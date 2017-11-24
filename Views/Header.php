@@ -17,7 +17,7 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 			// else{
 			// 	include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
       // }
-      include '../Locales/Strings_SPANISH.php';
+      include '../Locales/Strings_SPANISH.php'; //quitar cuando se implementen correctamente los idiomas
 		
 		?>
 		<!DOCTYPE html>

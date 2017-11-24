@@ -10,7 +10,7 @@ Vista que contiene el Menú lateral
 
 		function render(){
       // include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-      include '../Locales/Strings_SPANISH.php';
+      include '../Locales/Strings_SPANISH.php'; //quitar cuando se implemente correctamente los idiomas
       ?>
         <aside>
 					<ul class="menu">
