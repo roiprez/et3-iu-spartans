@@ -6,7 +6,7 @@
  * Time: 15:51
  */
 
-class USUARIOS_SHOWCURRENT{  // declaración de clase
+class Vista_SHOWCURRENT{  // declaración de clase
 
     var $lista_variables;//lista de variables a mostrar
     var $lista_valores;//lista de valores de las variables
