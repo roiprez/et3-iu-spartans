@@ -1,0 +1,14 @@
+#cuerpo{
+	width: 100%;
+	display: flex;
+}
+
+#root{
+	display: flex;
+	flex-direction: column;
+	margin: $m-size $m-size $m-size $s-size;
+	padding: $xl-size $xl-size;
+	width: 80%;
+	height: 100%;
+	background-color: white;
+}

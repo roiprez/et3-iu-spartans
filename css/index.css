@@ -1,178 +1,123 @@
-/*
-Este fichero se encarga de la distribución de la página y de los estilos de todos sus elementos
-excepto las tablas y los formularios
-*/
-
 * {
-	font-family: Open Sans;
-	margin: 0px;
-	padding: 0px;
-}
+  margin: 0px;
+  padding: 0px; }
 
-body, html {
+html {
+  font-family: Open Sans;
+  margin: 0px;
+  padding: 0px;
+  font-size: 62.5%; }
+
+body {
   height: 100%;
   width: 100%;
-  background-color: #DDD;
-}
+  background-color: #DDD; }
 
-header{
-	background-color: #333;
-	width: 100%;
-	height: 120px;
-	justify-content: space-between;
-	display: flex;
-	align-items: center;
-}
+header {
+  background-color: #333;
+  width: 100%;
+  height: 120px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center; }
 
-header h1{
-	padding-left: 40px;
-	font-family: Kaushan Script;
-	color: #FACD63;
-	font-size: 48px;
-	font-weight: 200;
-}
+.header__h1 {
+  padding-left: 3.2rem;
+  font-family: Kaushan Script;
+  color: #FACD63;
+  font-size: 3.2rem;
+  font-weight: 200; }
 
+.header__icon {
+  width: 3.2rem;
+  height: 3.2rem; }
 
-#contenedor-usuario {
-	display: flex;
-	align-items: center;
-}
+.header__contenedor-usuario {
+  display: flex;
+  align-items: center; }
 
-#usuario{
-	color: #FACD63;
-	font-size: 24px;
-	width: auto;
-	padding-right: 40px;
-}
-
-#contenedor-usuario p{
-	color: #FACD63;
-	font-size: 24px;
-	width: auto;
-}
-header button{
-	margin-right: 20px;
-}
-
-header img {	
-	width: 50px;
-	height: 50px;
-}
-
-#cuerpo{
-	width: 100%;
-	display: flex;
-}
+.header__contenedor-usuario__usuario {
+  color: #FACD63;
+  font-size: 1.6rem;
+  width: auto;
+  padding-right: 3.2rem; }
 
 aside {
-	display: flex;
-	justify-content: center;
-	width: 20%;
-	padding: 40px 10px;
-	margin: 20px 10px 20px 20px;
-	background: white;
-	color: #444;
-}
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  padding: 4.8rem 1.2rem;
+  margin: 1.6rem 1.2rem 1.6rem 1.6rem;
+  background: white;
+  color: #444; }
 
-aside .menu{
-	width: 100%;
-	font-size: 20px;
-	padding: 10px 20px;
-}
-
+.menu {
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.6rem; }
 
 .dropbtn {
-	background-color: #FFEDC4;
-	width: 100%;
-    color: #333;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
+  background-color: #FFEDC4;
+  width: 100%;
+  color: #444;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  cursor: pointer; }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #FACD63;
-}
+  background-color: #FACD63; }
 
 .dropdown {
-    display: block;
-}
+  display: block; }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
 
 .dropdown-content a {
-    padding: 12px 16px;
-    text-decoration: none;
-	color: #333;
-    display: block;
-}
+  padding: 1.2rem 1.6rem;
+  text-decoration: none;
+  color: #444;
+  display: block; }
 
-.dropdown-content a:hover {background-color: #FFEDC4}
+.dropdown-content a:hover {
+  background-color: #FFEDC4; }
 
-.show {display:block;}
+.show {
+  display: block; }
 
-aside li{
-	padding: 5px 0px;
-}
+aside li {
+  padding: 5px 0px; }
 
-#root{
-	display: flex;
-	flex-direction: column;
-	margin: 20px 20px 20px 10px;
-	padding: 240px 40px;
-	width: 80%;
-	height: 100%;
-	background-color: white;
-}
+@media screen and (min-width: 1200px) {
+  .menu {
+    font-size: 3.2rem;
+    padding: 1.2rem 1.6rem; } }
+#cuerpo {
+  width: 100%;
+  display: flex; }
 
-#boton-registro{
-	padding-top: 40px;
-}
+#root {
+  display: flex;
+  flex-direction: column;
+  margin: 1.6rem 1.6rem 1.6rem 1.2rem;
+  padding: 4.8rem 4.8rem;
+  width: 80%;
+  height: 100%;
+  background-color: white; }
 
-#parrafoLateral{
-	padding: 20px 0px;
-}
-
-#contenido h1{
-	font-family: Kaushan Script;
-	font-size: 48px;
-	color: #444;;
-}
-
-.titulo-categoria {
-	font-size: 48px;
-	color: #444;
-	padding: 40px;
-}
+#boton-registro {
+  padding-top: 3.2rem; }
 
 footer {
-	background-color: #333;
-	text-align: center;
-	width: 100%;
-	padding: 10px 0px;
-	color: #FACD63;
-}
+  background-color: #333;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0px;
+  color: #FACD63; }
 
-@media screen and (min-width:1200px){
-	aside .menu{
-		font-size: 28px;
-		padding: 10px 20px;
-	}
-
-	aside .submenu{
-		font-size: 24px;
-		padding: 10px 20px;
-	}
-	.img-contenido {
-		height: 500px;
-		width: 100%;
-		padding-bottom: 40px;
-	}
-}
+/*# sourceMappingURL=index.css.map */

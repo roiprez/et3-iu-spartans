@@ -34,9 +34,9 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 		</head>
 		<body>
 			<header>
-				<h1><?php echo $strings['Portal de Gestión']?></h1>
-				<div id="contenedor-usuario">	
-					<p id="usuario">
+				<h1 class="header__h1"><?php echo $strings['Portal de Gestión']?></h1>
+				<div class="header__contenedor-usuario">	
+					<p class="header__contenedor-usuario__usuario">
 						<?php	
 							// if (IsAuthenticated()){
 							// 	echo $strings['Usuario'] . ' : ' . $_SESSION['login'] . '<br>'; 
@@ -44,7 +44,7 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 						?>
 					</p>
 					<a href='../Functions/Desconectar.php'>
-						<img id="icono-logout" src="../iconos/logout.png" title="desconectar">
+						<img class="header__icon" src="../iconos/logout.png" title="desconectar">
 					</a>
 				</div>
 			</header>

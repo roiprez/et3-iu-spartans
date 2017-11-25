@@ -1,0 +1,64 @@
+aside {
+	display: flex;
+	justify-content: center;
+	width: 20%;
+	padding: $xl-size $s-size;
+	margin: $m-size $s-size $m-size $m-size;
+	background: white;
+	color: $color-texto;
+}
+
+.menu{
+	width: 100%;
+	font-size: $m-size;
+	padding: $s-size $m-size;
+}
+
+
+.dropbtn {
+	background-color: $color-principal-claro;
+	width: 100%;
+  color: $color-texto;
+  padding: $s-size;
+  font-size: $m-size;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: $color-principal;
+}
+
+.dropdown {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+  padding: $s-size $m-size;
+  text-decoration: none;
+	color: $color-texto;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: $color-principal-claro}
+
+.show {display:block;}
+
+aside li{
+	padding: 5px 0px;
+}
+
+@media screen and (min-width:1200px){
+	.menu{
+		font-size: $l-size;
+		padding: $s-size $m-size;
+	}
+}

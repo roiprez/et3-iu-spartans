@@ -1,0 +1,34 @@
+header{
+	background-color: #333;
+	width: 100%;
+	height: 120px;
+	justify-content: space-between;
+	display: flex;
+    align-items: center;
+}
+
+.header__h1{
+	padding-left: $l-size;
+	font-family: Kaushan Script;
+	color: $color-principal;
+	font-size: $l-size;
+	font-weight: 200;
+}
+
+.header__icon {	
+	width: $l-size;
+	height: $l-size;
+}
+
+.header__contenedor-usuario {
+	display: flex;
+	align-items: center;
+}
+
+.header__contenedor-usuario__usuario {
+	color: $color-principal;
+	font-size: $m-size;
+	width: auto;
+	padding-right: $l-size;
+}
+

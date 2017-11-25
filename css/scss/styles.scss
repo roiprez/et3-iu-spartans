@@ -1,0 +1,8 @@
+@import './base/settings'; //Tiene que ser la primera línea para que el resto de archivos lo usen
+@import './base/base';
+@import './components/header';
+@import './components/menu-lateral';
+@import './components/cuerpo';
+@import './components/registro';
+@import './components/footer';
+
