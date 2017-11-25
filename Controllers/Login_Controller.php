@@ -12,8 +12,8 @@ if(!isset($_REQUEST['login']) && !(isset($_REQUEST['password']))){
 	$login = new Login();
 }
 else{
-	include '../Models/Entidad_Model.php';
-	$usuario = new Entidad_Model($_REQUEST['login'],$_REQUEST['password'],'','','','','','');
+	include '../Models/USUARIOS_Model.php';
+	$usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],'','','','','','');
 	$respuesta = $usuario->login();
 
 	if ($respuesta == 'true'){

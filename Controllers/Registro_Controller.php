@@ -15,9 +15,9 @@ if(!isset($_POST['login'])){
 }
 
 else{
-	include '../Models/Entidad_Model.php';
+	include '../Models/USUARIOS_Model.php';
 	
-	$usuario = new Entidad_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['nombre'], $_REQUEST['apellidos'], $_REQUEST['correo'], $_REQUEST['direccion'], $_REQUEST['telefono']);
+	$usuario = new USUARIOS_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);
 	$respuesta = $usuario->Register();
 
 	if ($respuesta == 'true'){
