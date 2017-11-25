@@ -8,8 +8,8 @@ Controlador que se encarga de hacer login en la aplicación
 
 session_start();
 if(!isset($_REQUEST['login']) && !(isset($_REQUEST['password']))){
-	include '../Views/Login_View.php';
-	$login = new Login();
+	include '../Views/LOGIN_View.php';
+	$login = new Vista_LOGIN();
 }
 else{
 	include '../Models/USUARIOS_Model.php';
@@ -23,7 +23,7 @@ else{
 	}
 	else{
 		include '../Views/MESSAGE_View.php';
-		new MESSAGE($respuesta, './Login_Controller.php');
+		new Vista_MESSAGE($respuesta, './Login_Controller.php');
 	}
 }
 ?>

@@ -54,5 +54,8 @@ array(
 	"No existe" => 'No existe',
 	'No existe en la base de datos' => 'No existe en la base de datos',
 	'Error en la modificación' => 'Error en la modificación',
+	'Usuarios' =>'Usuarios',
+	'Grupos' => 'Grupos',
+	
 );
  ?>

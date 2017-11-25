@@ -11,9 +11,9 @@ Vista que contiene el footer de la aplicación junto con los scripts de javascri
 		}
 
 		function render(){
-			// if (IsAuthenticated()){
-			// 	include '../Controllers/USUARIOS_Controller.php';	
-			// }
+			if (IsAuthenticated()){
+				include '../Controllers/USUARIOS_Controller.php';	
+			}
 		?>
 		</div>
 		</div>

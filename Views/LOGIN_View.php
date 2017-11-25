@@ -10,7 +10,6 @@ class Vista_LOGIN{
 
     function __construct(){
         $this->render();
-
     }
 
     function render(){
@@ -27,9 +26,9 @@ class Vista_LOGIN{
             <input type = 'text' name = 'login' placeholder = 'login' size = '15' maxlength="15" onchange="comprobarVacio(this) && comprobarTexto(this, 15)"  ><br>
             <input type = 'password' name = 'password' id='password' placeholder = 'password' maxlength="20" size = '20' value = '' onchange="comprobarVacio(this) && comprobarTexto(this, 20)"  ><br>
 
-            <button id="enviar" type='submit' name='action'><img class="button-td" src="../iconos/send.png" title="enviar"></img></button>
+            <button id="enviar" type='submit' name='action'><img class="button-td" src="../Iconos/send.png" title="enviar"></img></button>
         </form>
-        <button id="boton-registro"><a href='../Controllers/Register_Controller.php'><img class="button-td" src="../Iconos/ic_person_add.png" title="Registrarse"></img></a></button>
+        <button id="boton-registro"><a href='../Controllers/Registro_Controller.php'><img class="button-td" src="../Iconos/ic_person_add.png" title="Registrarse"></img></a></button>
 
         <?php
 

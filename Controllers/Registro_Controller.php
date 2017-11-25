@@ -10,7 +10,7 @@ include_once '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 
 //session_start();
 if(!isset($_POST['login'])){
-	include '../Views/Register_View.php';
+	include '../Views/REGISTER_View.php';
 	$register = new Register();
 }
 
@@ -23,11 +23,11 @@ else{
 	if ($respuesta == 'true'){
 		$respuesta = $usuario->registrar();
 		Include '../Views/MESSAGE_View.php';
-		new MESSAGE($respuesta, '../index.php');
+		new Vista_MESSAGE($respuesta, '../index.php');
 	}
 	else{
 		include '../Views/MESSAGE_View.php';
-		new MESSAGE($respuesta, './Login_Controller.php');
+		new Vista_MESSAGE($respuesta, './Login_Controller.php');
 	}
 }
 

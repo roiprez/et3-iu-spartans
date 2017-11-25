@@ -15,7 +15,7 @@ if (!IsAuthenticated()){
 }
 //esta autenticado
 else{
-	include '../Views/users_index_View.php';
+	include '../Views/IndexView.php';
 	new Index();
 }
 ?>

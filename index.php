@@ -16,10 +16,10 @@ entrada a la aplicacion
 	}
 	//si ha pasado por el login de forma correcta 
 	else{
-		
+		header('Location:./Controllers/Index_Controller.php');
 	}
 
-	header('Location:./Controllers/Index_Controller.php');
+	
 
 	?>
 

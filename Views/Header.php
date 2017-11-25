@@ -10,15 +10,14 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 		}
 
 		function render(){
-			// include_once '../Functions/Authentication.php';
-			// if (!isset($_SESSION['idioma']) || !$_SESSION['idioma']) {
-			// 	$_SESSION['idioma'] = 'SPANISH';
-			// 	include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
-			// }
-			// else{
-			// 	include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
-      // }
-      include '../Locales/Strings_SPANISH.php'; //quitar cuando se implementen correctamente los idiomas
+			include_once '../Functions/Authentication.php';
+			if (!isset($_SESSION['idioma']) || !$_SESSION['idioma']) {
+				$_SESSION['idioma'] = 'SPANISH';
+				include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+			}
+			else{
+				include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+      }
 		
 		?>
 		<!DOCTYPE html>
@@ -28,8 +27,6 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title><?php echo $strings['Portal de Gestión']?></title>
 			<link href="../css/index.css" type="text/css" rel="stylesheet">
-			<!-- <link href="../css/formularios.css" type="text/css" rel="stylesheet">
-			<link href="../css/tablas.css" type="text/css" rel="stylesheet"> -->
 			<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans" rel="stylesheet">
 		</head>
 		<body>
@@ -38,13 +35,13 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 				<div class="header__contenedor-usuario">	
 					<p class="header__contenedor-usuario__usuario">
 						<?php	
-							// if (IsAuthenticated()){
-							// 	echo $strings['Usuario'] . ' : ' . $_SESSION['login'] . '<br>'; 
-							// }
+							if (IsAuthenticated()){
+								echo $strings['Usuario'] . ' : ' . $_SESSION['login'] . '<br>'; 
+							}
 						?>
 					</p>
 					<a href='../Functions/Desconectar.php'>
-						<img class="header__icon" src="../iconos/logout.png" title="desconectar">
+						<img class="header__icon" src="../Iconos/logout.png" title="desconectar">
 					</a>
 				</div>
 			</header>
