@@ -104,29 +104,12 @@ aside li {
 #root {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 1.6rem 1.6rem 1.6rem 1.2rem;
   padding: 4.8rem 4.8rem;
   width: 80%;
   height: 100%;
   background-color: white; }
-
-.botones-formulario {
-  align-self: center;
-  padding: 20px 0px; }
-
-#enviar, .borrar, #buscar, #button-search, #boton-registro {
-  color: #444;
-  font-size: 20px;
-  padding: 10px;
-  margin: 10px;
-  font-family: Helvetica;
-  background-color: #FFEDC4;
-  border: 1px solid #FACD63;
-  margin-right: 10px; }
-
-.button-td {
-  max-width: 30px;
-  max-height: 30px; }
 
 footer {
   background-color: #333;
@@ -134,5 +117,111 @@ footer {
   width: 100%;
   padding: 10px 0px;
   color: #FACD63; }
+
+.botones-formulario {
+  align-self: center;
+  padding: 1.6rem 0px; }
+
+#enviar, .borrar, #buscar, #button-search, #boton-registro {
+  color: #444;
+  font-size: 1.6rem;
+  padding: 1.2rem;
+  margin: 1.2rem;
+  font-family: Helvetica;
+  background-color: #FFEDC4;
+  border: 1px solid #FACD63;
+  margin-right: 1.2rem; }
+
+.button-td {
+  max-width: 3.2rem;
+  max-height: 3.2rem; }
+
+#tablas {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4.8rem; }
+
+table tr th {
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  background-color: #FACD63; }
+
+.celda {
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  background-color: #FFEDC4;
+  text-align: center; }
+
+.celda-botones, .boton-atras {
+  padding: 1.2rem;
+  text-align: center; }
+
+button {
+  background: none;
+  border: none; }
+
+#botones-comunes img {
+  max-width: 3.2rem;
+  max-height: 3.2rem; }
+
+.button-td {
+  max-width: 3.2rem;
+  max-height: 3.2rem; }
+
+#tablas p {
+  margin-top: 4.8rem;
+  margin-bottom: 1.6rem; }
+
+#mensaje-de-borrado {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4.8rem;
+  margin-bottom: 1.6rem;
+  padding: 1.2rem;
+  background-color: rgba(255, 117, 117, 0.58); }
+
+#mensaje-de-borrado img {
+  height: 3.2rem;
+  width: 3.2rem; }
+
+#mensaje-de-borrado p {
+  margin: 0px; }
+
+@media screen and (min-width: 1500px) {
+  .cabecera-tabla {
+    font-size: 1.2rem; }
+
+  .celda {
+    font-size: 1.2rem; } }
+form p {
+  width: 100%;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1.6rem 0px; }
+
+#formulario-add, #formulario-edit, #formulario-search, #formulario-registro, #formulario-login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 4.8rem;
+  margin: 1.6rem;
+  border: 2px solid #AAA; }
+
+.tcal {
+  background-color: white; }
+
+input, select {
+  color: #444;
+  background-color: white;
+  font-size: 1.6rem;
+  margin: 1.2rem;
+  padding: 5px;
+  border: 2px solid #FACD63;
+  border-radius: 2px; }
+
+#grupo-practicas {
+  margin-left: 150px; }
 
 /*# sourceMappingURL=index.css.map */

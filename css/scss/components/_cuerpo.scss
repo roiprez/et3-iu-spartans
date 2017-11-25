@@ -6,6 +6,7 @@
 #root{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	margin: $m-size $m-size $m-size $s-size;
 	padding: $xl-size $xl-size;
 	width: 80%;

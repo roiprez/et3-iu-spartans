@@ -1,21 +1,21 @@
 .botones-formulario {
   align-self: center;
-  padding: 20px 0px;
+  padding: $m-size 0px;
 }
 
 
 #enviar, .borrar, #buscar, #button-search, #boton-registro{
-  color: #444;
-  font-size: 20px;
-  padding: 10px;
-  margin: 10px;
+  color: $color-texto;
+  font-size: $m-size;
+  padding: $s-size;
+  margin: $s-size;
   font-family: Helvetica;
-  background-color: #FFEDC4;
-  border: 1px solid #FACD63;
-  margin-right: 10px;
+  background-color: $color-principal-claro;
+  border: 1px solid $color-principal;
+  margin-right: $s-size;
 }
 
 .button-td {
-	max-width: 30px;
-	max-height: 30px;
+	max-width: $l-size;
+	max-height: $l-size;
 }
