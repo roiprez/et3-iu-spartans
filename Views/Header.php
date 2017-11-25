@@ -1,6 +1,7 @@
 <?php
 /*
 Vista que contiene el Header y el menú lateral de la aplicación, en el se contiene además la funcionalidad del cambio de idioma, y de desconexión de la base de datos
+23/11/2017
 */
 
 	class Header{

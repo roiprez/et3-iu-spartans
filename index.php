@@ -1,6 +1,7 @@
 <?php
 /*
 entrada a la aplicacion
+23/11/2017
 */
 	//se va usar la session de la conexion
 	session_start();

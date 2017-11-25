@@ -1,6 +1,7 @@
 <?php
 /*
 Vista que contiene el Menú lateral
+23/11/2017
 */
 
   class MenuLateral{
