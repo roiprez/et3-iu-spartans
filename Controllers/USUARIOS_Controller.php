@@ -58,7 +58,7 @@ if (!isset($_REQUEST['action'])){
 				
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);
 				$respuesta = $USUARIOS->ADD();
-				new MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			break;
 		case 'DELETE':
@@ -71,7 +71,7 @@ if (!isset($_REQUEST['action'])){
 			else{
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
 				$respuesta = $USUARIOS->DELETE();
-				new MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			break;
 		case 'EDIT':		
@@ -85,7 +85,7 @@ if (!isset($_REQUEST['action'])){
 			else{	
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);							
 				$respuesta = $USUARIOS->EDIT();
-				new MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			
 			break;
