@@ -22,7 +22,7 @@ class Vista_SEARCH{  // declaración de clase
     function pinta(){
         //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         ?>
-        <form id="formulario-search" name="formulario_search" method="post">
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">>
 
             <?php
             for($i=0;$i<count($this->lista_variables);$i++) {
@@ -30,7 +30,7 @@ class Vista_SEARCH{  // declaración de clase
                 <label><?php echo $this->lista_variables[$i] ?>
                     <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
                            size="<?php echo $this->tamanho_variables[$i] ?>"
-                           maxlength="<?php echo $this->tamanho_variables[$i] ?>" onchange="comprobarTexto(this, 15)"/>
+                           maxlength="<?php echo $this->tamanho_variables[$i] ?>" />
                 </label>
                 <?php
             }//fin bucle for

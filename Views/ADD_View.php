@@ -25,7 +25,7 @@ class Vista_ADD// declaración de clase
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
         <?php
 
         for ($i = 0; $i < count($this->lista_variables); $i++) {//Creacion de inputs segun el numero de atributos

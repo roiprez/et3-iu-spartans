@@ -27,6 +27,7 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title><?php echo $strings['Portal de Gestión']?></title>
 			<link href="../css/index.css" type="text/css" rel="stylesheet">
+			<script type="text/javascript" src="../js/validaciones.js"></script>
 			<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans" rel="stylesheet">
 		</head>
 		<body>

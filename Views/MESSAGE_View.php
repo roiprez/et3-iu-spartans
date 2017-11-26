@@ -45,7 +45,7 @@ class Vista_MESSAGE{
         <br>
         <br>
 
-        <button name="atras" type="button"><a href=<?php echo $this->volver?>><img class="button-td" src="../Iconos/back.png" title="atrás"></img></a></button>
+        <button name="atras" type="button"><a href=<?php echo $this->volver?>><img class="button-td" src="../Iconos/back.png" onclick ="location='../Controllers/USUARIOS_Controller.php'" title="atrás"></img></a></button>
         <?php
         if (!IsAuthenticated()){
             include '../Views/Footer.php';
