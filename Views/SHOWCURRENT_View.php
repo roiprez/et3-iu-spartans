@@ -40,7 +40,7 @@ class Vista_SHOWCURRENT{  // declaración de clase
 
 
         </table>
-        <button class="boton-atras" name="atras" type="button"><a href="../Controllers/Index_Controller.php"><img class="button-td" src="../iconos/back.png" title="atrás"></img></a></button>
+        <button class="boton-atras" name="atras" type="button"><a href="../Controllers/Index_Controller.php"><img class="button-td" src="../Iconos/back.png" title="atrás"></img></a></button>
         <?php
     }//fin de pintar
 }//fin de la clase
