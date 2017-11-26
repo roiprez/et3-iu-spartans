@@ -5,6 +5,8 @@
 
 html {
     font-family: Open Sans;
+    height: 100%;
+    width: 100%;
     margin: 0px;
     padding: 0px;
     font-size: 62.5%; //Con esto lo que hacemos es que el rem pasen a estar en base 10
@@ -13,6 +15,8 @@ html {
 body{
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: $fondo-claro;
 }
 
