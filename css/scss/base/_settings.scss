@@ -1,6 +1,6 @@
 //Colores
 $color-principal: #FACD63;
-$color-principal-claro: #FFEDC4;
+$color-principal-claro: lighten($color-principal, 20%);
 $color-texto: #444;
 $fondo-oscuro: #333;
 $fondo-claro: #DDD;

@@ -61,7 +61,7 @@ aside {
   padding: 1.2rem 1.6rem; }
 
 .dropbtn {
-  background-color: #FFEDC4;
+  background-color: #fdedc6;
   width: 100%;
   color: #444;
   padding: 1.2rem;
@@ -89,7 +89,7 @@ aside {
   display: block; }
 
 .dropdown-content a:hover {
-  background-color: #FFEDC4; }
+  background-color: #fdedc6; }
 
 .show {
   display: block; }
@@ -133,7 +133,7 @@ footer {
   padding: 1.2rem;
   margin: 1.2rem;
   font-family: Helvetica;
-  background-color: #FFEDC4;
+  background-color: #fdedc6;
   border: 1px solid #FACD63;
   margin-right: 1.2rem; }
 
@@ -154,7 +154,7 @@ table tr th {
 .celda {
   font-size: 1.2rem;
   padding: 1.2rem;
-  background-color: #FFEDC4;
+  background-color: #fdedc6;
   text-align: center; }
 
 .celda-botones, .boton-atras {
