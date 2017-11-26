@@ -9,7 +9,7 @@
 	align-items: center;
 	margin: $m-size $m-size $m-size $s-size;
 	padding: $xl-size $xl-size;
-	width: 80%;
+	flex-grow: 1;
 	height: 100%;
 	background-color: white;
 }
