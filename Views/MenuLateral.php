@@ -23,7 +23,7 @@ Vista que contiene el Menú lateral
 							</ul>
 						</li>
 						<li class="dropdown">
-							<button onclick="dropdownMenu('submenu_grupos')" class="dropbtn"><?php echo $strings['Grupos']; ?></button>
+							<button onclick="location.href='../Controllers/GRUPOS_Controller.php'" class="dropbtn"><?php echo $strings['Grupos']; ?></button>
 							<ul id="submenu_grupos" class="dropdown-content">
 								<li><a href="#"><?php echo $strings['Mostrar todo']; ?></a></li>
 								<li><a href="#"><?php echo $strings['Añadir']; ?></a></li>

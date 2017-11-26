@@ -47,7 +47,7 @@ if (!isset($_REQUEST['action'])){
 			else{		
 				$GRUPOS = get_data_form();
 				$respuesta = $GRUPOS->ADD();
-				new MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			break;
 		case 'DELETE':
@@ -60,7 +60,7 @@ if (!isset($_REQUEST['action'])){
 			else{
 				$GRUPOS = new GRUPOS_Model($_REQUEST['IdGrupo'], '', '');
 				$respuesta = $GRUPOS->DELETE();
-				new MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			break;
 		case 'EDIT':		
@@ -74,7 +74,7 @@ if (!isset($_REQUEST['action'])){
 			else{	
 				$GRUPOS = get_data_form();						
 				$respuesta = $GRUPOS->EDIT();
-				new MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			
 			break;

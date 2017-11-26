@@ -50,6 +50,25 @@ UNIQUE KEY `Correo` (`Correo`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+
+
+CREATE TABLE IF NOT EXISTS `GRUPO` (
+
+`IdGrupo` varchar(15) NOT NULL,
+
+`NombreGrupo` varchar(20) NOT NULL,
+
+`DescripGrupo` varchar(50) NOT NULL,
+
+PRIMARY KEY (`IdGrupo`),
+
+UNIQUE KEY `DNI` (`NombreGrupo`)
+
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 INSERT INTO `USUARIO` (`login`,`password`,`DNI`, `Nombre`, `Apellidos`, `Correo`, `Direccion`, `Telefono`) 
 VALUES ('admin', 'admin', '60137338C', 'admin', 'admin', 'admin@admin.com', 'Calle del Administrador nº 1', '612612612');
+
+INSERT INTO `GRUPO` (`IdGrupo`,`NombreGrupo`,`DescripGrupo`) 
+VALUES ('1234', 'IU SPARTANS', 'aljksdfhajklsdfh');
 
