@@ -48,6 +48,8 @@ class Vista_EDIT// declaración de clase
             }//fin bucle for
 
             for ($i = $this->clave; $i < count($this->lista_variables ); $i++) {//Creacion de inputs segun el numero de atributos - los de la clave
+
+                if($this->lista_variables[$i]!='password'){
                 ?>
                 <label><?php echo $this->lista_variables[$i] ?>
                     <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
@@ -56,11 +58,18 @@ class Vista_EDIT// declaración de clase
                            value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>"
                     />
                 </label>
-
-
-
-                <?php
-
+                    <?php
+                    }else{
+                    ?>
+                    <label><?php echo $this->lista_variables[$i] ?>
+                        <input type="password" name="<?php echo $this->lista_variables[$i] ?>"
+                               id="<?php echo $this->lista_variables[$i] ?>" required="true"
+                               size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+                               value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>"
+                        />
+                    </label>
+                    <?php
+                }//fin del else
             }//fin bucle for
             ?>
             <div class="botones-formulario">

@@ -29,16 +29,31 @@ class Vista_ADD// declaración de clase
         <?php
 
         for ($i = 0; $i < count($this->lista_variables); $i++) {//Creacion de inputs segun el numero de atributos
+
+           if($this->lista_variables[$i]!='password'){
+
+
             ?>
-            <label><?php echo $this->lista_variables[$i] ?>
-                <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
-                       id="<?php echo $this->lista_variables[$i] ?>" required="true"
-                       size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
-                />
-            </label>
+               <label><?php echo $this->lista_variables[$i] ?>
+               <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
+                      id="<?php echo $this->lista_variables[$i] ?>" required="true"
+                      size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+               />
+               </label>
+               <?php
 
+           }else{
+               ?>
+               <label><?php echo $this->lista_variables[$i] ?>
+                   <input type="password" name="<?php echo $this->lista_variables[$i] ?>"
+                          id="<?php echo $this->lista_variables[$i] ?>" required="true"
+                          size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+                   />
+               </label>
 
-            <?php
+               <?php
+
+           }//fin else
 
         }//fin bucle for
         ?>
