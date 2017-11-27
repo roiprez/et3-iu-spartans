@@ -15,15 +15,19 @@ Vista que contiene el Menú lateral
         <aside>
 					<ul class="menu">
 						<li class="dropdown">
-							<button onclick="dropdownMenu('submenu_usuarios')" class="dropbtn"><?php echo $strings['Usuarios']; ?></button>
-							<ul id="submenu_usuarios" class="dropdown-content">
-								<li><a href="#"><?php echo $strings['Mostrar todo']; ?></a></li>
-								<li><a href="#"><?php echo $strings['Añadir']; ?></a></li>
-								<li><a href="#"><?php echo $strings['Buscar']; ?></a></li>
-							</ul>
-						</li>
+						<form action="../Controllers/Index_Controller.php">
+							<input type="submit" name="Controlador" value="USUARIOS" onclick="mostrarUsuarios()" class="dropbtn"></input>
+						</form>
+						<ul id="submenu_usuarios" class="dropdown-content">
+							<li><a href="#"><?php echo $strings['Mostrar todo']; ?></a></li>
+							<li><a href="#"><?php echo $strings['Añadir']; ?></a></li>
+							<li><a href="#"><?php echo $strings['Buscar']; ?></a></li>
+						</ul>
+					</li>
 						<li class="dropdown">
-							<button onclick="location.href='../Controllers/GRUPOS_Controller.php'" class="dropbtn"><?php echo $strings['Grupos']; ?></button>
+						<form action="../Controllers/Index_Controller.php">
+							<input type="submit" name="Controlador" value="GRUPOS" onclick="mostrarGrupos()" class="dropbtn"></input>
+						</form>
 							<ul id="submenu_grupos" class="dropdown-content">
 								<li><a href="#"><?php echo $strings['Mostrar todo']; ?></a></li>
 								<li><a href="#"><?php echo $strings['Añadir']; ?></a></li>
@@ -32,7 +36,7 @@ Vista que contiene el Menú lateral
 						</li>
 					</ul>
 				</aside>
-        <?php
+        <?php				
         }
       }
 ?>

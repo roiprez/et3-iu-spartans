@@ -12,7 +12,7 @@ Vista que contiene el footer de la aplicación junto con los scripts de javascri
 
 		function render(){
 			if (IsAuthenticated()){
-				include '../Controllers/USUARIOS_Controller.php';	
+				include '../Controllers/' . $_SESSION['controlador'] . '.php';	
 			}
 		?>
 		</div>

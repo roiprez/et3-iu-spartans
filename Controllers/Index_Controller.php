@@ -15,6 +15,9 @@ if (!IsAuthenticated()){
 }
 //esta autenticado
 else{
+	if(isset($_GET['Controlador'])){
+		$_SESSION['controlador'] = $_GET['Controlador'] . '_Controller'; 
+	}
 	include '../Views/IndexView.php';
 	new Index();
 }

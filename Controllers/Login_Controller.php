@@ -19,6 +19,7 @@ else{
 	if ($respuesta == 'true'){
 		session_start();
 		$_SESSION['login'] = $_REQUEST['login'];
+		$_SESSION['controlador'] = 'USUARIOS_Controller';
 		header('Location:../index.php');
 	}
 	else{
