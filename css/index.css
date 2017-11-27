@@ -221,7 +221,7 @@ input, select {
   color: #444;
   background-color: white;
   font-size: 1.6rem;
-  margin: 1.2rem;
+  margin: 1.2rem 0;
   padding: 5px;
   border: 2px solid #FACD63;
   border-radius: 2px; }
