@@ -32,7 +32,7 @@ class Vista_EDIT// declaración de clase
 
         <form id="formulario-edit" name="formulario_edit" method="post">
             <?php
-            for($i =0; $i <$this->clave); $i++){//Los atributos de la clave se tratan fuera para hacerlos no editables
+            for($i =0; $i <$this->clave; $i++){//Los atributos de la clave se tratan fuera para hacerlos no editables
                 ?>
                 <label><?php echo $this->lista_variables[$i] ?>
                     <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
