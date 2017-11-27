@@ -32,7 +32,7 @@ class Vista_SHOWCURRENT{  // declaración de clase
                 ?>
                 <tr>
                     <th><?php echo $this->lista_variables[$i]?></th>
-                    <td class="celda"><?php echo $this->lista_valores[$i]; ?></td>
+                    <td class="celda"><?php echo $this->lista_valores[$this->lista_variables[$i]]; ?></td>
                 </tr>
                 <?php
             }//fin de bucle for

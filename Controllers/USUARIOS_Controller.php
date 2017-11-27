@@ -106,7 +106,7 @@ if (!isset($_REQUEST['action'])){
 		case 'SHOWCURRENT':
 			$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');	
 			$valores = $USUARIOS->RellenaDatos();
-			$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion', 'Telefono');
+			$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion', 'Telefono');
 			new Vista_SHOWCURRENT($lista, $valores);
 			break;
 		default:
