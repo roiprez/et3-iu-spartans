@@ -69,7 +69,8 @@ if (!isset($_REQUEST['action'])){
         $lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
         $tamanhos = array(30, 30, 300);
 				$valores = $GRUPOS->RellenaDatos();
-				new Vista_EDIT($lista,$tamanhos,$valores);
+				$clave=1;
+				new Vista_EDIT($lista,$tamanhos,$valores,$clave);
 			}
 			else{	
 				$GRUPOS = get_data_form();						

@@ -80,7 +80,8 @@ if (!isset($_REQUEST['action'])){
 				$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
 				$tamanhos = array(15, 20, 9, 30, 50, 60, 120, 11);
 				$valores = $USUARIOS->RellenaDatos();
-				new Vista_EDIT($lista,$tamanhos,$valores);
+				$clave=1;
+				new Vista_EDIT($lista,$tamanhos,$valores,$clave);
 			}
 			else{	
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);							

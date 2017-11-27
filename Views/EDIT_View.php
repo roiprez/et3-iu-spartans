@@ -12,14 +12,16 @@ class Vista_EDIT// declaración de clase
     var $lista_variables;//variables requeridas
     var $tamanho_variables;//tamaño de las variables para los inputs
     var $lista_valores;//valores de las variables
+    var $clave;//numero de atributos que pertenecen a la clave
 
     //Constructor
-    function __construct($lista_variables,$tamanho_variables,$lista_valores)
+    function __construct($lista_variables,$tamanho_variables,$lista_valores,$clave)
     {
 
         $this->tamanho_variables=$tamanho_variables;
         $this->lista_variables=$lista_variables;
         $this->lista_valores=$lista_valores;
+        $this->clave=$clave;
         $this->pinta();
     }
     function pinta()
@@ -30,8 +32,22 @@ class Vista_EDIT// declaración de clase
 
         <form id="formulario-edit" name="formulario_edit" method="post">
             <?php
+            for($i =0; $i <$this->clave); $i++){//Los atributos de la clave se tratan fuera para hacerlos no editables
+                ?>
+                <label><?php echo $this->lista_variables[$i] ?>
+                    <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
+                           id="<?php echo $this->lista_variables[$i] ?>" required="true"
+                           readonly
+                           size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+                           value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>"
+                    />
+                </label>
 
-            for ($i = 0; $i < count($this->lista_variables); $i++) {//Creacion de inputs segun el numero de atributos
+                <?php
+
+            }//fin bucle for
+
+            for ($i = $this->clave; $i < count($this->lista_variables )- $this->clave; $i++) {//Creacion de inputs segun el numero de atributos - los de la clave
                 ?>
                 <label><?php echo $this->lista_variables[$i] ?>
                     <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
