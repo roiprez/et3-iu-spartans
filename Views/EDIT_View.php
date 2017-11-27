@@ -47,7 +47,7 @@ class Vista_EDIT// declaración de clase
 
             }//fin bucle for
 
-            for ($i = $this->clave; $i < count($this->lista_variables )- $this->clave; $i++) {//Creacion de inputs segun el numero de atributos - los de la clave
+            for ($i = $this->clave; $i < count($this->lista_variables ); $i++) {//Creacion de inputs segun el numero de atributos - los de la clave
                 ?>
                 <label><?php echo $this->lista_variables[$i] ?>
                     <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
