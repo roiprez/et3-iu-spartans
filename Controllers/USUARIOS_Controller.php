@@ -43,7 +43,7 @@ function get_data_form(){
 }
 //Como la password en la vista delete no está, al volver atrás del delete muestra un error de que no se encuentra inicializada
 if (!isset($_REQUEST['password'])){
-	$_REQUEST['password] = '';
+	$_REQUEST['password'] = '';
 }
 if (!isset($_REQUEST['action'])){
 	$_REQUEST['action'] = '';

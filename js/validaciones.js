@@ -297,7 +297,7 @@ if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que
     return false;
   }
   //Comprueba con la expresión regular que solo se incluyen caracteres alfabéticos y devuelve true en caso afirmativo, y una alerta y false en el contrario
-  else if (/^[A-Za-z\_\-\.\s\xF1\xD1]+$/.test(campo.value)){
+  else if (/^[a-zA-ZÁÉÍÏÓÚÜáéíïóüúñÑ-\s]+$/.test(campo.value)){
     campo.style.backgroundColor = "white";
     return true;
     }
@@ -430,12 +430,12 @@ function comprobarTelf(campo) {
 		return false;
 	}
 	//Expresion regular que indica los numeros de telefono validos
-	if(/^((\34([ \t|\-])?)?[9|6|7]((\d{1}([ \t|\-])?[0-9]{3})|(\d{2}([ \t|\-])?[0-9]{2}))([ \t|\-])?[0-9]{2}([ \t|\-])?[0-9]{2})$/.test(campo.value)){
+	if(/^(((34)?)?[9|8|6|7]((\d{1}([ \t|\-])?[0-9]{3})|(\d{2}([ \t|\-])?[0-9]{2}))([ \t|\-])?[0-9]{2}([ \t|\-])?[0-9]{2})$/.test(campo.value)){
 		return true;
 	}else{
 		
 		//Si el numero no coincide,devuelve false y un aviso explicando los formatos de numero permitidos
-		alert('Telefono malo, indicalo en uno de los siguientes formatos: 34(puedes escribirlo o no) 9XXXXXXXX | 6XXXXXXXX ');
+		alert('Telefono malo, indicalo en uno de los siguientes formatos: 34(puedes escribirlo o no) 9XXXXXXXX | 8XXXXXXXX | 7XXXXXXXX | 6XXXXXXXX ');
 		return false;
 		}
 }

@@ -30,7 +30,7 @@ class Vista_EDIT// declaración de clase
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post">
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit')">
             <?php
             for($i =0; $i <$this->clave; $i++){//Los atributos de la clave se tratan fuera para hacerlos no editables
                 ?>
