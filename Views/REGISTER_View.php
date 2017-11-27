@@ -16,7 +16,7 @@ class Register{
         <h1><?php echo $strings['Registro']; ?></h1>
         <form id="formulario-registro" name="formulario_registro" method="post" onsubmit="return validarFormulario('reg') && encriptar()">
             <label>Login
-                <input type="text" name="login" id = 'login' required="true" size="15" maxlength="15" onchange="comprobarVacio(this) && comprobarTexto(this, 15)"/>
+                <input type="text" name="login" id = 'login' required="true" size="9" maxlength="9" onchange="comprobarVacio(this) && comprobarTexto(this, 9)"/>
             </label>
             <label>Password
                 <input type="password" name="password" id = 'password' required="true" size="20" maxlength="20" onchange="comprobarVacio(this) && comprobarTexto(this, 20) && encriptar()"/>
@@ -30,15 +30,15 @@ class Register{
             <label><?php echo $strings['Apellidos']; ?>
                 <input type="text" name="Apellidos" required="true" size="50" maxlength="50" required="true" onchange="comprobarVacio(this) && comprobarAlfabetico(this, 50)"/>
             </label>
-            <label><?php echo $strings['Teléfono']; ?>
-                <input type="text" name="Telefono" required="true" size="11" maxlength="11" required="true" onchange="comprobarTelf(this)"/>
-            </label>
             <label>Email
-                <input type="text" name="Correo" required="true" size="60" maxlength="60" onchange="comprobarEmail(this, 60)"/>
+                <input type="text" name="Correo" required="true" size="40" maxlength="40" onchange="comprobarEmail(this, 40)"/>
             </label>
 
             <label>Direccion
                 <input type="text" name="Direccion" required="true" size="60" maxlength="60" />
+            </label>
+             <label><?php echo $strings['Teléfono']; ?>
+                <input type="text" name="Telefono" required="true" size="11" maxlength="11" required="true" onchange="comprobarTelf(this)"/>
             </label>
 
             <div class="botones-formulario">

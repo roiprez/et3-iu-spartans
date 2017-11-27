@@ -41,7 +41,7 @@ if (!isset($_REQUEST['action'])){
 		case 'ADD':
 			if (!$_POST){
         $lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
-        $tamanhos = array(30, 30, 300);
+        $tamanhos = array(6, 60, 100);
 				new Vista_ADD($lista, $tamanhos);
 			}
 			else{		
@@ -67,7 +67,7 @@ if (!isset($_REQUEST['action'])){
 			if (!$_POST){	
         $GRUPOS = new GRUPOS_Model($_REQUEST['IdGrupo'], '', '');
         $lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
-        $tamanhos = array(30, 30, 300);
+        $tamanhos = array(6, 60, 100);
 				$valores = $GRUPOS->RellenaDatos();
 				$clave=1;
 				new Vista_EDIT($lista,$tamanhos,$valores,$clave);
@@ -82,7 +82,7 @@ if (!isset($_REQUEST['action'])){
 		case 'SEARCH':
 			if (!$_POST){
         $lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
-        $tamanhos = array(30, 30, 300);
+        $tamanhos = array(6, 60, 100);
 				new Vista_SEARCH($lista, $tamanhos);
 			}
 			else{

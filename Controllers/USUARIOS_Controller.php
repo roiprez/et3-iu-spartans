@@ -51,7 +51,7 @@ if (!isset($_REQUEST['action'])){
 		case 'ADD':
 			if (!$_POST){
 				$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
-				$tamanhos = array(15, 20, 9, 30, 50, 60, 120, 11);
+				$tamanhos = array(9, 20, 9, 30, 50, 40, 60, 11);
 				new Vista_ADD($lista, $tamanhos);
 			}
 			else{
@@ -78,7 +78,7 @@ if (!isset($_REQUEST['action'])){
 			if (!$_POST){	
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
 				$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
-				$tamanhos = array(15, 20, 9, 30, 50, 60, 120, 11);
+				$tamanhos = array(9, 20, 9, 30, 50, 40, 60, 11);
 				$valores = $USUARIOS->RellenaDatos();
 				$clave=1;
 				new Vista_EDIT($lista,$tamanhos,$valores,$clave);
@@ -93,7 +93,7 @@ if (!isset($_REQUEST['action'])){
 		case 'SEARCH':
 			if (!$_POST){
 				$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');				
-				$tamanhos = array(15, 20, 9, 30, 50, 60, 120, 11);
+				$tamanhos = array(9, 20, 9, 30, 50, 40, 60, 11);
 				new Vista_SEARCH($lista, $tamanhos);
 			}
 			else{

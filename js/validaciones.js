@@ -77,7 +77,7 @@ function validarFormulario(formulario){
   if(!comprobarVacio(campo)){
     return false;
   }
-  if(!comprobarTexto(campo, 15)){
+  if(!comprobarTexto(campo, 9)){
     return false; 
   }
 
@@ -113,7 +113,7 @@ function validarFormulario(formulario){
   if(!comprobarVacio(campo)){
     return false;
    }
-  if(!comprobarAlfabetico(campo, 60,'')){
+  if(!comprobarAlfabetico(campo, 50,'')){
     return false;
   }
 
@@ -122,7 +122,7 @@ function validarFormulario(formulario){
   if(!comprobarVacio(campo)){
     return false; 
     }
-  if(!comprobarEmail(campo, 60,'')){
+  if(!comprobarEmail(campo, 40,'')){
     return false;
   }
   
@@ -133,7 +133,7 @@ function validarFormulario(formulario){
     return false;
    }
    
-  if(!comprobarTexto(campo, 120)){
+  if(!comprobarTexto(campo, 60)){
     return false;
   }
 
@@ -162,7 +162,7 @@ function validarBusqueda(){
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.login;
-  if(!comprobarTexto(campo, 15)){
+  if(!comprobarTexto(campo, 9)){
     return false; 
   }
   
@@ -198,14 +198,14 @@ function validarBusqueda(){
   //Comprueba que la direccion tenga la cantidad de caracteres adecuada
   campo = objetivo.Direccion;
 
-  if(!comprobarTexto(campo, 120)){
+  if(!comprobarTexto(campo, 60)){
     return false;
   }
   
   //Comprueba que el email tenga un formato válido
   campo = objetivo.Correo;
   
-  if(!comprobarEmail(campo, 60,'search')){
+  if(!comprobarEmail(campo, 40,'search')){
     return false;
   }
  
