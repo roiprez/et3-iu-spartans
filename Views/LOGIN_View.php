@@ -28,7 +28,13 @@ class Vista_LOGIN{
 
             <button id="enviar" type='submit' name='action'><img class="button-td" src="../Iconos/send.png" title="enviar"></img></button>
         </form>
-        <button id="boton-registro"><a href='../Controllers/Registro_Controller.php'><img class="button-td" src="../Iconos/ic_person_add.png" title="Registrarse"></img></a></button>
+
+
+        <form id="formulario-registro" action="../Controllers/Registro_Controller.php" method="post" style="border:none;">
+
+        <button id="boton-registro" type='submit' name='action'><img class="button-td" src="../Iconos/ic_person_add.png" title="Registrarse"></img></button>
+        </form>
+
 
         <?php
 
