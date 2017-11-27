@@ -45,7 +45,15 @@ class Vista_MESSAGE{
         <br>
         <br>
 
-        <button name="atras" type="button"><a href=<?php echo $this->volver?>><img class="button-td" src="../Iconos/back.png" onclick ="location='../Controllers/USUARIOS_Controller.php'" title="atrás"></img></a></button>
+		<form id="Formulario-mensaje" action="<?php echo $this->volver ?>" method="get">
+		<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Registrarse"></img></button> <!--Imagen para la accion back,que permite volver al menu principal-->
+		</center></form>
+
+        
+        
+		
+		
+		
         <?php
         if (!IsAuthenticated()){
             include '../Views/Footer.php';

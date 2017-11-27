@@ -77,7 +77,9 @@ class Vista_EDIT// declaración de clase
                 <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../Iconos/borrar_campo.png" title="borrar el contenido introducido"></img></button>
             </div>
         </form>
-        <button name="atras" type="button"><a href="../Controllers/Index_Controller.php"><img class="button-td" src="../Iconos/back.png" title="atrás"></img></a></button>
+        <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
+		<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Registrarse"></img></button> <!--Imagen para la accion back,que permite volver al menu principal-->
+		</center></form>
         <?php
     }//fin pinta
 
