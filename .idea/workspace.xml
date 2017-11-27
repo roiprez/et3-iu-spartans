@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f94f60f5-8ab5-44de-82a7-7068932ff4ea" name="Default" comment="" />
+    <list default="true" id="f94f60f5-8ab5-44de-82a7-7068932ff4ea" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Access_DB.php" afterPath="$PROJECT_DIR$/Models/Access_DB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/GRUPOS_Model.php" afterPath="$PROJECT_DIR$/Models/GRUPOS_Model.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,65 +13,52 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="USUARIOS_Model.php" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/Models/USUARIOS_Model.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-1880">
-                    <caret line="162" column="0" lean-forward="true" selection-start-line="162" selection-start-column="0" selection-end-line="173" selection-end-column="34" />
-                    <folding>
-                      <marker date="1511691441434" expanded="true" signature="1346:1394" ph="SELECT * FRO... USUARIO" />
-                      <marker date="1511691441434" expanded="true" signature="1884:2228" ph="INSERT INTO USUARIO... " />
-                      <marker date="1511691441434" expanded="true" signature="3261:3710" ph="select login... USUARIO" />
-                      <marker date="1511691441434" expanded="true" signature="4328:4380" ph="SELECT * FRO... USUARIO" />
-                      <marker date="1511691441434" expanded="true" signature="4605:4655" ph="DELETE FROM " />
-                      <marker date="1511691441434" expanded="true" signature="5211:5263" ph="SELECT * FRO... USUARIO" />
-                      <marker date="1511691441434" expanded="true" signature="5820:5872" ph="SELECT * FRO... USUARIO" />
-                      <marker date="1511691441434" expanded="true" signature="6137:6456" ph="UPDATE USUAR... " />
-                      <marker date="1511691441434" expanded="true" signature="7176:7250" ph="SELECT * FRO... USUARIO" />
-                      <marker date="1511691441434" expanded="true" signature="7621:7675" ph="select * fro... USUARIO" />
-                      <marker date="1511691441434" expanded="true" signature="7921:8293" ph="INSERT INTO USUARIO... " />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="GRUPOS_Model.php" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="GRUPOS_Model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/GRUPOS_Model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="683">
-              <caret line="219" column="1" lean-forward="true" selection-start-line="219" selection-start-column="1" selection-end-line="219" selection-end-column="1" />
+            <state relative-caret-position="354">
+              <caret line="146" column="27" lean-forward="false" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="27" />
               <folding>
-                <element signature="n#ADD#0;n#USUARIO_GRUPO_Model#0;n#!!top" expanded="false" />
                 <element signature="n#DELETE#0;n#USUARIO_GRUPO_Model#0;n#!!top" expanded="false" />
-                <marker date="1511702534950" expanded="true" signature="607:659" ph="SELECT * FRO... GRUPO" />
-                <marker date="1511702534950" expanded="true" signature="1149:1459" ph="INSERT INTO GRUPO... " />
-                <marker date="1511702534950" expanded="true" signature="2376:2670" ph="SELECT idGru... GRUPO" />
-                <marker date="1511702534950" expanded="true" signature="3159:3213" ph="SELECT * FRO... GRUPO" />
-                <marker date="1511702534950" expanded="true" signature="3441:3493" ph="DELETE FROM " />
-                <marker date="1511702534950" expanded="true" signature="3889:3943" ph="SELECT * FRO... GRUPO" />
-                <marker date="1511702534950" expanded="true" signature="4214:4399" ph="UPDATE USUAR... " />
-                <marker date="1511702534950" expanded="true" signature="5021:5075" ph="SELECT * FRO... GRUPO" />
-                <marker date="1511702534950" expanded="true" signature="5915:5967" ph="SELECT * FRO... GRUPO" />
-                <marker date="1511702534950" expanded="true" signature="6496:6547" ph="SELECT * FRO... USUARIO" />
-                <marker date="1511702534950" expanded="true" signature="7104:7157" ph="SELECT * FRO... USU_GRUPO" />
-                <marker date="1511702534950" expanded="true" signature="7104:7186" ph="SELECT * FRO... USU_GRUPO" />
-                <marker date="1511702534950" expanded="true" signature="7418:7439" ph="INSERT INTO USU_GRUPO... " />
-                <marker date="1511702534950" expanded="true" signature="7418:7809" ph="INSERT INTO USU_GRUPO... " />
-                <marker date="1511702534950" expanded="true" signature="9387:9473" ph="SELECT * FRO... USU_GRUPO" />
-                <marker date="1511702534950" expanded="true" signature="9729:9811" ph="DELETE FROM " />
+                <marker date="1511780724742" expanded="true" signature="615:668" ph="SELECT * FRO... GRUPO" />
+                <marker date="1511780724742" expanded="true" signature="1158:1468" ph="INSERT INTO GRUPO... " />
+                <marker date="1511780724742" expanded="true" signature="2385:2679" ph="SELECT idGru... GRUPO" />
+                <marker date="1511780724742" expanded="true" signature="3168:3222" ph="SELECT * FRO... GRUPO" />
+                <marker date="1511780724742" expanded="true" signature="3450:3502" ph="DELETE FROM " />
+                <marker date="1511780724742" expanded="true" signature="3898:3952" ph="SELECT * FRO... GRUPO" />
+                <marker date="1511780724742" expanded="true" signature="4223:4408" ph="UPDATE USUAR... " />
+                <marker date="1511780724742" expanded="true" signature="5030:5084" ph="SELECT * FRO... GRUPO" />
+                <marker date="1511780724742" expanded="true" signature="5932:5984" ph="SELECT * FRO... GRUPO" />
+                <marker date="1511780724742" expanded="true" signature="6513:6564" ph="SELECT * FRO... USUARIO" />
+                <marker date="1511780724742" expanded="true" signature="7121:7174" ph="SELECT * FRO... USU_GRUPO" />
+                <marker date="1511780724742" expanded="true" signature="7121:7203" ph="SELECT * FRO... USU_GRUPO" />
+                <marker date="1511780724742" expanded="true" signature="7435:7456" ph="INSERT INTO USU_GRUPO... " />
+                <marker date="1511780724742" expanded="true" signature="7435:7826" ph="INSERT INTO USU_GRUPO... " />
+                <marker date="1511780724742" expanded="true" signature="9404:9490" ph="SELECT * FRO... USU_GRUPO" />
+                <marker date="1511780724742" expanded="true" signature="9746:9828" ph="DELETE FROM " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Access_DB.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Access_DB.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ET3_BD.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Downloads/ET3_BD.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="766">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,7 +66,7 @@
       <file leaf-file-name="SHOWALL_View.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/SHOWALL_View.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-697">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -91,6 +82,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Models/Access_DB.php" />
         <option value="$PROJECT_DIR$/Models/GRUPOS_Model.php" />
       </list>
     </option>
@@ -123,6 +115,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,24 +127,12 @@
             <path>
               <item name="et3-iu-spartans" type="b2602c69:ProjectViewProjectNode" />
               <item name="et3-iu-spartans" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="et3-iu-spartans" type="b2602c69:ProjectViewProjectNode" />
-              <item name="et3-iu-spartans" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Models" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="et3-iu-spartans" type="b2602c69:ProjectViewProjectNode" />
-              <item name="et3-iu-spartans" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,25 +164,28 @@
       <updated>1511691565368</updated>
       <workItem from="1511691568465" duration="19000" />
       <workItem from="1511691710770" duration="9975000" />
+      <workItem from="1511733077087" duration="928000" />
+      <workItem from="1511777380655" duration="1559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9994000" />
+    <option name="totallyTimeSpent" value="12484000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1058" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32560706" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.171875" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.171875" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -221,9 +206,77 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Models/GRUPOS_Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#DELETE#0;n#USUARIO_GRUPO_Model#0;n#!!top" expanded="false" />
+            <marker date="1511780724742" expanded="true" signature="615:668" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="1158:1468" ph="INSERT INTO GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="2385:2679" ph="SELECT idGru... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3168:3222" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3450:3502" ph="DELETE FROM " />
+            <marker date="1511780724742" expanded="true" signature="3898:3952" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="4223:4408" ph="UPDATE USUAR... " />
+            <marker date="1511780724742" expanded="true" signature="5030:5084" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="5932:5984" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="6513:6564" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7174" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7203" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7435:7456" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="7435:7826" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="9404:9490" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="9746:9828" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Views/SHOWALL_View.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BD_IU_USUARIO.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1533">
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/GRUPOS_Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2877">
+          <caret line="137" column="15" lean-forward="false" selection-start-line="137" selection-start-column="15" selection-end-line="137" selection-end-column="15" />
+          <folding>
+            <element signature="n#DELETE#0;n#USUARIO_GRUPO_Model#0;n#!!top" expanded="false" />
+            <marker date="1511780724742" expanded="true" signature="615:668" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="1158:1468" ph="INSERT INTO GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="2385:2679" ph="SELECT idGru... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3168:3222" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3450:3502" ph="DELETE FROM " />
+            <marker date="1511780724742" expanded="true" signature="3898:3952" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="4223:4408" ph="UPDATE USUAR... " />
+            <marker date="1511780724742" expanded="true" signature="5030:5084" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="5932:5984" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="6513:6564" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7174" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7203" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7435:7456" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="7435:7826" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="9404:9490" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="9746:9828" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/SHOWALL_View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -231,48 +284,207 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/USUARIOS_Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1880">
-          <caret line="162" column="0" lean-forward="true" selection-start-line="162" selection-start-column="0" selection-end-line="173" selection-end-column="34" />
+        <state relative-caret-position="3339">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="173" selection-end-column="34" />
           <folding>
-            <marker date="1511691441434" expanded="true" signature="1346:1394" ph="SELECT * FRO... USUARIO" />
-            <marker date="1511691441434" expanded="true" signature="1884:2228" ph="INSERT INTO USUARIO... " />
-            <marker date="1511691441434" expanded="true" signature="3261:3710" ph="select login... USUARIO" />
-            <marker date="1511691441434" expanded="true" signature="4328:4380" ph="SELECT * FRO... USUARIO" />
-            <marker date="1511691441434" expanded="true" signature="4605:4655" ph="DELETE FROM " />
-            <marker date="1511691441434" expanded="true" signature="5211:5263" ph="SELECT * FRO... USUARIO" />
-            <marker date="1511691441434" expanded="true" signature="5820:5872" ph="SELECT * FRO... USUARIO" />
-            <marker date="1511691441434" expanded="true" signature="6137:6456" ph="UPDATE USUAR... " />
-            <marker date="1511691441434" expanded="true" signature="7176:7250" ph="SELECT * FRO... USUARIO" />
-            <marker date="1511691441434" expanded="true" signature="7621:7675" ph="select * fro... USUARIO" />
-            <marker date="1511691441434" expanded="true" signature="7921:8293" ph="INSERT INTO USUARIO... " />
+            <marker date="1511733035019" expanded="true" signature="1346:1394" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="1884:2228" ph="INSERT INTO USUARIO... " />
+            <marker date="1511733035019" expanded="true" signature="3261:3710" ph="select login... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="4328:4380" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="4605:4655" ph="DELETE FROM " />
+            <marker date="1511733035019" expanded="true" signature="5211:5263" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="5820:5872" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="6137:6456" ph="UPDATE USUAR... " />
+            <marker date="1511733035019" expanded="true" signature="7176:7250" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="7621:7675" ph="select * fro... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="7921:8293" ph="INSERT INTO USUARIO... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/GRUPOS_Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
+        <state relative-caret-position="3234">
           <caret line="219" column="1" lean-forward="true" selection-start-line="219" selection-start-column="1" selection-end-line="219" selection-end-column="1" />
           <folding>
-            <element signature="n#ADD#0;n#USUARIO_GRUPO_Model#0;n#!!top" expanded="false" />
             <element signature="n#DELETE#0;n#USUARIO_GRUPO_Model#0;n#!!top" expanded="false" />
-            <marker date="1511702534950" expanded="true" signature="607:659" ph="SELECT * FRO... GRUPO" />
-            <marker date="1511702534950" expanded="true" signature="1149:1459" ph="INSERT INTO GRUPO... " />
-            <marker date="1511702534950" expanded="true" signature="2376:2670" ph="SELECT idGru... GRUPO" />
-            <marker date="1511702534950" expanded="true" signature="3159:3213" ph="SELECT * FRO... GRUPO" />
-            <marker date="1511702534950" expanded="true" signature="3441:3493" ph="DELETE FROM " />
-            <marker date="1511702534950" expanded="true" signature="3889:3943" ph="SELECT * FRO... GRUPO" />
-            <marker date="1511702534950" expanded="true" signature="4214:4399" ph="UPDATE USUAR... " />
-            <marker date="1511702534950" expanded="true" signature="5021:5075" ph="SELECT * FRO... GRUPO" />
-            <marker date="1511702534950" expanded="true" signature="5915:5967" ph="SELECT * FRO... GRUPO" />
-            <marker date="1511702534950" expanded="true" signature="6496:6547" ph="SELECT * FRO... USUARIO" />
-            <marker date="1511702534950" expanded="true" signature="7104:7157" ph="SELECT * FRO... USU_GRUPO" />
-            <marker date="1511702534950" expanded="true" signature="7104:7186" ph="SELECT * FRO... USU_GRUPO" />
-            <marker date="1511702534950" expanded="true" signature="7418:7439" ph="INSERT INTO USU_GRUPO... " />
-            <marker date="1511702534950" expanded="true" signature="7418:7809" ph="INSERT INTO USU_GRUPO... " />
-            <marker date="1511702534950" expanded="true" signature="9387:9473" ph="SELECT * FRO... USU_GRUPO" />
-            <marker date="1511702534950" expanded="true" signature="9729:9811" ph="DELETE FROM " />
+            <marker date="1511780724742" expanded="true" signature="615:668" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="1158:1468" ph="INSERT INTO GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="2385:2679" ph="SELECT idGru... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3168:3222" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3450:3502" ph="DELETE FROM " />
+            <marker date="1511780724742" expanded="true" signature="3898:3952" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="4223:4408" ph="UPDATE USUAR... " />
+            <marker date="1511780724742" expanded="true" signature="5030:5084" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="5932:5984" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="6513:6564" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7174" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7203" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7435:7456" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="7435:7826" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="9404:9490" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="9746:9828" ph="DELETE FROM " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/SHOWALL_View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/USUARIOS_Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1511733035019" expanded="true" signature="1346:1394" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="1884:2228" ph="INSERT INTO USUARIO... " />
+            <marker date="1511733035019" expanded="true" signature="3261:3710" ph="select login... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="4328:4380" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="4605:4655" ph="DELETE FROM " />
+            <marker date="1511733035019" expanded="true" signature="5211:5263" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="5820:5872" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="6137:6456" ph="UPDATE USUAR... " />
+            <marker date="1511733035019" expanded="true" signature="7176:7250" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="7621:7675" ph="select * fro... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="7921:8293" ph="INSERT INTO USUARIO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/SHOWALL_View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/USUARIOS_Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="173" selection-end-column="34" />
+          <folding>
+            <marker date="1511733035019" expanded="true" signature="1346:1394" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="1884:2228" ph="INSERT INTO USUARIO... " />
+            <marker date="1511733035019" expanded="true" signature="3261:3710" ph="select login... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="4328:4380" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="4605:4655" ph="DELETE FROM " />
+            <marker date="1511733035019" expanded="true" signature="5211:5263" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="5820:5872" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="6137:6456" ph="UPDATE USUAR... " />
+            <marker date="1511733035019" expanded="true" signature="7176:7250" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="7621:7675" ph="select * fro... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="7921:8293" ph="INSERT INTO USUARIO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/GRUPOS_Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="137" column="15" lean-forward="true" selection-start-line="137" selection-start-column="15" selection-end-line="137" selection-end-column="15" />
+          <folding>
+            <element signature="n#DELETE#0;n#USUARIO_GRUPO_Model#0;n#!!top" expanded="false" />
+            <marker date="1511780724742" expanded="true" signature="615:668" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="1158:1468" ph="INSERT INTO GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="2385:2679" ph="SELECT idGru... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3168:3222" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3450:3502" ph="DELETE FROM " />
+            <marker date="1511780724742" expanded="true" signature="3898:3952" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="4223:4408" ph="UPDATE USUAR... " />
+            <marker date="1511780724742" expanded="true" signature="5030:5084" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="5932:5984" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="6513:6564" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7174" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7203" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7435:7456" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="7435:7826" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="9404:9490" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="9746:9828" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/USUARIOS_Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="173" selection-end-column="34" />
+          <folding>
+            <marker date="1511733035019" expanded="true" signature="1346:1394" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="1884:2228" ph="INSERT INTO USUARIO... " />
+            <marker date="1511733035019" expanded="true" signature="3261:3710" ph="select login... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="4328:4380" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="4605:4655" ph="DELETE FROM " />
+            <marker date="1511733035019" expanded="true" signature="5211:5263" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="5820:5872" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="6137:6456" ph="UPDATE USUAR... " />
+            <marker date="1511733035019" expanded="true" signature="7176:7250" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="7621:7675" ph="select * fro... USUARIO" />
+            <marker date="1511733035019" expanded="true" signature="7921:8293" ph="INSERT INTO USUARIO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BD_IU_USUARIO.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/SHOWALL_View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Access_DB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/GRUPOS_Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="146" column="27" lean-forward="false" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="27" />
+          <folding>
+            <element signature="n#DELETE#0;n#USUARIO_GRUPO_Model#0;n#!!top" expanded="false" />
+            <marker date="1511780724742" expanded="true" signature="615:668" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="1158:1468" ph="INSERT INTO GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="2385:2679" ph="SELECT idGru... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3168:3222" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="3450:3502" ph="DELETE FROM " />
+            <marker date="1511780724742" expanded="true" signature="3898:3952" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="4223:4408" ph="UPDATE USUAR... " />
+            <marker date="1511780724742" expanded="true" signature="5030:5084" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="5932:5984" ph="SELECT * FRO... GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="6513:6564" ph="SELECT * FRO... USUARIO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7174" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7121:7203" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="7435:7456" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="7435:7826" ph="INSERT INTO USU_GRUPO... " />
+            <marker date="1511780724742" expanded="true" signature="9404:9490" ph="SELECT * FRO... USU_GRUPO" />
+            <marker date="1511780724742" expanded="true" signature="9746:9828" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/ET3_BD.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="766">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
