@@ -372,7 +372,7 @@ function comprobarDni(campo,formulario){
 				
 	}else{
 		
-		if(/^[a-z]+$/.test(campo.value)){//Comprueba que la letra DNI sea mayuscula y sino lo es, de un aviso
+		if((/^[0-9]*[a-z]+$/.test(campo.value))){//Comprueba que la letra DNI sea mayuscula y sino lo es, de un aviso
 							alert('Los Dni se escriben con mayuscula');
 							campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
 							campo.focus();
@@ -453,7 +453,7 @@ function comprobarTelf(campo) {
 	}
 	
 	if(/^[0-9]+$/.test(campo.value)==false){
-		alert('El telefono solo tiene numeros y se escrien con mayuscula');
+		alert('El telefono solo tiene numeros');
 		campo.focus();
 		campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
 		return false;
