@@ -255,19 +255,18 @@ function comprobarTexto(campo, size){
   function comprobarAlfabetico(campo, size, formulario){
 	  if(formulario == 'search'){
 		  if(campo.value.length==0){//Si el valor del campo está vacio, que devuelva cierto
-		campo.style.backgroundColor = "white";
+		
 		return true;
 	}
 if (!campo.value.match(/^[a-zA-ZÁÉÍÓÚÜáéíóüúñÑ-\s]*$/)){//Si el valor del campo contiene algo que no sea un caracter alfabetico permitido en nuestro idioma,devuelve falso y un aviso indicando el campo que tiene el error
 		if(campo.name=='Nombre'){
 		alert('El campo nombre solo puede contener letras');
-		campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
+		
 		campo.focus();
 		return false;
 		}
 		if(campo.name=='Apellidos'){
 		alert('El campo apellidos solo puede contener letras');
-		alert('Los Dni se escriben con mayuscula');
 		campo.focus();
 		return false;
 		}
@@ -275,19 +274,18 @@ if (!campo.value.match(/^[a-zA-ZÁÉÍÓÚÜáéíóüúñÑ-\s]*$/)){//Si el va
 if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que el tamaño permitido, que devuelva false{
 		if(campo.name=='Nombre'){
 			alert( 'El tamaño de nombre sobrepasa');
-			campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
+			
 			campo.focus();
 			return false;
 		}
 		if(campo.name=='Apellidos'){
 			alert('El tamaño de apellidos sobrepasa');
-			campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
+			
 			campo.focus();
 			return false;
 		}
     }
 
- campo.style.backgroundColor = "white";
 	return true;//Si ninguno de los if anteriores se cumple,devuelve true	
 		  
 		  
@@ -338,7 +336,7 @@ function comprobarDni(campo,formulario){
 						
 						return false;
 					}else{//Sino, devuelve cierto
-					campo.style.backgroundColor = "white";
+					
 					return true;
 					}
 					
