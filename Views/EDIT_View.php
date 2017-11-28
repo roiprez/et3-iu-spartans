@@ -55,7 +55,7 @@ class Vista_EDIT// declaración de clase
 					case 2:
 						?>
 						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
 						onBlur="return comprobarDni(this,'') && comprobarVacio(this)"/>
 						</label>
 						<?php
@@ -63,7 +63,7 @@ class Vista_EDIT// declaración de clase
 					case 3:
 					?>
 						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
 						onBlur="comprobarAlfabetico(this, 30,'')"/>
 						</label>
 						<?php
@@ -71,7 +71,7 @@ class Vista_EDIT// declaración de clase
 					case 4:
 					?>
 						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
 						onBlur="comprobarAlfabetico(this, 50,'')"/>
 						</label>
 						<?php
@@ -79,7 +79,7 @@ class Vista_EDIT// declaración de clase
 					case 5:
 					?>
 						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
 						onBlur="comprobarEmail(this, 40,'')"/>
 						</label>
 						<?php
@@ -87,7 +87,7 @@ class Vista_EDIT// declaración de clase
 					case 7:
 					?>
 						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
 						onBlur="comprobarTelf(this)"/>
 						</label>
 						<?php
@@ -95,7 +95,7 @@ class Vista_EDIT// declaración de clase
 					default:
 					?>
 						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
 						/>
 						</label>
 				<?php }//Fin switch
@@ -105,7 +105,7 @@ class Vista_EDIT// declaración de clase
                <label><?php echo $this->lista_variables[$i] ?>
                    <input type="password" name="<?php echo $this->lista_variables[$i] ?>"
                           id="<?php echo $this->lista_variables[$i] ?>" required="true"
-                          size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+                          size="<?php echo $this->tamanho_variables[$i] ?>" value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
                    />
                </label>
 
