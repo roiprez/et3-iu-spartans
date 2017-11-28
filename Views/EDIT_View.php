@@ -50,24 +50,65 @@ class Vista_EDIT// declaración de clase
             for ($i = $this->clave; $i < count($this->lista_variables ); $i++) {//Creacion de inputs segun el numero de atributos - los de la clave
 
                 if($this->lista_variables[$i]!='password'){
-                ?>
-                <label><?php echo $this->lista_variables[$i] ?>
-                    <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
-                           id="<?php echo $this->lista_variables[$i] ?>" required="true"
-                           size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
-                           value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>"
-                    />
-                </label>
-                    <?php
-                    }else{
-                    ?>
-                    <label><?php echo $this->lista_variables[$i] ?>
-                        <input type="password" name="<?php echo $this->lista_variables[$i] ?>"
-                               id="<?php echo $this->lista_variables[$i] ?>" required="true"
-                               size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
-                               value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>"
-                        />
-                    </label>
+                				
+				switch ($i){
+					case 2:
+						?>
+						<label><?php echo $this->lista_variables[$i] ?>
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						onBlur="return comprobarDni(this,'') && comprobarVacio(this)"/>
+						</label>
+						<?php
+						break;
+					case 3:
+					?>
+						<label><?php echo $this->lista_variables[$i] ?>
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						onBlur="comprobarAlfabetico(this, 30,'')"/>
+						</label>
+						<?php
+					break;
+					case 4:
+					?>
+						<label><?php echo $this->lista_variables[$i] ?>
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						onBlur="comprobarAlfabetico(this, 50,'')"/>
+						</label>
+						<?php
+					break;
+					case 5:
+					?>
+						<label><?php echo $this->lista_variables[$i] ?>
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						onBlur="comprobarEmail(this, 40,'')"/>
+						</label>
+						<?php
+					break;
+					case 7:
+					?>
+						<label><?php echo $this->lista_variables[$i] ?>
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						onBlur="comprobarTelf(this)"/>
+						</label>
+						<?php
+					break;
+					default:
+					?>
+						<label><?php echo $this->lista_variables[$i] ?>
+						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						/>
+						</label>
+				<?php }//Fin switch
+					
+           }else{
+               ?>
+               <label><?php echo $this->lista_variables[$i] ?>
+                   <input type="password" name="<?php echo $this->lista_variables[$i] ?>"
+                          id="<?php echo $this->lista_variables[$i] ?>" required="true"
+                          size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+                   />
+               </label>
+
                     <?php
                 }//fin del else
             }//fin bucle for
