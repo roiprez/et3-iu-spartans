@@ -104,7 +104,7 @@ function EDIT(){
         $sql = "UPDATE GRUPO SET 
 					IdGrupo = '$this->idGrupo',
 					NombreGrupo = '$this->nombreGrupo',
-					DescripGrupo = '$this->descripGrupo',
+					DescripGrupo = '$this->descripGrupo'
 					
 				WHERE ( IdGrupo = '$this->idGrupo'
 				)";

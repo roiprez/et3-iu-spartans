@@ -39,12 +39,13 @@ class Vista_DELETE{
             }
             ?>
             <tr>
-                <form id="formulario-borrado" method="post">
+                
                     <td class="celda-botones">
                         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
 						<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Registrarse"></img></button> <!--Imagen para la accion back,que permite volver al menu principal-->
 						</center></form>
                     </td>
+                    <form id="formulario-borrado" method="post">
                     <td class="celda-botones">
                         <button type = "submit" name = "action" value = "DELETE"><img class="button-td" src="../Iconos/borrar.png" title="borrar"></img></button>
                     </td>
