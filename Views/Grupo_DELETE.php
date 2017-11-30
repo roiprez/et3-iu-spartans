@@ -1,12 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: diego
- * Date: 25/11/17
- * Time: 13:11
+ * User: Drubito
+ * Date: 30/11/2017
+ * Time: 13:34
  */
 
-class Vista_DELETE{
+class Grupo_DELETE
+{
+
 
     var $lista_variables;
     var $lista_valores;
