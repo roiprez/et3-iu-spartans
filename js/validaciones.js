@@ -77,7 +77,7 @@ function validarFormulario(formulario){
   if(!comprobarVacio(campo)){
     return false;
   }
-  if(!comprobarTexto(campo, 15)){
+  if(!comprobarTexto(campo, 9)){
     return false; 
   }
 
@@ -113,7 +113,7 @@ function validarFormulario(formulario){
   if(!comprobarVacio(campo)){
     return false;
    }
-  if(!comprobarAlfabetico(campo, 60,'')){
+  if(!comprobarAlfabetico(campo, 50,'')){
     return false;
   }
 
@@ -122,7 +122,7 @@ function validarFormulario(formulario){
   if(!comprobarVacio(campo)){
     return false; 
     }
-  if(!comprobarEmail(campo, 60,'')){
+  if(!comprobarEmail(campo, 40,'')){
     return false;
   }
   
@@ -133,7 +133,7 @@ function validarFormulario(formulario){
     return false;
    }
    
-  if(!comprobarTexto(campo, 120)){
+  if(!comprobarTexto(campo, 60)){
     return false;
   }
 
@@ -162,7 +162,7 @@ function validarBusqueda(){
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.login;
-  if(!comprobarTexto(campo, 15)){
+  if(!comprobarTexto(campo, 9)){
     return false; 
   }
   
@@ -198,14 +198,14 @@ function validarBusqueda(){
   //Comprueba que la direccion tenga la cantidad de caracteres adecuada
   campo = objetivo.Direccion;
 
-  if(!comprobarTexto(campo, 120)){
+  if(!comprobarTexto(campo, 60)){
     return false;
   }
   
   //Comprueba que el email tenga un formato válido
   campo = objetivo.Correo;
   
-  if(!comprobarEmail(campo, 60,'search')){
+  if(!comprobarEmail(campo, 40,'search')){
     return false;
   }
  
@@ -255,29 +255,36 @@ function comprobarTexto(campo, size){
   function comprobarAlfabetico(campo, size, formulario){
 	  if(formulario == 'search'){
 		  if(campo.value.length==0){//Si el valor del campo está vacio, que devuelva cierto
+		
 		return true;
 	}
-if (!campo.value.match(/^[a-zA-ZÁÉÍÓÚÜáéíóüúñÑ-\s]*$/)){//Si el valor del campo contiene algo que no sea un caracter alfabetico permitido en nuestro idioma,devuelve falso y un aviso indicando el campo que tiene el error{
+if (!campo.value.match(/^[a-zA-ZÁÉÍÓÚÜáéíóüúñÑ-\s]*$/)){//Si el valor del campo contiene algo que no sea un caracter alfabetico permitido en nuestro idioma,devuelve falso y un aviso indicando el campo que tiene el error
 		if(campo.name=='Nombre'){
 		alert('El campo nombre solo puede contener letras');
+		
+		campo.focus();
 		return false;
 		}
 		if(campo.name=='Apellidos'){
 		alert('El campo apellidos solo puede contener letras');
+		campo.focus();
 		return false;
 		}
 }
 if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que el tamaño permitido, que devuelva false{
 		if(campo.name=='Nombre'){
 			alert( 'El tamaño de nombre sobrepasa');
+			
+			campo.focus();
 			return false;
 		}
 		if(campo.name=='Apellidos'){
 			alert('El tamaño de apellidos sobrepasa');
+			
+			campo.focus();
 			return false;
 		}
     }
-
 
 	return true;//Si ninguno de los if anteriores se cumple,devuelve true	
 		  
@@ -297,7 +304,7 @@ if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que
     return false;
   }
   //Comprueba con la expresión regular que solo se incluyen caracteres alfabéticos y devuelve true en caso afirmativo, y una alerta y false en el contrario
-  else if (/^[A-Za-z\_\-\.\s\xF1\xD1]+$/.test(campo.value)){
+  else if (/^[a-zA-ZÁÉÍÏÓÚÜáéíïóüúñÑ-\s]+$/.test(campo.value)){
     campo.style.backgroundColor = "white";
     return true;
     }
@@ -315,23 +322,33 @@ function comprobarDni(campo,formulario){
 	
 	if(formulario == 'search'){
 					
-					if(campo.value.length==0){//Si el campo dni está vacio devuelve true
-					return true;
+					if(campo.value.length==0){
+						return true;
 				}else if(campo.value.length<9){ // Sino, comprueba si la longitud del dni es menor que nueve
 					if(/[a-z-A-Z]{2,}/.test(campo.value)){//Comprueba que solo haya una letra 
 						alert('Los dni solo tienen una letra mayúscula');
+						campo.focus();
+						
 						return false;
-					} else if(/[a-z]/.test(campo.value)){ //Comprueba que tenga una letra mayuscula
+					} else if(/^[0-9]+[a-z]+$/.test(campo.value) || (/^[a-z]+$/.test(campo.value) )){ //Comprueba que tenga una letra mayuscula
 						alert('Los dni solo tienen una letra mayúscula');
+						campo.focus();
+						
 						return false;
 					}else{//Sino, devuelve cierto
+					
 					return true;
 					}
 					
 				}else{//Si la longitud es de 9 o mayor
-
-						if(/^[0-9]+[a-z]*$/.test(campo.value)){//Comprueba que la letra DNI sea mayuscula y sino lo es, de un aviso
+						if(campo.value.trim().length === 0){
+						
+						return false;
+						}
+						if(/^[a-z]+$/.test(campo.value)){//Comprueba que la letra DNI sea mayuscula y sino lo es, de un aviso
 							alert('Los Dni se escriben con mayuscula');
+							campo.focus();
+							
 							return false;
 						}else{
 							//Se mete en una variable una subcadena del valor de campo
@@ -349,15 +366,16 @@ function comprobarDni(campo,formulario){
 								alert('Dni erroneo');
 							return false;
 							}
-							
 						return true;
 					}
 				}
 				
 	}else{
 		
-		if(/^[0-9]+[a-z]*$/.test(campo.value)){//Comprueba que la letra DNI sea mayuscula y sino lo es, de un aviso
+		if(/^[a-z]+$/.test(campo.value)){//Comprueba que la letra DNI sea mayuscula y sino lo es, de un aviso
 							alert('Los Dni se escriben con mayuscula');
+							campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
+							campo.focus();
 							return false;
 						}else{
 							//Se mete en una variable una subcadena del valor de campo
@@ -373,9 +391,15 @@ function comprobarDni(campo,formulario){
 							  //Si el valor de la variable letra no coincide con la letra mayuscula del campo,se devuelve false y un error.Si coinciden,devuelve true
 							  if (letra!=let) {
 								alert('Dni erroneo');
+								campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
+								campo.focus();
+								if(campo.value.trim().length === 0){
+								campo.style.backgroundColor = "white";
+								return false;
+								}
 							return false;
 							}
-							
+						campo.style.backgroundColor = "white";	
 						return true;
 						}		
 	}
@@ -390,16 +414,18 @@ function comprobarEmail(campo,size,formulario){
 			  if (campo.value.length>size) {
 				alert('Longitud incorrecta. El atributo ' + campo.name + 'debe ser maximo ' + size + ' y es ' + campo.value.length);
 				campo.focus();
-				campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
+				
 				return false;
 			  }
 
-			  campo.style.backgroundColor = "white";
+			  
 			  return true;
 					
 				
 	}else{
-	
+	if(campo.value.trim().length === 0){
+    campo.style.backgroundColor = "white";
+    return false;}
   //Comprueba que el campo tenga una longitud superior a la indicada y lanza una alerta y devuelve un false en ese caso
   if (campo.value.length>size) {
     alert('Longitud incorrecta. El atributo ' + campo.name + 'debe ser maximo ' + size + ' y es ' + campo.value.length);
@@ -422,20 +448,25 @@ function comprobarEmail(campo,size,formulario){
 
 function comprobarTelf(campo) {
 	if(campo.value.length==0){//Si el campo telefono esta vacio que devuelva true
+	campo.style.backgroundColor = "white";
 		return true;
 	}
 	
 	if(/^[0-9]+$/.test(campo.value)==false){
-		alert('El telefono solo tiene numeros');
+		alert('El telefono solo tiene numeros y se escrien con mayuscula');
+		campo.focus();
+		campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
 		return false;
 	}
 	//Expresion regular que indica los numeros de telefono validos
-	if(/^((\34([ \t|\-])?)?[9|6|7]((\d{1}([ \t|\-])?[0-9]{3})|(\d{2}([ \t|\-])?[0-9]{2}))([ \t|\-])?[0-9]{2}([ \t|\-])?[0-9]{2})$/.test(campo.value)){
+	if(/^(((34)?)?[9|8|6|7]((\d{1}([ \t|\-])?[0-9]{3})|(\d{2}([ \t|\-])?[0-9]{2}))([ \t|\-])?[0-9]{2}([ \t|\-])?[0-9]{2})$/.test(campo.value)){
+		campo.style.backgroundColor = "white";
 		return true;
 	}else{
 		
 		//Si el numero no coincide,devuelve false y un aviso explicando los formatos de numero permitidos
-		alert('Telefono malo, indicalo en uno de los siguientes formatos: 34(puedes escribirlo o no) 9XXXXXXXX | 6XXXXXXXX ');
+		alert('Telefono malo, indicalo en uno de los siguientes formatos: 34(puedes escribirlo o no) 9XXXXXXXX | 8XXXXXXXX | 7XXXXXXXX | 6XXXXXXXX ');
+		campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
 		return false;
 		}
 }
@@ -443,21 +474,28 @@ function comprobarTelf(campo) {
 
 function comprobarTelfSearch(campo) {
 	if(campo.value.length==0){//Si el campo telefono esta vacio que devuelva true
+	
 		return true;
 	}
 	if(/^[0-9]+$/.test(campo.value)==false){
 		alert('El telefono solo tiene numeros');
+		
+		campo.focus();
 		return false;
 	}
 	
 	if(campo.value.length<11){
+		 
 		return true;
 	}else if(/^((34)?[9|6|7]((\d{1}([ \t|\-])?[0-9]{3})|(\d{2}([ \t|\-])?[0-9]{2}))([ \t|\-])?[0-9]{2}([ \t|\-])?[0-9]{2})$/.test(campo.value)){
+		 
 		return true;
 	}else{
 		
 		//Si el numero no coincide,devuelve false y un aviso explicando los formatos de numero permitidos
 		alert('Telefono malo, indicalo en uno de los siguientes formatos: 34(puedes escribirlo o no) 9XXXXXXXX | 6XXXXXXXX ');
+		
+		campo.focus();
 		return false;
 		}
 }

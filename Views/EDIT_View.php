@@ -30,7 +30,7 @@ class Vista_EDIT// declaración de clase
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post">
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit')">
             <?php
             for($i =0; $i <$this->clave; $i++){//Los atributos de la clave se tratan fuera para hacerlos no editables
                 ?>
@@ -46,28 +46,69 @@ class Vista_EDIT// declaración de clase
                 <?php
 
             }//fin bucle for
+foreach ($this->lista_variables as $variable=> $valor ) {//Creacion de inputs segun el numero de atributos
 
-            for ($i = $this->clave; $i < count($this->lista_variables ); $i++) {//Creacion de inputs segun el numero de atributos - los de la clave
-
-                if($this->lista_variables[$i]!='password'){
-                ?>
-                <label><?php echo $this->lista_variables[$i] ?>
-                    <input type="text" name="<?php echo $this->lista_variables[$i] ?>"
-                           id="<?php echo $this->lista_variables[$i] ?>" required="true"
-                           size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
-                           value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>"
-                    />
-                </label>
-                    <?php
-                    }else{
-                    ?>
-                    <label><?php echo $this->lista_variables[$i] ?>
-                        <input type="password" name="<?php echo $this->lista_variables[$i] ?>"
-                               id="<?php echo $this->lista_variables[$i] ?>" required="true"
-                               size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
-                               value="<?php echo $this->lista_valores[$this->lista_variables[$i]] ?>"
-                        />
-                    </label>
+           if($valor!='password'){
+        
+        switch ($valor){
+          case 'login':
+          break;
+          case 'DNI':
+            ?>
+            <label><?php echo $valor ?>
+            <input type="text" name="<?php echo $valor ?>" id="<?php echo $valor ?>" value="<?php echo $this->lista_valores[$valor] ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
+            onBlur="return comprobarDni(this,'') && comprobarVacio(this)"/>
+            </label>
+            <?php
+            break;
+          case 'Nombre':
+          ?>
+            <label><?php echo $valor ?>
+            <input type="text" name="<?php echo $valor ?>" id="<?php echo $valor ?>" value="<?php echo $this->lista_valores[$valor] ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
+            onBlur="comprobarAlfabetico(this, 30,'')"/>
+            </label>
+            <?php
+          break;
+          case 'Apellidos':
+          ?>
+            <label><?php echo $valor ?>
+            <input type="text" name="<?php echo $valor ?>" id="<?php echo $valor ?>" value="<?php echo $this->lista_valores[$valor] ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
+            onBlur="comprobarAlfabetico(this, 50,'')"/>
+            </label>
+            <?php
+          break;
+          case 'Correo':
+          ?>
+            <label><?php echo $valor ?>
+            <input type="text" name="<?php echo $valor ?>" id="<?php echo $valor ?>" value="<?php echo $this->lista_valores[$valor] ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
+            onBlur="comprobarEmail(this, 40,'')"/>
+            </label>
+            <?php
+          break;
+          case 'Telefono':
+          ?>
+            <label><?php echo $valor ?>
+            <input type="text" name="<?php echo $valor ?>" id="<?php echo $valor ?>" value="<?php echo $this->lista_valores[$valor] ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
+            onBlur="comprobarTelf(this)"/>
+            </label>
+            <?php
+          break;
+          default:
+          ?>
+            <label><?php echo $valor ?>
+            <input type="text" name="<?php echo $valor ?>" id="<?php echo $valor ?>" value="<?php echo $this->lista_valores[$valor] ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
+            />
+            </label>
+        <?php }//Fin switch
+          
+           }else{
+               ?>
+               <label><?php echo $valor ?>
+                   <input type="password" name="<?php echo $valor ?>"
+                          id="<?php echo $valor ?>" value="<?php echo $this->lista_valores[$valor] ?>" required="true"
+                          size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
+                   />
+               </label>
                     <?php
                 }//fin del else
             }//fin bucle for
@@ -77,7 +118,9 @@ class Vista_EDIT// declaración de clase
                 <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../Iconos/borrar_campo.png" title="borrar el contenido introducido"></img></button>
             </div>
         </form>
-        <button name="atras" type="button"><a href="../Controllers/Index_Controller.php"><img class="button-td" src="../Iconos/back.png" title="atrás"></img></a></button>
+        <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
+		<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Registrarse"></img></button> <!--Imagen para la accion back,que permite volver al menu principal-->
+		</center></form>
         <?php
     }//fin pinta
 
