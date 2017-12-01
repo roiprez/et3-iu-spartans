@@ -131,4 +131,89 @@ class FUNCIONALIDADES_MODEL{
         }
     } // fin del metodo RellenaDatos()
 }//Fin de la clase GRUPO
+
+class FUNC_ACCION_Model {
+    var $idFuncionalidad;
+    var $idAccion;
+
+    function __construct($idFuncionalidad,$idAccion)
+    {
+        $this->idFuncionalidad=$idFuncionalidad;
+        $this->idAccion=$idAccion;
+
+        //Creamos el conector a la base de datos
+        include_once '../Models/Access_DB.php';
+        $this->mysqli = ConectarBD();
+
+    }
+    function ADD()
+    {
+        if ($this->idFuncionalidad <> '') {//Se comprueba que grupo no este vacio
+            $sql = "SELECT * FROM FUNCIONALIDAD WHERE (IdFuncionalidad= '$this->idFuncionalidad')";
+            if (!$result = $this->mysqli->query($sql))  // si da error la ejecución de la query
+                return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
+            else {// si la query no da error
+                if ($result->num_rows == 1) {//miramos que el Grupo existe en la BD
+                    if ($this->login <> '') {// Se comprueba que login no este vacio
+                        $sql = "SELECT * FROM ACCION WHERE (IdAccion= '$this->idAccion')";
+                        if (!$result = $this->mysqli->query($sql)) { // si da error la ejecución de la query
+                            return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido
+                            // conectar con la bd). Devolvemos un mensaje que el controlador manejara
+                        }
+                        else {//si la query no da error
+                            if ($result->num_rows == 1) {//miramos que el Usuario existe en la BD
+                                $sql="SELECT * FROM FUNC_ACCION WHERE ((IdFuncionalidad='$this->idFuncionalidad')
+                                                                                  &&(IdAccion='$this->idAccion'))";
+                                $result = $this->mysqli->query($sql);
+                                if($result->num_rows ==0){// Comprobamos que el usuario no este ya asignado al grupo
+                                    $sql="INSERT INTO FUNC_ACCCION
+                                            (
+                                            IdFuncionalidad,
+                                            IdAccion)
+                                            VALUES (
+                                            '$this->idFuncionalidad',
+                                            '$this->idAccion'
+                                            )";
+                                    if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
+                                        return 'Error en la inserción';
+                                    }
+                                    else{ //si no da error en la insercion devolvemos mensaje de exito
+                                        return 'Inserción realizada con éxito'; //operacion de insertado correcta
+                                    }
+                                }
+                                else // Si el usuario ya estaba asignado se notifica
+                                    return 'El usuario ya esta asignado a ese grupo';
+                            }
+                            else // si no existe ese valor en USUARIO se avisa de que el usuario no existe o es incorrecto
+                                return 'El Usuario no existe o el codigo es incorrecto'; // ya existe
+                        }
+                    }
+                }else // si no existe ese valor en GRUPO se avisa de que el grupo no existe o es incorrecto
+                    return 'El grupo no existe o el codigo es incorrecto'; // ya existe
+            }
+        }
+        else // si el atributo clave de la bd es vacio solicitamos un valor en un mensaje
+            return 'Introduzca un valor'; // introduzca un valor para el grupo
+    } // fin del metodo ADD
+    function DELETE(){
+        //se comprueba que existe existe la tupla a borrar si es asi se borra
+        //si no, se alerta de que no existe
+        $sql = "SELECT * FROM FUNC_ACCION WHERE ((IdFuncionalidad = '$this->idFuncionalidad')&&(IdAccion = '$this->idAccion'))";
+        // se ejecuta la query
+        $result = $this->mysqli->query($sql);
+        // si existe una tupla con ese valor de clave
+        if ($result->num_rows == 1)
+        {
+            // se construye la sentencia sql de borrado
+            $sql = "DELETE FROM FUNC_ACCION WHERE ((IdFuncionalidad = '$this->idFuncionalidad')
+                                                                  &&(IdAccion='$this->idAccion'))";
+            // se ejecuta la query
+            $this->mysqli->query($sql);
+            // se devuelve el mensaje de borrado correcto
+            return "Borrado correctamente";
+        } // si no existe el login a borrar se devuelve el mensaje de que no existe
+        else
+            return "No existe";
+    } // fin metodo DELETE
+}
 ?>
