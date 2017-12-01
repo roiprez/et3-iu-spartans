@@ -15,6 +15,7 @@ if (!IsAuthenticated()){
 }
 //esta autenticado
 else{
+	//Coge del menú lateral el controlador al que tiene que dirigirse la aplicación
 	if(isset($_GET['Controlador'])){
 		$_SESSION['controlador'] = $_GET['Controlador'] . '_Controller'; 
 	}
