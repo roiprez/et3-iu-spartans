@@ -35,17 +35,15 @@ class Grupo_ADD
                 />
             </label>
             <label>Descripcion
-                <input type="text" name="DescripGrupo"
-                       id="DescripGrupo" required="true"
-                       size="100" maxlength="100"
-                />
+                <textarea form="formulario-add" maxlength="100" name="DescripGrupo" required="true">
+                </textarea>
             </label>
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADD" type="submit"><img class="button-td" src="../Iconos/send.png" title="enviar"></button>
-                <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
+                <button id="enviar" name = "action" value = "ADD" type="submit"><img class="button-td" src="../../Iconos/send.png" title="enviar"></button>
+                <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
             </div>
         </form>
-        <button name="atras" type="button"><a href="../Controllers/Index_Controller.php"><img class="button-td" src="../Iconos/back.png" title="atrás"></a></button>
+        <button name="atras" type="button"><a href="../../Controllers/Index_Controller.php"><img class="button-td" src="../../Iconos/back.png" title="atrás"></a></button>
         <?php
     }//fin pinta
 

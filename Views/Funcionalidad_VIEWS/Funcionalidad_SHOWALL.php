@@ -2,13 +2,12 @@
 /**
  * Created by PhpStorm.
  * User: Drubito
- * Date: 30/11/2017
- * Time: 12:55
+ * Date: 01/12/2017
+ * Time: 18:05
  */
 
-
-class Grupo_SHOWALL{  // declaración de clase
-
+class Funcionalidad_SHOWALL
+{
     var $lista;
     var $datos;
     var $indexphp;
@@ -28,8 +27,8 @@ class Grupo_SHOWALL{  // declaración de clase
         ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">
-                <button type = "submit" name = "action" value="ADD"><img src="../Iconos/add.png" title="añadir una fila"></button>
-                <button type = "submit" name = "action" value="SEARCH"><img src="../Iconos/search.png" title="buscar en la tabla"></button>
+                <button type = "submit" name = "action" value="ADD"><img src="../../Iconos/add.png" title="añadir una fila"></button>
+                <button type = "submit" name = "action" value="SEARCH"><img src="../../Iconos/search.png" title="buscar en la tabla"></button>
             </div>
         </form>
         <table id="tabla-showall">
@@ -56,9 +55,9 @@ class Grupo_SHOWALL{  // declaración de clase
                             <?php
                         }
                         ?>
-                        <td><button type = "submit" name = "action" value="SHOWCURRENT"><img class="button-td" src="../Iconos/details.png" title="detalles"></img></button></td>
-                        <td><button type = "submit" name = "action" value="EDIT"><img class="button-td" src="../Iconos/edit.png" title="editar"></img></button></td>
-                        <td><button type = "submit" name = "action" value="DELETE"><img class="button-td" src="../Iconos/borrar.png" title="borrar línea"></img></button></td>
+                        <td><button type = "submit" name = "action" value="SHOWCURRENT"><img class="button-td" src="../../Iconos/details.png" title="detalles"></button></td>
+                        <td><button type = "submit" name = "action" value="EDIT"><img class="button-td" src="../../Iconos/edit.png" title="editar"></button></td>
+                        <td><button type = "submit" name = "action" value="DELETE"><img class="button-td" src="../../Iconos/borrar.png" title="borrar línea"></button></td>
                     </tr>
                 </form>
                 <?php
@@ -66,7 +65,7 @@ class Grupo_SHOWALL{  // declaración de clase
             ?>
 
         </table>
-        <button class="boton-atras" name="atras" type="button"><a href="../Controllers/Index_Controller.php"><img class="button-td" src="../Iconos/back.png" title="atrás"></img></a></button>
+        <button class="boton-atras" name="atras" type="button"><a href="../../Controllers/Index_Controller.php"><img class="button-td" src="../../Iconos/back.png" title="atrás"></a></button>
         <?php
     }
 }

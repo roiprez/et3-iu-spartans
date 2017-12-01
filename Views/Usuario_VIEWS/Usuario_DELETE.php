@@ -25,7 +25,7 @@ class Usuario_DELETE{
         ?>
         <table id="tabla-delete">
             <div id="mensaje-de-borrado">
-                <img src="../Iconos/error.png">
+                <img src="../../Iconos/error.png">
                 <p id="frase-borrado-tupla"><?php echo $strings['¿Está seguro de querer borrar los siguientes datos?'] ?></p>
             </div>
             <?php for($i=0;$i<count($this->lista_variables);$i++){
@@ -41,10 +41,10 @@ class Usuario_DELETE{
             <tr>
                 <form id="formulario-borrado" method="post">
                     <td class="celda-botones">
-                        <button name="atras" type="button"><a href="../Controllers/Index_Controller.php"><img class="button-td" src="../Iconos/back.png" title="atrás"></img></a></button>
+                        <button name="atras" type="button"><a href="../../Controllers/Index_Controller.php"><img class="button-td" src="../../Iconos/back.png" title="atrás"></a></button>
                     </td>
                     <td class="celda-botones">
-                        <button type = "submit" name = "action" value = "DELETE"><img class="button-td" src="../Iconos/borrar.png" title="borrar"></img></button>
+                        <button type = "submit" name = "action" value = "DELETE"><img class="button-td" src="../../Iconos/borrar.png" title="borrar"></button>
                     </td>
                 </form>
             </tr>

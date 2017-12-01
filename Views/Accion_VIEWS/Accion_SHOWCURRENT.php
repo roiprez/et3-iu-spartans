@@ -2,11 +2,12 @@
 /**
  * Created by PhpStorm.
  * User: Drubito
- * Date: 30/11/2017
- * Time: 13:17
+ * Date: 01/12/2017
+ * Time: 18:19
  */
 
-class Usuario_SHOWCURRENT{  // declaración de clase
+class Accion_SHOWCURRENT
+{
 
     var $lista_variables;//lista de variables a mostrar
     var $lista_valores;//lista de valores de las variables
@@ -40,9 +41,8 @@ class Usuario_SHOWCURRENT{  // declaración de clase
 
 
         </table>
-        <button class="boton-atras" name="atras" type="button"><a href="../Controllers/Index_Controller.php"><img class="button-td" src="../Iconos/back.png" title="atrás"></img></a></button>
+        <button class="boton-atras" name="atras" type="button"><a href="../../Controllers/Index_Controller.php"><img class="button-td" src="../../Iconos/back.png" title="atrás"></a></button>
         <?php
     }//fin de pintar
 }//fin de la clase
 ?>
-

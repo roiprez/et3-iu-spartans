@@ -37,23 +37,18 @@ function pinta()
         />
     </label>
     <label>Descripcion
-        <input type="text" name="DescripGrupo"
-               id="DescripGrupo"
-               size="100" maxlength="100"
-        />
+        <textarea form="formulario-edit" maxlength="100" name="DescripGrupo">
+
+        </textarea>
     </label>
     <div class="botones-formulario">
-        <button id="buscar" name = "action" value = "SEARCH" type="submit"><img class="button-td" src="../Iconos/search.png" title="buscar"></button>
-        <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
+        <button id="buscar" name = "action" value = "SEARCH" type="submit"><img class="button-td" src="../../Iconos/search.png" title="buscar"></button>
+        <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
     </div>
 </form>
-    <button name="atras" type="button"><a href="../Controllers/Index_Controller.php"><img class="button-td" src="../Iconos/back.png" title="atrás"></a></button>
+    <button name="atras" type="button"><a href="../../Controllers/Index_Controller.php"><img class="button-td" src="../../Iconos/back.png" title="atrás"></a></button>
     <?php
 }//fin de pinta
 
 }//fin de la clase
 ?>
-
-}
-
-}
