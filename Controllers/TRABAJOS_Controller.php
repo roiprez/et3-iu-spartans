@@ -95,7 +95,7 @@ if (!isset($_REQUEST['action'])){
 			break;
 		default:
 			if (!$_POST){
-				$TRABAJO = new TRABAJOS_Model('','','');
+				$TRABAJO = new TRABAJOS_Model('','','','');
 			}
 			else{
 				$TRABAJO = get_data_form();
