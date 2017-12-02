@@ -34,12 +34,6 @@ class Trabajo_ADD
                        size="60" maxlength="60"
                 />
             </label>
-            <label>PorcentajeNota
-                <input type="text" name="PorcentajeNota"
-                       id="PorcentajeNota" required="true"
-                       size="50" maxlength="50"
-                />
-            </label>
             <label>Fecha inicio
                 <input type="text" name="FechaIniTrabajo" class="tcal" required="true" readonly="readonly"/>
             </label>

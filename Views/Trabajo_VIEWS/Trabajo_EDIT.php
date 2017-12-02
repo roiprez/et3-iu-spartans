@@ -38,12 +38,6 @@ class Trabajo_EDIT
                        size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreTrabajo'] ?>"
                 />
             </label>
-            <label>PorcentajeNota
-                <input type="text" name="PorcentajeNota"
-                       id="PorcentajeNota" required="true"
-                       size="50" maxlength="50" value="<?php echo $this->lista_valores['PorcentajeNota'] ?>"
-                />
-            </label>
             <label>Fecha inicio
                 <input type="text" name="FechaIniTrabajo" class="tcal" required="true" readonly="readonly" value="<?php echo $this->lista_valores['FechaIniTrabajo'] ?>"/>
             </label>

@@ -18,7 +18,7 @@ class Trabajo_SEARCH
     function pinta(){
         //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         ?>
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">>
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
             <label>Id trabajo
                 <input type="text" name="IdTrabajo"
@@ -30,12 +30,6 @@ class Trabajo_SEARCH
                 <input type="text" name="NombreTrabajo"
                        id="NombreTrabajo"
                        size="60" maxlength="60"
-                />
-            </label>
-            <label>PorcentajeNota
-                <input type="text" name="PorcentajeNota"
-                       id="PorcentajeNota"
-                       size="50" maxlength="50"
                 />
             </label>
             <label>Fecha inicio
@@ -57,5 +51,3 @@ class Trabajo_SEARCH
 
 }//fin de la clase
 ?>
-
-}
