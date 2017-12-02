@@ -7,7 +7,7 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 
 include '../Models/USUARIOS_Model.php';
 include '../Views/Usuario_VIEWS/Usuario_SHOWALL.php';
-include '../Views/Usuario_VIEWS/Usuarios_SEARCH.php';
+include '../Views/Usuario_VIEWS/Usuario_SEARCH.php';
 include '../Views/Usuario_VIEWS/Usuario_ADD.php';
 include '../Views/Usuario_VIEWS/Usuario_EDIT.php';
 include '../Views/Usuario_VIEWS/Usuario_DELETE.php';

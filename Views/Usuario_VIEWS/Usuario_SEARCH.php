@@ -6,7 +6,7 @@
  * Time: 13:22
  */
 
-class Usuarios_SEARCH
+class Usuario_SEARCH
 {
 
     //Constructor de la clase
@@ -79,5 +79,3 @@ class Usuarios_SEARCH
 
 }//fin de la clase
 ?>
-
-}
