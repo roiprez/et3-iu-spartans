@@ -58,7 +58,7 @@ class ACCIONES_Model{
             IdAccion,
             NombreAccion,
             DescripAccion
-            FROM Accion
+            FROM ACCION
             WHERE (
             (IdAccion LIKE '%$this->idAccion%')&&
             (NombreAccion LIKE '%$this->nombreAccion%')&&
@@ -76,14 +76,14 @@ class ACCIONES_Model{
     function DELETE(){
         //se comprueba que existe existe la tupla a borrar si es asi se borra
         //si no, se alerta de que no existe
-        $sql = "SELECT * FROM Accion WHERE (IdAccion = '$this->idAccion')";
+        $sql = "SELECT * FROM ACCION WHERE (IdAccion = '$this->idAccion')";
         // se ejecuta la query
         $result = $this->mysqli->query($sql);
         // si existe una tupla con ese valor de clave
         if ($result->num_rows == 1)
         {
             // se construye la sentencia sql de borrado
-            $sql = "DELETE FROM Accion WHERE (IdAccion = '$this->idAccion')";
+            $sql = "DELETE FROM ACCION WHERE (IdAccion = '$this->idAccion')";
             // se ejecuta la query
             $this->mysqli->query($sql);
             // se devuelve el mensaje de borrado correcto
@@ -94,7 +94,7 @@ class ACCIONES_Model{
     } // fin metodo DELETE
     function EDIT(){
 // se construye la sentencia de busqueda de la tupla en la bd
-        $sql = "SELECT * FROM Accion WHERE (IdAccion = '$this->idAccion')";
+        $sql = "SELECT * FROM ACCION WHERE (IdAccion = '$this->idAccion')";
         // se ejecuta la query
         $result = $this->mysqli->query($sql);
         // si el numero de filas es igual a uno es que lo encuentra
