@@ -6,12 +6,12 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 */
 
 include '../Models/USUARIOS_Model.php';
-include '../Views/SHOWALL_View.php';
-include '../Views/SEARCH_View.php';
-include '../Views/ADD_View.php';
-include '../Views/EDIT_View.php';
-include '../Views/DELETE_View.php';
-include '../Views/SHOWCURRENT_View.php';
+include '../Views/Usuario_VIEWS/Usuario_SHOWALL.php';
+include '../Views/Usuario_VIEWS/Usuarios_SEARCH.php';
+include '../Views/Usuario_VIEWS/Usuario_ADD.php';
+include '../Views/Usuario_VIEWS/Usuario_EDIT.php';
+include '../Views/Usuario_VIEWS/Usuario_DELETE.php';
+include '../Views/Usuario_VIEWS/Usuario_SHOWCURRENT.php';
 include '../Views/MESSAGE_View.php';
 
 
@@ -53,9 +53,7 @@ if (!isset($_REQUEST['action'])){
 	Switch ($_REQUEST['action']){
 		case 'ADD':
 			if (!$_POST){
-				$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
-				$tamanhos = array(9, 20, 9, 30, 50, 40, 60, 11);
-				new Vista_ADD($lista, $tamanhos);
+				new Usuario_ADD();
 			}
 			else{
 				
@@ -69,7 +67,7 @@ if (!isset($_REQUEST['action'])){
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
 				$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
 				$valores = $USUARIOS->RellenaDatos();
-				new Vista_DELETE($lista, $valores);
+				new Usuario_DELETE($lista, $valores);
 			}
 			else{
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
@@ -80,11 +78,9 @@ if (!isset($_REQUEST['action'])){
 		case 'EDIT':		
 			if (!$_POST){	
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
-				$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
-				$tamanhos = array(9, 20, 9, 30, 50, 40, 60, 11);
 				$valores = $USUARIOS->RellenaDatos();
-				$clave=1;
-				new Vista_EDIT($lista,$tamanhos,$valores,$clave);
+
+				new Usuario_EDIT($valores);
 			}
 			else{	
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);							
@@ -95,15 +91,14 @@ if (!isset($_REQUEST['action'])){
 			break;
 		case 'SEARCH':
 			if (!$_POST){
-				$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');				
-				$tamanhos = array(9, 20, 9, 30, 50, 40, 60, 11);
-				new Vista_SEARCH($lista, $tamanhos);
+
+				new Usuario_SEARCH();
 			}
 			else{
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);
 				$datos = $USUARIOS->SEARCH();
 				$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion', 'Telefono');				
-				new Vista_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+				new Usuario_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 			}
 			break;
 		case 'SHOWCURRENT':
