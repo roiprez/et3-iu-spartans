@@ -60,7 +60,8 @@ class Usu_Grupo_SHOWALL{  // declaración de clase
             ?>
 
         </table>
-        <button class="boton-atras" name="atras" type="button"><a href="../../Controllers/Index_Controller.php"><img class="button-td" src="../../Iconos/back.png" title="atrás"></img></a></button>
+        <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
+		<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Registrarse"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }
 }
