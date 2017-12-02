@@ -21,6 +21,7 @@ array(
 	'Correo' => 'Email',
 	'Direccion' => 'Direccion',
 	'Telefono' =>'Teléfono',
+	'Teléfono' =>'Teléfono',
 	'El login no existe' => 'El login no existe',
 	'Volver' => 'Volver',
 	'La password para este usuario no es correcta' => 'La password para este usuario no es correcta',

@@ -27,6 +27,7 @@ array(
 	'Correo' => 'Email',
 	'Direccion' => 'Addres',
 	'Telefono' =>'Phone',
+	'Teléfono' =>'Phone',
 
 	'El login no existe' => 'The login dont exists',
 	'Volver' => 'Back',
