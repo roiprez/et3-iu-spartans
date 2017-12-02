@@ -32,7 +32,7 @@ class Permiso_ADD
 
         <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
 
-            <label>Id funcionalidad
+            <label>Id grupo
 
                 <select name="IdGrupo" id="IdGrupo" required="true">
                     <?php
@@ -46,6 +46,8 @@ class Permiso_ADD
 
                     ?>
                 </select>
+            </label>
+            <label>In funcionalidad
                 <select name="IdFuncionalidad" id="IdFuncionalidad" required="true">
                     <?php
                     for ($i=0;$i<count($this->lista_Funcion);$i++) {
@@ -58,6 +60,8 @@ class Permiso_ADD
 
                     ?>
                 </select>
+            </label>
+            <label>id accion
                 <select name="IdAccion" id="IdAccion" required="true">
                     <?php
                     for ($i=0;$i<count($this->lista_Accion);$i++) {
@@ -69,6 +73,8 @@ class Permiso_ADD
                     }//fin del bucle
 
                     ?>
+                </select>
+            </label>
             <div class="botones-formulario">
                 <button id="enviar" name = "action" value = "ADD" type="submit"><img class="button-td" src="../../Iconos/send.png" title="enviar"></button>
                 <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>

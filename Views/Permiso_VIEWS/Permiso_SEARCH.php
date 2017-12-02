@@ -32,7 +32,7 @@ var $lista_Grupos;
 
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
-            <label>Id funcionalidad
+            <label>Id grupo
 
                 <select name="IdGrupo" id="IdGrupo">
                     <?php
@@ -46,6 +46,8 @@ var $lista_Grupos;
 
                     ?>
                 </select>
+            </label>
+            <label>In funcionalidad
                 <select name="IdFuncionalidad" id="IdFuncionalidad">
                     <?php
                     for ($i=0;$i<count($this->lista_Funcion);$i++) {
@@ -58,6 +60,8 @@ var $lista_Grupos;
 
                     ?>
                 </select>
+            </label>
+            <label>id accion
                 <select name="IdAccion" id="IdAccion" >
                     <?php
                     for ($i=0;$i<count($this->lista_Accion);$i++) {
@@ -69,10 +73,12 @@ var $lista_Grupos;
                     }//fin del bucle
 
                     ?>
-                    <div class="botones-formulario">
-                        <button id="buscar" name = "action" value = "SEARCH" type="submit"><img class="button-td" src="../../Iconos/search.png" title="buscar"></button>
-                        <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
-                    </div>
+                </select>
+            </label>
+            <div class="botones-formulario">
+                <button id="buscar" name = "action" value = "SEARCH" type="submit"><img class="button-td" src="../../Iconos/search.png" title="buscar"></button>
+                <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
+            </div>
         </form>
         <button name="atras" type="button"><a href="../../Controllers/Index_Controller.php"><img class="button-td" src="../../Iconos/back.png" title="atrás"></a></button>
         <?php
