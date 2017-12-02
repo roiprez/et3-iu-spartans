@@ -71,4 +71,4 @@ class Historia_SEARCH
 }//fin de la clase
 ?>
 
-}
+

@@ -19,7 +19,7 @@ class HISTORIA_Model{   //Declaracion de la clase
 
     function ADD()
     {
-        if ($this->idGrupo <> ''){//Se comprueba que el primer campo clave no este vacio
+        if ($this->idTrabajo <> ''){//Se comprueba que el primer campo clave no este vacio
             //sentencia sql
             $sql = "SELECT * FROM TRABAJO WHERE (IdTrabajo= '$this->idTrabajo')";
 
