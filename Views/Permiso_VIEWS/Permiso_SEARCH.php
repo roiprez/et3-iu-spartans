@@ -2,14 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: Drubito
- * Date: 01/12/2017
- * Time: 18:23
+ * Date: 02/12/2017
+ * Time: 11:57
  */
 
-class Permiso_ADD
+class Permiso_SEARCH
 {
 
-    var $lista_Grupos;
+var $lista_Grupos;
     var $lista_Funcion;
     var $lista_Accion;
 
@@ -30,11 +30,11 @@ class Permiso_ADD
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
             <label>Id funcionalidad
 
-                <select name="IdGrupo" id="IdGrupo" required="true">
+                <select name="IdGrupo" id="IdGrupo">
                     <?php
                     for ($i=0;$i<count($this->lista_Grupos);$i++) {
 
@@ -46,7 +46,7 @@ class Permiso_ADD
 
                     ?>
                 </select>
-                <select name="IdFuncionalidad" id="IdFuncionalidad" required="true">
+                <select name="IdFuncionalidad" id="IdFuncionalidad">
                     <?php
                     for ($i=0;$i<count($this->lista_Funcion);$i++) {
 
@@ -58,7 +58,7 @@ class Permiso_ADD
 
                     ?>
                 </select>
-                <select name="IdAccion" id="IdAccion" required="true">
+                <select name="IdAccion" id="IdAccion" >
                     <?php
                     for ($i=0;$i<count($this->lista_Accion);$i++) {
 
@@ -69,14 +69,16 @@ class Permiso_ADD
                     }//fin del bucle
 
                     ?>
-            <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADD" type="submit"><img class="button-td" src="../../Iconos/send.png" title="enviar"></button>
-                <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
-            </div>
+                    <div class="botones-formulario">
+                        <button id="buscar" name = "action" value = "SEARCH" type="submit"><img class="button-td" src="../../Iconos/search.png" title="buscar"></button>
+                        <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
+                    </div>
         </form>
         <button name="atras" type="button"><a href="../../Controllers/Index_Controller.php"><img class="button-td" src="../../Iconos/back.png" title="atrás"></a></button>
         <?php
-    }//fin pinta
+    }//fin de pinta
+
+}//fin de la clase
+?>
 
 }
-?>

@@ -17,7 +17,7 @@ class Usuarios_SEARCH
     function pinta(){
         //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         ?>
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">>
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
             <label>Login
                 <input type="text" name="login"
