@@ -105,7 +105,7 @@ if (!isset($_REQUEST['action'])){
 			$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');	
 			$valores = $USUARIOS->RellenaDatos();
 			$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion', 'Telefono');
-			new Vista_SHOWCURRENT($lista, $valores);
+			new Usuario_SHOWCURRENT($lista, $valores);
 			break;
 		default:
 			if (!$_POST){
@@ -116,7 +116,7 @@ if (!isset($_REQUEST['action'])){
 			}
 			$datos = $USUARIOS->SEARCH();
 			$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
-			new Vista_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+			new Usuario_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 						
 	}
 ?>
