@@ -19,7 +19,7 @@ class Register{
                 <input type="text" name="login" id = 'login' required="true" size="9" maxlength="9" onchange="comprobarVacio(this) && comprobarTexto(this, 9)"/>
             </label>
             <label>Password
-                <input type="password" name="password" id = 'password' required="true" size="20" maxlength="20" onchange="comprobarVacio(this) && comprobarTexto(this, 20) && encriptar()"/>
+                <input type="password" name="password" id = 'password' required="true" size="20" maxlength="20" onchange="comprobarVacio(this) && comprobarTexto(this, 20)"/>
             </label>
             <label>DNI
                 <input type="text" name="DNI" required="true" size="9" maxlength="9" onchange="comprobarVacio(this) && comprobarDni(this)"/>

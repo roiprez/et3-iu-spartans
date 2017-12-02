@@ -6,12 +6,12 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 */
 
 include '../Models/GRUPOS_Model.php';
-include '../Views/SHOWALL_View.php';
-include '../Views/SEARCH_View.php';
-include '../Views/ADD_View.php';
-include '../Views/EDIT_View.php';
-include '../Views/DELETE_View.php';
-include '../Views/SHOWCURRENT_View.php';
+include '../Views/Grupo_VIEWS/Grupo_SHOWALL.php';
+include '../Views/Grupo_VIEWS/Grupo_SEARCH.php';
+include '../Views/Grupo_VIEWS/Grupo_ADD.php';
+include '../Views/Grupo_VIEWS/Grupo_EDIT.php';
+include '../Views/Grupo_VIEWS/Grupo_DELETE.php';
+include '../Views/Grupo_VIEWS/Grupo_SHOWCURRENT.php';
 include '../Views/MESSAGE_View.php';
 
 
@@ -40,9 +40,7 @@ if (!isset($_REQUEST['action'])){
 	Switch ($_REQUEST['action']){
 		case 'ADD':
 			if (!$_POST){
-        $lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
-        $tamanhos = array(6, 60, 100);
-				new Vista_ADD($lista, $tamanhos);
+				new Grupo_ADD();
 			}
 			else{		
 				$GRUPOS = get_data_form();
@@ -55,7 +53,7 @@ if (!isset($_REQUEST['action'])){
         $GRUPOS = new GRUPOS_Model($_REQUEST['IdGrupo'], '', '');
         $lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
 				$valores = $GRUPOS->RellenaDatos();
-				new Vista_DELETE($lista, $valores);
+				new Grupo_DELETE($lista, $valores);
 			}
 			else{
 				$GRUPOS = new GRUPOS_Model($_REQUEST['IdGrupo'], '', '');
@@ -66,11 +64,8 @@ if (!isset($_REQUEST['action'])){
 		case 'EDIT':		
 			if (!$_POST){	
         $GRUPOS = new GRUPOS_Model($_REQUEST['IdGrupo'], '', '');
-        $lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
-        $tamanhos = array(6, 60, 100);
 				$valores = $GRUPOS->RellenaDatos();
-				$clave=1;
-				new Vista_EDIT($lista,$tamanhos,$valores,$clave);
+				new Grupo_EDIT($valores);
 			}
 			else{	
 				$GRUPOS = get_data_form();						
@@ -81,22 +76,20 @@ if (!isset($_REQUEST['action'])){
 			break;
 		case 'SEARCH':
 			if (!$_POST){
-        $lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
-        $tamanhos = array(6, 60, 100);
-				new Vista_SEARCH($lista, $tamanhos);
+				new Grupo_SEARCH();
 			}
 			else{
 				$GRUPOS = get_data_form();
 				$datos = $GRUPOS->SEARCH();
 				$lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
-				new Vista_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+				new Grupo_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 			}
 			break;
 		case 'SHOWCURRENT':
       $GRUPOS = new GRUPOS_Model($_REQUEST['IdGrupo'], '', '');
       $lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
 			$valores = $GRUPOS->RellenaDatos();
-			new Vista_SHOWCURRENT($lista, $valores);
+			new Grupo_SHOWCURRENT($lista, $valores);
 			break;
 		default:
 			if (!$_POST){
@@ -107,7 +100,7 @@ if (!isset($_REQUEST['action'])){
 			}
 			$datos = $GRUPOS->SEARCH();
 			$lista = array('IdGrupo', 'NombreGrupo', 'DescripGrupo');
-			new Vista_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+			new Grupo_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 						
 	}
 ?>

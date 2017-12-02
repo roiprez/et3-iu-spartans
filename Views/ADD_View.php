@@ -25,68 +25,68 @@ class Vista_ADD// declaración de clase
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add') && encriptar()">
         <?php
 
-        for ($i = 0; $i < count($this->lista_variables); $i++) {//Creacion de inputs segun el numero de atributos
+        foreach ($this->lista_variables as $variable=> $valor ) {//Creacion de inputs segun el numero de atributos
 
-           if($this->lista_variables[$i]!='password'){
+           if($variable!='password'){
 				
-				switch ($i){
-					case 2:
+				switch ($valor){
+					case 'DNI':
 						?>
-						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<label><?php echo $valor ?>
+						<input type="text" name="<?php echo $variable ?>" id="<?php echo $variable ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
 						onBlur="return comprobarDni(this,'') && comprobarVacio(this)"/>
 						</label>
 						<?php
 						break;
-					case 3:
+					case 'Nombre':
 					?>
-						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<label><?php echo $valor ?>
+						<input type="text" name="<?php echo $variable ?>" id="<?php echo $variable ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
 						onBlur="comprobarAlfabetico(this, 30,'')"/>
 						</label>
 						<?php
 					break;
-					case 4:
+					case 'Apellidos':
 					?>
-						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<label><?php echo $valor ?>
+						<input type="text" name="<?php echo $variable ?>" id="<?php echo $variable ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
 						onBlur="comprobarAlfabetico(this, 50,'')"/>
 						</label>
 						<?php
 					break;
-					case 5:
+					case 'Correo':
 					?>
-						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<label><?php echo $valor ?>
+						<input type="text" name="<?php echo $variable ?>" id="<?php echo $variable ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
 						onBlur="comprobarEmail(this, 40,'')"/>
 						</label>
 						<?php
 					break;
-					case 7:
+					case 'Telefono':
 					?>
-						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<label><?php echo $valor ?>
+						<input type="text" name="<?php echo $variable ?>" id="<?php echo $variable ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
 						onBlur="comprobarTelf(this)"/>
 						</label>
 						<?php
 					break;
 					default:
 					?>
-						<label><?php echo $this->lista_variables[$i] ?>
-						<input type="text" name="<?php echo $this->lista_variables[$i] ?>" id="<?php echo $this->lista_variables[$i] ?>" required="true" size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+						<label><?php echo $valor ?>
+						<input type="text" name="<?php echo $variable ?>" id="<?php echo $variable ?>" required="true" size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
 						/>
 						</label>
 				<?php }//Fin switch
 					
            }else{
                ?>
-               <label><?php echo $this->lista_variables[$i] ?>
-                   <input type="password" name="<?php echo $this->lista_variables[$i] ?>"
-                          id="<?php echo $this->lista_variables[$i] ?>" required="true"
-                          size="<?php echo $this->tamanho_variables[$i] ?>" maxlength="<?php echo $this->tamanho_variables[$i] ?>"
+               <label><?php echo $valor ?>
+                   <input type="password" name="<?php echo $variable ?>"
+                          id="<?php echo $variable ?>" required="true"
+                          size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
                    />
                </label>
 

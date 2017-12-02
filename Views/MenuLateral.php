@@ -15,23 +15,59 @@ Vista que contiene el Menú lateral
         <aside>
 					<ul class="menu">
 						<li class="dropdown">
-						<form action="../Controllers/Index_Controller.php">
-							<input type="submit" name="Controlador" value="USUARIOS" onclick="mostrarUsuarios()" class="dropbtn"></input>
-						</form>
-						<ul id="submenu_usuarios" class="dropdown-content">
-							<li><a href="#"><?php echo $strings['Mostrar todo']; ?></a></li>
-							<li><a href="#"><?php echo $strings['Añadir']; ?></a></li>
-							<li><a href="#"><?php echo $strings['Buscar']; ?></a></li>
-						</ul>
-					</li>
+							<input onclick="dropdownMenu('submenu_usuarios')" type="button" name="Controlador" value="USUARIOS" class="dropbtn"></input>
+							<ul id="submenu_usuarios" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=USUARIOS">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=USUARIOS&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=USUARIOS&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
 						<li class="dropdown">
-						<form action="../Controllers/Index_Controller.php">
-							<input type="submit" name="Controlador" value="GRUPOS" onclick="mostrarGrupos()" class="dropbtn"></input>
-						</form>
+							<input onclick="dropdownMenu('submenu_grupos')" type="button" name="Controlador" value="GRUPOS" class="dropbtn"></input>
 							<ul id="submenu_grupos" class="dropdown-content">
-								<li><a href="#"><?php echo $strings['Mostrar todo']; ?></a></li>
-								<li><a href="#"><?php echo $strings['Añadir']; ?></a></li>
-								<li><a href="#"><?php echo $strings['Buscar']; ?></a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=GRUPOS">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=GRUPOS&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=GRUPOS&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_funcionalidades')" type="button" name="Controlador" value="FUNCIONALIDADES" class="dropbtn"></input>
+							<ul id="submenu_funcionalidades" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=FUNCIONALIDADES">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=FUNCIONALIDADES&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=FUNCIONALIDADES&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_acciones')" type="button" name="Controlador" value="ACCIONES" class="dropbtn"></input>
+							<ul id="submenu_acciones" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ACCIONES">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ACCIONES&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ACCIONES&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_permisos')" type="button" name="Controlador" value="PERMISOS" class="dropbtn"></input>
+							<ul id="submenu_permisos" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_trabajos')" type="button" name="Controlador" value="TRABAJOS" class="dropbtn"></input>
+							<ul id="submenu_trabajos" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=TRABAJOS">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=TRABAJOS&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=TRABAJOS&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_historias')" type="button" name="Controlador" value="HISTORIAS" class="dropbtn"></input>
+							<ul id="submenu_historias" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=HISTORIAS">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=HISTORIAS&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=HISTORIAS&action=SEARCH">Buscar</a></li>
 							</ul>
 						</li>
 					</ul>

@@ -134,7 +134,7 @@ function EDIT(){
     } // fin del metodo RellenaDatos()
 }//Fin de la clase GRUPO
 
-class USUARIO_GRUPO_Model{//Declaracion de la clase
+class USU_GRUPO_Model{//Declaracion de la clase
     var $login;
     var $idGrupo;
 
@@ -201,14 +201,14 @@ function __construct($login,$idGrupo)
     function DELETE(){
         //se comprueba que existe existe la tupla a borrar si es asi se borra
         //si no, se alerta de que no existe
-        $sql = "SELECT * FROM USU_GRUPO WHERE ((idGrupo = '$this->idGrupo')&&(login = '$this->login'))";
+        $sql = "SELECT * FROM USU_GRUPO WHERE ((IdGrupo = '$this->idGrupo')&&(Login = '$this->login'))";
         // se ejecuta la query
         $result = $this->mysqli->query($sql);
         // si existe una tupla con ese valor de clave
         if ($result->num_rows == 1)
         {
             // se construye la sentencia sql de borrado
-            $sql = "DELETE FROM USU_GRUPO WHERE ((idGrupo = '$this->idGrupo')&&(login='$this->login'))";
+            $sql = "DELETE FROM USU_GRUPO WHERE ((IdGrupo = '$this->idGrupo')&&(Login='$this->login'))";
             // se ejecuta la query
             $this->mysqli->query($sql);
             // se devuelve el mensaje de borrado correcto

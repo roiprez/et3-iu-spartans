@@ -22,7 +22,7 @@ class Vista_SEARCH{  // declaración de clase
     function pinta(){
         //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         ?>
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">>
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
             <?php
             for($i=0;$i<count($this->lista_variables);$i++) {
