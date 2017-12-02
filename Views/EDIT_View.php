@@ -119,8 +119,7 @@ foreach ($this->lista_variables as $variable=> $valor ) {//Creacion de inputs se
             </div>
         </form>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Registrarse"></img></button> <!--Imagen para la accion back,que permite volver al menu principal-->
-		</center></form>
+		<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Volver atrás"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//fin pinta
 
