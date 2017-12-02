@@ -35,9 +35,7 @@ class Funcionalidad_SEARCH
                 />
             </label>
             <label>Descripcion
-                <textarea form="formulario-search" maxlength="100" name="DescripFuncionalidad">
-
-        </textarea>
+                <textarea form="formulario-search" maxlength="100" name="DescripFuncionalidad"></textarea>
             </label>
             <div class="botones-formulario">
                 <button id="buscar" name = "action" value = "SEARCH" type="submit"><img class="button-td" src="../../Iconos/search.png" title="buscar"></button>

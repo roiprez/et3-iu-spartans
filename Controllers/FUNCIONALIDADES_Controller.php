@@ -6,13 +6,13 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 */
 
 include '../Models/FUNCIONALIDADES_Model.php';
-include '../Views/FUNCIONALIDADES_VIEWS/Funcionalidades_SHOWALL.php';
-include '../Views/FUNCIONALIDADES_VIEWS/Funcionalidades_SEARCH.php';
-include '../Views/FUNCIONALIDADES_VIEWS/Funcionalidades_ADD.php';
-include '../Views/FUNCIONALIDADES_VIEWS/Funcionalidades_EDIT.php';
-include '../Views/FUNCIONALIDADES_VIEWS/Funcionalidades_DELETE.php';
-include '../Views/FUNCIONALIDADES_VIEWS/Funcionalidades_SHOWCURRENT.php';
-include '../Views/FUNCIONALIDADES_VIEWS/Funcionalidades_MESSAGE.php';
+include '../Views/Funcionalidad_VIEWS/Funcionalidad_SHOWALL.php';
+include '../Views/Funcionalidad_VIEWS/Funcionalidad_SEARCH.php';
+include '../Views/Funcionalidad_VIEWS/Funcionalidad_ADD.php';
+include '../Views/Funcionalidad_VIEWS/Funcionalidad_EDIT.php';
+include '../Views/Funcionalidad_VIEWS/Funcionalidad_DELETE.php';
+include '../Views/Funcionalidad_VIEWS/Funcionalidad_SHOWCURRENT.php';
+include '../Views/MESSAGE_View.php';
 
 
 function get_data_form(){
@@ -38,9 +38,7 @@ if (!isset($_REQUEST['action'])){
 	Switch ($_REQUEST['action']){
 		case 'ADD':
 			if (!$_POST){
-        $lista = array('IdFuncionalidad', 'NombreFuncionalidad', 'DescripFuncionalidad');
-        $tamanhos = array(6, 60, 100);
-				new Funcionalidad_ADD($lista, $tamanhos);
+				new Funcionalidad_ADD();
 			}
 			else{		
 				$FUNCIONALIDADES = get_data_form();
@@ -64,11 +62,8 @@ if (!isset($_REQUEST['action'])){
 		case 'EDIT':		
 			if (!$_POST){	
         $FUNCIONALIDADES = new FUNCIONALIDADES_Model($_REQUEST['IdFuncionalidad'], '', '');
-        $lista = array('IdFuncionalidad', 'NombreFuncionalidad', 'DescripFuncionalidad');
-        $tamanhos = array(6, 60, 100);
 				$valores = $FUNCIONALIDADES->RellenaDatos();
-				$clave=1;
-				new Funcionalidad_EDIT($lista,$tamanhos,$valores,$clave);
+				new Funcionalidad_EDIT($valores);
 			}
 			else{	
 				$FUNCIONALIDADES = get_data_form();						
@@ -79,9 +74,7 @@ if (!isset($_REQUEST['action'])){
 			break;
 		case 'SEARCH':
 			if (!$_POST){
-        $lista = array('IdFuncionalidad', 'NombreFuncionalidad', 'DescripFuncionalidad');
-        $tamanhos = array(6, 60, 100);
-				new Funcionalidad_SEARCH($lista, $tamanhos);
+				new Funcionalidad_SEARCH();
 			}
 			else{
 				$FUNCIONALIDADES = get_data_form();

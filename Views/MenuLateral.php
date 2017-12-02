@@ -15,24 +15,42 @@ Vista que contiene el Menú lateral
         <aside>
 					<ul class="menu">
 						<li class="dropdown">
-						<form action="../Controllers/Index_Controller.php">
-							<input type="submit" name="Controlador" value="USUARIOS" onclick="mostrarUsuarios()" class="dropbtn"></input>
-						</form>
-						<ul id="submenu_usuarios" class="dropdown-content">
-							<li><a href="#"><?php echo $strings['Mostrar todo']; ?></a></li>
-							<li><a href="#"><?php echo $strings['Añadir']; ?></a></li>
-							<li><a href="#"><?php echo $strings['Buscar']; ?></a></li>
-						</ul>
-					</li>
-						<li class="dropdown">
-						<form action="../Controllers/Index_Controller.php">
-							<input type="submit" name="Controlador" value="GRUPOS" onclick="mostrarGrupos()" class="dropbtn"></input>
-						</form>
-							<ul id="submenu_grupos" class="dropdown-content">
-								<li><a href="#"><?php echo $strings['Mostrar todo']; ?></a></li>
-								<li><a href="#"><?php echo $strings['Añadir']; ?></a></li>
-								<li><a href="#"><?php echo $strings['Buscar']; ?></a></li>
+							<form action="../Controllers/Index_Controller.php" onsubmit="dropdownMenu('submenu_usuarios')">
+								<input type="submit" name="Controlador" value="USUARIOS" onclick="mostrarUsuarios()" class="dropbtn"></input>
+							</form>
+							<ul id="submenu_usuarios" class="dropdown-content">
+								<li><a href="#">Mostrar todo</a></li>
 							</ul>
+						</li>
+						<li class="dropdown">
+							<form action="../Controllers/Index_Controller.php">
+								<input type="submit" name="Controlador" value="GRUPOS" onclick="mostrarGrupos()" class="dropbtn"></input>
+							</form>
+						</li>
+						<li class="dropdown">
+							<form action="../Controllers/Index_Controller.php">
+								<input type="submit" name="Controlador" value="FUNCIONALIDADES" onclick="mostrarGrupos()" class="dropbtn"></input>
+							</form>
+						</li>
+						<li class="dropdown">
+							<form action="../Controllers/Index_Controller.php">
+								<input type="submit" name="Controlador" value="ACCIONES" onclick="mostrarGrupos()" class="dropbtn"></input>
+							</form>
+						</li>
+						<li class="dropdown">
+							<form action="../Controllers/Index_Controller.php">
+								<input type="submit" name="Controlador" value="PERMISOS" onclick="mostrarGrupos()" class="dropbtn"></input>
+							</form>
+						</li>
+						<li class="dropdown">
+							<form action="../Controllers/Index_Controller.php">
+								<input type="submit" name="Controlador" value="TRABAJOS" onclick="mostrarGrupos()" class="dropbtn"></input>
+							</form>
+						</li>
+						<li class="dropdown">
+							<form action="../Controllers/Index_Controller.php">
+								<input type="submit" name="Controlador" value="HISTORIAS" onclick="mostrarGrupos()" class="dropbtn"></input>
+							</form>
 						</li>
 					</ul>
 				</aside>

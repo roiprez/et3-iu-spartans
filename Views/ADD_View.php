@@ -25,7 +25,7 @@ class Vista_ADD// declaración de clase
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add') && encriptar()">
         <?php
 
         foreach ($this->lista_variables as $variable=> $valor ) {//Creacion de inputs segun el numero de atributos

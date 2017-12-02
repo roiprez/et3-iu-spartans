@@ -35,8 +35,7 @@ class Funcionalidad_ADD
                 />
             </label>
             <label>Descripcion
-                <textarea form="formulario-add" maxlength="100" name="DescripFuncionalidad" required="true">
-                </textarea>
+                <textarea form="formulario-add" maxlength="100" name="DescripFuncionalidad" required="true"></textarea>
             </label>
             <div class="botones-formulario">
                 <button id="enviar" name = "action" value = "ADD" type="submit"><img class="button-td" src="../../Iconos/send.png" title="enviar"></button>

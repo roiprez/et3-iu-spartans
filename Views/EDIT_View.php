@@ -106,7 +106,7 @@ foreach ($this->lista_variables as $variable=> $valor ) {//Creacion de inputs se
                <label><?php echo $valor ?>
                    <input type="password" name="<?php echo $valor ?>"
                           id="<?php echo $valor ?>" value="<?php echo $this->lista_valores[$valor] ?>" required="true"
-                          size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>"
+                          size="<?php echo $this->tamanho_variables[$variable] ?>" maxlength="<?php echo $this->tamanho_variables[$variable] ?>" onchange="encriptar()"
                    />
                </label>
                     <?php
