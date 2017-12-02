@@ -19,16 +19,14 @@ class TRABAJOS_Model{   //Declaracion de la clase
         if ($fechIniTrabajo == ''){
             $this->fechIniTrabajo = $fechIniTrabajo;
         }
-        else{ // si no viene vacia le cambiamos el formato para que se adecue al de la bd
-            $this->fechIniTrabajo = date_format(date_create($fechIniTrabajo), 'Y-d-m');
-        }
+        
 
         //si la fechFinTrabajo viene vacia la asignamos vacia
         if ($fechFinTrabajo == ''){
             $this->fechFinTrabajo = $fechFinTrabajo;
         }
         else{ // si no viene vacia le cambiamos el formato para que se adecue al de la bd
-            $this->fechFinTrabajo = date_format(date_create($fechFinTrabajo), 'Y-d-m');
+           
         }
 
         //Creamos el conector a la base de datos
