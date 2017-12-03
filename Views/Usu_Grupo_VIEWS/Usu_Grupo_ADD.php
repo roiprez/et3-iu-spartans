@@ -22,43 +22,62 @@ class Usu_Grupo_ADD// declaración de clase
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
+        <form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
 
         	<table>
             <tr>
                 <th>Usuario</th>
                 <th>Grupos</th>
-                <th>Grupos a los que ya pertenece</th> 
             </tr>
 
             <?php
-            foreach ($this->lista_usuarios as $usuario) 
+            foreach ($this->lista_usuarios as $usuario)//recorre todos los usuarios creados creando una fila por usuario
             {
                 ?>
-                <form class="formulario-tupla" method="">
                     <tr>
-                    	<td><?php echo '$usuario'?></td>
                     	<td>
-                    	<?php
-							for($i=0;$i<count($this->lista_grupos);$i++){
-							?>
-								<label><?php echo "$this->lista_grupos[$i]"?>
-								<input type="checkbox" name="IdGrupo"  value="<?php echo "$this->lista_grupos[$i]"?>">
-								</label>
-							<?php
-							}//fin del bucle for
-                    	?>
-                    	</td>
+                            <?php echo '$usuario'?>
+                            <input type="text" hidden name="login"  value="<?php echo '$usuario'?>">
+                        </td>
                     	<td>
+                            <select multiple="true">
                     	<?php
-							$row=$this->lista_valores['$usuario']->fetch_array();
-							for($i=0;$i<count($row);$i++){
-								echo "$row,";
-							}//fin de bucle for
+                            var $grupos_usuario [];
+                            foreach ($this->lista_valores as $tupla) {//recorre el recordset de datos
+                                if ($tupla['login']==$usuario) {//almacena en un array los grupos a los que pertenece el usuario
+                                    array_push($grupos_usuario, $tupla['IdGrupo'])
+                                }//fin if
+                            }//fin foreach
+                            
+							for($i=0;$i<count($this->lista_grupos);$i++){//recorre la lista de todos los grupos posibles
+
+                                for($j=0;j<count($grupos_usuario);j++){//recorre los grupos a los que pertenece el usuario
+					               if ($grupos_usuario[j]==$this->lista_grupos[$i]) {//si encuentra el grupo dentro de los grupos del usuario seleccionado=true
+                                       $seleccionado=true;
+                                   }//fin del if
+                                }//fin del bucle for interno
+
+                                if ($seleccionado==true) {//si esta seleccionado opcion seleccionada para ese grupo
+                                    ?>
+                                    <option selected="true" value="<?php echo "$this->lista_grupos[$i]"?>">
+                                        <?php echo "$this->lista_grupos[$i]"?>
+                                    </option>
+                                    <?php
+                                }else{//si no esta seleccionado opcion normal para ese grupo
+                                    ?>
+                                    <option value="<?php echo "$this->lista_grupos[$i]"?>">
+                                        <?php echo "$this->lista_grupos[$i]"?>
+                                    </option>
+                                    <?php
+                                }//fin del else
+                                $seleccionado=false;//volvemos a poner seleccionado a false
+
+							}//fin del bucle for externo
                     	?>
+                        </select>
                     	</td>
                     </tr>
-                </form>
+                
                 <?php
             }//fin del bucle for each
             ?>
