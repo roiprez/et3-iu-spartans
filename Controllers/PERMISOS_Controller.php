@@ -33,12 +33,6 @@ Switch ($_REQUEST['action']){
             new Permiso_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
         }
         break;
-    case 'SHOWCURRENT':
-        $GRUPOS = new PERMISOS_Model($_REQUEST['IdGrupo'], $_REQUEST['IdFuncionalidad'], $_REQUEST['IdAccion']);
-        $lista = array('IdGrupo', 'IdFuncionalidad', 'IdAccion');
-        $valores = $PERMISOS->RellenaDatos();
-        new Permiso_SHOWCURRENT($lista, $valores);
-        break;
     default:
         if (!$_POST){
             $PERMISOS = new PERMISOS_Model('','','');
@@ -49,6 +43,7 @@ Switch ($_REQUEST['action']){
         $datos = $PERMISOS->SEARCH();
         $lista = array('IdGrupo', 'IdFuncionalidad', 'IdAccion');
         new Permiso_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+        
 
 }
 ?>
