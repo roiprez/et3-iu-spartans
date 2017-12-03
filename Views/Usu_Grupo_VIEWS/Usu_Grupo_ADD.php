@@ -48,7 +48,7 @@ class Usu_Grupo_ADD// declaración de clase
                     	<?php
                             $grupos_usuario=array();
                             foreach ($this->lista_valores as $tupla) {//recorre el recordset de datos
-                                if ($tupla['login']==$usuario['login']) {//almacena en un array los grupos a los que pertenece el usuario
+                                if ($tupla['login']==$usuario) {//almacena en un array los grupos a los que pertenece el usuario
 									echo "esto peta";
 									$grupos_usuario[]=$tupla['IdGrupo'];
 								}//fin if

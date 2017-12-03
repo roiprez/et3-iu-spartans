@@ -116,24 +116,12 @@ if (!isset($_REQUEST['action'])){
 				$GRUPOS =new GRUPOS_Model('','','');
 				
 				$datosUsu = $USUARIOS->SEARCH();
-				$usuariostotales = array();
-				
-				while($rowusuarios = $datosUsu->fetch_array()){
-					$i=0;
-				$usuariostotales[$i]=$rowusuarios[0];
-				echo $usuariostotales[$i];
-				$i++;
-				}
 				
 				$datosGru = $GRUPOS->SEARCH();
 				$grupostotales = array();
 				while($rowgrupos = $datosGru->fetch_array()){
-				$i=0;
-				$grupostotales[$i]=$rowgrupos[0];
-				echo $grupostotales[$i];
-				$i++;
+				$grupostotales[]=$rowgrupos[0];
 				}
-							
 						
 				$USU_GRUP =new USU_GRUPO_Model('','');
 				$datosUsuGrup = $USU_GRUP->SEARCH();
