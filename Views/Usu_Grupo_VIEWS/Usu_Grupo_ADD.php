@@ -22,12 +22,11 @@ class Usu_Grupo_ADD// declaración de clase
 
         ?>
 
-        <form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
-
         	<table>
             <tr>
                 <th>Usuario</th>
                 <th>Grupos</th>
+				<th>Accion</th>
             </tr>
 
             <?php
@@ -40,11 +39,12 @@ class Usu_Grupo_ADD// declaración de clase
                 ?>
                     <tr>
                     	<td>
+						<form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
                             <?php echo $usuario['login'] ;?>
                             <input type="hidden"  name="login"  value="<?php echo $usuario['login'] ;?>">
                         </td>
                     	<td>
-                            <select multiple="true">
+                            <select  multiple name="IdGrupo[]">
                     	<?php
                             $grupos_usuario = array();
                             foreach ($this->lista_valores as $tupla) {//recorre el recordset de datos
@@ -62,13 +62,13 @@ class Usu_Grupo_ADD// declaración de clase
 
                                 if ($sel==true) {//si esta seleccionado opcion seleccionada para ese grupo
                                     ?>
-                                    <option selected="true" value="<?php echo $this->lista_grupos[$i] ;?>">
+                                    <option selected="true" name="<?php echo $this->lista_grupos[$i] ;?>" value="<?php echo $this->lista_grupos[$i] ;?>">
                                         <?php echo $this->lista_grupos[$i];?>
                                     </option>
                                     <?php
                                 }else{//si no esta seleccionado opcion normal para ese grupo
                                     ?>
-                                    <option  value="<?php echo $this->lista_grupos[$i] ;?>">
+                                    <option name="<?php echo $this->lista_grupos[$i] ;?>"  value="<?php echo $this->lista_grupos[$i] ;?>">
                                         <?php echo $this->lista_grupos[$i] ;?>
                                     </option>
                                     <?php
@@ -80,6 +80,11 @@ class Usu_Grupo_ADD// declaración de clase
                     	?>
                         </select>
                     	</td>
+						<td><div class="botones-formulario">
+						<button id="enviar" name = "action" value = "ADDGROUP" type="submit"><img class="button-td" src="../Iconos/send.png" title="enviar"></button>
+						<button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
+						</div></td>
+        </form>
                     </tr>
                 
                 <?php
@@ -88,11 +93,7 @@ class Usu_Grupo_ADD// declaración de clase
 
         </table>
 
-            <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADD" type="submit"><img class="button-td" src="../../Iconos/send.png" title="enviar"></button>
-                <button class="borrar" type="reset" name="limpiar"> <img class="button-td" src="../../Iconos/borrar_campo.png" title="borrar el contenido introducido"></button>
-            </div>
-        </form>
+            
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
 		<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Registrarse"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php

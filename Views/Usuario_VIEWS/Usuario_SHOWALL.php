@@ -27,7 +27,7 @@ class Usuario_SHOWALL{  // declaración de clase
         ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">
-                <button type = "submit" name = "action" value="ADDGROUP"><img src="../../Iconos/add.png" title="añadir una fila"></button>
+                <button type = "submit" name = "action" value="ADD"><img src="../../Iconos/add.png" title="añadir una fila"></button>
                 <button type = "submit" name = "action" value="SEARCH"><img src="../../Iconos/search.png" title="buscar en la tabla"></button>
             </div>
         </form>

@@ -149,29 +149,44 @@ function __construct($login,$idGrupo)
 
 }
 
-
+	function reventarUsuario(){
+		
+   $sql="DELETE
+		FROM USU_GRUPO
+		WHERE (login LIKE '$this->login')";
+		if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
+			return 'Error en el borrado';
+		}
+		else{ //si no da error en la insercion devolvemos mensaje de exito
+			return 'Inserción realizada con éxito'; //operacion de insertado correcta
+		}
+		
+	}
     function ADD()
     {
         if ($this->idGrupo <> '') {//Se comprueba que grupo no este vacio
-            $sql = "SELECT * FROM GRUPO WHERE (IdGupo= '$this->idGrupo')";
+            $sql = "SELECT * FROM GRUPO WHERE (IdGrupo= '$this->idGrupo')";
             if (!$result = $this->mysqli->query($sql))  // si da error la ejecución de la query
                 return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
             else {// si la query no da error
                 if ($result->num_rows == 1) {//miramos que el Grupo existe en la BD
                     if ($this->login <> '') {// Se comprueba que login no este vacio
-                        $sql = "SELECT * FROM USUARIO WHERE (Login= '$this->login')";
+                        $sql = "SELECT * FROM USUARIO WHERE (login= '$this->login')";
                         if (!$result = $this->mysqli->query($sql)) { // si da error la ejecución de la query
                             return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido
                             // conectar con la bd). Devolvemos un mensaje que el controlador manejara
                         }
                         else {//si la query no da error
                             if ($result->num_rows == 1) {//miramos que el Usuario existe en la BD
-                                $sql="SELECT * FROM USU_GRUPO WHERE ((Login='$this->login')&&(IdGrupo='$this->idGrupo'))";
+                                $sql="SELECT * FROM USU_GRUPO WHERE ((login='$this->login')&&(IdGrupo='$this->idGrupo'))";
                                 $result = $this->mysqli->query($sql);
                                 if($result->num_rows ==0){// Comprobamos que el usuario no este ya asignado al grupo
-                                    $sql="INSERT INTO USU_GRUPO
+
+									
+									
+									$sql="INSERT INTO USU_GRUPO
                                             (
-                                            Login,
+                                            login,
                                             IdGrupo)
                                             VALUES (
                                             '$this->login',
@@ -185,7 +200,7 @@ function __construct($login,$idGrupo)
                                     }
                                 }
                                 else // Si el usuario ya estaba asignado se notifica
-                                return 'El usuario ya esta asignado a ese grupo';
+                                return 'Inserción realizada con éxito';
                             }
                             else // si no existe ese valor en USUARIO se avisa de que el usuario no existe o es incorrecto
                                 return 'El Usuario no existe o el codigo es incorrecto'; // ya existe

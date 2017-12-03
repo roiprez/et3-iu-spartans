@@ -29,6 +29,7 @@ function get_data_form(){
 	$Direccion = $_REQUEST['Direccion'];
 	$Telefono = $_REQUEST['Telefono'];
 	$action = $_REQUEST['action'];
+	$IdGrupo = $_REQUEST['IdGrupo'];
 
 	$USUARIOS = new USUARIOS_Model(
 		$login,
@@ -49,6 +50,10 @@ if (!isset($_REQUEST['password'])){
 }
 if (!isset($_REQUEST['action'])){
 	$_REQUEST['action'] = '';
+}
+
+if (!isset($_REQUEST['IdGrupo'])){
+	$_REQUEST['IdGrupo'] = '';
 }
 
 	
@@ -111,29 +116,41 @@ if (!isset($_REQUEST['action'])){
 			break;
 			
 		case 'ADDGROUP':
-			if(!$_POST){
-				$USUARIOS = new USUARIOS_Model('','','', '','','', '', '');
-				$GRUPOS =new GRUPOS_Model('','','');
+			if(!$_POST){ //Si no hay informacion
+				$USUARIOS = new USUARIOS_Model('','','', '','','', '', ''); //Nuevo modelo de usuario
+				$GRUPOS =new GRUPOS_Model('','',''); //Nuevo modelo de grupo
 				
-				$datosUsu = $USUARIOS->SEARCH();
+				$datosUsu = $USUARIOS->SEARCH(); // Devuelve toda la tabla de usuarios
+				$datosGru = $GRUPOS->SEARCH(); //Devuelve toda la tabla de grupos
 				
-				$datosGru = $GRUPOS->SEARCH();
-				$grupostotales = array();
+				$grupostotales = array(); //Array que contendrá todos los grupos existentes
 				while($rowgrupos = $datosGru->fetch_array()){
 				$grupostotales[]=$rowgrupos[0];
 				}
 						
-				$USU_GRUP =new USU_GRUPO_Model('','');
-				$datosUsuGrup = $USU_GRUP->SEARCH();		
-				new Usu_Grupo_ADD($datosUsu,$grupostotales,$datosUsuGrup);
+				$USU_GRUP =new USU_GRUPO_Model('',''); // Nuevo modelo de USU_GRUPO
+				$datosUsuGrup = $USU_GRUP->SEARCH(); //Devolverá todos los pares usuario_grupo		
+				new Usu_Grupo_ADD($datosUsu,$grupostotales,$datosUsuGrup); //Muestra la vista de USU_GRUPO
 			}
-			else{
-			$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
-			$GRUPOS = new GRUPOS_Model($_REQUEST['IdGrupo'], '', '');
-			$USU_GRUPO= new USU_GRUPO_Model($_REQUEST['login'],$_REQUEST
-				['IdGrupo']);
-			$respuesta=$USU_GRUPO->ADD();
-			new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+			else{//Si se ha hehco un post
+				
+				$login=$_REQUEST['login']; //Definimos login para poder utilizarlo tantas veces como select se hayan seleccionado
+				$USU_GRUPOPREVIO= new USU_GRUPO_Model($login,''); //Definimos un modelo de USU_GRUPO con el login que se nos pasa para borrar todos los grupos que tenia seleccionados de antes
+				$borrado=$USU_GRUPOPREVIO->reventarUsuario(); //Se revientan todos los grupos a los que pertenece el usuario
+				
+				if ($_REQUEST['IdGrupo']!=''){ // Si se ha seleccionado algun grupo
+				foreach ($_REQUEST['IdGrupo'] as $indice => $valor){ //Recorremos todos los seleccionados
+				$USU_GRUPO= new USU_GRUPO_Model($login,$valor);
+				$respuesta=$USU_GRUPO->ADD(); // Añadimos uno por uno a la tabla
+				}
+				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
+				break; //Rompemos para que no continue
+				}else{ //Si no se ha seleccionado ninguno
+					new Vista_MESSAGE('Inserción realizada con éxito', '../Controllers/Index_Controller.php'); //Mostramos mensaje de exito en la inserción porque ya se han borrado previamente
+				}
+				
+
+			
 
 			}
 			break;
