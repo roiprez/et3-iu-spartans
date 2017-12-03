@@ -31,27 +31,31 @@ class Usu_Grupo_ADD// declaración de clase
             </tr>
 
             <?php
+				
+
+
+				
             foreach ($this->lista_usuarios as $usuario)//recorre todos los usuarios creados creando una fila por usuario
             {
                 ?>
                     <tr>
                     	<td>
-                            <?php echo '$usuario'?>
-                            <input type="text" hidden name="login"  value="<?php echo '$usuario'?>">
+                            <?php echo $usuario['login'] ;?>
+                            <input type="hidden"  name="login"  value="<?php echo $usuario['login'] ;?>">
                         </td>
                     	<td>
                             <select multiple="true">
                     	<?php
-                            var $grupos_usuario [];
+                            $grupos_usuario=array();
                             foreach ($this->lista_valores as $tupla) {//recorre el recordset de datos
-                                if ($tupla['login']==$usuario) {//almacena en un array los grupos a los que pertenece el usuario
-                                    array_push($grupos_usuario, $tupla['IdGrupo'])
-                                }//fin if
+                                if ($tupla['login']==$usuario['login']) {//almacena en un array los grupos a los que pertenece el usuario
+									echo "esto peta";
+									$grupos_usuario[]=$tupla['IdGrupo'];
+								}//fin if
                             }//fin foreach
-                            
 							for($i=0;$i<count($this->lista_grupos);$i++){//recorre la lista de todos los grupos posibles
 
-                                for($j=0;j<count($grupos_usuario);j++){//recorre los grupos a los que pertenece el usuario
+                                for($j=0;j<count($grupos_usuario);$j++){//recorre los grupos a los que pertenece el usuario
 					               if ($grupos_usuario[j]==$this->lista_grupos[$i]) {//si encuentra el grupo dentro de los grupos del usuario seleccionado=true
                                        $seleccionado=true;
                                    }//fin del if
@@ -59,20 +63,21 @@ class Usu_Grupo_ADD// declaración de clase
 
                                 if ($seleccionado==true) {//si esta seleccionado opcion seleccionada para ese grupo
                                     ?>
-                                    <option selected="true" value="<?php echo "$this->lista_grupos[$i]"?>">
-                                        <?php echo "$this->lista_grupos[$i]"?>
+                                    <option selected="true" value="<?php echo $this->lista_grupos[$i] ;?>">
+                                        <?php echo $this->lista_grupos[$i];?>
                                     </option>
                                     <?php
                                 }else{//si no esta seleccionado opcion normal para ese grupo
                                     ?>
-                                    <option value="<?php echo "$this->lista_grupos[$i]"?>">
-                                        <?php echo "$this->lista_grupos[$i]"?>
+                                    <option value="<?php echo $this->lista_grupos[$i] ;?>">
+                                        <?php echo $this->lista_grupos[$i] ;?>
                                     </option>
                                     <?php
                                 }//fin del else
                                 $seleccionado=false;//volvemos a poner seleccionado a false
 
 							}//fin del bucle for externo
+						
                     	?>
                         </select>
                     	</td>

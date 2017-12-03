@@ -198,7 +198,27 @@ function __construct($login,$idGrupo)
         else // si el atributo clave de la bd es vacio solicitamos un valor en un mensaje
             return 'Introduzca un valor'; // introduzca un valor para el grupo
     } // fin del metodo ADD
-    function DELETE(){
+    
+	function SEARCH(){
+                $sql = "select *
+                from USU_GRUPO
+                where 
+                    (
+                    (login LIKE '%$this->login%') &&
+					(IdGrupo LIKE '%$this->idGrupo%')
+                    )";
+    // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
+    if (!($resultado = $this->mysqli->query($sql))){
+        return 'Error en la consulta sobre la base de datos';
+    }
+    else{ // si la busqueda es correcta devolvemos el recordset resultado
+        return $resultado;
+    }
+    } // fin metodo SEARCH
+	
+	
+	
+	function DELETE(){
         //se comprueba que existe existe la tupla a borrar si es asi se borra
         //si no, se alerta de que no existe
         $sql = "SELECT * FROM USU_GRUPO WHERE ((IdGrupo = '$this->idGrupo')&&(Login = '$this->login'))";

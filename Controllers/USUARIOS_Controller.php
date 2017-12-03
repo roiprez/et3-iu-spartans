@@ -13,6 +13,8 @@ include '../Views/Usuario_VIEWS/Usuario_EDIT.php';
 include '../Views/Usuario_VIEWS/Usuario_DELETE.php';
 include '../Views/Usuario_VIEWS/Usuario_SHOWCURRENT.php';
 include '../Views/MESSAGE_View.php';
+include '../Views/Usu_Grupo_VIEWS/Usu_Grupo_ADD.php';
+include '../Models/GRUPOS_Model.php';
 
 
 
@@ -107,6 +109,48 @@ if (!isset($_REQUEST['action'])){
 			$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion', 'Telefono');
 			new Usuario_SHOWCURRENT($lista, $valores);
 			break;
+			
+		case 'ADDGROUP':
+			if(!$_POST){
+				$USUARIOS = new USUARIOS_Model('','','', '','','', '', '');
+				$GRUPOS =new GRUPOS_Model('','','');
+				
+				$datosUsu = $USUARIOS->SEARCH();
+				$usuariostotales = array();
+				
+				while($rowusuarios = $datosUsu->fetch_array()){
+					$i=0;
+				$usuariostotales[$i]=$rowusuarios[0];
+				echo $usuariostotales[$i];
+				$i++;
+				}
+				
+				$datosGru = $GRUPOS->SEARCH();
+				$grupostotales = array();
+				while($rowgrupos = $datosGru->fetch_array()){
+				$i=0;
+				$grupostotales[$i]=$rowgrupos[0];
+				echo $grupostotales[$i];
+				$i++;
+				}
+							
+						
+				$USU_GRUP =new USU_GRUPO_Model('','');
+				$datosUsuGrup = $USU_GRUP->SEARCH();
+				
+				new Usu_Grupo_ADD($datosUsu,$grupostotales,$datosUsuGrup);
+			}
+			else{
+			$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
+			$GRUPOS = new GRUPOS_Model($_REQUEST['IdGrupo'], '', '');
+			$USU_GRUPO= new USU_GRUPO_Model($_REQUEST['login'],$_REQUEST
+				['IdGrupo']);
+			$respuesta=$USU_GRUPO->ADD();
+			new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+
+			}
+			break;
+			
 		default:
 			if (!$_POST){
 				$USUARIOS = new USUARIOS_Model('','','', '','','', '', '');
