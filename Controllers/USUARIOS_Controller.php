@@ -124,8 +124,7 @@ if (!isset($_REQUEST['action'])){
 				}
 						
 				$USU_GRUP =new USU_GRUPO_Model('','');
-				$datosUsuGrup = $USU_GRUP->SEARCH();
-				
+				$datosUsuGrup = $USU_GRUP->SEARCH();		
 				new Usu_Grupo_ADD($datosUsu,$grupostotales,$datosUsuGrup);
 			}
 			else{

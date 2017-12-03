@@ -46,22 +46,21 @@ class Usu_Grupo_ADD// declaración de clase
                     	<td>
                             <select multiple="true">
                     	<?php
-                            $grupos_usuario=array();
+                            $grupos_usuario = array();
                             foreach ($this->lista_valores as $tupla) {//recorre el recordset de datos
-                                if ($tupla['login']==$usuario) {//almacena en un array los grupos a los que pertenece el usuario
-									echo "esto peta";
+                                if ($tupla['login']==$usuario['login']) {//almacena en un array los grupos a los que pertenece el usuario
 									$grupos_usuario[]=$tupla['IdGrupo'];
 								}//fin if
                             }//fin foreach
 							for($i=0;$i<count($this->lista_grupos);$i++){//recorre la lista de todos los grupos posibles
 
-                                for($j=0;j<count($grupos_usuario);$j++){//recorre los grupos a los que pertenece el usuario
-					               if ($grupos_usuario[j]==$this->lista_grupos[$i]) {//si encuentra el grupo dentro de los grupos del usuario seleccionado=true
-                                       $seleccionado=true;
+                                for($j=0;$j<count($grupos_usuario);$j++){//recorre los grupos a los que pertenece el usuario
+					               if ($grupos_usuario[$j]==$this->lista_grupos[$i]) {//si encuentra el grupo dentro de los grupos del usuario seleccionado=true
+                                       $sel=true;
                                    }//fin del if
                                 }//fin del bucle for interno
 
-                                if ($seleccionado==true) {//si esta seleccionado opcion seleccionada para ese grupo
+                                if ($sel==true) {//si esta seleccionado opcion seleccionada para ese grupo
                                     ?>
                                     <option selected="true" value="<?php echo $this->lista_grupos[$i] ;?>">
                                         <?php echo $this->lista_grupos[$i];?>
@@ -69,12 +68,12 @@ class Usu_Grupo_ADD// declaración de clase
                                     <?php
                                 }else{//si no esta seleccionado opcion normal para ese grupo
                                     ?>
-                                    <option value="<?php echo $this->lista_grupos[$i] ;?>">
+                                    <option  value="<?php echo $this->lista_grupos[$i] ;?>">
                                         <?php echo $this->lista_grupos[$i] ;?>
                                     </option>
                                     <?php
                                 }//fin del else
-                                $seleccionado=false;//volvemos a poner seleccionado a false
+                                $sel=false;//volvemos a poner seleccionado a false
 
 							}//fin del bucle for externo
 						
