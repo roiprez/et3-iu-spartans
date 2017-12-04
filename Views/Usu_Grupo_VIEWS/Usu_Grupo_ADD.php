@@ -4,14 +4,14 @@ class Usu_Grupo_ADD// declaración de clase
 {
 
 	//declaracion de atributos
-	var $lista_usuarios;
+	var $usuario;
 	var $lista_grupos;
 	var $lista_valores;
 
     //Constructor
-    function __construct($lista_usuarios,$lista_grupos,$lista_valores)
+    function __construct($usuario,$lista_grupos,$lista_valores)
     {	
-    	$this->lista_usuarios=$lista_usuarios;
+    	$this->usuario=$usuario;
     	$this->lista_valores=$lista_valores;
     	$this->lista_grupos=$lista_grupos;
         $this->pinta();
@@ -28,27 +28,18 @@ class Usu_Grupo_ADD// declaración de clase
                 <th>Grupos</th>
 				<th>Accion</th>
             </tr>
-
-            <?php
-				
-
-
-				
-            foreach ($this->lista_usuarios as $usuario)//recorre todos los usuarios creados creando una fila por usuario
-            {
-                ?>
                     <tr>
                     	<td>
 						<form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
-                            <?php echo $usuario['login'] ;?>
-                            <input type="hidden"  name="login"  value="<?php echo $usuario['login'] ;?>">
+                            <?php echo $usuario ;?>
+                            <input type="hidden"  name="login"  value="<?php echo $usuario ;?>">
                         </td>
                     	<td>
                             <select  multiple name="IdGrupo[]">
                     	<?php
                             $grupos_usuario = array();
                             foreach ($this->lista_valores as $tupla) {//recorre el recordset de datos
-                                if ($tupla['login']==$usuario['login']) {//almacena en un array los grupos a los que pertenece el usuario
+                                if ($tupla['login']==$usuario) {//almacena en un array los grupos a los que pertenece el usuario
 									$grupos_usuario[]=$tupla['IdGrupo'];
 								}//fin if
                             }//fin foreach
@@ -86,10 +77,6 @@ class Usu_Grupo_ADD// declaración de clase
 						</div></td>
         </form>
                     </tr>
-                
-                <?php
-            }//fin del bucle for each
-            ?>
 
         </table>
 
