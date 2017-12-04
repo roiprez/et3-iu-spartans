@@ -32,7 +32,7 @@ class Usu_Grupo_ADD// declaración de clase
                     	<td>
 						<form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
                             <?php echo $usuario ;?>
-                            <input type="hidden"  name="login"  value="<?php echo $usuario ;?>">
+                            <input type="hidden"  name="login"  value="<?php echo "$usuario" ;?>">
                         </td>
                     	<td>
                             <select  multiple name="IdGrupo[]">
