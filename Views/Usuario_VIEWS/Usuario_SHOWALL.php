@@ -57,7 +57,7 @@ class Usuario_SHOWALL{  // declaración de clase
                         ?>
                         <td><button type = "submit" name = "action" value="SHOWCURRENT"><img class="button-td" src="../../Iconos/details.png" title="detalles"></img></button></td>
                         <td><button type = "submit" name = "action" value="EDIT"><img class="button-td" src="../../Iconos/edit.png" title="editar"></img></button></td>
-                        <td><button type = "submit" name = "action" value="ADDGROUP"><img class="button-td" src="../../Iconos/edit.png" title="editar grupos"></img></button></td>
+                        <td><button type = "submit" name = "action" value="ADDGROUP"><img class="button-td" src="../../Iconos/group_add.png" title="editar grupos"></img></button></td>
                         <td><button type = "submit" name = "action" value="DELETE"><img class="button-td" src="../../Iconos/borrar.png" title="borrar línea"></img></button></td>
                     </tr>
                 </form>
