@@ -24,7 +24,7 @@ class Funcionalidad_ADD
             <label>Id funcionalidad
                 <input type="text" name="IdFuncionalidad"
                        id="IdFuncionalidad" required="true"
-                       size="6 maxlength="6"
+                       size="6" maxlength="6"
                 />
             </label>
 
