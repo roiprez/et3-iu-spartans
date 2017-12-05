@@ -111,7 +111,7 @@ if (!isset($_REQUEST['IdGrupo'])){
 		case 'SHOWCURRENT':
 			$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');	
 			$valores = $USUARIOS->RellenaDatos();
-			$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion', 'Telefono');
+			$lista = array('login','DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion', 'Telefono');
 			new Usuario_SHOWCURRENT($lista, $valores);
 			break;
 			

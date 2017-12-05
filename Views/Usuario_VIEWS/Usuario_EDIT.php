@@ -27,7 +27,7 @@ class Usuario_EDIT// declaración de clase
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit')>
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit') && encriptar()">
             <label>Login
                 <input type="text" name="login"
                        id="login" required="true" readonly
@@ -37,7 +37,7 @@ class Usuario_EDIT// declaración de clase
             <label>Password
                 <input type="password" name="password"
                        id="password" required="true"
-                       size="20" maxlength="20"value="<?php echo $this->lista_valores['Password'] ?>"
+                       size="20" maxlength="20" value="<?php echo $this->lista_valores['password'] ?>"
                 />
             </label>
             <label>DNI
