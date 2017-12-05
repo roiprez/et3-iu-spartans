@@ -41,12 +41,15 @@ class Usuario_DELETE{
             <tr>
                 <form id="formulario-borrado" method="post">
                     <td class="celda-botones">
-                        <button name="atras" type="button"><a href="../../Controllers/Index_Controller.php"><img class="button-td" src="../../Iconos/back.png" title="atrás"></a></button>
-                    </td>
-                    <td class="celda-botones">
                         <button type = "submit" name = "action" value = "DELETE"><img class="button-td" src="../../Iconos/borrar.png" title="borrar"></button>
                     </td>
                 </form>
+				<form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
+					 <td class="celda-botones">
+					<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Registrarse"></img></button><!--Imagen para la accion back,que permite volver al menu principal-->
+					</td>
+					</form> 
+        
             </tr>
         </table>
 
