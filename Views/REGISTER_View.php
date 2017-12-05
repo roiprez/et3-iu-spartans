@@ -22,13 +22,13 @@ class Register{
                 <input type="password" name="password" id = 'password' required="true" size="20" maxlength="20" onchange="comprobarVacio(this) && comprobarTexto(this, 20)"/>
             </label>
             <label>DNI
-                <input type="text" name="DNI" required="true" size="9" maxlength="9" onchange="comprobarVacio(this) && comprobarDni(this)"/>
+                <input type="text" name="DNI" required="true" size="9" maxlength="9" onchange="comprobarDni(this)"/>
             </label>
             <label><?php echo $strings['Nombre']; ?>
-                <input type="text" name="Nombre" required="true" size="30" maxlength="30" required="true" onchange="comprobarVacio(this) && comprobarAlfabetico(this, 30)"/>
+                <input type="text" name="Nombre" required="true" size="30" maxlength="30" required="true" onchange="comprobarAlfabetico(this, 30)"/>
             </label>
             <label><?php echo $strings['Apellidos']; ?>
-                <input type="text" name="Apellidos" required="true" size="50" maxlength="50" required="true" onchange="comprobarVacio(this) && comprobarAlfabetico(this, 50)"/>
+                <input type="text" name="Apellidos" required="true" size="50" maxlength="50" required="true" onchange="comprobarAlfabetico(this, 50)"/>
             </label>
             <label>Email
                 <input type="text" name="Correo" required="true" size="40" maxlength="40" onchange="comprobarEmail(this, 40)"/>

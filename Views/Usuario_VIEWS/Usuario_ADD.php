@@ -21,7 +21,7 @@ class Usuario_ADD// declaración de clase
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add') && encriptar()">
 
             <label>Login
                 <input type="text" name="login"
