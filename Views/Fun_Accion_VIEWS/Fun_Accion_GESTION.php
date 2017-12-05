@@ -3,16 +3,16 @@
 class Fun_Accion_GESTION// declaración de clase
 {
 //declaracion de atributos
-	var $lista_usuarios;
-	var $lista_grupos;
+	var $lista_funcionalidades;
+	var $accion;
 	var $lista_valores;
 
     //Constructor
     function __construct($lista_funcionalidades,$accion,$lista_valores)
     {	
     	$this->lista_funcionalidades=$lista_funcionalidades;
-    	$this->lista_valores=$lista_valores;
     	$this->accion=$accion;
+    	$this->lista_valores=$lista_valores;
         $this->pinta();
     }
     function pinta()
