@@ -4,22 +4,28 @@ class Usu_Grupo_ADD// declaración de clase
 {
 
 	//declaracion de atributos
-	var $usuario;
+	var $datosusuario;
 	var $lista_grupos;
 	var $lista_valores;
-
+	
+	var $usuario;
     //Constructor
-    function __construct($usuario,$lista_grupos,$lista_valores)
+    function __construct($datosUsuario,$lista_grupos,$lista_valores)
     {	
-    	$this->usuario=$usuario;
+    	$this->datosUsuario=$datosUsuario;
     	$this->lista_valores=$lista_valores;
     	$this->lista_grupos=$lista_grupos;
+		$this->usuario;
         $this->pinta();
     }
     function pinta()
     {
         //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
+		
+			$this->usuario = $this->datosUsuario->fetch_array(); //Asignamos al array usuario la tupla contenida en el sql datosUsuario
+
+		
         ?>
 
         	<table>
@@ -31,15 +37,15 @@ class Usu_Grupo_ADD// declaración de clase
                     <tr>
                     	<td>
 						<form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
-                            <?php echo $usuario ;?>
-                            <input type="hidden"  name="login"  value="<?php echo "$usuario" ;?>">
+                            <?php echo $this->usuario['login'] ;?>
+                            <input type="hidden"  name="login"  value="<?php echo $this->usuario['login'] ;?>">
                         </td>
                     	<td>
                             <select  multiple name="IdGrupo[]">
                     	<?php
                             $grupos_usuario = array();
                             foreach ($this->lista_valores as $tupla) {//recorre el recordset de datos
-                                if ($tupla['login']==$usuario) {//almacena en un array los grupos a los que pertenece el usuario
+                                if ($tupla['login']==$this->usuario['login']) {//almacena en un array los grupos a los que pertenece el usuario
 									$grupos_usuario[]=$tupla['IdGrupo'];
 								}//fin if
                             }//fin foreach

@@ -117,10 +117,11 @@ if (!isset($_REQUEST['IdGrupo'])){
 			
 		case 'ADDGROUP':
 			if(!$_POST){ //Si no hay informacion
-				$USUARIOS = new USUARIOS_Model('','','', '','','', '', ''); //Nuevo modelo de usuario
+				$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','', '','','', '', ''); //Nuevo modelo de usuario
 				$GRUPOS =new GRUPOS_Model('','',''); //Nuevo modelo de grupo
 				
-				$datosUsu = $USUARIOS->SEARCH(); // Devuelve toda la tabla de usuarios
+				$datosUsu = $USUARIOS->SEARCH(); // Devuelve la tupla del usuario
+
 				$datosGru = $GRUPOS->SEARCH(); //Devuelve toda la tabla de grupos
 				
 				$grupostotales = array(); //Array que contendrá todos los grupos existentes
@@ -132,7 +133,7 @@ if (!isset($_REQUEST['IdGrupo'])){
 				$datosUsuGrup = $USU_GRUP->SEARCH(); //Devolverá todos los pares usuario_grupo		
 				new Usu_Grupo_ADD($datosUsu,$grupostotales,$datosUsuGrup); //Muestra la vista de USU_GRUPO
 			}
-			else{//Si se ha hehco un post
+			else{//Si se ha hecho un post
 				
 				$login=$_REQUEST['login']; //Definimos login para poder utilizarlo tantas veces como select se hayan seleccionado
 				$USU_GRUPOPREVIO= new USU_GRUPO_Model($login,''); //Definimos un modelo de USU_GRUPO con el login que se nos pasa para borrar todos los grupos que tenia seleccionados de antes
