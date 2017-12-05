@@ -24,7 +24,7 @@ class Grupo_ADD
             <label>Id del grupo
                 <input type="text" name="IdGrupo"
                        id="IdGrupo" required="true"
-                       size="6 maxlength="6"
+                       size="6" maxlength="6"
                 />
             </label>
 
