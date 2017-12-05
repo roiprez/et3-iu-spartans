@@ -133,7 +133,7 @@ function validarFormulario(formulario){
     return false;
    }
    
-  if(!comprobarTexto(campo, 60)){
+  if(!comprobarAlfabetico(campo, 60,'')){
     return false;
   }
 
@@ -265,6 +265,14 @@ if (!campo.value.match(/^[a-zA-ZÁÉÍÓÚÜáéíóüúñÑ-\s]*$/)){//Si el va
 		campo.focus();
 		return false;
 		}
+		
+		if(campo.name=='Direccion'){
+		alert('El campo direccion solo puede contener letras');
+		
+		campo.focus();
+		return false;
+		}
+		
 		if(campo.name=='Apellidos'){
 		alert('El campo apellidos solo puede contener letras');
 		campo.focus();
@@ -278,6 +286,14 @@ if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que
 			campo.focus();
 			return false;
 		}
+		
+		if(campo.name=='Direccion'){
+		alert('El tamaño de direccion sobrepasa');
+		
+		campo.focus();
+		return false;
+		}
+		
 		if(campo.name=='Apellidos'){
 			alert('El tamaño de apellidos sobrepasa');
 			

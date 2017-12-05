@@ -34,37 +34,37 @@ class Usuario_SEARCH
             <label>DNI
                 <input type="text" name="DNI"
                        id="DNI"
-                       size="9" maxlength="9"
+                       size="9" maxlength="9" onBlur="comprobarDni(this,'search')"
                 />
             </label>
             <label>Nombre
                 <input type="text" name="Nombre"
                        id="Nombre"
-                       size="30" maxlength="30"
+                       size="30" maxlength="30" onBlur="comprobarAlfabetico(this, this.size, 'search')"
                 />
             </label>
             <label>Apellidos
                 <input type="text" name="Apellidos"
                        id="Apellidos"
-                       size="50" maxlength="50"
+                       size="50" maxlength="50" onBlur="comprobarAlfabetico(this, this.size, 'search')"
                 />
             </label>
             <label>Correo
                 <input type="text" name="Correo"
                        id="Correo"
-                       size="40" maxlength="40"
+                       size="40" maxlength="40" onBlur="comprobarEmail(this,this.size,'search')"
                 />
             </label>
             <label>Direccion
                 <input type="text" name="Direccion"
                        id="Direccion"
-                       size="60" maxlength="60"
+                       size="60" maxlength="60" onBlur="comprobarAlfabetico(this, this.size, 'search')"
                 />
             </label>
             <label>Telefono
                 <input type="text" name="Telefono"
                        id="Telefono"
-                       size="11" maxlength="11"
+                       size="11" maxlength="11" onBlur="comprobarTelf(this)"
                 />
             </label>
 
