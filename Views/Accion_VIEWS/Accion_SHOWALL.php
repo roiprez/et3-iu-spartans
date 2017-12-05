@@ -57,6 +57,7 @@ class Accion_SHOWALL
                         ?>
                         <td><button type = "submit" name = "action" value="SHOWCURRENT"><img class="button-td" src="../../Iconos/details.png" title="detalles"></button></td>
                         <td><button type = "submit" name = "action" value="EDIT"><img class="button-td" src="../../Iconos/edit.png" title="editar"></button></td>
+                        <td><button type = "submit" name = "action" value="ADDFUNCTIONALITY"><img class="button-td" src="../../Iconos/functionality_add.png" title="editar funcionalidades"></img></button></td>
                         <td><button type = "submit" name = "action" value="DELETE"><img class="button-td" src="../../Iconos/borrar.png" title="borrar línea"></button></td>
                     </tr>
                 </form>

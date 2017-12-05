@@ -49,6 +49,7 @@ array(
 	'La accion ya esta asignada a esa funcionalidad' => 'La accion ya esta asignada a esa funcionalidad',
 	'La accion no existe o el Id es incorrecto' => 'La accion no existe o el Id es incorrecto',
 	'La funcionalidad no existe o el Id es incorrecto' => 'La funcionalidad no existe o el Id es incorrecto',
+	'Se han registrado sus cambios' => 'Se han registrado sus cambios',
 	
 	/*Diccionario para GRUPOS_Model*/
 	'El usuario ya esta asignado a ese grupo' => 'El usuario ya esta asignado a ese grupo',

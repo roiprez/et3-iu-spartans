@@ -9,8 +9,9 @@ class FUNCIONALIDADES_MODEL{
     function __construct($idFuncionalidad,$nobreFuncionalidad,$descripFuncionalidad)
     {
         $this->idFuncionalidad=$idFuncionalidad;
-        $this->descripFuncionalidad=$descripFuncionalidad;
         $this->nombreFuncionalidad=$nobreFuncionalidad;
+        $this->descripFuncionalidad=$descripFuncionalidad;
+        
 
         //Creamos el conector a la base de datos
         include_once '../Models/Access_DB.php';
@@ -146,6 +147,21 @@ class FUNC_ACCION_Model {
         $this->mysqli = ConectarBD();
 
     }
+
+    function reventarFuncionalidad(){
+                
+        $sql="DELETE
+                FROM FUNC_ACCION
+                WHERE ((IdFuncionalidad LIKE '$this->idFuncionalidad') && (IdAccion='$this->idAccion'))";
+                if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
+                    return 'Error en el borrado';
+                }
+                else{ //si no da error en la insercion devolvemos mensaje de exito
+                    return 'Inserción realizada con éxito'; //operacion de insertado correcta
+                }
+                
+    }
+    
     function ADD()
     {
         if ($this->idFuncionalidad <> '') {//Se comprueba que grupo no este vacio
@@ -154,7 +170,7 @@ class FUNC_ACCION_Model {
                 return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
             else {// si la query no da error
                 if ($result->num_rows == 1) {//miramos que el Grupo existe en la BD
-                    if ($this->login <> '') {// Se comprueba que login no este vacio
+                    if ($this->idFuncionalidad <> '') {// Se comprueba que login no este vacio
                         $sql = "SELECT * FROM ACCION WHERE (IdAccion= '$this->idAccion')";
                         if (!$result = $this->mysqli->query($sql)) { // si da error la ejecución de la query
                             return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido
@@ -166,7 +182,7 @@ class FUNC_ACCION_Model {
                                                                                   &&(IdAccion='$this->idAccion'))";
                                 $result = $this->mysqli->query($sql);
                                 if($result->num_rows ==0){// Comprobamos que el usuario no este ya asignado al grupo
-                                    $sql="INSERT INTO FUNC_ACCCION
+                                    $sql="INSERT INTO FUNC_ACCION
                                             (
                                             IdFuncionalidad,
                                             IdAccion)
@@ -195,6 +211,19 @@ class FUNC_ACCION_Model {
         else // si el atributo clave de la bd es vacio solicitamos un valor en un mensaje
             return 'Introduzca un valor'; // introduzca un valor para el grupo
     } // fin del metodo ADD
+
+    function SEARCH(){
+		$sql = "SELECT * FROM FUNCIONALIDAD WHERE (IdFuncionalidad = '$this->idFuncionalidad')";
+        $sql = "SELECT * FROM FUNC_ACCION WHERE ((IdAccion LIKE '%$this->idAccion%') && (IdFuncionalidad LIKE '%$this->idFuncionalidad%'))";
+        // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
+        if (!($resultado = $this->mysqli->query($sql))){
+            return 'Error en la consulta sobre la base de datos';
+        }
+        else{ // si la busqueda es correcta devolvemos el recordset resultado
+            return $resultado;
+        }
+        } // fin metodo SEARCH
+
     function DELETE(){
         //se comprueba que existe existe la tupla a borrar si es asi se borra
         //si no, se alerta de que no existe
