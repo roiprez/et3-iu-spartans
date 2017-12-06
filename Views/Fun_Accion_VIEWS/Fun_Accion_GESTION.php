@@ -26,7 +26,7 @@ class Fun_Accion_GESTION// declaración de clase
         	<table>
             <tr>
                 <th>Funcionalidad</th>
-                <th>Acciones</th>
+                <th>Asignado</th>
             </tr>
 
             <?php
@@ -34,11 +34,11 @@ class Fun_Accion_GESTION// declaración de clase
             {
                 ?>
                     <tr>
-                    	<td>
+                    	<td class="celda">
                             <?php echo $this->lista_funcionalidades[$i]?>
                             <input type="text" hidden value="<?php echo $this->lista_funcionalidades[$i]?>">
                         </td>
-                    	<td>
+                    	<td class="celda">
                         <?php
                             if($this->lista_valores[$i]){
                                 ?>   
