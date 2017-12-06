@@ -7,6 +7,7 @@ Controlador que se encarga de hacer login en la aplicación
 
 
 session_start();
+$_SESSION['login'] = null;
 if(!isset($_REQUEST['login']) && !(isset($_REQUEST['password']))){
 	include '../Views/LOGIN_View.php';
 	$login = new Vista_LOGIN();
