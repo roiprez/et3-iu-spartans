@@ -26,13 +26,13 @@ class Vista_LOGIN{
             <input type = 'text' name = 'login' placeholder = 'login' size = '9' maxlength="9" onchange="comprobarVacio(this) && comprobarTexto(this, 9)"  ><br>
             <input type = 'password' name = 'password' id='password' placeholder = 'password' maxlength="20" size = '20' value = '' onchange="comprobarVacio(this) && comprobarTexto(this, 20)"  ><br>
 
-            <button id="enviar" type='submit' name='action'><img class="button-td" src="../Iconos/send.png" title="enviar"></img></button>
+            <button id="enviar" type='submit' name='action'  title="enviar"><img class="button-td" src="../Iconos/send.png"></img></button>
         </form>
 
 
         <form id="formulario-registro" action="../Controllers/Registro_Controller.php" method="post" style="border:none;">
 
-        <button id="boton-registro" type='submit' name='action'><img class="button-td" src="../Iconos/ic_person_add.png" title="Registrarse"></img></button>
+        <button id="boton-registro" type='submit' name='action' title="Registrarse"><img class="button-td" src="../Iconos/ic_person_add.png" ></img></button>
         </form>
 
 

@@ -46,7 +46,7 @@ class Vista_MESSAGE{
         <br>
 
 		<form id="Formulario-mensaje" action="<?php echo $this->volver ?>" method="get">
-		<button id="boton-mensaje" type='submit' name='action'><img class="button-td" src="../Iconos/back.png" title="Registrarse"></img></button> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action' title="Registrarse"><img class="button-td" src="../Iconos/back.png" ></img></button> <!--Imagen para la accion back,que permite volver al menu principal-->
 		</center></form>
 
         
