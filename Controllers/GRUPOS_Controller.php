@@ -105,7 +105,7 @@ if (!isset($_REQUEST['action'])){
                 }
                 $PERMISO =new PERMISOS_Model('','',''); // Nuevo modelo de PERMISO
                 $datosPermiso = $PERMISO->SEARCH(); //Devolverá toda la tabla
-                new /*Poner nombre vista*/Usu_Grupo_ADD($datosGru,$accionesTotales,$funcionalidadesTotales,$datosUsuGrup); //Muestra la vista de USU_GRUPO
+                new /*Poner nombre vista*/Usu_Grupo_ADD($datosGru,$accionesTotales,$funcionalidadesTotales,$datosPermiso); //Muestra la vista de USU_GRUPO
             }
             else{//Si se ha hecho un post
 
