@@ -17,6 +17,58 @@ class PERMISOS_Model{
         $this->mysqli = ConectarBD();
     }
 
+    function ADD()
+    {
+        if ($this->idGrupo <> '') {//Se comprueba que grupo no este vacio
+            $sql = "SELECT * FROM GRUPO WHERE (IdGrupo= '$this->idGrupo')";
+            if (!$result = $this->mysqli->query($sql))  // si da error la ejecución de la query
+                return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido
+                                                                      // conectar con la bd). Devolvemos un mensaje que el controlador manejara
+            else {// si la query no da error
+                if ($result->num_rows == 1) {//miramos que el Grupo existe en la BD
+                    if ($this->idFuncionalidad <> ''&& $this->idAccion <>'') {// Se comprueba que idFuncionalidad e idAccion no esten vacios
+                        $sql = "SELECT * FROM FUNC_ACCION WHERE ((IdFuncionalidad = '$this->idFuncionalidad')&&(IdAccion = '$this->idAccion'))";
+                        if (!$result = $this->mysqli->query($sql)) { // si da error la ejecución de la query
+                            return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido
+                            // conectar con la bd). Devolvemos un mensaje que el controlador manejara
+                        }
+                        else {//si la query no da error
+                            if ($result->num_rows == 1) {//miramos que la Funcionalidad tiene Asignada esa Accion  en la BD
+                                $sql="SELECT * FROM PERMISO WHERE ((IdGrupo='$this->idGrupo')&&(IdFuncionalidad = '$this->idFuncionalidad')
+                                                                                                            &&(IdAccion = '$this->idAccion'))";
+                                $result = $this->mysqli->query($sql);
+                                if($result->num_rows ==0){// Comprobamos que el grupo no tiene asignado ese permiso
+                                    $sql="INSERT INTO PERMISO
+                                            (
+                                            IdGrupo,
+                                            IdFuncionalidad,
+                                            IdAccion)
+                                            VALUES (
+                                            $this->idGrupo,
+                                            $this->idFuncionalidad,
+                                            $this->idAccion
+                                            )";
+                                    if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
+                                        return 'Error en la inserción';
+                                    }
+                                    else{ //si no da error en la insercion devolvemos mensaje de exito
+                                        return 'Inserción realizada con éxito'; //operacion de insertado correcta
+                                    }
+                                }
+                                else // Si el premiso ya estaba asignado se notifica
+                                    return 'Permiso ya concedido prebiamente';
+                            }
+                            else // si esa funcionalidad no tiene asignada dicha accion
+                                return 'No existe esa accion para la funcionalidad seleccionada'; // ya existe
+                        }
+                    }
+                }else // si no existe ese valor en GRUPO se avisa de que el grupo no existe o es incorrecto
+                    return 'El grupo no existe o el codigo es incorrecto'; // ya existe
+            }
+        }
+        else // si el atributo clave de la bd es vacio solicitamos un valor en un mensaje
+            return 'Introduzca un valor'; // introduzca un valor para el grupo
+    } // fin del metodo ADD
     function SEARCH(){
     //Se contruye la sentencia de busqueda usando Like
 $sql= "SELECT
@@ -50,6 +102,19 @@ else{ // si la busqueda es correcta devolvemos el recordset resultado
             return $result;
         }
     } // fin del metodo RellenaDatos()
+    function reventarPermiso(){
+
+        $sql="DELETE
+		FROM PERMISO
+		WHERE (IdGrupo LIKE '$this->idGrupo')";
+        if (!$this->mysqli->query($sql)) { // si da error en la ejecución del delete devolvemos mensaje
+            return 'Error en el borrado';
+        }
+        else{ //si no da error en el borrado devolvemos mensaje de exito
+            return 'Inserción realizada con éxito'; //operacion de borrado correcta
+        }
+
+    }
 
 }
 ?>

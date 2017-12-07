@@ -181,9 +181,6 @@ function __construct($login,$idGrupo)
                                 $sql="SELECT * FROM USU_GRUPO WHERE ((login='$this->login')&&(IdGrupo='$this->idGrupo'))";
                                 $result = $this->mysqli->query($sql);
                                 if($result->num_rows ==0){// Comprobamos que el usuario no este ya asignado al grupo
-
-									
-									
 									$sql="INSERT INTO USU_GRUPO
                                             (
                                             login,

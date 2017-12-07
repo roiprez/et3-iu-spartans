@@ -113,8 +113,6 @@ if (!isset($_REQUEST['action'])){
 					}
 					array_push($lista_funcionalidades_accion, $contained);
 				}
-
-
 				new Fun_Accion_GESTION($lista_funcionalidades,$_REQUEST['IdAccion'],$lista_funcionalidades_accion);
 			}
 				else{//Si se ha hehco un post	
