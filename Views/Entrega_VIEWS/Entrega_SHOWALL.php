@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 11:50
+ 
+ * User: Diego
+ * Date: 07/12/2017
+ * Time: 13:02
  */
 
-class Permiso_SHOWALL
-{
+class Entrega_SHOWALL{  // declaración de clase
+
     var $lista;
     var $datos;
     var $indexphp;
@@ -27,6 +27,7 @@ class Permiso_SHOWALL
         ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">
+                <button type = "submit" name = "action" value="ADD" title="añadir una fila"><img src="../Iconos/add.png" ></button>
                 <button type = "submit" name = "action" value="SEARCH" title="buscar en la tabla"><img src="../Iconos/search.png" ></button>
             </div>
         </form>
@@ -54,7 +55,9 @@ class Permiso_SHOWALL
                             <?php
                         }
                         ?>
-                        <td><button type = "submit" name = "action" value="SHOWCURRENT" title="detalles"><img class="button-td" src="../Iconos/details.png" ></img></button></td>
+                        <td><button type = "submit" name = "action" value="SHOWCURRENT"  title="detalles"><img class="button-td" src="../Iconos/details.png"></img></button></td>
+                        <td><button type = "submit" name = "action" value="EDIT" title="editar"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
+                        <td><button type = "submit" name = "action" value="DELETE"  title="borrar línea"><img class="button-td" src="../Iconos/borrar.png"></img></button></td>
                     </tr>
                 </form>
                 <?php

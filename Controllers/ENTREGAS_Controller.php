@@ -1,11 +1,15 @@
 <?php
     include '../Models/ENTREGAS_Model.php';
+    include '../Models/USUARIOS_Model.php';
+    include '../Models/TRABAJOS_Model.php';
     include '../Views/Entrega_VIEWS/Entrega_ADD.php';
     include '../Views/Entrega_VIEWS/Entrega_DELETE.php';
     include '../Views/Entrega_VIEWS/Entrega_EDIT.php';
     include '../Views/Entrega_VIEWS/Entrega_SEARCH.php';
     include '../Views/Entrega_VIEWS/Entrega_SHOWALL.php';
     include '../Views/Entrega_VIEWS/Entrega_SHOWCURRENT.php';
+    include '../Views/MESSAGE_View.php';
+    include '../Functions/upload.php';
 
 function get_data_form(){
     $IdTrabajo = $_REQUEST['IdTrabajo'];
@@ -18,7 +22,9 @@ function get_data_form(){
     $ENTREGAS = new ENTREGAS_Model(
         $IdTrabajo,
         $login,
-        $Alias
+        $Alias,
+        $Horas, 
+        $Ruta
   
     );
 
@@ -29,14 +35,30 @@ if (!isset($_REQUEST['action'])){
     $_REQUEST['action'] = '';
 }
 
-
 Switch ($_REQUEST['action']){
     case 'ADD':
         if (!$_POST){
-            new Entrega_ADD();
+            $TRABAJOS = new TRABAJOS_Model('', '', '', '');    
+            $trabajos = $TRABAJOS->SEARCH();
+            
+            $USUARIOS = new USUARIOS_Model('', '', '', '', '', '', '', '');    
+            $usuarios = $USUARIOS->SEARCH();
+            
+            $lista_trabajos = [];
+            $lista_usuarios = [];
+            
+            while($row = $trabajos->fetch_array()) {
+                array_push($lista_trabajos, $row[0]);
+            }
+            while($row = $usuarios->fetch_array()) {
+                array_push($lista_usuarios, $row[0]);
+            }
+            
+            new Entrega_ADD($lista_trabajos, $lista_usuarios, 'alias');
         }
         else{
-            $ENTREGAS = get_data_form();
+            $Ruta = upload_entrega($_REQUEST['Alias']);
+            $ENTREGAS = new ENTREGAS_Model($_REQUEST['IdTrabajo'], $_REQUEST['login'], $_REQUEST['Alias'], $_REQUEST['Horas'], $Ruta);
             $respuesta = $ENTREGAS->ADD();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         }

@@ -52,7 +52,9 @@ class ENTREGAS_Model{   //Declaracion de la clase
                             $sql =  "INSERT INTO ENTREGA (
                                  IdTrabajo,
                                  login,
-                                 Alias)
+                                 Alias,
+                                 Horas,
+                                 Ruta)
                                   VALUES (
                                     '$this->idTrabajo',
                                     '$this->login',

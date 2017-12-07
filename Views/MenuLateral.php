@@ -70,6 +70,14 @@ Vista que contiene el Menú lateral
 								<li><a href="../Controllers/Index_Controller.php?Controlador=HISTORIAS&action=SEARCH">Buscar</a></li>
 							</ul>
 						</li>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_entregas')" type="button" name="Controlador" value="ENTREGAS" class="dropbtn"></input>
+							<ul id="submenu_entregas" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ENTREGAS">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ENTREGAS&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ENTREGAS&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
 					</ul>
 				</aside>
         <?php				
