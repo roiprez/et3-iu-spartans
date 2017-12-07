@@ -66,7 +66,7 @@ class Evaluacion_EDIT// declaración de clase
                 </select>
             </label>
             <label>Comentario
-                <textarea form="formulario-add" maxlength="300" name="ComenIncorrectoA"><?php echo "$this->lista_valores['ComenIncorrectoA']" ?></textarea>
+                <textarea form="formulario-edit" maxlength="300" name="ComenIncorrectoA"><?php echo "$this->lista_valores['ComenIncorrectoA']" ?></textarea>
             </label>
             <label>Corrección del profesor
                 <select name="CorrectoP" id="CorrectoP" required="true" size="1">
@@ -82,7 +82,7 @@ class Evaluacion_EDIT// declaración de clase
                 </select>
             </label>
             <label>Comentario
-                <textarea form="formulario-add" maxlength="300" name="ComenIncorrectoP"><?php echo "$this->lista_valores['ComenIncorrectoP']" ?></textarea>
+                <textarea form="formulario-edit" maxlength="300" name="ComenIncorrectoP"><?php echo "$this->lista_valores['ComenIncorrectoP']" ?></textarea>
             </label>
             <label>Corrección de la evaluación
                 <select name="OK" id="OK" required="true" size="1">

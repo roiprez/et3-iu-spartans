@@ -9,12 +9,16 @@
 class Entrega_ADD// declaración de clase
 {
 
-  var $lista_Valores;
+  var $lista_Usuarios;
+  var $lista_Trabajos;
+  var $alias;
 
     //Constructor
-    function __construct($lista_Valores)
+    function __construct($lista_usuarios,$lista_trabajos,$alias)
     {
-        $this->lista_Valores=$lista_Valores;
+        $this->lista_Usuarios=$lista_usuarios;
+        $this->lista_trabajos=$lista_trabajos;
+        $this->alias=$alias;
         $this->pinta();
     }
     function pinta()
@@ -26,32 +30,42 @@ class Entrega_ADD// declaración de clase
         <form id="formulario-add" name="formulario_add" method="post" enctype="multipart/form-data" onSubmit="return validarFormulario('add') ">
 
             <label>Login
-                <input type="text" name="login"
-                       id="login" required="true" readonly="true"
-                       size="9" maxlength="9" value="<?php echo "$this->lista_Valores['login']"?>" 
-                />
+                <select name="login" id="login" required="true" size="1">
+                  <?php 
+                    for($i=0;$i<count($this->lista_Usuarios);$i++){
+                      ?>
+                      <option value="<?php echo "$this->lista_Usuarios[$i]" ?>"><?php echo "$this->lista_Usuarios[$i]" ?></option>
+                      <?php
+                    }//fin del bucle
+                  ?>
+                </select>
             </label>
             <label>Id del Trabajo
-                <input type="text" name="IdTrabajo" readonly="true"
-                       id="IdTrabajo" required="true"
-                       size="6" maxlength="6" value="<?php echo "$this->lista_Valores['IdTrabajo']"?>" 
-                />
+                <select name="IdTrabajo" id="IdTrabajo" required="true" size="1">
+                  <?php 
+                    for($i=0;$i<count($this->lista_Trabajos);$i++){
+                      ?>
+                      <option value="<?php echo "$this->lista_Trabajos[$i]" ?>"><?php echo "$this->lista_Trabajos[$i]" ?></option>
+                      <?php
+                    }//fin del bucle
+                  ?>
+                </select>
             </label>
             <label>Alias
                 <input type="text" name="Alias" readonly="true"
                        id="Alias" required="true"
-                       size="9" maxlength="9" value="<?php echo "$this->lista_Valores['Alias']"?>" 
+                       size="9" maxlength="9" value="<?php echo "$alias"?>" 
                 />
             </label>
             <label>Horas
                 <input type="number" name="Horas"
-                       id="Horas" required="true"
+                       id="Horas" 
                        size="2" maxlength="2"
                 />
             </label>
             <label>Ruta
                 <input type="file" name="Ruta"
-                       id="Ruta" required="true"
+                       id="Ruta" 
                        size="60" maxlength="60"
                 />
             </label>
