@@ -91,7 +91,7 @@ if (!isset($_REQUEST['action'])){
 			}
 			break;
 		case 'SHOWCURRENT':
-			$EVALUACION = new Evaluacion_Model($_REQUEST['login'], '', '', '', '', '', '', '');	
+			$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], '', '', '', '', '');
 			$valores = $EVALUACION->RellenaDatos();
 			$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComenIncorrectoP','OK');
 			new Evaluacion_SHOWCURRENT($lista, $valores);
