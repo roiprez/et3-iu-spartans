@@ -78,6 +78,22 @@ Vista que contiene el Menú lateral
 								<li><a href="../Controllers/Index_Controller.php?Controlador=ENTREGAS&action=SEARCH">Buscar</a></li>
 							</ul>
 						</li>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_notas')" type="button" name="Controlador" value="NOTAS" class="dropbtn"></input>
+							<ul id="submenu_notas" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=NOTAS">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=NOTAS&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=NOTAS&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_evaluaciones')" type="button" name="Controlador" value="EVALUACIONES" class="dropbtn"></input>
+							<ul id="submenu_evaluaciones" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=EVALUACIONES">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=EVALUACIONES&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=EVALUACIONES&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
 					</ul>
 				</aside>
         <?php				
