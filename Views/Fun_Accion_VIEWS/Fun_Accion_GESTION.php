@@ -20,12 +20,12 @@ class Fun_Accion_GESTION// declaración de clase
         //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
         ?>
-        <h1>Acción: <?php echo $this->accion?></h1>
+        <h1>Funcinalidad: <?php echo $this->accion?></h1>
         <form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
 
         	<table>
             <tr>
-                <th>Funcionalidad</th>
+                <th>Acción</th>
                 <th>Asignado</th>
             </tr>
 
@@ -42,12 +42,12 @@ class Fun_Accion_GESTION// declaración de clase
                         <?php
                             if($this->lista_valores[$i]){
                                 ?>   
-                                <input type="checkbox" name='IdFuncionalidad[<?php echo $i?>]' value="<?php echo $this->lista_funcionalidades[$i]?>" checked/>
+                                <input type="checkbox" name='IdAccion[<?php echo $i?>]' value="<?php echo $this->lista_funcionalidades[$i]?>" checked/>
                                 <?php
                             }
                             else {
                                 ?>
-                                <input type="checkbox" name='IdFuncionalidad[<?php echo $i?>]' value="<?php echo $this->lista_funcionalidades[$i]?>"/>
+                                <input type="checkbox" name='IdAccion[<?php echo $i?>]' value="<?php echo $this->lista_funcionalidades[$i]?>"/>
                                 <?php
                             }
                         ?>
@@ -61,7 +61,7 @@ class Fun_Accion_GESTION// declaración de clase
         </table>
 
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADDFUNCTIONALITY" type="submit" title="enviar"><img class="button-td" src="../../Iconos/send.png" ></button>
+                <button id="enviar" name = "action" value = "ADDACTION" type="submit" title="enviar"><img class="button-td" src="../../Iconos/send.png" ></button>
                 <button class="borrar" type="reset" name="limpiar" title="borrar el contenido introducido"> <img class="button-td" src="../../Iconos/borrar_campo.png" ></button>
             </div>
         </form>
