@@ -28,19 +28,19 @@ function get_data_form(){
 	$ComenIncorrectoP = $_REQUEST['ComenIncorrectoP'];
 	$OK = $_REQUEST['OK'];
 	$accion = $_REQUEST['accion'];
-	$USUARIOS = new USUARIOS_Model(
-		$IdTrabajo;
-		$LoginEvaluador;
-		$AliasEvaluado;
-		$IdHistoria;
-		$CorrectoA;
-		$ComenIncorrectoA;
-		$CorrectoP;
-		$ComenIncorrectoP;
-		$OK;
+	$EVALUACION = new EVALUACION_Model(
+		$IdTrabajo,
+		$LoginEvaluador,
+		$AliasEvaluado,
+		$IdHistoria,
+		$CorrectoA,
+		$ComenIncorrectoA,
+		$CorrectoP,
+		$ComenIncorrectoP,
+		$OK
 		);
 
-	return $USUARIOS;
+	return $EVALUACION;
 }
 //Como la password en la vista delete no está, al volver atrás del delete muestra un error de que no se encuentra inicializada
 
@@ -52,6 +52,17 @@ if (!isset($_REQUEST['action'])){
 	
 	Switch ($_REQUEST['action']){
 
+		case 'ADD':
+			if (!$_POST){
+				new Evaluacion_ADD();
+			}
+			else{
+				
+				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComenIncorrectoP'], $_REQUEST['OK']);
+				$respuesta = $EVALUACION->ADD();
+				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+			}
+			break;
 		case 'DELETE':
 			if (!$_POST){
 				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], '', '', '', '', '');
