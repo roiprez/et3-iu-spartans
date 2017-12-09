@@ -94,6 +94,14 @@ Vista que contiene el Menú lateral
 								<li><a href="../Controllers/Index_Controller.php?Controlador=EVALUACIONES&action=SEARCH">Buscar</a></li>
 							</ul>
 						</li>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_permisos')" type="button" name="Controlador" value="PERMISOS" class="dropbtn"></input>
+							<ul id="submenu_permisos" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS&action=SEARCH">Buscar</a></li>
+							</ul>
+						</li>
 					</ul>
 				</aside>
         <?php				
