@@ -32,7 +32,7 @@ function __construct($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$IdHistoria,$Corr
 	$this->ComenIncorrectoA = $ComenIncorrectoA;
 	$this->CorrectoP = $CorrectoP;
 	$this->ComenIncorrectoP = $ComenIncorrectoP;
-	$this->OK = $Ok;
+	$this->OK = $OK;
 	
 
 	// incluimos la funcion de acceso a la bd
@@ -43,10 +43,75 @@ function __construct($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$IdHistoria,$Corr
 } // fin del constructor
 
 
+function ADD()
+{	
+			$sql1 = "SELECT * FROM ASIGNAC_QA WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluado = '$this->LoginEvaluador') && (AliasEvaluado = '$this->AliasEvaluado') ";
+			// se construye la sentencia de busqueda de la tupla en la bd
+			if (!$result = $this->mysqli->query($sql1))  // si da error la ejecución de la query
+						return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
+					
+		else {// si la query no da error
+		if ($result->num_rows == 1){
+					//sentencia que las historias de un trabajo para un alias y un login determinados
+			$sql2= "SELECT * FROM HISTORIA WHERE (IdTrabajo = '$this->IdTrabajo') && (IdHistoria = '$this->IdHistoria')";
+			if (!$result = $this->mysqli->query($sql2))  // si da error la ejecución de la query
+				return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
+			
+			else {// si la query no da error
+				 if ($result->num_rows == 1){ //Si existe en la tabla Historia el IdTrabajo y el IdHistoria indicados
+					$sql3= "SELECT * FROM EVALUACION WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluador = '$this->LoginEvaluador') && (Alias = '$this->AliasEvaluado') && (IdHistoria = '$this->IdHistoria')";
+						if (!$result = $this->mysqli->query($sql3))  // si da error la ejecución de la query
+				return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
+			
+			else {// si la query no da error
+					 if ($result->num_rows == 0){
+									$sql = "INSERT INTO EVALUACION(
+										IdTrabajo,
+										LoginEvaluador,
+										AliasEvaluado,
+										IdHistoria,
+										CorrectoA,
+										ComenIncorrectoA,
+										CorrectoP,
+										ComenIncorrectoP,
+										OK)
+										VALUES(
+										'$this->IdTrabajo',
+										'$this->LoginEvaluador',
+										'$this->AliasEvaluado',
+										'$this->IdHistoria,
+										'$this->CorrectoA',
+										'$this->ComenIncorrectoA',
+										'$this->CorrectoP',
+										'$this->ComenIncorrectoP',
+										'$this->OK')";
+										
+										if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
+											return 'Error al añadir la tupla';
+										}//Fin if
+										else{ //si no da error en la insercion devolvemos mensaje de exito
+											return 'Tupla añadida con éxito'; //operacion de insertado correcta
+										}//Fin else			
+									}else{//Fin if
+									return 'La historia de este trabajo ya existe';
+									}
+								}//Fin else
+				 
+				 
+				 }//Fin if comprobacion de que tenga historias
+			}//Fin else
+				
+		}else{
+		return 'El login no tiene que evaluar el trabajo o al alias indicado';
+		}
+	}//Fin else
+}//Fin funcion ADD
+
+
 function EDIT()
 {
 		//No estoy del todo seguro de que esta sentencia sea necesario
-	$sql1 = "SELECT IdTrabajo,login,Alias FROM ASIGNAC_QA WHERE (IdTrabajo = '$this->IdTrabajo') && (login = '$this->LoginEvaluador') && (Alias = '$this->AliasEvaluado') ";
+	$sql1 = "SELECT * FROM ASIGNAC_QA WHERE (IdTrabajo = '$this->IdTrabajo') && (login = '$this->LoginEvaluador') && (Alias = '$this->AliasEvaluado') ";
 			// se construye la sentencia de busqueda de la tupla en la bd
 			if (!$result = $this->mysqli->query($sql1))  // si da error la ejecución de la query
 						return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
@@ -82,7 +147,7 @@ function EDIT()
 										'$this->IdTrabajo',
 										'$this->LoginEvaluador',
 										'$this->AliasEvaluado',
-										'$row['IdHistoria']',
+										'$row[0]',
 										'',
 										'',
 										'',
@@ -155,27 +220,14 @@ function __destruct()
 function SEARCH()
 { 	// construimos la sentencia de busqueda con LIKE y los atributos de la entidad
 		$sql = "SELECT
-					IdTrabajo,
-					LoginEvaluador,
-					AliasEvaluado,
-					IdHistoria,
-					CorrectoA,
-					ComenIncorrectoA,
-					CorrectoP,
-					ComenIncorrectoP,
-					OK
+					*
        			FROM EVALUACION
     			WHERE
     				(
 					(IdTrabajo LIKE '%$this->IdTrabajo') &&
 					(LoginEvaluador LIKE '%$this->LoginEvaluador%') &&
 	 				(AliasEvaluado LIKE '%$this->AliasEvaluado%') &&
-	 				(IdHistoria LIKE '%$this->IdHistoria%') &&
-	 				(CorrectoA LIKE '%$this->CorrectoA%') &&
-	 				(ComenIncorrectoA LIKE '%$this->ComenIncorrectoA%') &&
-	 				(CorrectoP LIKE '%$this->CorrectoP%') &&
-					(ComenIncorrectoP LIKE '$this->ComenIncorrectoP') &&
-					(OK LIKE '$this->OK')
+	 				(IdHistoria LIKE '%$this->IdHistoria%')
     				)";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
     if (!($resultado = $this->mysqli->query($sql))){

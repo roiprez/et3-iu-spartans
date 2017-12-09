@@ -60,6 +60,9 @@ array(
 	'El Usuario no existe o el codigo es incorrecto' => 'User doesn´t exists or code is incorrecto',
 	'El grupo no existe o el codigo es incorrecto' => 'Group don´t exists or code is incorrect',
 	
+	/*Diccionario Evaluaciones*/
+	'El login no tiene que evaluar el trabajo o al alias indicado' => 'The login does not have to evaluate the work or alias indicated',
+	'La historia de este trabajo ya existe' => 'History already exists to this work',
 	
 	/*Traducciones en validaciones*/
 	'El campo Nombre no puede ser vacio' => 'Name can´t be empty',
