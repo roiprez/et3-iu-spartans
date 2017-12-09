@@ -1,5 +1,5 @@
 <?php
-/*Modelo de datos de HISTORIA*/
+/*Modelo de datos de Grupo*/
 class HISTORIA_Model{   //Declaracion de la clase
     var $idTrabajo;
     var $idHistoria;
@@ -162,7 +162,7 @@ function EDIT(){
             return $result;
         }
     } // fin del metodo RellenaDatos()
-}//Fin de la clase HISTORIA
+}//Fin de la clase GRUPO
 
 
 
