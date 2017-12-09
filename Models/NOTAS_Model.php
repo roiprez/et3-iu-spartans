@@ -33,7 +33,7 @@ class NOTAS_Model{   //Declaracion de la clase
                 if($result->num_rows == 0){//Comprueba que no existe el trabajo en la BD.
                     return 'El trabajo con este id no existe en la base de datos.';//Avisa de que no existe ningun trabajo con ese id.
                 }
-                else if($result->num_rows == 1){//Si existe un solo trabajo en la BD con ese id.
+                else{//Si existe un solo trabajo en la BD con ese id.
 
                     if($this->login <> ''){//Comprueba que el campo idHistoria no está vacío
 

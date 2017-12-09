@@ -1,11 +1,13 @@
 <?php
     include '../Models/NOTAS_Model.php';
-    include '../Views/Notas_VIEWS/Notas_ADD.php';
-    include '../Views/Notas_VIEWS/Notas_DELETE.php';
-    include '../Views/Notas_VIEWS/Notas_EDIT.php';
-    include '../Views/Notas_VIEWS/Notas_SEARCH.php';
-    include '../Views/Notas_VIEWS/Notas_SHOWALL.php';
-    include '../Views/Notas_VIEWS/Notas_SHOWCURRENT.php';
+    include '../Models/ENTREGAS_Model.php';
+    include '../Functions/Generacion_Notas.php';
+    include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_ADD.php';
+    include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_DELETE.php';
+    include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_EDIT.php';
+    include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_SEARCH.php';
+    include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_SHOWALL.php';
+    include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_SHOWCURRENT.php';
 
 function get_data_form(){
     $login = $_REQUEST['login'];
@@ -13,13 +15,34 @@ function get_data_form(){
     $NotaTrabajo = $_REQUEST['NotaTrabajo'];
     $action = $_REQUEST['action'];
 
-    $NOTAS = new HISTORIA_Model(
+    $NOTAS = new NOTAS_Model(
         $login,
         $IdTrabajo,
         $NotaTrabajo
     );
 
     return $NOTAS;
+}
+
+function get_data_form2(){
+
+    $login = $_REQUEST['login'];
+    $IdTrabajo = $_REQUEST['IdTrabajo']; 
+
+    $ruta = '';
+    $horas = '';
+    $alias = '';
+
+     $ENTREGA = new ENTREGA_Model(
+        $IdTrabajo,
+        $login,
+        $alias,
+        $horas,
+        $ruta
+    );
+
+     return $ENTREGA;
+
 }
 
 if (!isset($_REQUEST['action'])){
@@ -29,21 +52,21 @@ if (!isset($_REQUEST['action'])){
 
 Switch ($_REQUEST['action']){
     case 'ADD':
-        if (!$_POST){
-            new Nota_ADD();
-        }
-        else{
-            $NOTAS = get_data_form();
-            $respuesta = $NOTAS->ADD();
-            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
-        }
+        $ENTREGA = get_data_form2();
+        $valorentrega = $ENTREGA->SEARCH();
+        $alias_v = $valorentrega->fetch_array();
+        $NOTAS = get_data_form();
+        $NOTAS['NotaTrabajo'] = generarNotasEntrega($IdTrabajo,$alias_v[2]);
+        $respuesta = $NOTAS->ADD();
+        new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+        
         break;
     case 'DELETE':
         if (!$_POST){
             $NOTAS = new NOTAS_Model($_REQUEST['login'], $_REQUEST['IdTrabajo'], '');
             $lista = array('login', 'IdTrabajo', 'NotaTrabajo');
             $valores = $NOTAS->RellenaDatos();
-            new Nota_DELETE($lista, $valores);
+            new Nota_Trabajo_DELETE($lista, $valores);
         }
         else{
             $NOTAS = new NOTAS_Model($_REQUEST['login'], $_REQUEST['IdTrabajo'], '');
@@ -55,7 +78,7 @@ Switch ($_REQUEST['action']){
         if (!$_POST){
             $NOTAS = new NOTAS_Model($_REQUEST['login'], $_REQUEST['IdTrabajo'], '');
             $valores = $NOTAS->RellenaDatos();
-            new Nota_EDIT($valores);
+            new Nota_Trabajo_EDIT($valores);
         }
         else{
             $NOTAS = get_data_form();
@@ -66,20 +89,20 @@ Switch ($_REQUEST['action']){
         break;
     case 'SEARCH':
         if (!$_POST){
-            new Nota_SEARCH();
+            new Nota_Trabajo_SEARCH();
         }
         else{
             $NOTAS = get_data_form();
             $datos = $NOTAS->SEARCH();
             $lista = array('login', 'IdTrabajo', 'NotaTrabajo');
-            new Nota_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+            new Nota_Trabajo_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
         }
         break;
     case 'SHOWCURRENT':
         $NOTAS = new NOTAS_Model($_REQUEST['login'], $_REQUEST['IdTrabajo'], '');
         $lista = array('login', 'IdTrabajo', 'NotaTrabajo');
         $valores = $NOTAS->RellenaDatos();
-        new Nota_SHOWCURRENT($lista, $valores);
+        new Nota_Trabajo_SHOWCURRENT($lista, $valores);
         break;
     default:
         if (!$_POST){
@@ -90,7 +113,7 @@ Switch ($_REQUEST['action']){
         }
         $datos = $NOTAS->SEARCH();
         $lista = array('login', 'IdTrabajo', 'NotaTrabajo');
-        new Nota_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+        new Nota_Trabajo_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 
 }
 ?>
