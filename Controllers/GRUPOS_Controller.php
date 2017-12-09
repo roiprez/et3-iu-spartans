@@ -6,6 +6,8 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 */
 
 include '../Models/GRUPOS_Model.php';
+include '../Models/EVALUACIONES_Model.php';
+include '../Models/ACCIONES_Model.php';
 include '../Views/Grupo_VIEWS/Grupo_SHOWALL.php';
 include '../Views/Grupo_VIEWS/Grupo_SEARCH.php';
 include '../Views/Grupo_VIEWS/Grupo_ADD.php';
@@ -87,28 +89,42 @@ if (!isset($_REQUEST['action'])){
 			break;
         case 'ADDACCION':
             if(!$_POST){ //Si no hay informacion
-                $ACCIONES = new ACCIONES_Model('','',''); //Nuevo modelo de accion
                 $GRUPOS =new GRUPOS_Model($_REQUEST['IdGrupo'],'',''); //Nuevo modelo de grupo
-                $FUNCIONALIDADES= new FUNCIONALIDADES_MODEL('','','');//Nuevo modelo de funcionalidad
-
                 $datosGru = $GRUPOS->SEARCH(); //Devuelve la tupla del grupo
-                $datosAccion = $ACCIONES->SEARCH(); // Devuelve la tabla de acciones
-                $datosFuncionalidad = $FUNCIONALIDADES->SEARCH(); //Devuelve la Tabla de acciones
 
-                $accionesTotales = array(); //Array que contendrá todas las acciones existentes
-                $funcionalidadesTotales = array(); //Array que contendrá todas las acciones existentes
-                while($rowAcciones = $datosAccion->fetch_array()){
-                    $accionesTotales[]=$rowAcciones[0];
+                $FUNC_ACCION = new FUNC_ACCION_Model('','');//Nuevo modelo de Func_Accion
+                $datosFuncAccion = $FUNC_ACCION->SEARCH(); //Devuelve la tabla Func_Accion
+                $funcAccion= array();//Array que contendrá todas las relaciones entre Funcionalidades y Acciones, ademas de sus nombres
+                while($rowFuncAcc = $datosFuncAccion->fetch_array()){
+                    $nombreFunc= new FUNCIONALIDADES_MODEL($rowFuncAcc[0],'','');
+                    $nombreFunc= $nombreFunc->SEARCH();
+                    $nombreFunc= $nombreFunc['nombreFuncionalidad'];
+
+                    $nombreAcci= new ACCIONES_Model($rowFuncAcc[1],'','');
+                    $nombreAcci= $nombreAcci->SEARCH();
+                    $nombreAcci= $nombreAcci['nombreAccion'];
+
+                    $funcAccion[]=$rowFuncAcc[0]+','+$rowFuncAcc[1]+','+$nombreFunc+','+$nombreAcci;
                 }
-                while($rowFuncionalidades = $datosFuncionalidad->fetch_array()){
-                    $funcionalidadesTotales[]=$rowFuncionalidades[0];
+
+                $PERMISO =new PERMISOS_Model($_REQUEST['IdGrupo'],'',''); // Nuevo modelo de PERMISO
+                $datosPermiso = $PERMISO->SEARCH(); //Devolverá las tuplas de los permisos para ese grupo, si los hay
+                $permisosYaAsignados= array();//Array que contendrá todas las relaciones entre Funcionalidades y Acciones, ademas de sus nombres,
+                                     // para los permisos ya asignados al grupo
+                while($rowPermiso = $datosPermiso->fetch_array()){
+                    $nombreFunc= new FUNCIONALIDADES_MODEL($rowPermiso[0],'','');
+                    $nombreFunc= $nombreFunc->SEARCH();
+                    $nombreFunc= $nombreFunc['nombreFuncionalidad'];
+
+                    $nombreAcci= new ACCIONES_Model($rowPermiso[1],'','');
+                    $nombreAcci= $nombreAcci->SEARCH();
+                    $nombreAcci= $nombreAcci['nombreAccion'];
+
+                    $permisosYaAsignados[]=$rowPermiso[0]+','+$rowPermiso[1]+','+$nombreFunc+','+$nombreAcci;
                 }
-                $PERMISO =new PERMISOS_Model('','',''); // Nuevo modelo de PERMISO
-                $datosPermiso = $PERMISO->SEARCH(); //Devolverá toda la tabla
-                new /*Poner nombre vista*/Usu_Grupo_ADD($datosGru,$accionesTotales,$funcionalidadesTotales,$datosPermiso); //Muestra la vista de USU_GRUPO
+                new /*Poner nombre vista*/Usu_Grupo_ADD($datosGru,$funcAccion,$permisosYaAsignados); //Muestra la vista de USU_GRUPO
             }
             else{//Si se ha hecho un post
-
                 $idGrupo=$_REQUEST['IdGrupo']; //Definimos idGrupo para poder utilizarlo tantas veces como select se hayan seleccionado
                 $PERMISOS_PREVIO= new PERMISOS_Model($idGrupo,'',''); //Definimos un modelo de USU_GRUPO con el login que se nos pasa para borrar todos los grupos que tenia seleccionados de antes
                 $borrado=$PERMISOS_PREVIO->reventarPermiso(); //Se revientan todos los grupos a los que pertenece el usuario
@@ -123,10 +139,6 @@ if (!isset($_REQUEST['action'])){
                 }else{ //Si no se ha seleccionado ninguno
                     new Vista_MESSAGE('Inserción realizada con éxito', '../Controllers/Index_Controller.php'); //Mostramos mensaje de exito en la inserción porque ya se han borrado previamente
                 }
-
-
-
-
             }
             break;
 		case 'SHOWCURRENT':

@@ -46,12 +46,12 @@ class Usu_Grupo_ADD// declaración de clase
                             $permisos_grupo = array();
                             foreach ($this->lista_valores as $tupla) {//recorre el recordset de datos de permiso
                                 if ($tupla['IdGrupo']==$this->grupo['IdGrupo']) {//almacena en un array los permisos que ya tiene el grupo
-                                    $permiso=$tupla['IdFuncionalidad'] . ",".$tupla['IdAccion']//concatenacion de funcionalidad y accion para ser manejado como uno
+                                    $permiso=$tupla['IdFuncionalidad'] . ",".$tupla['IdAccion'];//concatenacion de funcionalidad y accion para ser manejado como uno
 									$permisos_grupo[]=$permiso;
 								}//fin if
                             }//fin foreach
 							foreach ($this->lista_fun_accion as $fun_accion){//recorre la lista de todas las fun_accion posibles
-                                 $valor=$fun_accion['IdFuncionalidad'] . ",".$fun_accion['IdAccion']//concatenacion de los dos valores para ser manejados como uno
+                                 $valor=$fun_accion['IdFuncionalidad'] . ",".$fun_accion['IdAccion'];//concatenacion de los dos valores para ser manejados como uno
 
                                 for($j=0;$j<count($permisos_grupo);$j++){//recorre los permisos que ya tenia el grupo
 					               if ($permisos_grupo[$j]==$valor) {//si encuentra el permiso en la lista de fun_accion seleccionado=true
