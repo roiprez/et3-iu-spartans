@@ -131,7 +131,7 @@ class FUNCIONALIDADES_MODEL{
             return $result;
         }
     } // fin del metodo RellenaDatos()
-}//Fin de la clase GRUPO
+}//Fin de la clase FUNCIONALIDADES
 
 class FUNC_ACCION_Model {
     var $idFuncionalidad;
