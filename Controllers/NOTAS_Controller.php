@@ -1,6 +1,6 @@
 <?php
     include '../Models/NOTAS_Model.php';
-    include '../Models/ENTREGA_Model.php';
+    include '../Models/ENTREGAS_Model.php';
     include '../Functions/Generacion_Notas.php';
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_ADD.php';
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_DELETE.php';
@@ -53,7 +53,7 @@ if (!isset($_REQUEST['action'])){
 Switch ($_REQUEST['action']){
     case 'ADD':
         $ENTREGA = get_data_form2();
-        $valorentrega = $ENTREGA->SEARCH()
+        $valorentrega = $ENTREGA->SEARCH();
         $alias_v = $valorentrega->fetch_array();
         $NOTAS = get_data_form();
         $NOTAS['NotaTrabajo'] = generarNotasEntrega($IdTrabajo,$alias_v[2]);
