@@ -31,6 +31,15 @@ function get_data_form(){
     return $ENTREGAS;
 }
 
+function alias_gen(){
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+    $randstring = '';
+    for ($i = 0; $i < 6; $i++) {
+        $randstring = $randstring . $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randstring;
+}
+
 if (!isset($_REQUEST['action'])){
     $_REQUEST['action'] = '';
 }
@@ -54,7 +63,7 @@ Switch ($_REQUEST['action']){
                 array_push($lista_usuarios, $row[0]);
             }
             
-            new Entrega_ADD($lista_trabajos, $lista_usuarios, 'alias');
+            new Entrega_ADD($lista_usuarios, $lista_trabajos, alias_gen());
         }
         else{
             $Ruta = upload_entrega($_REQUEST['Alias']);

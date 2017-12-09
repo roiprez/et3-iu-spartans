@@ -17,7 +17,7 @@ class Entrega_ADD// declaración de clase
     function __construct($lista_usuarios,$lista_trabajos,$alias)
     {
         $this->lista_Usuarios=$lista_usuarios;
-        $this->lista_trabajos=$lista_trabajos;
+        $this->lista_Trabajos=$lista_trabajos;
         $this->alias=$alias;
         $this->pinta();
     }
@@ -34,7 +34,7 @@ class Entrega_ADD// declaración de clase
                   <?php 
                     for($i=0;$i<count($this->lista_Usuarios);$i++){
                       ?>
-                      <option value="<?php echo "$this->lista_Usuarios[$i]" ?>"><?php echo "$this->lista_Usuarios[$i]" ?></option>
+                      <option value="<?php echo $this->lista_Usuarios[$i]?>"><?php echo $this->lista_Usuarios[$i] ?></option>
                       <?php
                     }//fin del bucle
                   ?>
@@ -45,7 +45,7 @@ class Entrega_ADD// declaración de clase
                   <?php 
                     for($i=0;$i<count($this->lista_Trabajos);$i++){
                       ?>
-                      <option value="<?php echo "$this->lista_Trabajos[$i]" ?>"><?php echo "$this->lista_Trabajos[$i]" ?></option>
+                      <option value="<?php echo $this->lista_Trabajos[$i] ?>"><?php echo $this->lista_Trabajos[$i] ?></option>
                       <?php
                     }//fin del bucle
                   ?>
@@ -54,7 +54,7 @@ class Entrega_ADD// declaración de clase
             <label>Alias
                 <input type="text" name="Alias" readonly="true"
                        id="Alias" required="true"
-                       size="6" maxlength="6" value="<?php echo "$alias"?>" 
+                       size="6" maxlength="6" value="<?php echo $this->alias?>" 
                 />
             </label>
             <label>Horas
