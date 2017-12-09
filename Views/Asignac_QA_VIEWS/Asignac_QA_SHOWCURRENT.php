@@ -1,12 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 11:51
+ * User: Diego
+ * Date: 08/12/2017
+ * Time: 10:53
  */
 
-class Permiso_SHOWCURRENT
+class Asignac_QA_SHOWCURRENT
 {
     var $lista_variables;//lista de variables a mostrar
     var $lista_valores;//lista de valores de las variables

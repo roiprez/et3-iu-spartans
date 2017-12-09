@@ -6,14 +6,12 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 */
 
 include '../Models/ACCIONES_Model.php';
-include '../Models/FUNCIONALIDADES_Model.php';
 include '../Views/Accion_VIEWS/Accion_SHOWALL.php';
 include '../Views/Accion_VIEWS/Accion_SEARCH.php';
 include '../Views/Accion_VIEWS/Accion_ADD.php';
 include '../Views/Accion_VIEWS/Accion_EDIT.php';
 include '../Views/Accion_VIEWS/Accion_DELETE.php';
 include '../Views/Accion_VIEWS/Accion_SHOWCURRENT.php';
-include '../Views/Fun_Accion_VIEWS/Fun_Accion_GESTION.php';
 include '../Views/MESSAGE_View.php';
 
 
@@ -92,56 +90,6 @@ if (!isset($_REQUEST['action'])){
       $lista = array('IdAccion', 'NombreAccion', 'DescripAccion');
 			$valores = $ACCIONES->RellenaDatos();
 			new Accion_SHOWCURRENT($lista, $valores);
-			break;
-		case 'ADDFUNCTIONALITY' :
-			if(!$_POST){ //Si no hay informacion
-				$FUNCIONALIDADES = new FUNCIONALIDADES_Model('','','');
-				$funcionalidades = $FUNCIONALIDADES->SEARCH();
-
-				$lista_funcionalidades = [];
-				$lista_funcionalidades_accion = [];
-
-				while($row = $funcionalidades->fetch_array()) {
-					array_push($lista_funcionalidades, $row[0]);
-					$contained = false;
-					$FUNC_ACCION = new FUNC_ACCION_Model('',$_REQUEST['IdAccion']); 
-					$datos_func_accion = $FUNC_ACCION->SEARCH();
-					while($row_action = $datos_func_accion->fetch_array()) {
-						if($row_action[0] == $row[0]){
-							$contained = true;
-						}			
-					}
-					array_push($lista_funcionalidades_accion, $contained);
-				}
-				new Fun_Accion_GESTION($lista_funcionalidades,$_REQUEST['IdAccion'],$lista_funcionalidades_accion);
-			}
-				else{//Si se ha hehco un post	
-					$accion = $_REQUEST['IdAccion'];
-					
-					$FUNCIONALIDADES = new FUNCIONALIDADES_Model('','','');
-					$funcionalidades = $FUNCIONALIDADES->SEARCH();
-
-					$lista_funcionalidades = [];
-
-					while($row = $funcionalidades->fetch_array()) {
-						array_push($lista_funcionalidades, $row[0]);
-					}
-
-					foreach ($lista_funcionalidades as $funcionalidad){ 
-						$FUNC_ACCION= new FUNC_ACCION_Model($funcionalidad,$accion);
-						$FUNC_ACCION->reventarFuncionalidad();
-					}
-					
-					if(isset($_REQUEST['IdFuncionalidad'])){
-						$funcionalidades = $_REQUEST['IdFuncionalidad'];
-						
-						foreach ($funcionalidades as $funcionalidad){ 
-							$FUNC_ACCION= new FUNC_ACCION_Model($funcionalidad,$accion);
-							$FUNC_ACCION->ADD();
-						}
-					}
-					new Vista_MESSAGE("Se han registrado sus cambios", '../Controllers/Index_Controller.php');		
-		}
 			break;
 		default:
 			if (!$_POST){

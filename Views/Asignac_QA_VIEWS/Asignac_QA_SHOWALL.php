@@ -1,12 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 01/12/2017
- * Time: 18:18
+ * User: Diego
+ * Date: 08/12/2017
+ * Time: 10:51
  */
 
-class Accion_SHOWALL
+class Asignac_QA_SHOWALL
 {
     var $lista;
     var $datos;
@@ -27,7 +26,6 @@ class Accion_SHOWALL
         ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">
-                <button type = "submit" name = "action" value="ADD" title="añadir una fila"><img src="../Iconos/add.png" ></button>
                 <button type = "submit" name = "action" value="SEARCH" title="buscar en la tabla"><img src="../Iconos/search.png" ></button>
             </div>
         </form>
@@ -55,9 +53,7 @@ class Accion_SHOWALL
                             <?php
                         }
                         ?>
-                        <td><button type = "submit" name = "action" value="SHOWCURRENT" title="detalles"><img class="button-td" src="../Iconos/details.png" ></button></td>
-                        <td><button type = "submit" name = "action" value="EDIT" title="editar"><img class="button-td" src="../Iconos/edit.png" ></button></td>
-                        <td><button type = "submit" name = "action" value="DELETE"  title="borrar línea"><img class="button-td" src="../Iconos/borrar.png"></button></td>
+                        <td><button type = "submit" name = "action" value="SHOWCURRENT" title="detalles"><img class="button-td" src="../Iconos/details.png" ></img></button></td>
                     </tr>
                 </form>
                 <?php
@@ -66,7 +62,7 @@ class Accion_SHOWALL
 
         </table>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action'  title="Volver atrás"><img class="button-td" src="../Iconos/back.png"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }
 }

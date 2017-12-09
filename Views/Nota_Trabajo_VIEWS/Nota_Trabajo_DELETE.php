@@ -1,12 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 11:53
+ * User: Diego
+ * Date: 08/12/2017
+ * Time: 10:54
  */
 
-class Permiso_DELETE
+class Nota_Trabajo_DELETE
 {
 
     var $lista_variables;

@@ -1,23 +1,25 @@
 <?php
 /**
  * User: Diego
- * Date: 07/12/2017
- * Time: 12:32
+ * Date: 08/12/2017
+ * Time: 10:57
  */
 
 
-class Entrega_ADD// declaración de clase
+class Asignac_QA_ADD// declaración de clase
 {
 
   var $lista_Usuarios;
-  var $lista_Trabajos;
+  var $usuario;
+  var $trabajo
   var $alias;
 
     //Constructor
-    function __construct($lista_usuarios,$lista_trabajos,$alias)
+    function __construct($lista_usuarios,$trabajo,$usuario,$alias)
     {
         $this->lista_Usuarios=$lista_usuarios;
-        $this->lista_trabajos=$lista_trabajos;
+        $this->trabajo=$trabajo;
+        $this->usuario=$usuario;
         $this->alias=$alias;
         $this->pinta();
     }
@@ -29,27 +31,11 @@ class Entrega_ADD// declaración de clase
 
         <form id="formulario-add" name="formulario_add" method="post" enctype="multipart/form-data" onSubmit="return validarFormulario('add') ">
 
-            <label>Login
-                <select name="login" id="login" required="true" size="1">
-                  <?php 
-                    for($i=0;$i<count($this->lista_Usuarios);$i++){
-                      ?>
-                      <option value="<?php echo "$this->lista_Usuarios[$i]" ?>"><?php echo "$this->lista_Usuarios[$i]" ?></option>
-                      <?php
-                    }//fin del bucle
-                  ?>
-                </select>
-            </label>
-            <label>Id del Trabajo
-                <select name="IdTrabajo" id="IdTrabajo" required="true" size="1">
-                  <?php 
-                    for($i=0;$i<count($this->lista_Trabajos);$i++){
-                      ?>
-                      <option value="<?php echo "$this->lista_Trabajos[$i]" ?>"><?php echo "$this->lista_Trabajos[$i]" ?></option>
-                      <?php
-                    }//fin del bucle
-                  ?>
-                </select>
+            <label>Login del evaluado
+                 <input type="text" name="login" readonly="true"
+                       id="login"
+                       size="9" maxlength="9" value="<?php echo "$usuario"?>" 
+                />
             </label>
             <label>Alias
                 <input type="text" name="Alias" readonly="true"
@@ -57,17 +43,25 @@ class Entrega_ADD// declaración de clase
                        size="6" maxlength="6" value="<?php echo "$alias"?>" 
                 />
             </label>
-            <label>Horas
-                <input type="number" name="Horas"
-                       id="Horas" 
-                       size="2" maxlength="2"
+            <label>Id del Trabajo
+                <input type="text" name="IdTrabajo" readonly="true"
+                       id="IdTrabajo" required="true"
+                       size="6" maxlength="6" value="<?php echo "$this->trabajo"?>" 
                 />
             </label>
-            <label>Ruta
-                <input type="file" name="Ruta"
-                       id="Ruta" 
-                       size="60" maxlength="60"
-                />
+            <label>Login del evaluador
+                <select name="IdTrabajo" id="IdTrabajo" required="true" size="1">
+                  <?php 
+                    for($i=0;$i<count($this->lista_Usuarios);$i++){//recorre todos los usuarios
+                      
+                      if($this->lista_Usuarios[$i]!=$this->usuario){//si el usuario es distinto del evaluado es un posible corrector
+                      ?>
+                        <option value="<?php echo "$this->lista_Usuarios[$i]" ?>"><?php echo "$this->lista_Usuarios[$i]" ?></option>
+                      <?php
+                      }//fin del if
+                    }//fin del bucle
+                  ?>
+                </select>
             </label>
             <div class="botones-formulario">
                 <button id="enviar" name = "action" value = "ADD" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></button>
