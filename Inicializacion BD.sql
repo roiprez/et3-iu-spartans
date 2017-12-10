@@ -14,8 +14,8 @@ INSERT INTO GRUPO (
             NombreGrupo,
             DescripGrupo)
             VALUES (
-            'Alumno',
-            'Alumno',
+            'Alumnos',
+            'Alumnos',
             'El usuario mas basico de la aplicacion, con permisos muy limitados'
             );
 /*Insercion de un usuario admin por defecto para poder manipular la configuracion de la aplicacion*/
