@@ -45,7 +45,10 @@ array(
 	'Error en la consulta sobre la base de datos' => 'Erro na consulta sobre a base de datos',
 	"No existe" => 'Non existe',
 	'No existe en la base de datos' => 'Non existe na base de datos',
-	'Error en la modificación' => 'Erro na modificación'
+	'Error en la modificación' => 'Erro na modificación',
+
+	/*Diccionarios de permisos*/
+	'Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain' => 'Vostede non ten permitido aceder a esta vista, conten información supersecreta de Mor Ardain',
 	
 	/*Diccionario para FUNC_ACCION*/
 	'La accion ya esta asignada a esa funcionalidad' => 'A accion xa esta asignada a esa funcionalidade',

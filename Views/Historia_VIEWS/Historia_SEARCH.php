@@ -25,6 +25,14 @@ class Historia_SEARCH
     function pinta()
     {
 //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        //Si el usuarios está autenticado pero no es administrador 
+            if (IsAuthenticated() && !isAdmin()){
+            $respuesta= "Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain";
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
+            
+            
+            //Si esta autenticado y es administrador
+            }else{
 
         ?>
 
@@ -66,6 +74,7 @@ class Historia_SEARCH
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
 		<button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
+    }//Fin else
     }//fin de pinta
 
 }//fin de la clase

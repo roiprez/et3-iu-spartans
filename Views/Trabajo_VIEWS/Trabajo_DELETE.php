@@ -23,6 +23,14 @@ function __construct($lista_variables,$lista_valores){
 
 function pinta(){
     include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+    //Si el usuarios está autenticado pero no es administrador 
+            if (IsAuthenticated() && !isAdmin()){
+            $respuesta= "Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain";
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
+            
+            
+            //Si esta autenticado y es administrador
+            }else{
     ?>
     <table id="tabla-delete">
         <div id="mensaje-de-borrado">
@@ -52,6 +60,7 @@ function pinta(){
     </table>
 
     <?php
+}//Fin else
 }//fin pinta
 }//fin clase
 ?>

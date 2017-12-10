@@ -24,6 +24,14 @@ class Usuario_SHOWALL{  // declaración de clase
     function pinta(){
         //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 
+            //Si el usuarios está autenticado pero no es administrador 
+            if (IsAuthenticated() && !isAdmin()){
+            $respuesta= "Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain";
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
+            
+            //Si esta autenticado y es administrador
+            }else{
+
         ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">
@@ -71,5 +79,5 @@ class Usuario_SHOWALL{  // declaración de clase
         <?php
     }
 }
-
+}
 ?>

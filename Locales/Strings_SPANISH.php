@@ -45,6 +45,9 @@ array(
 	'Usuarios' =>'Usuarios',
 	'Grupos' => 'Grupos',
 	
+	/*Diccionarios de permisos*/
+	'Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain' => 'Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain',
+
 	/*Diccionario para FUNC_ACCION*/
 	'La accion ya esta asignada a esa funcionalidad' => 'La accion ya esta asignada a esa funcionalidad',
 	'La accion no existe o el Id es incorrecto' => 'La accion no existe o el Id es incorrecto',

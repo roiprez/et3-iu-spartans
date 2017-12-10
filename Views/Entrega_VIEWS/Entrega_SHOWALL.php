@@ -22,8 +22,54 @@ class Entrega_SHOWALL{  // declaración de clase
     }
 
     function pinta(){
-        //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 
+        //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+        if (IsAuthenticated() && !isAdmin()){
+        ?>
+        <table id="tabla-showall">
+            <tr>
+                <?php
+                for ($i = 0; $i < count($this->lista); $i++) {
+                    ?>
+                    <th><?php echo $this->lista[$i];?></th>
+                    <?php
+                }
+                ?>
+            </tr>
+
+            <?php
+            while($row = $this->datos->fetch_array())
+            {
+                //Comprobamos si el login de la entrega coincide con el usuario que está logeado y si coincide se muestra la entrega
+                if($row[1] == $_SESSION['login']){
+                ?>
+                <form class="formulario-tupla" method="">
+                    <tr>
+                        <?php
+                        for ($i = 0; $i < count($this->lista); $i++) {
+                            ?>
+
+                            <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
+                            <?php
+                        }
+                        ?>
+                       
+                        <td><button type = "submit" name = "action" value="EDIT" title="editar"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
+                        
+                    </tr>
+                </form>
+                <?php
+            }//Fin if
+        }//Fin while
+            ?>
+
+        </table>
+        <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
+        <button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+        <?php
+
+            //Si esta autenticado y es administrador
+            }else{
         ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">
@@ -62,13 +108,16 @@ class Entrega_SHOWALL{  // declaración de clase
                 </form>
                 <?php
             }
-            ?>
+
+        ?>
 
         </table>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
 		<button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
-        <?php
-    }
+    <?php
 }
 
+}
+}
 ?>
+

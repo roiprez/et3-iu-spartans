@@ -23,7 +23,10 @@ class Evaluacion_SHOWALL{  // declaración de clase
 
     function pinta(){
         //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-
+         if (IsAuthenticated() && !isAdmin()){
+           $respuesta= "Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain";
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
+            }else{
         ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">
@@ -68,6 +71,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
 		<button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
+    }//Fin else
     }
 }
 
