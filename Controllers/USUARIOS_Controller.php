@@ -14,7 +14,7 @@ include '../Views/Usuario_VIEWS/Usuario_DELETE.php';
 include '../Views/Usuario_VIEWS/Usuario_SHOWCURRENT.php';
 include '../Views/MESSAGE_View.php';
 include '../Views/Usu_Grupo_VIEWS/Usu_Grupo_ADD.php';
-include '../Models/GRUPOS_Model.php';
+include_once '../Models/GRUPOS_Model.php';
 
 
 
