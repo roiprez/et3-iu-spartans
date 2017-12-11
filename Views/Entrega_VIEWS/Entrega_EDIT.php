@@ -28,31 +28,31 @@ class Entrega_EDIT// declaración de clase
             <label>Login
                 <input type="text" name="login"
                        id="login" required="true" readonly="true"
-                       size="9" maxlength="9" value="<?php echo "$this->lista_Valores['login']"?>" 
+                       size="9" maxlength="9" value="<?php echo $this->lista_Valores['login']?>" 
                 />
             </label>
             <label>Id del Trabajo
                 <input type="text" name="IdTrabajo" readonly="true"
                        id="IdTrabajo" required="true"
-                       size="6" maxlength="6" value="<?php echo "$this->lista_Valores['IdTrabajo']"?>" 
+                       size="6" maxlength="6" value="<?php echo $this->lista_Valores['IdTrabajo']?>" 
                 />
             </label>
             <label>Alias
                 <input type="text" name="Alias" readonly="true"
                        id="Alias" required="true"
-                       size="9" maxlength="9" value="<?php echo "$this->lista_Valores['Alias']"?>" 
+                       size="9" maxlength="9" value="<?php echo $this->lista_Valores['Alias']?>" 
                 />
             </label>
             <label>Horas
                 <input type="number" name="Horas"
                        id="Horas" required="true"
-                       size="2" maxlength="2" value="<?php echo "$this->lista_Valores['Horas']"?>" 
+                       size="2" maxlength="2" value="<?php echo $this->lista_Valores['Horas']?>" 
                 />
             </label>
             <label>Ruta
                 <input type="text" hidden="true" name="RutaOriginal"
                        id="RutaOriginal" 
-                       size="60" maxlength="60" value="<?php echo "$this->lista_Valores['Ruta']"?>" 
+                       size="60" maxlength="60" value="<?php echo $this->lista_Valores['Ruta']?>" 
                 />
                 <input type="file" name="Ruta"
                        id="Ruta"  
