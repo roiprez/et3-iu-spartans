@@ -31,30 +31,30 @@ class Evaluacion_EDIT// declaración de clase
              <label>Id del trabajo
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
-                       size="6" maxlength="6" value="<?php echo "$this->lista_valores['IdTrabajo']" ?>" 
+                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo'] ?>" 
                 />
             </label>
             <label>Login evaluador
                 <input type="text" name="LoginEvaluador"
                        id="LoginEvaluador" required="true"
-                       size="9" maxlength="9" value="<?php echo "$this->lista_valores['LoginEvaluador']" ?>"
+                       size="9" maxlength="9" value="<?php echo $this->lista_valores['LoginEvaluador'] ?>"
                 />
             </label>
             <label>Alias evaluado
                 <input type="text" name="AliasEvaluado"
                        id="AliasEvaluado" required="true"
-                       size="9" maxlength="9" value="<?php echo "$this->lista_valores['AliasEvaluado']" ?>"
+                       size="9" maxlength="9" value="<?php echo $this->lista_valores['AliasEvaluado'] ?>"
                 />
             </label>
             <label>Id de la historia
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
-                       size="2" maxlength="2" value="<?php echo "$this->lista_valores['IdHistoria']" ?>"
+                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria'] ?>"
                 />
             </label>
             <label>Corrección de la historia
                 <select name="CorrectoA" id="CorrectoA" required="true" size="1">
-                  <option selected="true"> value="<?php echo "$this->lista_valores['CorrectoA']" ?>"><?php if($this->lista_valores['CorrectoA']==1){
+                  <option selected="true"> value="<?php echo $this->lista_valores['CorrectoA'] ?>"><?php if($this->lista_valores['CorrectoA']==1){
                     echo "Correcto";
                   }else{
                     echo "Incorrecto";
@@ -70,7 +70,7 @@ class Evaluacion_EDIT// declaración de clase
             </label>
             <label>Corrección del profesor
                 <select name="CorrectoP" id="CorrectoP" required="true" size="1">
-                  <option selected="true"> value="<?php echo "$this->lista_valores['CorrectoP']" ?>"><?php if($this->lista_valores['CorrectoP']==1){
+                  <option selected="true"> value="<?php echo $this->lista_valores['CorrectoP'] ?>"><?php if($this->lista_valores['CorrectoP']==1){
                     echo "Correcto";
                   }else{
                     echo "Incorrecto";
@@ -82,11 +82,11 @@ class Evaluacion_EDIT// declaración de clase
                 </select>
             </label>
             <label>Comentario
-                <textarea form="formulario-edit" maxlength="300" name="ComenIncorrectoP"><?php echo "$this->lista_valores['ComenIncorrectoP']" ?></textarea>
+                <textarea form="formulario-edit" maxlength="300" name="ComenIncorrectoP"><?php echo $this->lista_valores['ComenIncorrectoP'] ?></textarea>
             </label>
             <label>Corrección de la evaluación
                 <select name="OK" id="OK" required="true" size="1">
-                  <option selected="true"> value="<?php echo "$this->lista_valores['OK']" ?>"><?php if($this->lista_valores['OK']==1){
+                  <option selected="true"> value="<?php echo $this->lista_valores['OK'] ?>"><?php if($this->lista_valores['OK']==1){
                     echo "Correcto";
                   }else{
                     echo "Incorrecto";
