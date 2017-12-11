@@ -24,7 +24,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
     function pinta(){
         //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if (IsAuthenticated() && !isAdmin()){
-           $respuesta= "Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain";
+           $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
             }else{
         ?>

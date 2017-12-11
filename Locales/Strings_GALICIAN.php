@@ -48,7 +48,7 @@ array(
 	'Error en la modificación' => 'Erro na modificación',
 
 	/*Diccionarios de permisos*/
-	'Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain' => 'Vostede non ten permitido aceder a esta vista, conten información supersecreta de Mor Ardain',
+	'No tienes permiso para acceder a esta vista' => 'Non podes acceder a esta vista',
 	
 	/*Diccionario para FUNC_ACCION*/
 	'La accion ya esta asignada a esa funcionalidad' => 'A accion xa esta asignada a esa funcionalidade',

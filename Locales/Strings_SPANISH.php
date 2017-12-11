@@ -46,7 +46,7 @@ array(
 	'Grupos' => 'Grupos',
 	
 	/*Diccionarios de permisos*/
-	'Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain' => 'Usted no tiene permitido acceder a esta vista, contiene información supersecreta de Mor Ardain',
+	'No tienes permiso para acceder a esta vista' => 'No tienes permiso para acceder a esta vista',
 
 	/*Diccionario para FUNC_ACCION*/
 	'La accion ya esta asignada a esa funcionalidad' => 'La accion ya esta asignada a esa funcionalidad',
