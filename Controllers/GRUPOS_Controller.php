@@ -98,10 +98,12 @@ if (!isset($_REQUEST['action'])){
                 while($rowFuncAcc = $datosFuncAccion->fetch_array()){
                     $nombreFunc= new FUNCIONALIDADES_MODEL($rowFuncAcc[0],'','');
                     $nombreFunc= $nombreFunc->SEARCH();
+                    $nombreFunc= $nombreFunc->fetch_array();
                     $nombreFunc= $nombreFunc['nombreFuncionalidad'];
 
                     $nombreAcci= new ACCIONES_Model($rowFuncAcc[1],'','');
                     $nombreAcci= $nombreAcci->SEARCH();
+                    $nombreAcci= $nombreAcci->fetch_array();
                     $nombreAcci= $nombreAcci['nombreAccion'];
 
                     $funcAccion[]=$rowFuncAcc[0]+','+$rowFuncAcc[1]+','+$nombreFunc+','+$nombreAcci;
