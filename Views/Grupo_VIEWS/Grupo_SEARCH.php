@@ -45,9 +45,7 @@ function pinta()
         />
     </label>
     <label>Descripcion
-        <textarea form="formulario-edit" maxlength="100" name="DescripGrupo">
-
-        </textarea>
+        <textarea form="formulario-edit" maxlength="100" name="DescripGrupo"></textarea>
     </label>
     <div class="botones-formulario">
         <button id="buscar" name = "action" value = "SEARCH" type="submit" title="buscar"><img class="button-td" src="../Iconos/search.png" ></button>
