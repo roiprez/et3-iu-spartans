@@ -1,5 +1,6 @@
 <?php
 include '../Models/ASIGNAC_QA_Model.php';
+include '../Models/TRABAJOS_Model.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_ADD.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_ESIT.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_DELETE.php';
@@ -13,13 +14,13 @@ function get_data_form(){
     $TextoHistoria = $_REQUEST['TextoHistoria'];
     $action = $_REQUEST['action'];
 
-    $HISTORIAS = new HISTORIA_Model(
+    $ASIGNA_QA = new HISTORIA_Model(
         $IdTrabajo,
         $IdHistoria,
         $TextoHistoria
     );
 
-    return $HISTORIAS;
+    return $ASIGNA_QA;
 }
 
 if (!isset($_REQUEST['action'])){
@@ -46,14 +47,14 @@ Switch ($_REQUEST['action']){
         break;
     case 'DELETE':
         if (!$_POST){
-            $ASIG_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'],$_REQUEST['AliasEvaluado']);
+            $ASIGNA_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'],$_REQUEST['AliasEvaluado']);
             $lista = array('IdTrabajo', 'LoginEvaluador', 'LoginEvaluado','AliasEvaluado');
-            $valores = $ASIG_QA->RellenaDatos();
+            $valores = $ASIGNA_QA->RellenaDatos();
             new Historia_DELETE($lista, $valores);
         }
         else{
             $ASIG_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'],$_REQUEST['AliasEvaluado']);
-            $respuesta = $ASIG_QA->DELETE();
+            $respuesta = $ASIGNA_QA->DELETE();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         }
         break;
@@ -78,31 +79,31 @@ Switch ($_REQUEST['action']){
         break;
     case 'SEARCH':
         if (!$_POST){
-            new Historia_SEARCH();
+            new Asignac_QA_SEARCH();
         }
         else{
-            $HISTORIAS = get_data_form();
-            $datos = $HISTORIAS->SEARCH();
-            $lista = array('IdTrabajo', 'IdHistoria', 'TextoHistoria');
-            new Historia_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+            $ASIGNA_QA = get_data_form();
+            $datos = $ASIG_QA->SEARCH();
+            $lista = array('IdTrabajo', 'LoginEvaluador', 'LoginEvaluado','AliasEvaluado');
+            new Asignac_QA_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
         }
         break;
     case 'SHOWCURRENT':
-        $HISTORIAS = new HISTORIA_Model($_REQUEST['IdTrabajo'], $_REQUEST['IdHistoria'], '');
-        $lista = array('IdTrabajo', 'IdHistoria', 'TextoHistoria');
-        $valores = $HISTORIAS->RellenaDatos();
-        new Historia_SHOWCURRENT($lista, $valores);
+        $ASIG_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],'' ,$_REQUEST['AliasEvaluado']);
+        $lista = array('IdTrabajo', 'LoginEvaluador', 'LoginEvaluado','AliasEvaluado');
+        $valores = $ASIG_QA->RellenaDatos();
+        new Asignac_QA_SHOWCURRENT($lista, $valores);
         break;
     default:
         if (!$_POST){
-            $HISTORIAS = new HISTORIA_Model('','','');
+            $ASIG_QA = new ASIGNAC_QA_Model('','','','');
         }
         else{
-            $HISTORIAS = get_data_form();
+            $ASIG_QA = get_data_form();
         }
-        $datos = $HISTORIAS->SEARCH();
-        $lista = array('IdTrabajo', 'IdHistoria', 'TextoHistoria');
-        new Historia_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+        $datos = $ASIG_QA->SEARCH();
+        $lista = array('IdTrabajo', 'LoginEvaluador', 'LoginEvaluado','AliasEvaluado');
+        new Asignac_QA_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 
 }
 ?>

@@ -36,13 +36,13 @@ class Asignac_QA_EDIT// declaración de clase
             <label>Login del evaluado
                  <input type="text" name="login" readonly="true"
                        id="login"
-                       size="9" maxlength="9" value="<?php echo $usuario?>" 
+                       size="9" maxlength="9" value="<?php echo $this->usuario?>"
                 />
             </label>
             <label>Alias
                 <input type="text" name="Alias" readonly="true"
                        id="Alias" required="true"
-                       size="9" maxlength="9" value="<?php echo $alias?>" 
+                       size="9" maxlength="9" value="<?php echo $this->alias?>"
                 />
             </label>
             <label>Id del Trabajo

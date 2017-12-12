@@ -20,7 +20,7 @@ class ASIGNAC_QA_Model{
 
     function ADD()
     {
-        if ($this->IdTrabajo <> ''){//Se comprueba que el campo no este vacio
+        if ($this->IdTrabajo <> ''&& $this->LoginEvaluador <> ''&& $this->AliasEvaluado <> ''){//Se comprueba que el campo no este vacio
             $sql = "SELECT * FROM ASIGNAC_QA WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador'
                                                                                     &&(AliasEvaluado= '$this->AliasEvaluado'))";
             if (!$result = $this->mysqli->query($sql)){ // si da error la ejecución de la query
