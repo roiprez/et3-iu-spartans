@@ -1,11 +1,11 @@
 <?php
-    include '../Models/HISTORIA_Model.php';
-    include '../Views/Historia_VIEWS/Historia_ADD.php';
-    include '../Views/Historia_VIEWS/Historia_DELETE.php';
-    include '../Views/Historia_VIEWS/Historia_EDIT.php';
-    include '../Views/Historia_VIEWS/Historia_SEARCH.php';
-    include '../Views/Historia_VIEWS/Historia_SHOWALL.php';
-    include '../Views/Historia_VIEWS/Historia_SHOWCURRENT.php';
+include '../Models/ASIGNAC_QA_Model.php';
+include '../Views/Asignac_QA_VIEWS/Asignac_QA_ADD.php';
+include '../Views/Asignac_QA_VIEWS/Asignac_QA_ESIT.php';
+include '../Views/Asignac_QA_VIEWS/Asignac_QA_DELETE.php';
+include '../Views/Asignac_QA_VIEWS/Asignac_QA_SEARCH.php';
+include '../Views/Asignac_QA_VIEWS/Asignac_QA_SHOWALL.php';
+include '../Views/Asignac_QA_VIEWS/Asignac_QA_SHOWCURRENT.php';
 
 function get_data_form(){
     $IdTrabajo = $_REQUEST['IdTrabajo'];
@@ -46,14 +46,14 @@ Switch ($_REQUEST['action']){
         break;
     case 'DELETE':
         if (!$_POST){
-            $HISTORIAS = new HISTORIA_Model($_REQUEST['IdTrabajo'], $_REQUEST['IdHistoria'], '');
-            $lista = array('IdTrabajo', 'IdHistoria', 'TextoHistoria');
-            $valores = $HISTORIAS->RellenaDatos();
+            $ASIG_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'],$_REQUEST['AliasEvaluado']);
+            $lista = array('IdTrabajo', 'LoginEvaluador', 'LoginEvaluado','AliasEvaluado');
+            $valores = $ASIG_QA->RellenaDatos();
             new Historia_DELETE($lista, $valores);
         }
         else{
-            $HISTORIAS = new HISTORIA_Model($_REQUEST['IdTrabajo'], $_REQUEST['IdHistoria'], '');
-            $respuesta = $HISTORIAS->DELETE();
+            $ASIG_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'],$_REQUEST['AliasEvaluado']);
+            $respuesta = $ASIG_QA->DELETE();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         }
         break;
