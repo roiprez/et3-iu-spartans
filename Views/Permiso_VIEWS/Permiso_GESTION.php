@@ -1,6 +1,6 @@
 <?php
 
-class Usu_Grupo_ADD// declaración de clase
+class Permiso_GESTION// declaración de clase
 {
 
 	//declaracion de atributos

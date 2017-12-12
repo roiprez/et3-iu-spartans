@@ -6,14 +6,16 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 */
 
 include_once '../Models/GRUPOS_Model.php';
-include '../Models/EVALUACIONES_Model.php';
+include '../Models/FUNCIONALIDADES_Model.php';
 include '../Models/ACCIONES_Model.php';
+include '../Models/PERMISOS_Model.php';
 include '../Views/Grupo_VIEWS/Grupo_SHOWALL.php';
 include '../Views/Grupo_VIEWS/Grupo_SEARCH.php';
 include '../Views/Grupo_VIEWS/Grupo_ADD.php';
 include '../Views/Grupo_VIEWS/Grupo_EDIT.php';
 include '../Views/Grupo_VIEWS/Grupo_DELETE.php';
 include '../Views/Grupo_VIEWS/Grupo_SHOWCURRENT.php';
+include '../Views/Permiso_VIEWS/Permiso_GESTION.php';
 include '../Views/MESSAGE_View.php';
 
 
@@ -124,7 +126,7 @@ if (!isset($_REQUEST['action'])){
 
                     $permisosYaAsignados[]=$rowPermiso[0]+','+$rowPermiso[1]+','+$nombreFunc+','+$nombreAcci;
                 }
-                new /*Poner nombre vista*/Usu_Grupo_ADD($datosGru,$funcAccion,$permisosYaAsignados); //Muestra la vista de USU_GRUPO
+                new Permiso_GESTION($datosGru,$funcAccion,$permisosYaAsignados); //Muestra la vista de USU_GRUPO
             }
             else{//Si se ha hecho un post
                 $idGrupo=$_REQUEST['IdGrupo']; //Definimos idGrupo para poder utilizarlo tantas veces como select se hayan seleccionado
