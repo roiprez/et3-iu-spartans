@@ -116,7 +116,8 @@ CREATE TABLE `TRABAJO` (
   `IdTrabajo` varchar(6) COLLATE latin1_spanish_ci NOT NULL,
   `NombreTrabajo` varchar(60) COLLATE latin1_spanish_ci NOT NULL,
   `FechaIniTrabajo` date NOT NULL,
-  `FechaFinTrabajo` date NOT NULL
+  `FechaFinTrabajo` date NOT NULL,
+  `PorcentajeNota` decimal(2,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 
@@ -132,7 +133,7 @@ CREATE TABLE `TRABAJO` (
 CREATE TABLE `EVALUACION` (
   `IdTrabajo` varchar(6) COLLATE latin1_spanish_ci NOT NULL,
   `LoginEvaluador` varchar(9) COLLATE latin1_spanish_ci NOT NULL,
-  `AliasEvaluado` varchar(9) COLLATE latin1_spanish_ci NOT NULL,
+  `AliasEvaluado` varchar(6) COLLATE latin1_spanish_ci NOT NULL,
   `IdHistoria` int(2) NOT NULL,
   `CorrectoA` tinyint(1) NOT NULL,
   `ComenIncorrectoA` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
@@ -189,7 +190,7 @@ CREATE TABLE `ASIGNAC_QA` (
 CREATE TABLE `ENTREGA` (
   `login` varchar(9) COLLATE latin1_spanish_ci NOT NULL,
   `IdTrabajo` varchar(6) COLLATE latin1_spanish_ci NOT NULL,
-  `Alias` varchar(9) COLLATE latin1_spanish_ci NOT NULL,
+  `Alias` varchar(6) COLLATE latin1_spanish_ci NOT NULL,
   `Horas` int(2) DEFAULT NULL,
   `Ruta` varchar(60) COLLATE latin1_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
