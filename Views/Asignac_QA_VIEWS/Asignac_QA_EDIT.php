@@ -11,7 +11,7 @@ class Asignac_QA_EDIT// declaración de clase
 
   var $lista_Usuarios;
   var $usuario;
-  var $trabajo
+  var $trabajo;
   var $alias;
   var $corrector;
 
@@ -36,13 +36,13 @@ class Asignac_QA_EDIT// declaración de clase
             <label>Login del evaluado
                  <input type="text" name="login" readonly="true"
                        id="login"
-                       size="9" maxlength="9" value="<?php echo $usuario?>" 
+                       size="9" maxlength="9" value="<?php echo $this->usuario?>"
                 />
             </label>
             <label>Alias
                 <input type="text" name="Alias" readonly="true"
                        id="Alias" required="true"
-                       size="9" maxlength="9" value="<?php echo $alias?>" 
+                       size="9" maxlength="9" value="<?php echo $this->alias?>"
                 />
             </label>
             <label>Id del Trabajo
@@ -69,12 +69,12 @@ class Asignac_QA_EDIT// declaración de clase
                 </select>
             </label>
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "EDIT" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></button>
-                <button class="borrar" type="reset" name="limpiar" title="borrar el contenido introducido"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
+                <button id="enviar" name = "action" value = "EDIT" type="submit" title="enviar"><img class="button-td" src="../../Iconos/send.png" ></button>
+                <button class="borrar" type="reset" name="limpiar" title="borrar el contenido introducido"> <img class="button-td" src="../../Iconos/borrar_campo.png" ></button>
             </div>
         </form>
-        <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-    <button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+        <form id="Formulario-mensaje" action="../../Controllers/Index_Controller.php" method="get">
+    <button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//fin pinta
 
