@@ -89,7 +89,7 @@ if (!isset($_REQUEST['action'])){
 				new Grupo_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 			}
 			break;
-        case 'ADDACCION':
+        case 'ADDPERMISO':
             if(!$_POST){ //Si no hay informacion
                 $GRUPOS =new GRUPOS_Model($_REQUEST['IdGrupo'],'',''); //Nuevo modelo de grupo
                 $datosGru = $GRUPOS->SEARCH(); //Devuelve la tupla del grupo
@@ -97,18 +97,23 @@ if (!isset($_REQUEST['action'])){
                 $FUNC_ACCION = new FUNC_ACCION_Model('','');//Nuevo modelo de Func_Accion
                 $datosFuncAccion = $FUNC_ACCION->SEARCH(); //Devuelve la tabla Func_Accion
                 $funcAccion= array();//Array que contendrá todas las relaciones entre Funcionalidades y Acciones, ademas de sus nombres
+                $i=0;
                 while($rowFuncAcc = $datosFuncAccion->fetch_array()){
+
                     $nombreFunc= new FUNCIONALIDADES_MODEL($rowFuncAcc[0],'','');
                     $nombreFunc= $nombreFunc->SEARCH();
                     $nombreFunc= $nombreFunc->fetch_array();
-                    $nombreFunc= $nombreFunc['nombreFuncionalidad'];
+                    $nombreFunc= $nombreFunc[1];
 
                     $nombreAcci= new ACCIONES_Model($rowFuncAcc[1],'','');
                     $nombreAcci= $nombreAcci->SEARCH();
                     $nombreAcci= $nombreAcci->fetch_array();
-                    $nombreAcci= $nombreAcci['nombreAccion'];
-
-                    $funcAccion[]=$rowFuncAcc[0]+','+$rowFuncAcc[1]+','+$nombreFunc+','+$nombreAcci;
+                    $nombreAcci= $nombreAcci[1];
+                    $funcAccion[$i][0]=$rowFuncAcc[0];
+                    $funcAccion[$i][1]=$rowFuncAcc[1];
+                    $funcAccion[$i][2]=$nombreFunc;
+                    $funcAccion[$i][3]=$nombreAcci;
+                    $i++;
                 }
 
                 $PERMISO =new PERMISOS_Model($_REQUEST['IdGrupo'],'',''); // Nuevo modelo de PERMISO
