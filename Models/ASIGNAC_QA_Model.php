@@ -21,7 +21,7 @@ class ASIGNAC_QA_Model{
     function ADD()
     {
         if ($this->IdTrabajo <> ''&& $this->LoginEvaluador <> ''&& $this->AliasEvaluado <> ''){//Se comprueba que el campo no este vacio
-            $sql = "SELECT * FROM ASIGNAC_QA WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador'
+            $sql = "SELECT * FROM ASIGNAC_QA WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador')
                                                                                     &&(AliasEvaluado= '$this->AliasEvaluado'))";
             if (!$result = $this->mysqli->query($sql)){ // si da error la ejecución de la query
                 return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
@@ -35,10 +35,10 @@ class ASIGNAC_QA_Model{
                       LoginEvaluado,
                       AliasEvaluado)
                       VALUES (
-                        $this->IdTrabajo,
-                        $this->LoginEvaluador,
-                        $this->LoginEvaluado,
-                        $this->AliasEvaluado
+                        '$this->IdTrabajo',
+                        '$this->LoginEvaluador',
+                        '$this->LoginEvaluado',
+                        '$this->AliasEvaluado'
                       )";
                     if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
                         return 'Error en la inserción';
