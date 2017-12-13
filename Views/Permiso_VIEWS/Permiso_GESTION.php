@@ -50,39 +50,31 @@ class Permiso_GESTION// declaración de clase
                     	<td>
                             <select  multiple name="permiso[]">
                     	<?php
-                            $permisos_grupo = array();
-                            foreach ($this->lista_valores as $tupla) {//recorre el recordset de datos de permiso
-                                if ($tupla['IdGrupo']==$this->grupo['IdGrupo']) {//almacena en un array los permisos que ya tiene el grupo
-                                    $permiso=$tupla['IdFuncionalidad'] . ",".$tupla['IdAccion'];//concatenacion de funcionalidad y accion para ser manejado como uno
-									$permisos_grupo[]=$permiso;
-								}//fin if
-                            }//fin foreach
-							foreach ($this->lista_fun_accion as $fun_accion){//recorre la lista de todas las fun_accion posibles
-                                 $valor=$fun_accion['IdFuncionalidad'] . ",".$fun_accion['IdAccion'];//concatenacion de los dos valores para ser manejados como uno
 
-                                for($j=0;$j<count($permisos_grupo);$j++){//recorre los permisos que ya tenia el grupo
-					               if ($permisos_grupo[$j]==$valor) {//si encuentra el permiso en la lista de fun_accion seleccionado=true
-                                       $sel=true;
-                                   }//fin del if
-                                }//fin del bucle for interno
+                            for($j=0;count($this->lista_fun_accion);$j++){//recorre la lista de fun accion posibles
+                                $permiso = $this->lista_fun_accion[$j][0] . ',' . $this->lista_fun_accion[$j][1];
+                                for ($i = 0; count($this->lista_valores); $i++) {//recorre la lista de permisos ya creados
+                                    $permisoyaasignado = $this->lista_valores[$i][0] . ',' . $this->lista_valores[$i][1];
+                                    if($permiso==$permisoyaasignado){//si coinciden el  permiso ya está creado
+                                        $sel=true;
+                                    }
 
-                                if ($sel==true) {//si esta seleccionado opcion seleccionada para ese grupo
+                                }
+                                if ($sel==true) {//si esta seleccionado opcion seleccionada para ese permiso
                                     ?>
-                                    <option selected="true" name="<?php echo $valor ;?>" value="<?php echo $valor ;?>">
-                                        <?php echo $valor;?>
+                                    <option selected="true" name="<?php echo $permiso ;?>" value="<?php echo $permiso ;?>">
+                                        <?php echo $this->lista_fun_accion[$j][2].','.$this->lista_fun_accion[$j][3];?>//mostramos el nombre de funcionalidad y la accion no los id
                                     </option>
                                     <?php
-                                }else{//si no esta seleccionado opcion normal para ese grupo
+                                }else{//si no esta seleccionado opcion normal para ese permiso
                                     ?>
-                                    <option name="<?php echo $valor;?>"  value="<?php echo $valor ;?>">
-                                        <?php echo $valor ;?>
+                                    <option name="<?php echo $permiso;?>"  value="<?php echo $permiso ;?>">
+                                        <?php echo $this->lista_fun_accion[$j][2].','.$this->lista_fun_accion[$j][3];?>//mostramos el nombre de funcionalidad y la accion no los id
                                     </option>
                                     <?php
                                 }//fin del else
                                 $sel=false;//volvemos a poner seleccionado a false
-
-							}//fin del bucle for externo
-						
+                            }
                     	?>
                         </select>
                     	</td>
