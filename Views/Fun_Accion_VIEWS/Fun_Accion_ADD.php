@@ -59,8 +59,8 @@ class Fun_Accion_ADD// declaración de clase
                     	</td>
                     	<td>
                     	<?php
-							$row=this->lista_valores['$usuario']->fetch_array();
-							for($i=0;$i<count($row);i++){
+							$row=$this->lista_valores['$usuario']->fetch_array();
+							for($i=0;$i<count($row);$i++){
 								echo "$row,";
 							}//fin de bucle for
                     	?>
