@@ -29,12 +29,12 @@ function pinta()
 
 ?>
 
-<form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarBusqueda()">
+<form id="formulario-search" name="formulario-search" method="post" onSubmit="return validarBusqueda()">
 
     <label>Id del grupo
         <input type="text" name="IdGrupo"
                id="IdGrupo"
-               size="6 maxlength="6"
+               size="6" maxlength="6"
         />
     </label>
 
@@ -45,7 +45,7 @@ function pinta()
         />
     </label>
     <label>Descripcion
-        <textarea form="formulario-edit" maxlength="100" name="DescripGrupo"></textarea>
+        <textarea form="formulario-search" maxlength="100" name="DescripGrupo"></textarea>
     </label>
     <div class="botones-formulario">
         <button id="buscar" name = "action" value = "SEARCH" type="submit" title="buscar"><img class="button-td" src="../Iconos/search.png" ></button>
