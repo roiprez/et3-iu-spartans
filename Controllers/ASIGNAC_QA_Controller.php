@@ -1,8 +1,8 @@
 <?php
-include '../Models/ASIGNAC_QA_Model.php';
+include_once  '../Models/ASIGNAC_QA_Model.php';
 include '../Models/TRABAJOS_Model.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_ADD.php';
-include '../Views/Asignac_QA_VIEWS/Asignac_QA_ESIT.php';
+include '../Views/Asignac_QA_VIEWS/Asignac_QA_EDIT.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_DELETE.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_SEARCH.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_SHOWALL.php';
@@ -33,7 +33,7 @@ if (!isset($_REQUEST['action'])){
 Switch ($_REQUEST['action']){
     case 'ADD':
         if (!$_POST){
-            new Historia_ADD($trabajosTotales);
+            new Asignac_QA_ADD();
         }
         else{
             $ASIGNA_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'],$_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'],$_REQUEST['AliasEvaluado']);
