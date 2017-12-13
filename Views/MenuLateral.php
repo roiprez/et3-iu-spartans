@@ -10,6 +10,7 @@ Vista que contiene el Menú lateral
 		}
 
 		function render(){
+			include '../Functions/Generacion_QAs.php';
       include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
       ?>
         <aside>
@@ -95,11 +96,11 @@ Vista que contiene el Menú lateral
 							</ul>
 						</li>
 						<li class="dropdown">
-							<input onclick="dropdownMenu('submenu_permisos')" type="button" name="Controlador" value="PERMISOS" class="dropbtn"></input>
-							<ul id="submenu_permisos" class="dropdown-content">
-								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS">Mostrar todo</a></li>
-								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS&action=ADD">Añadir</a></li>
-								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS&action=SEARCH">Buscar</a></li>
+							<input onclick="dropdownMenu('submenu_asignaciones')" type="button" name="Controlador" value="ASIGNACIONES" class="dropbtn"></input>
+							<ul id="submenu_asignaciones" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNAC_QA">Mostrar todo</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNAC_QA&action=ADD">Añadir</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNAC_QA&action=SEARCH">Buscar</a></li>
 							</ul>
 						</li>
 					</ul>
