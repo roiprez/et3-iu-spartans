@@ -6,7 +6,7 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 */
 
 include '../Models/EVALUACIONES_Model.php';
-include '../Models/HISTORIAS_Model.php';
+include '../Models/HISTORIA_Model.php';
 include '../Models/ENTREGAS_Model.php';
 include '../Views/Resultados_VIEWS/Resultados_SHOWCURRENT_ET.php';
 include '../Views/MESSAGE_View.php';
