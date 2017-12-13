@@ -10,14 +10,16 @@ include '../Views/Asignac_QA_VIEWS/Asignac_QA_SHOWCURRENT.php';
 
 function get_data_form(){
     $IdTrabajo = $_REQUEST['IdTrabajo'];
-    $IdHistoria = $_REQUEST['IdHistoria'];
-    $TextoHistoria = $_REQUEST['TextoHistoria'];
+    $LoginEvaluador =$_REQUEST['LoginEvaluador'];
+    $LoginEvaluado = $_REQUEST['LoginEvaluado'];
+    $AliasEvaluado = $_REQUEST['AliasEvaluado'];
     $action = $_REQUEST['action'];
 
     $ASIGNA_QA = new HISTORIA_Model(
         $IdTrabajo,
-        $IdHistoria,
-        $TextoHistoria
+        $LoginEvaluador,
+        $LoginEvaluado,
+        $AliasEvaluado
     );
 
     return $ASIGNA_QA;
@@ -31,26 +33,20 @@ if (!isset($_REQUEST['action'])){
 Switch ($_REQUEST['action']){
     case 'ADD':
         if (!$_POST){
-            $TRABAJOS=new TRABAJOS_Model();//Nuevo modelo de Trabajo
-            $datosTrabajos= $TRABAJOS->SEARCH();
-            $trabajosTotales = array();
-            while($rowTrabajo= $datosTrabajos->fetch_array()){
-                $trabajosTotales[]=$rowTrabajo;
-            }
             new Historia_ADD($trabajosTotales);
         }
         else{
-            $HISTORIAS = get_data_form();
-            $respuesta = $HISTORIAS->ADD();
+            $ASIGNA_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'],$_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'],$_REQUEST['AliasEvaluado']);
+            $respuesta = $ASIGNA_QA->ADD();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         }
         break;
     case 'DELETE':
         if (!$_POST){
-            $ASIGNA_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'],$_REQUEST['AliasEvaluado']);
+            $ASIGNA_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],'',$_REQUEST['AliasEvaluado']);
             $lista = array('IdTrabajo', 'LoginEvaluador', 'LoginEvaluado','AliasEvaluado');
             $valores = $ASIGNA_QA->RellenaDatos();
-            new Historia_DELETE($lista, $valores);
+            new Asignac_QA_DELETE($lista, $valores);
         }
         else{
             $ASIG_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'],$_REQUEST['AliasEvaluado']);
@@ -60,21 +56,18 @@ Switch ($_REQUEST['action']){
         break;
     case 'EDIT':
         if (!$_POST){
-            $HISTORIAS = new HISTORIA_Model($_REQUEST['IdTrabajo'], $_REQUEST['IdHistoria'], '');
-            $valores = $HISTORIAS->RellenaDatos();
-            $TRABAJOS=new TRABAJOS_Model();//Nuevo modelo de Trabajo
-            $datosTrabajos= $TRABAJOS->SEARCH();
-            $trabajosTotales = array();
-            while($rowTrabajo= $datosTrabajos->fetch_array()){
-                $trabajosTotales[]=$rowTrabajo;
-            }
-            new Historia_EDIT($valores,$trabajosTotales);
+            $ASIG_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], '',$_REQUEST['AliasEvaluado']);
+            $valores = $ASIGNA_QA->RellenaDatos();
+
+            new Asignac_QA_EDIT($valores);
         }
         else{
-            $HISTORIAS = get_data_form();
-            $respuesta = $HISTORIAS->EDIT();
+            $ASIGNA_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'] ,$_REQUEST['AliasEvaluado']);
+            $respuesta = $ASIGNA_QA->EDIT();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         }
+
+        break;
 
         break;
     case 'SEARCH':
@@ -83,7 +76,7 @@ Switch ($_REQUEST['action']){
         }
         else{
             $ASIGNA_QA = get_data_form();
-            $datos = $ASIG_QA->SEARCH();
+            $datos = $ASIGNA_QA->SEARCH();
             $lista = array('IdTrabajo', 'LoginEvaluador', 'LoginEvaluado','AliasEvaluado');
             new Asignac_QA_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
         }
@@ -96,12 +89,12 @@ Switch ($_REQUEST['action']){
         break;
     default:
         if (!$_POST){
-            $ASIG_QA = new ASIGNAC_QA_Model('','','','');
+            $ASIGNA_QA = new ASIGNAC_QA_Model('','','','');
         }
         else{
-            $ASIG_QA = get_data_form();
+            $ASIGNA_QA = get_data_form();
         }
-        $datos = $ASIG_QA->SEARCH();
+        $datos = $ASIGNA_QA->SEARCH();
         $lista = array('IdTrabajo', 'LoginEvaluador', 'LoginEvaluado','AliasEvaluado');
         new Asignac_QA_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 
