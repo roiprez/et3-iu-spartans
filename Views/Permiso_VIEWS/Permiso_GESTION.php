@@ -50,9 +50,9 @@ class Permiso_GESTION// declaración de clase
                     	<td>
                             <select  multiple name="permiso[]">
                     	<?php
+                        $j=0;
+                            while($permiso = $this->lista_fun_accion[$j][0] . ',' . $this->lista_fun_accion[$j][1]){//recorre la lista de fun accion posibles
 
-                            for($j=0;count($this->lista_fun_accion);$j++){//recorre la lista de fun accion posibles
-                                $permiso = $this->lista_fun_accion[$j][0] . ',' . $this->lista_fun_accion[$j][1];
                                 for ($i = 0; count($this->lista_valores); $i++) {//recorre la lista de permisos ya creados
                                     $permisoyaasignado = $this->lista_valores[$i][0] . ',' . $this->lista_valores[$i][1];
                                     if($permiso==$permisoyaasignado){//si coinciden el  permiso ya está creado
@@ -74,6 +74,7 @@ class Permiso_GESTION// declaración de clase
                                     <?php
                                 }//fin del else
                                 $sel=false;//volvemos a poner seleccionado a false
+                                $j++;
                             }
                     	?>
                         </select>
@@ -81,8 +82,9 @@ class Permiso_GESTION// declaración de clase
 						<td><div class="botones-formulario">
 						<button id="enviar" name = "action" value = "ADDGROUP" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></button>
 						<button class="borrar" type="reset" name="limpiar" title="borrar el contenido introducido"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
-						</div></td>
-        </form>
+						</div>
+                        </td>
+                        </form>
                     </tr>
 
         </table>
