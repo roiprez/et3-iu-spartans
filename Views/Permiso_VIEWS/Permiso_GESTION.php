@@ -63,13 +63,13 @@ class Permiso_GESTION// declaración de clase
                                 if ($sel==true) {//si esta seleccionado opcion seleccionada para ese permiso
                                     ?>
                                     <option selected="true" name="<?php echo $permiso ;?>" value="<?php echo $permiso ;?>">
-                                        <?php echo $this->lista_fun_accion[$j][2].','.$this->lista_fun_accion[$j][3];?>//mostramos el nombre de funcionalidad y la accion no los id
+                                        <?php echo $this->lista_fun_accion[$j][2].','.$this->lista_fun_accion[$j][3];?>
                                     </option>
                                     <?php
                                 }else{//si no esta seleccionado opcion normal para ese permiso
                                     ?>
                                     <option name="<?php echo $permiso;?>"  value="<?php echo $permiso ;?>">
-                                        <?php echo $this->lista_fun_accion[$j][2].','.$this->lista_fun_accion[$j][3];?>//mostramos el nombre de funcionalidad y la accion no los id
+                                        <?php echo $this->lista_fun_accion[$j][2].','.$this->lista_fun_accion[$j][3];?>
                                     </option>
                                     <?php
                                 }//fin del else

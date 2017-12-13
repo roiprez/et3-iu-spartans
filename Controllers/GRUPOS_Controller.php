@@ -120,16 +120,21 @@ if (!isset($_REQUEST['action'])){
                 $datosPermiso = $PERMISO->SEARCH(); //Devolverá las tuplas de los permisos para ese grupo, si los hay
                 $permisosYaAsignados= array();//Array que contendrá todas las relaciones entre Funcionalidades y Acciones, ademas de sus nombres,
                                      // para los permisos ya asignados al grupo
+                $i=0;
                 while($rowPermiso = $datosPermiso->fetch_array()){
                     $nombreFunc= new FUNCIONALIDADES_MODEL($rowPermiso[0],'','');
                     $nombreFunc= $nombreFunc->SEARCH();
-                    $nombreFunc= $nombreFunc['nombreFuncionalidad'];
+                    $nombreFunc= $nombreFunc[0];
 
                     $nombreAcci= new ACCIONES_Model($rowPermiso[1],'','');
                     $nombreAcci= $nombreAcci->SEARCH();
-                    $nombreAcci= $nombreAcci['nombreAccion'];
+                    $nombreAcci= $nombreAcci[0];
 
-                    $permisosYaAsignados[]=$rowPermiso[0]+','+$rowPermiso[1]+','+$nombreFunc+','+$nombreAcci;
+                    $permisosYaAsignados[$i][0]=$rowPermiso[0];
+                    $permisosYaAsignados[$i][1]=$rowPermiso[1];
+                    $permisosYaAsignados[$i][2]=$nombreFunc;
+                    $permisosYaAsignados[$i][3]=$nombreAcci;
+                    $i++;
                 }
                 new Permiso_GESTION($datosGru,$funcAccion,$permisosYaAsignados); //Muestra la vista de USU_GRUPO
             }
