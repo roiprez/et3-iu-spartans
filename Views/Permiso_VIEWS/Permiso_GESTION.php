@@ -51,11 +51,11 @@ class Permiso_GESTION// declaración de clase
                             <select  multiple name="permiso[]">
                     	<?php
                         $j=0;
-                            while(true){//recorre la lista de fun accion posibles
-                                if($this->lista_fun_accion[$j]==null){
+                            while($permiso = $this->lista_fun_accion[$j][0] . ',' . $this->lista_fun_accion[$j][1]){//recorre la lista de fun accion posibles
+                                if($permiso==null){
                                     break;
                                 }
-                                $permiso = $this->lista_fun_accion[$j][0] . ',' . $this->lista_fun_accion[$j][1];
+                                
                                 for ($i = 0; count($this->lista_valores); $i++) {//recorre la lista de permisos ya creados
                                     $permisoyaasignado = $this->lista_valores[$i][0] . ',' . $this->lista_valores[$i][1];
                                     if($permiso==$permisoyaasignado){//si coinciden el  permiso ya está creado
