@@ -15,7 +15,7 @@ function get_data_form(){
     $AliasEvaluado = $_REQUEST['AliasEvaluado'];
     $action = $_REQUEST['action'];
 
-    $ASIGNA_QA = new HISTORIA_Model(
+    $ASIGNA_QA = new ASIGNAC_QA_Model(
         $IdTrabajo,
         $LoginEvaluador,
         $LoginEvaluado,

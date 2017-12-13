@@ -143,9 +143,10 @@ if (!isset($_REQUEST['action'])){
                 $PERMISOS_PREVIO= new PERMISOS_Model($idGrupo,'',''); //Definimos un modelo de USU_GRUPO con el login que se nos pasa para borrar todos los grupos que tenia seleccionados de antes
                 $borrado=$PERMISOS_PREVIO->reventarPermiso(); //Se revientan todos los grupos a los que pertenece el usuario
 
-                if ($_REQUEST['IdFuncionalidad']!=''){ // Si se ha seleccionado algun grupo
-                    foreach ($_REQUEST['IdFuncionalidad'] as $indice => $valorFunc){ //Recorremos todos los seleccionados
-                        $PERMISO= new PERMISOS_Model($idGrupo,$valorFunc,$_REQUEST['IdAccion']);
+                if ($_REQUEST['permiso']!=''){ // Si se ha seleccionado algun grupo
+                    foreach ($_REQUEST['permiso'] as  $valorPermiso){ //Recorremos todos los seleccionados
+                        $temp= explode(',',$valorPermiso);
+                        $PERMISO= new PERMISOS_Model($idGrupo,$temp[0],$temp[1]);
                         $respuesta=$PERMISO->ADD(); // Añadimos uno por uno a la tabla
                     }
                     new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
