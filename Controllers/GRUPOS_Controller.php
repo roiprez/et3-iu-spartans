@@ -120,16 +120,21 @@ if (!isset($_REQUEST['action'])){
                 $datosPermiso = $PERMISO->SEARCH(); //Devolverá las tuplas de los permisos para ese grupo, si los hay
                 $permisosYaAsignados= array();//Array que contendrá todas las relaciones entre Funcionalidades y Acciones, ademas de sus nombres,
                                      // para los permisos ya asignados al grupo
+                $i=0;
                 while($rowPermiso = $datosPermiso->fetch_array()){
                     $nombreFunc= new FUNCIONALIDADES_MODEL($rowPermiso[0],'','');
                     $nombreFunc= $nombreFunc->SEARCH();
-                    $nombreFunc= $nombreFunc['nombreFuncionalidad'];
+                    $nombreFunc= $nombreFunc[0];
 
                     $nombreAcci= new ACCIONES_Model($rowPermiso[1],'','');
                     $nombreAcci= $nombreAcci->SEARCH();
-                    $nombreAcci= $nombreAcci['nombreAccion'];
+                    $nombreAcci= $nombreAcci[0];
 
-                    $permisosYaAsignados[]=$rowPermiso[0]+','+$rowPermiso[1]+','+$nombreFunc+','+$nombreAcci;
+                    $permisosYaAsignados[$i][0]=$rowPermiso[0];
+                    $permisosYaAsignados[$i][1]=$rowPermiso[1];
+                    $permisosYaAsignados[$i][2]=$nombreFunc;
+                    $permisosYaAsignados[$i][3]=$nombreAcci;
+                    $i++;
                 }
                 new Permiso_GESTION($datosGru,$funcAccion,$permisosYaAsignados); //Muestra la vista de USU_GRUPO
             }
@@ -138,9 +143,10 @@ if (!isset($_REQUEST['action'])){
                 $PERMISOS_PREVIO= new PERMISOS_Model($idGrupo,'',''); //Definimos un modelo de USU_GRUPO con el login que se nos pasa para borrar todos los grupos que tenia seleccionados de antes
                 $borrado=$PERMISOS_PREVIO->reventarPermiso(); //Se revientan todos los grupos a los que pertenece el usuario
 
-                if ($_REQUEST['IdFuncionalidad']!=''){ // Si se ha seleccionado algun grupo
-                    foreach ($_REQUEST['IdFuncionalidad'] as $indice => $valorFunc){ //Recorremos todos los seleccionados
-                        $PERMISO= new PERMISOS_Model($idGrupo,$valorFunc,$_REQUEST['IdAccion']);
+                if ($_REQUEST['permiso']!=''){ // Si se ha seleccionado algun grupo
+                    foreach ($_REQUEST['permiso'] as  $valorPermiso){ //Recorremos todos los seleccionados
+                        $temp= explode(',',$valorPermiso);
+                        $PERMISO= new PERMISOS_Model($idGrupo,$temp[0],$temp[1]);
                         $respuesta=$PERMISO->ADD(); // Añadimos uno por uno a la tabla
                     }
                     new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
