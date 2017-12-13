@@ -1,5 +1,7 @@
 <?php
     include '../Models/HISTORIA_Model.php';
+    include '../Models/TRABAJOS_Model.php';
+    include '../Views/MESSAGE_View.php';
     include '../Views/Historia_VIEWS/Historia_ADD.php';
     include '../Views/Historia_VIEWS/Historia_DELETE.php';
     include '../Views/Historia_VIEWS/Historia_EDIT.php';
@@ -30,11 +32,11 @@ if (!isset($_REQUEST['action'])){
 Switch ($_REQUEST['action']){
     case 'ADD':
         if (!$_POST){
-            $TRABAJOS=new TRABAJOS_Model();//Nuevo modelo de Trabajo
+            $TRABAJOS=new TRABAJOS_Model('','','','');//Nuevo modelo de Trabajo
             $datosTrabajos= $TRABAJOS->SEARCH();
             $trabajosTotales = array();
             while($rowTrabajo= $datosTrabajos->fetch_array()){
-                $trabajosTotales[]=$rowTrabajo;
+                $trabajosTotales[]=$rowTrabajo[0];
             }
             new Historia_ADD($trabajosTotales);
         }

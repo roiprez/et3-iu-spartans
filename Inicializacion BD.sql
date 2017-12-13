@@ -30,7 +30,7 @@ INSERT INTO USUARIO (
 					Telefono)
 						VALUES (
 							'admin',
-							'provisional',
+					'e25d7c6cd66f11492b040391ea0b895a',
 							'12345678Z',
 							'Admin',
 							'Admin',
