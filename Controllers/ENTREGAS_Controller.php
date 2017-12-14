@@ -1,7 +1,7 @@
 <?php
-    include '../Models/ENTREGAS_Model.php';
-    include '../Models/USUARIOS_Model.php';
-    include '../Models/TRABAJOS_Model.php';
+    include_once '../Models/ENTREGAS_Model.php';
+    include_once '../Models/USUARIOS_Model.php';
+    include_once '../Models/TRABAJOS_Model.php';
     include '../Views/Entrega_VIEWS/Entrega_ADD.php';
     include '../Views/Entrega_VIEWS/Entrega_DELETE.php';
     include '../Views/Entrega_VIEWS/Entrega_EDIT.php';

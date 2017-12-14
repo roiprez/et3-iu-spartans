@@ -5,7 +5,7 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 20/10/2017 por s84f46
 */
 
-include '../Models/EVALUACIONES_Model.php';
+include_once '../Models/EVALUACIONES_Model.php';
 include '../Views/Evaluacion_VIEWS/Evaluacion_SHOWALL.php';
 include '../Views/Evaluacion_VIEWS/Evaluacion_SEARCH.php';
 include '../Views/Evaluacion_VIEWS/Evaluacion_ADD.php';

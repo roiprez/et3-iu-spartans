@@ -48,11 +48,12 @@ class Permiso_GESTION// declaración de clase
                             <input type="hidden"  name="IdGrupo"  value="<?php echo $this->grupo['IdGrupo'] ;?>">
                         </td>
                     	<td>
-                            <select  multiple name="permiso[]">
+                            <select  multiple name="permiso">
                     	<?php
                         $j=0;
-                            while($permiso = $this->lista_fun_accion[$j][0] . ',' . $this->lista_fun_accion[$j][1]){//recorre la lista de fun accion posibles
-                                if($permiso==null){
+                            while(true){//recorre la lista de fun accion posibles
+                                $permiso = $this->lista_fun_accion[$j][0] . ',' . $this->lista_fun_accion[$j][1];
+                                if($this->lista_fun_accion[$j]==null){
                                     break;
                                 }
 
