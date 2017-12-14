@@ -19,11 +19,11 @@ class Entrega_SHOWALL{  // declaración de clase
         $this->datos = $datos;
         $this->indexphp = $indexphp;
         $this->pinta();
-    }
+	}
 
     function pinta(){
 
-        //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+        include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         if (IsAuthenticated() && !isAdmin()){
         ?>
         <table id="tabla-showall">

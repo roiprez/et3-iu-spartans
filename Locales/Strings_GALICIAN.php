@@ -57,6 +57,9 @@ array(
 	'Ver en detalle' => 'Ver ao detalle',
 	'editar' => 'Editar',
 	'borrar línea' => 'Borrar línea',
+	'buscar' => 'Buscar',
+	'editar acciones' => 'editar acciones',
+	'editar permisos' => 'editar permisos'
 
 	/*Diccionarios de permisos*/
 	'No tienes permiso para acceder a esta vista' => 'Non podes acceder a esta vista',

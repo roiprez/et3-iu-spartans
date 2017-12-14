@@ -16,7 +16,7 @@ class Asignac_QA_SEARCH
     }
 
     function pinta(){
-        //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+        include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         ?>
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 

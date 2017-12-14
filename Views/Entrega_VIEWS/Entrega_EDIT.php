@@ -19,7 +19,7 @@ class Entrega_EDIT// declaración de clase
     }
     function pinta()
     {
-        //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
         ?>
 

@@ -25,7 +25,7 @@ class Asignac_QA_ADD// declaración de clase
     }
     function pinta()
     {
-        //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
         ?>
 

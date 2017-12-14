@@ -18,7 +18,7 @@ class Fun_Accion_ADD// declaración de clase
     }
     function pinta()
     {
-        //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAdmin()){
             $respuesta= "No tienes permiso para acceder a esta vista";

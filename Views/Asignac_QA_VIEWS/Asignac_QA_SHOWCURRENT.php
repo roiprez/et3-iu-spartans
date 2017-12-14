@@ -20,7 +20,7 @@ class Asignac_QA_SHOWCURRENT
     }
 
     function pinta(){
-        //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+        include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         ?>
         <table id="tabla-detail">
 

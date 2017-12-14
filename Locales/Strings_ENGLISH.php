@@ -60,6 +60,9 @@ array(
 	'Ver en detalle' => 'Show current',
 	'editar' => 'Edit',
 	'borrar línea' => 'Delete line',
+	'buscar' => 'Search',
+	'editar acciones' => 'Edit actions',
+	'editar permisos' => 'Edit permisssion',
 
 	/*Diccionarios de permisos*/
 	'No tienes permiso para acceder a esta vista' => 'You can´t see this View',
