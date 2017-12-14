@@ -124,11 +124,13 @@ if (!isset($_REQUEST['action'])){
                 while($rowPermiso = $datosPermiso->fetch_array()){
                     $nombreFunc= new FUNCIONALIDADES_MODEL($rowPermiso[0],'','');
                     $nombreFunc= $nombreFunc->SEARCH();
-                    $nombreFunc= $nombreFunc[0];
+                    $nombreFunc= $nombreFunc->fetch_array();
+                    $nombreFunc= $nombreFunc[1];
 
                     $nombreAcci= new ACCIONES_Model($rowPermiso[1],'','');
                     $nombreAcci= $nombreAcci->SEARCH();
-                    $nombreAcci= $nombreAcci[0];
+                    $nombreAcci= $nombreAcci->fetch_array();
+                    $nombreAcci= $nombreAcci[1];
 
                     $permisosYaAsignados[$i][0]=$rowPermiso[0];
                     $permisosYaAsignados[$i][1]=$rowPermiso[1];
@@ -141,9 +143,7 @@ if (!isset($_REQUEST['action'])){
             else{//Si se ha hecho un post
                 $idGrupo=$_REQUEST['IdGrupo']; //Definimos idGrupo para poder utilizarlo tantas veces como select se hayan seleccionado
                 $PERMISOS_PREVIO= new PERMISOS_Model($idGrupo,'',''); //Definimos un modelo de USU_GRUPO con el login que se nos pasa para borrar todos los grupos que tenia seleccionados de antes
-                echo 'hello';
                 $borrado=$PERMISOS_PREVIO->reventarPermiso(); //Se revientan todos los grupos a los que pertenece el usuario
-                echo 'bye';
                 if ($_REQUEST['permiso']!=''){ // Si se ha seleccionado algun grupo
                     foreach ($_REQUEST['permiso'] as  $valorPermiso){ //Recorremos todos los seleccionados
                         $temp= explode(',',$valorPermiso);
