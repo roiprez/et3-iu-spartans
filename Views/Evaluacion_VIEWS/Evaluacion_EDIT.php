@@ -54,7 +54,7 @@ class Evaluacion_EDIT// declaración de clase
             </label>
             <label>Corrección de la historia
                 <select name="CorrectoA" id="CorrectoA" required="true" size="1">
-                  <option selected="true"> value="<?php echo $this->lista_valores['CorrectoA'] ?>"><?php if($this->lista_valores['CorrectoA']==1){
+                  <option selected="true" value="<?php echo $this->lista_valores['CorrectoA'] ?>"><?php if($this->lista_valores['CorrectoA']==1){
                     echo "Correcto";
                   }else{
                     echo "Incorrecto";
@@ -66,11 +66,11 @@ class Evaluacion_EDIT// declaración de clase
                 </select>
             </label>
             <label>Comentario
-                <textarea form="formulario-edit" maxlength="300" name="ComenIncorrectoA"><?php echo "$this->lista_valores['ComenIncorrectoA']" ?></textarea>
+                <textarea form="formulario-edit" maxlength="300" name="ComenIncorrectoA"><?php echo $this->lista_valores['ComenIncorrectoA']?></textarea>
             </label>
             <label>Corrección del profesor
                 <select name="CorrectoP" id="CorrectoP" required="true" size="1">
-                  <option selected="true"> value="<?php echo $this->lista_valores['CorrectoP'] ?>"><?php if($this->lista_valores['CorrectoP']==1){
+                  <option selected="true" value="<?php echo $this->lista_valores['CorrectoP'] ?>"><?php if($this->lista_valores['CorrectoP']==1){
                     echo "Correcto";
                   }else{
                     echo "Incorrecto";
@@ -86,7 +86,7 @@ class Evaluacion_EDIT// declaración de clase
             </label>
             <label>Corrección de la evaluación
                 <select name="OK" id="OK" required="true" size="1">
-                  <option selected="true"> value="<?php echo $this->lista_valores['OK'] ?>"><?php if($this->lista_valores['OK']==1){
+                  <option selected="true" value="<?php echo $this->lista_valores['OK'] ?>"><?php if($this->lista_valores['OK']==1){
                     echo "Correcto";
                   }else{
                     echo "Incorrecto";
