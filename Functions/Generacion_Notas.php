@@ -2,7 +2,7 @@
 /*
 Genera las notas de entregas y QAs
 */
-include '../Models/EVALUACIONES_Model.php';
+include_once '../Models/EVALUACIONES_Model.php';
 
 function generarNotaEntrega($idTrabajo, $alias){
 	$EVALUACIONES = new EVALUACIONES_Model($idTrabajo, '', $alias, '', '', '', '', '', '');   

@@ -63,7 +63,6 @@ function evaluacion_gen($IdTrabajo, $LoginEvaluador, $AliasEvaluado){
     while($row = $historias->fetch_array()) {
       $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$row[1],'','','','','');
       $respuesta = $EVALUACIONES->ADD();
-      echo $respuesta;
   }
 }
 ?>
