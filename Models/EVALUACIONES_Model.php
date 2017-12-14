@@ -14,7 +14,7 @@ class EVALUACIONES_Model { //declaración de la clase
 	var $CorrectoA;
 	var $ComenIncorrectoA;
 	var $CorrectoP;
-	var $ComenIncorrectoP;
+	var $ComentIncorrectoP;
 	var $OK;
 	
 	var $mysqli; // declaración del atributo manejador de la bd
@@ -22,7 +22,7 @@ class EVALUACIONES_Model { //declaración de la clase
 //Constructor de la clase
 
 
-function __construct($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$IdHistoria,$CorrectoA,$ComenIncorrectoA,$CorrectoP,$ComenIncorrectoP,$OK){
+function __construct($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$IdHistoria,$CorrectoA,$ComenIncorrectoA,$CorrectoP,$ComentIncorrectoP,$OK){
 	//asignación de valores de parámetro a los atributos de la clase
 	$this->IdTrabajo = $IdTrabajo;
 	$this->LoginEvaluador = $LoginEvaluador;
@@ -31,7 +31,7 @@ function __construct($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$IdHistoria,$Corr
 	$this->CorrectoA = $CorrectoA;
 	$this->ComenIncorrectoA = $ComenIncorrectoA;
 	$this->CorrectoP = $CorrectoP;
-	$this->ComenIncorrectoP = $ComenIncorrectoP;
+	$this->ComentIncorrectoP = $ComentIncorrectoP;
 	$this->OK = $OK;
 	
 
@@ -83,7 +83,7 @@ function ADD()
 										'$this->CorrectoA',
 										'$this->ComenIncorrectoA',
 										'$this->CorrectoP',
-										'$this->ComenIncorrectoP',
+										'$this->ComentIncorrectoP',
 										'$this->OK')";
 										
 										if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
@@ -141,7 +141,7 @@ function EDIT()
 										CorrectoA,
 										ComenIncorrectoA,
 										CorrectoP,
-										ComenIncorrectoP,
+										ComentIncorrectoP,
 										OK)
 										VALUES(
 										'$this->IdTrabajo',
@@ -189,7 +189,7 @@ function EDIT()
 					CorrectoA = '$this->CorrectoA',
 					ComenIncorrectoA = '$this->ComenIncorrectoA',
 					CorrectoP = '$this->CorrectoP',
-					ComenIncorrectoP = '$this->ComenIncorrectoP',
+					ComentIncorrectoP = '$this->ComentIncorrectoP',
 					OK = '$this->Ok'
 				WHERE ( (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluado = '$this->LoginEvaluado') && (AliasEvaluado = '$this->AliasEvaluado') && (IdHistoria = '$this->IdHistoria')
 				)";

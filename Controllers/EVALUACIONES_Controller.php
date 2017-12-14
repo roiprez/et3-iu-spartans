@@ -25,7 +25,7 @@ function get_data_form(){
 	$CorrectoA = $_REQUEST['CorrectoA'];
 	$ComenIncorrectoA = $_REQUEST['ComenIncorrectoA'];
 	$CorrectoP = $_REQUEST['CorrectoP'];
-	$ComenIncorrectoP = $_REQUEST['ComenIncorrectoP'];
+	$ComentIncorrectoP = $_REQUEST['ComentIncorrectoP'];
 	$OK = $_REQUEST['OK'];
 	$accion = $_REQUEST['accion'];
 	$EVALUACION = new EVALUACION_Model(
@@ -36,7 +36,7 @@ function get_data_form(){
 		$CorrectoA,
 		$ComenIncorrectoA,
 		$CorrectoP,
-		$ComenIncorrectoP,
+		$ComentIncorrectoP,
 		$OK
 		);
 
@@ -58,7 +58,7 @@ if (!isset($_REQUEST['action'])){
 			}
 			else{
 				
-				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComenIncorrectoP'], $_REQUEST['OK']);
+				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComentIncorrectoP'], $_REQUEST['OK']);
 				$respuesta = $EVALUACION->ADD();
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
@@ -66,7 +66,7 @@ if (!isset($_REQUEST['action'])){
 		case 'DELETE':
 			if (!$_POST){
 				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], '', '', '', '', '');
-				$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComenIncorrectoP','OK');
+				$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComentIncorrectoP','OK');
 				$valores = $EVALUACION->RellenaDatos();
 				new Evaluacion_DELETE($lista, $valores);
 			}
@@ -83,7 +83,7 @@ if (!isset($_REQUEST['action'])){
 				new Evaluacion_EDIT($valores);
 			}
 			else{	
-				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComenIncorrectoP'], $_REQUEST['OK']);							
+				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComentIncorrectoP'], $_REQUEST['OK']);							
 				$respuesta = $EVALUACION->EDIT();
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
@@ -95,16 +95,16 @@ if (!isset($_REQUEST['action'])){
 				new Evaluacion_SEARCH();
 			}
 			else{
-				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComenIncorrectoP'], $_REQUEST['OK']);
+				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComentIncorrectoP'], $_REQUEST['OK']);
 				$datos = $EVALUACION->SEARCH();
-				$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComenIncorrectoP','OK');				
+				$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComentIncorrectoP','OK');				
 				new Evaluacion_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 			}
 			break;
 		case 'SHOWCURRENT':
 			$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], '', '', '', '', '');
 			$valores = $EVALUACION->RellenaDatos();
-			$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComenIncorrectoP','OK');
+			$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComentIncorrectoP','OK');
 			new Evaluacion_SHOWCURRENT($lista, $valores);
 			break;
 			
@@ -116,7 +116,7 @@ if (!isset($_REQUEST['action'])){
 				$EVALUACION = get_data_form();
 			}
 			$datos = $EVALUACION->SEARCH();
-			$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComenIncorrectoP','OK');
+			$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA','CorrectoP','OK');
 			new Evaluacion_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 						
 	}
