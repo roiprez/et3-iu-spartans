@@ -21,8 +21,8 @@ function qa_gen($IdTrabajo){
     //Rellena las listas de login y alias
     while($row = $entregas->fetch_array()) {
       array_push($lista_login, $row[1]);
-      array_push($lista_login_evaluado, $row[2]);
-      array_push($lista_alias, $row[3]);
+      array_push($lista_login_evaluado, $row[1]);
+      array_push($lista_alias, $row[2]);
     }
     
     //Recorre en bucle todos los login
