@@ -49,6 +49,17 @@ array(
 	"No existe" => "Don't exist",
 	'No existe en la base de datos' => "Don't exist in the database",
 	'Error en la modificación' => 'Modification error',
+	
+	/*Diccionario de titles*/
+	'Volver atrás' => 'Come back',
+	'borrar el contenido introducido' => 'Reset',
+	'borrar' => 'Delete',
+	'enviar' => 'Send',
+	'añadir una fila' => 'Add row',
+	'buscar en la tabla' => 'Search',
+	'Ver en detalle' => 'Show current',
+	'editar' => 'Edit',
+	'borrar línea' => 'Delete line',
 
 	/*Diccionarios de permisos*/
 	'No tienes permiso para acceder a esta vista' => 'You can´t see this View',

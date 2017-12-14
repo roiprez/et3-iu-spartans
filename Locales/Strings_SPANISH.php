@@ -45,6 +45,18 @@ array(
 	'Usuarios' =>'Usuarios',
 	'Grupos' => 'Grupos',
 	
+	/*Diccionario de titles*/
+	'Volver atrás' => 'Volver atrás',
+	'borrar el contenido introducido' => 'borrar el contenido introducido',
+	'borrar' => 'borrar',
+	'enviar' => 'enviar',
+	'añadir una fila' => 'añadir una fila',
+	'buscar en la tabla' => 'buscar en la tabla',
+	'Ver en detalle' => 'Ver en detalle',
+	'editar' => 'Editar',
+	'borrar línea' => 'Borrar línea',
+	
+	
 	/*Diccionarios de permisos*/
 	'No tienes permiso para acceder a esta vista' => 'No tienes permiso para acceder a esta vista',
 
