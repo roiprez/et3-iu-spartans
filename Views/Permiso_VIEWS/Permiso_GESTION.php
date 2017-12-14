@@ -55,7 +55,7 @@ class Permiso_GESTION// declaración de clase
                                 if($permiso==null){
                                     break;
                                 }
-                                
+
                                 for ($i = 0; count($this->lista_valores); $i++) {//recorre la lista de permisos ya creados
                                     $permisoyaasignado = $this->lista_valores[$i][0] . ',' . $this->lista_valores[$i][1];
                                     if($permiso==$permisoyaasignado){//si coinciden el  permiso ya está creado
