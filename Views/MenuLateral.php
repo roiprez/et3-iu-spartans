@@ -10,7 +10,6 @@ Vista que contiene el Menú lateral
 		}
 
 		function render(){
-			include_once '../Functions/Generacion_QAs.php';
       include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
       ?>
         <aside>
@@ -103,7 +102,6 @@ Vista que contiene el Menú lateral
 								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNAC_QA&action=SEARCH">Buscar</a></li>
 							</ul>
 						</li>
-						<?php qa_gen('ET1'); ?>
 					</ul>
 				</aside>
         <?php				
