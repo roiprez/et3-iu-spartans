@@ -1,5 +1,8 @@
 <?php
     include '../Models/PERMISOS_Model.php';
+    include_once '../Models/GRUPOS_Model.php';
+    include_once '../Models/FUNCIONALIDADES_Model.php';
+    include_once '../Models/ACCIONES_Model.php';
     include '../Views/Permiso_VIEWS/Permiso_SHOWALL.php';
     include '../Views/Permiso_VIEWS/Permiso_SEARCH.php';
 
@@ -24,7 +27,14 @@ if (!isset($_REQUEST['action'])){
 Switch ($_REQUEST['action']){
     case 'SEARCH':
         if (!$_POST){
-            new Permiso_SEARCH();
+            $IDGRUPOS= new GRUPOS_Model('','','');
+            $IdFUNCIONALIDADES= new FUNCIONALIDADES_MODEL('','','');
+            $IDACCIONES= new ACCIONES_Model('','','');
+
+            $datosGrupos= $IDGRUPOS->SEARCH();
+            $datosFuncionalidades= $IdFUNCIONALIDADES->SEARCH();
+            $datosAcciones= $IDACCIONES->SEARCH();
+            new Permiso_SEARCH($datosGrupos,$datosFuncionalidades,$datosAcciones);
         }
         else{
             $PERMISOS = get_data_form();

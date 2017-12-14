@@ -48,7 +48,7 @@ class Permiso_GESTION// declaración de clase
                             <input type="hidden"  name="IdGrupo"  value="<?php echo $this->grupo['IdGrupo'] ;?>">
                         </td>
                     	<td>
-                            <select  multiple name="permiso">
+                            <select  multiple name="permiso[]">
                     	<?php
                         $j=0;
                             while(true){//recorre la lista de fun accion posibles
