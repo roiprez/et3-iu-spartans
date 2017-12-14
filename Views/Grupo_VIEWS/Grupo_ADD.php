@@ -15,7 +15,7 @@ class Grupo_ADD
     }
     function pinta()
     {
-        //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAdmin()){
             $respuesta= "No tienes permiso para acceder a esta vista";
@@ -46,12 +46,12 @@ class Grupo_ADD
                 <textarea form="formulario-add" maxlength="100" name="DescripGrupo" required="true"></textarea>
             </label>
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADD" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></button>
-                <button class="borrar" type="reset" name="limpiar" title="borrar el contenido introducido"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
+                <button id="enviar" name = "action" value = "ADD" type="submit" title="<?php echo $strings['enviar'];?>"><img class="button-td" src="../Iconos/send.png" ></button>
+                <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido'];?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás'];?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//Fin else
     }//fin pinta

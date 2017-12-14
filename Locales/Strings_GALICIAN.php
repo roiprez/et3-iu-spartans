@@ -46,6 +46,20 @@ array(
 	"No existe" => 'Non existe',
 	'No existe en la base de datos' => 'Non existe na base de datos',
 	'Error en la modificación' => 'Erro na modificación',
+	
+	/*Diccionario de titles*/
+	'Volver atrás' => 'Volver atrás',
+	'borrar el contenido introducido' => 'borrar o contenido introducido',
+	'borrar' => 'borrar',
+	'enviar' => 'enviar',
+	'añadir una fila' => 'añadir unha fila',
+	'buscar en la tabla' => 'buscar na tabla',
+	'Ver en detalle' => 'Ver ao detalle',
+	'editar' => 'Editar',
+	'borrar línea' => 'Borrar línea',
+	'buscar' => 'Buscar',
+	'editar acciones' => 'editar acciones',
+	'editar permisos' => 'editar permisos'
 
 	/*Diccionarios de permisos*/
 	'No tienes permiso para acceder a esta vista' => 'Non podes acceder a esta vista',

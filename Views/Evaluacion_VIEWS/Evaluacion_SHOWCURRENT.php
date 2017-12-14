@@ -22,7 +22,7 @@ class Evaluacion_SHOWCURRENT{  // declaración de clase
     }
 
     function pinta(){
-        //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+        include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if (IsAuthenticated() && !isAdmin()){
             $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
@@ -49,7 +49,7 @@ class Evaluacion_SHOWCURRENT{  // declaración de clase
 
         </table>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action'  title="Volver atrás"><img class="button-td" src="../Iconos/back.png"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action'  title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//Fin else
     }//fin de pintar

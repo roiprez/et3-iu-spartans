@@ -22,7 +22,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
     }
 
     function pinta(){
-        //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+        include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if (IsAuthenticated() && !isAdmin()){
            $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
@@ -58,9 +58,9 @@ class Evaluacion_SHOWALL{  // declaración de clase
                             <?php
                         }
                         ?>
-                        <td><button type = "submit" name = "action" value="SHOWCURRENT"  title="detalles"><img class="button-td" src="../Iconos/details.png"></img></button></td>
-                        <td><button type = "submit" name = "action" value="EDIT" title="editar"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
-                        <td><button type = "submit" name = "action" value="DELETE"  title="borrar línea"><img class="button-td" src="../Iconos/borrar.png"></img></button></td>
+                        <td><button type = "submit" name = "action" value="SHOWCURRENT"  title="<?php echo $strings['Ver en detalle']; ?>"><img class="button-td" src="../Iconos/details.png"></img></button></td>
+                        <td><button type = "submit" name = "action" value="EDIT" title="<?php echo $strings['editar']; ?>"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
+                        <td><button type = "submit" name = "action" value="DELETE"  title="<?php echo $strings['borrar línea']; ?>"><img class="button-td" src="../Iconos/borrar.png"></img></button></td>
                     </tr>
                 </form>
                 <?php
@@ -69,7 +69,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
 
         </table>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//Fin else
     }

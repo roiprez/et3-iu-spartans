@@ -19,11 +19,11 @@ class Entrega_SHOWALL{  // declaración de clase
         $this->datos = $datos;
         $this->indexphp = $indexphp;
         $this->pinta();
-    }
+	}
 
     function pinta(){
 
-        //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+        include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         if (IsAuthenticated() && !isAdmin()){
         ?>
         <table id="tabla-showall">
@@ -54,7 +54,7 @@ class Entrega_SHOWALL{  // declaración de clase
                         }
                         ?>
                        
-                        <td><button type = "submit" name = "action" value="EDIT" title="editar"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
+                        <td><button type = "submit" name = "action" value="EDIT" title="<?php echo $strings['editar']; ?>"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
                         
                     </tr>
                 </form>
@@ -65,7 +65,7 @@ class Entrega_SHOWALL{  // declaración de clase
 
         </table>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-        <button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+        <button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
 
             //Si esta autenticado y es administrador
@@ -73,8 +73,8 @@ class Entrega_SHOWALL{  // declaración de clase
         ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">
-                <button type = "submit" name = "action" value="ADD" title="añadir una fila"><img src="../Iconos/add.png" ></button>
-                <button type = "submit" name = "action" value="SEARCH" title="buscar en la tabla"><img src="../Iconos/search.png" ></button>
+                <button type = "submit" name = "action" value="ADD" title="<?php echo $strings['añadir una fila']; ?>"><img src="../Iconos/add.png" ></button>
+                <button type = "submit" name = "action" value="SEARCH" title="<?php echo $strings['buscar en la tabla']; ?>"><img src="../Iconos/search.png" ></button>
             </div>
         </form>
         <table id="tabla-showall">
@@ -101,9 +101,9 @@ class Entrega_SHOWALL{  // declaración de clase
                             <?php
                         }
                         ?>
-                        <td><button type = "submit" name = "action" value="SHOWCURRENT"  title="detalles"><img class="button-td" src="../Iconos/details.png"></img></button></td>
-                        <td><button type = "submit" name = "action" value="EDIT" title="editar"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
-                        <td><button type = "submit" name = "action" value="DELETE"  title="borrar línea"><img class="button-td" src="../Iconos/borrar.png"></img></button></td>
+                        <td><button type = "submit" name = "action" value="SHOWCURRENT"  title="<?php echo $strings['Ver en detalle']; ?>"><img class="button-td" src="../Iconos/details.png"></img></button></td>
+                        <td><button type = "submit" name = "action" value="EDIT" title="<?php echo $strings['editar']; ?>"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
+                        <td><button type = "submit" name = "action" value="DELETE"  title="<?php echo $strings['borrar línea']; ?>"><img class="button-td" src="../Iconos/borrar.png"></img></button></td>
                     </tr>
                 </form>
                 <?php
@@ -113,7 +113,7 @@ class Entrega_SHOWALL{  // declaración de clase
 
         </table>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
     <?php
 }
 

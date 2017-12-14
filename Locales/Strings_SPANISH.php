@@ -44,6 +44,21 @@ array(
 	'Error en la modificación' => 'Error en la modificación',
 	'Usuarios' =>'Usuarios',
 	'Grupos' => 'Grupos',
+	'buscar' => 'Buscar',
+	
+	/*Diccionario de titles*/
+	'Volver atrás' => 'Volver atrás',
+	'borrar el contenido introducido' => 'borrar el contenido introducido',
+	'borrar' => 'borrar',
+	'enviar' => 'enviar',
+	'añadir una fila' => 'añadir una fila',
+	'buscar en la tabla' => 'buscar en la tabla',
+	'Ver en detalle' => 'Ver en detalle',
+	'editar' => 'Editar',
+	'borrar línea' => 'Borrar línea',
+	'editar acciones' => 'editar acciones',
+	'editar permisos' => 'editar permisos',
+	
 	
 	/*Diccionarios de permisos*/
 	'No tienes permiso para acceder a esta vista' => 'No tienes permiso para acceder a esta vista',
