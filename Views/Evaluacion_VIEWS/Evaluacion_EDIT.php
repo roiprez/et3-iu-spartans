@@ -82,7 +82,7 @@ class Evaluacion_EDIT// declaración de clase
                 </select>
             </label>
             <label>Comentario
-                <textarea form="formulario-edit" maxlength="300" name="ComenIncorrectoP"><?php echo $this->lista_valores['ComenIncorrectoP'] ?></textarea>
+                <textarea form="formulario-edit" maxlength="300" name="ComentIncorrectoP"><?php echo $this->lista_valores['ComentIncorrectoP'] ?></textarea>
             </label>
             <label>Corrección de la evaluación
                 <select name="OK" id="OK" required="true" size="1">
