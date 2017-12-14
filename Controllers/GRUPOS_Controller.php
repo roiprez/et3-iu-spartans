@@ -141,8 +141,9 @@ if (!isset($_REQUEST['action'])){
             else{//Si se ha hecho un post
                 $idGrupo=$_REQUEST['IdGrupo']; //Definimos idGrupo para poder utilizarlo tantas veces como select se hayan seleccionado
                 $PERMISOS_PREVIO= new PERMISOS_Model($idGrupo,'',''); //Definimos un modelo de USU_GRUPO con el login que se nos pasa para borrar todos los grupos que tenia seleccionados de antes
+                echo 'hello';
                 $borrado=$PERMISOS_PREVIO->reventarPermiso(); //Se revientan todos los grupos a los que pertenece el usuario
-
+                echo 'bye';
                 if ($_REQUEST['permiso']!=''){ // Si se ha seleccionado algun grupo
                     foreach ($_REQUEST['permiso'] as  $valorPermiso){ //Recorremos todos los seleccionados
                         $temp= explode(',',$valorPermiso);

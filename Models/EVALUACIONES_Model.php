@@ -45,27 +45,27 @@ function __construct($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$IdHistoria,$Corr
 
 function ADD()
 {	
-			$sql1 = "SELECT * FROM ASIGNAC_QA WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluado = '$this->LoginEvaluador') && (AliasEvaluado = '$this->AliasEvaluado') ";
-			// se construye la sentencia de busqueda de la tupla en la bd
-			if (!$result = $this->mysqli->query($sql1))  // si da error la ejecución de la query
-						return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
+	$sql1 = "SELECT * FROM ASIGNAC_QA WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluado = '$this->LoginEvaluador') && (AliasEvaluado = '$this->AliasEvaluado') ";
+	// se construye la sentencia de busqueda de la tupla en la bd
+	if (!$result = $this->mysqli->query($sql1))  // si da error la ejecución de la query
+		return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
 					
-		else {// si la query no da error
+	else {// si la query no da error
 		if ($result->num_rows == 1){
-					//sentencia que las historias de un trabajo para un alias y un login determinados
+			//sentencia que las historias de un trabajo para un alias y un login determinados
 			$sql2= "SELECT * FROM HISTORIA WHERE (IdTrabajo = '$this->IdTrabajo') && (IdHistoria = '$this->IdHistoria')";
 			if (!$result = $this->mysqli->query($sql2))  // si da error la ejecución de la query
 				return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
 			
 			else {// si la query no da error
-				 if ($result->num_rows == 1){ //Si existe en la tabla Historia el IdTrabajo y el IdHistoria indicados
+				if ($result->num_rows == 1){ //Si existe en la tabla Historia el IdTrabajo y el IdHistoria indicados
 					$sql3= "SELECT * FROM EVALUACION WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluador = '$this->LoginEvaluador') && (Alias = '$this->AliasEvaluado') && (IdHistoria = '$this->IdHistoria')";
-						if (!$result = $this->mysqli->query($sql3))  // si da error la ejecución de la query
-				return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
+					if (!$result = $this->mysqli->query($sql3))  // si da error la ejecución de la query
+						return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
 			
-			else {// si la query no da error
-					 if ($result->num_rows == 0){
-									$sql = "INSERT INTO EVALUACION(
+					else {// si la query no da error
+						if ($result->num_rows == 0){
+							$sql = "INSERT INTO EVALUACION(
 										IdTrabajo,
 										LoginEvaluador,
 										AliasEvaluado,
@@ -79,7 +79,7 @@ function ADD()
 										'$this->IdTrabajo',
 										'$this->LoginEvaluador',
 										'$this->AliasEvaluado',
-										'$this->IdHistoria,
+										'$this->IdHistoria',
 										'$this->CorrectoA',
 										'$this->ComenIncorrectoA',
 										'$this->CorrectoP',

@@ -44,9 +44,9 @@ class PERMISOS_Model{
                                             IdFuncionalidad,
                                             IdAccion)
                                             VALUES (
-                                            $this->idGrupo,
-                                            $this->idFuncionalidad,
-                                            $this->idAccion
+                                            '$this->idGrupo',
+                                            '$this->idFuncionalidad',
+                                            '$this->idAccion'
                                             )";
                                     if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
                                         return 'Error en la inserción';
