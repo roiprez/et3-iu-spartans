@@ -9,7 +9,8 @@
 class Permiso_SEARCH
 {
 
-var $lista_Grupos;
+    //recordset de datos
+    var $lista_Grupos;
     var $lista_Funcion;
     var $lista_Accion;
 
@@ -44,10 +45,10 @@ var $lista_Grupos;
 
                 <select name="IdGrupo" id="IdGrupo">
                     <?php
-                    for ($i=0;$i<count($this->lista_Grupos);$i++) {
+                    foreach($this->lista_Grupos as $grupo) {
 
                         ?>
-                        <option value="<?php echo $this->lista_Grupos[$i]?>"><?php echo $this->lista_Grupos[$i]?></option>
+                        <option value="<?php echo $grupo['IdGrupo']?>"><?php echo $grupo['NombreGrupo']?></option>
                         <?php
 
                     }//fin del bucle
@@ -58,10 +59,10 @@ var $lista_Grupos;
             <label>In funcionalidad
                 <select name="IdFuncionalidad" id="IdFuncionalidad">
                     <?php
-                    for ($i=0;$i<count($this->lista_Funcion);$i++) {
+                    foreach ($this->lista_Funcion as $funcion) {
 
                         ?>
-                        <option value="<?php echo $this->lista_Funcion[$i]?>"><?php echo $this->lista_Funcion[$i]?></option>
+                        <option value="<?php echo $funcion['idFuncionalidad']?>"><?php echo $funcion['NombreFuncionalidad']?></option>
                         <?php
 
                     }//fin del bucle
@@ -72,10 +73,10 @@ var $lista_Grupos;
             <label>id accion
                 <select name="IdAccion" id="IdAccion" >
                     <?php
-                    for ($i=0;$i<count($this->lista_Accion);$i++) {
+                    foreach ($this->lista_Accion as $accion) {
 
                         ?>
-                        <option value="<?php echo $this->lista_Accion[$i]?>"><?php echo $this->lista_Accion[$i]?></option>
+                        <option value="<?php echo $accion['IdAccion']?>"><?php echo $accion['NombreAccion']?></option>
                         <?php
 
                     }//fin del bucle
