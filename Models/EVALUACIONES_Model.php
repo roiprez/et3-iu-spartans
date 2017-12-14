@@ -45,7 +45,7 @@ function __construct($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$IdHistoria,$Corr
 
 function ADD()
 {	
-	$sql1 = "SELECT * FROM ASIGNAC_QA WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluado = '$this->LoginEvaluador') && (AliasEvaluado = '$this->AliasEvaluado') ";
+	$sql1 = "SELECT * FROM ASIGNAC_QA WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluador = '$this->LoginEvaluador') && (AliasEvaluado = '$this->AliasEvaluado') ";
 	// se construye la sentencia de busqueda de la tupla en la bd
 	if (!$result = $this->mysqli->query($sql1))  // si da error la ejecución de la query
 		return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
@@ -59,7 +59,7 @@ function ADD()
 			
 			else {// si la query no da error
 				if ($result->num_rows == 1){ //Si existe en la tabla Historia el IdTrabajo y el IdHistoria indicados
-					$sql3= "SELECT * FROM EVALUACION WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluador = '$this->LoginEvaluador') && (Alias = '$this->AliasEvaluado') && (IdHistoria = '$this->IdHistoria')";
+					$sql3= "SELECT * FROM EVALUACION WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluador = '$this->LoginEvaluador') && (AliasEvaluado = '$this->AliasEvaluado') && (IdHistoria = '$this->IdHistoria')";
 					if (!$result = $this->mysqli->query($sql3))  // si da error la ejecución de la query
 						return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
 			
@@ -73,7 +73,7 @@ function ADD()
 										CorrectoA,
 										ComenIncorrectoA,
 										CorrectoP,
-										ComenIncorrectoP,
+										ComentIncorrectoP,
 										OK)
 										VALUES(
 										'$this->IdTrabajo',
@@ -102,7 +102,7 @@ function ADD()
 			}//Fin else
 				
 		}else{
-		return 'El login no tiene que evaluar el trabajo o al alias indicado';
+			return 'El login no tiene que evaluar el trabajo o al alias indicado';
 		}
 	}//Fin else
 }//Fin funcion ADD
