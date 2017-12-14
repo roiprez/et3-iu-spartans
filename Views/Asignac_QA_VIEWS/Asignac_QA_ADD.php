@@ -25,7 +25,7 @@ class Asignac_QA_ADD// declaración de clase
 
             <label>Login del evaluado
                  <input type="text" name="LoginEvaluado"
-                       id="login"
+                       id="LoginEvaluado"
                        size="9" maxlength="9"
                 />
             </label>
@@ -43,7 +43,7 @@ class Asignac_QA_ADD// declaración de clase
             </label>
             <label>Login del evaluador
                 <input type="text" name="LoginEvaluador"
-                       id="login"
+                       id="LoginEvaluador"
                        size="9" maxlength="9"
                 />
             </label>
