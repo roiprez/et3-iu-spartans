@@ -87,7 +87,7 @@ class Permiso_GESTION// declaración de clase
                         </select>
                     </td>
                     <td><div class="botones-formulario">
-                            <button id="enviar" name = "action" value = "ADDGROUP" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></button>
+                            <button id="enviar" name = "action" value = "ADDPERMISO" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></button>
                             <button class="borrar" type="reset" name="limpiar" title="borrar el contenido introducido"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
                         </div>
                     </td>
