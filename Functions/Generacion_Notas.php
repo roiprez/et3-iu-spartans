@@ -17,7 +17,11 @@ function generarNotaEntrega($idTrabajo, $alias){
       }   
       $numero_historias++;
   }
-  return ($numero_correctos/$numero_historias)*10;
+  //Solución provisional para que no intente hacer la operación si no hay historias
+  if($numero_historias > 0){
+    return ($numero_correctos/$numero_historias)*10;
+  }
+  return 0;
 } 
 function generarNotaQA($idTrabajo, $login){
 	$EVALUACIONES = new EVALUACIONES_Model($idTrabajo, $login, '', '', '', '', '', '', '');   
@@ -32,6 +36,10 @@ function generarNotaQA($idTrabajo, $login){
       }   
       $numero_historias++;
   }
-  return ($numero_correctos/$numero_historias)*10;
+  //Solución provisional para que no intente hacer la operación si no hay historias
+  if($numero_historias > 0){
+    return ($numero_correctos/$numero_historias)*10;
+  }
+  return 0;
 } 
 ?>
