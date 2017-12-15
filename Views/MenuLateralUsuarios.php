@@ -25,9 +25,10 @@ Vista que contiene el Menú lateral
 							</form>
 						</li>
 						<li class="dropdown">
-							<form action="../Controllers/Index_Controller.php">
-								<input type="submit" name="Controlador" value="Resultados " onclick="" class="dropbtn"></input>
-							</form>
+							<input onclick="dropdownMenu('submenu_resultados')" type="button" name="Controlador" value="Resultados" class="dropbtn"></input>
+							<ul id="submenu_resultados" class="dropdown-content">
+								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=ET1">ET1</a></li>
+							</ul>
 						</li>
 					</ul>
 				</aside>

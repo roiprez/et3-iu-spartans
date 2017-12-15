@@ -1,8 +1,6 @@
 <?php
 
 /*
-Controlador que se encarga de gestionar las peticiones de lectura y escritura de datos al modelo.
-20/10/2017 por s84f46
 */
 
 include_once '../Models/EVALUACIONES_Model.php';
@@ -10,8 +8,6 @@ include_once '../Models/HISTORIA_Model.php';
 include_once '../Models/ENTREGAS_Model.php';
 include '../Views/Resultados_VIEWS/Resultados_SHOWCURRENT_ET.php';
 include '../Views/MESSAGE_View.php';
-
-
 
 $IdTrabajo = $_REQUEST['IdTrabajo'];
 $LoginEvaluador = $_SESSION['login']; 
@@ -52,7 +48,7 @@ if($IdTrabajo[0] == 'E'){
   }
 
   $lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComenIncorrectoP','OK');
-  new Resultados_SHOWCURRENT_QA($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php');	
+  //new Resultados_SHOWCURRENT_QA($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php');	
 
 }
 ?>
