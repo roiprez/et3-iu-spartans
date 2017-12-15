@@ -6,6 +6,7 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 */
 
 include_once '../Models/EVALUACIONES_Model.php';
+include_once '../Functions/Generacion_QAs.php';
 include '../Views/Evaluacion_VIEWS/Evaluacion_SHOWALL.php';
 include '../Views/Evaluacion_VIEWS/Evaluacion_SEARCH.php';
 include '../Views/Evaluacion_VIEWS/Evaluacion_ADD.php';
@@ -85,6 +86,7 @@ if (!isset($_REQUEST['action'])){
 			else{	
 				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComentIncorrectoP'], $_REQUEST['OK']);							
 				$respuesta = $EVALUACION->EDIT();
+				notas_update($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado']);
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			

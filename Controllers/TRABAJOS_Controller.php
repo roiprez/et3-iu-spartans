@@ -96,22 +96,6 @@ if (!isset($_REQUEST['action'])){
 			$valores = $TRABAJO->RellenaDatos();
 			new Trabajo_SHOWCURRENT($lista, $valores);
 			break;
-		case 'GENERAR_NOTAS':
-      $ENTREGAS = new ENTREGAS_Model($_REQUEST['IdTrabajo'], '', '','','');
-      $entregas = $ENTREGAS->SEARCH();
-
-			while($row = $entregas->fetch_array()) {
-				$nota_gen;
-				$NOTAS;
-				if($row[0][0] == 'E'){
-					$NOTAS = new NOTAS_Model($row[1], $row[0], generarNotaEntrega($row[0], $row[2]));
-				}
-				else{
-					$NOTAS = new NOTAS_Model($row[0], $row[1], generarNotaEntrega($row[0], $row[1]));
-				}
-				$NOTAS->ADD();			
-			}
-			break;
 		default:
 			if (!$_POST){
 				$TRABAJO = new TRABAJOS_Model('','','','');

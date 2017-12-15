@@ -4,6 +4,9 @@ include_once '../Models/ENTREGAS_Model.php';
 include_once '../Models/HISTORIA_Model.php';
 include_once '../Models/EVALUACIONES_Model.php';
 include_once '../Models/ASIGNAC_QA_Model.php';
+include_once '../Functions/Generacion_Notas.php';
+include_once '../Models/NOTAS_Model.php';
+
 // include_once '../Views/MESSAGE_View.php';
 
 if(isset($_GET['qa_gen'])){
@@ -59,10 +62,43 @@ function evaluacion_gen($IdTrabajo, $LoginEvaluador, $AliasEvaluado){
   $historias = $HISTORIAS->SEARCH();
 
   $lista_historias = [];
-    //Recorre las historias y pasa el Id de historia al modelo de evaluaciones
-    while($row = $historias->fetch_array()) {
-      $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$row[1],'','','','','');
-      $respuesta = $EVALUACIONES->ADD();
+  //Recorre las historias y pasa el Id de historia al modelo de evaluaciones
+  while($row = $historias->fetch_array()) {
+    $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$row[1],'','','','','');
+    $respuesta = $EVALUACIONES->ADD();
   }
+  notas_gen($IdTrabajo);
+}
+
+function notas_gen($IdTrabajo){
+  $ENTREGAS = new ENTREGAS_Model($IdTrabajo, '', '','','');
+  $entregas = $ENTREGAS->SEARCH();
+  
+  while($row = $entregas->fetch_array()) {
+    $NOTAS;
+    if($IdTrabajo[0] == 'E'){
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2]));
+    }
+    else{
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1]));
+    }
+    $NOTAS->ADD();			
+  }
+}
+
+function notas_update($IdTrabajo, $loginEvaluador, $AliasEvaluado){
+  $ENTREGAS = new ENTREGAS_Model($IdTrabajo, '', '','','');
+  $entregas = $ENTREGAS->SEARCH();
+
+  while($row = $entregas->fetch_array()) {
+    $NOTAS;
+    if($IdTrabajo[0] == 'E'){
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2]));
+    }
+    else{
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1]));
+    }
+    $NOTAS->EDIT();				
+  } 		
 }
 ?>
