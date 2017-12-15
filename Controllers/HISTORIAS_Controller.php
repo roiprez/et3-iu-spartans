@@ -1,5 +1,5 @@
 <?php
-    include '../Models/HISTORIA_Model.php';
+    include_once '../Models/HISTORIA_Model.php';
     include '../Models/TRABAJOS_Model.php';
     include '../Views/MESSAGE_View.php';
     include '../Views/Historia_VIEWS/Historia_ADD.php';

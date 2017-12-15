@@ -105,7 +105,9 @@ class Trabajo_SHOWALL
                         ?>
                         <td><button type = "submit" name = "action" value="SHOWCURRENT" title="detalles"><img class="button-td" src="../Iconos/details.png" ></img></button></td>
                         <td><button type = "submit" name = "action" value="EDIT" title="editar"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
+                        <td><button type = "submit" name = "action" value="GENERAR_NOTAS" title="generar notas"><img class="button-td" src="../Iconos/functionality_add.png" ></img></button></td>
                         <td><button type = "submit" name = "action" value="DELETE" title="borrar línea"><img class="button-td" src="../Iconos/borrar.png" ></img></button></td>
+                        
                     </tr>
                 </form>
                 <?php

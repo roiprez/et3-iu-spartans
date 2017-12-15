@@ -1,7 +1,7 @@
 <?php
     include '../Models/NOTAS_Model.php';
     include_once '../Models/ENTREGAS_Model.php';
-    include '../Functions/Generacion_Notas.php';
+    include_once '../Functions/Generacion_Notas.php';
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_ADD.php';
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_DELETE.php';
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_EDIT.php';

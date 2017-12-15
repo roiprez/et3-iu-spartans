@@ -6,6 +6,9 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 */
 
 include '../Models/TRABAJOS_Model.php';
+include '../Models/NOTAS_Model.php';
+include_once '../Models/ENTREGAS_Model.php';
+include_once '../Functions/Generacion_Notas.php';
 include '../Views/Trabajo_VIEWS/Trabajo_SHOWALL.php';
 include '../Views/Trabajo_VIEWS/Trabajo_SEARCH.php';
 include '../Views/Trabajo_VIEWS/Trabajo_ADD.php';
@@ -92,6 +95,22 @@ if (!isset($_REQUEST['action'])){
       $lista = array('IdTrabajo', 'NombreTrabajo', 'FechaIniTrabajo','FechaFinTrabajo');
 			$valores = $TRABAJO->RellenaDatos();
 			new Trabajo_SHOWCURRENT($lista, $valores);
+			break;
+		case 'GENERAR_NOTAS':
+      $ENTREGAS = new ENTREGAS_Model($_REQUEST['IdTrabajo'], '', '','','');
+      $entregas = $ENTREGAS->SEARCH();
+
+			while($row = $entregas->fetch_array()) {
+				$nota_gen;
+				$NOTAS;
+				if($row[0][0] == 'E'){
+					$NOTAS = new NOTAS_Model($row[1], $row[0], generarNotaEntrega($row[0], $row[2]));
+				}
+				else{
+					$NOTAS = new NOTAS_Model($row[0], $row[1], generarNotaEntrega($row[0], $row[1]));
+				}
+				$NOTAS->ADD();			
+			}
 			break;
 		default:
 			if (!$_POST){

@@ -111,7 +111,7 @@ function ADD()
 function EDIT()
 {
 		//No estoy del todo seguro de que esta sentencia sea necesario
-	$sql1 = "SELECT * FROM ASIGNAC_QA WHERE (IdTrabajo = '$this->IdTrabajo') && (login = '$this->LoginEvaluador') && (Alias = '$this->AliasEvaluado') ";
+	$sql1 = "SELECT * FROM ASIGNAC_QA WHERE (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluador = '$this->LoginEvaluador') && (AliasEvaluado = '$this->AliasEvaluado') ";
 			// se construye la sentencia de busqueda de la tupla en la bd
 			if (!$result = $this->mysqli->query($sql1))  // si da error la ejecución de la query
 						return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
@@ -190,8 +190,8 @@ function EDIT()
 					ComenIncorrectoA = '$this->ComenIncorrectoA',
 					CorrectoP = '$this->CorrectoP',
 					ComentIncorrectoP = '$this->ComentIncorrectoP',
-					OK = '$this->Ok'
-				WHERE ( (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluado = '$this->LoginEvaluado') && (AliasEvaluado = '$this->AliasEvaluado') && (IdHistoria = '$this->IdHistoria')
+					OK = '$this->OK'
+				WHERE ( (IdTrabajo = '$this->IdTrabajo') && (LoginEvaluador = '$this->LoginEvaluador') && (AliasEvaluado = '$this->AliasEvaluado') && (IdHistoria = '$this->IdHistoria')
 				)";
 		// si hay un problema con la query se envia un mensaje de error en la modificacion
         if (!($resultado = $this->mysqli->query($sql))){
