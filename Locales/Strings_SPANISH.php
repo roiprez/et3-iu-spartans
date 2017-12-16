@@ -10,9 +10,12 @@ array(
 	'Usuario' => 'Usuario',
 	'ENTREGAS' => 'Entregas',
 	'QA' => 'QA',
+	'Cambiar a español' => 'Cambiar a español',
+	'Cambiar a ingles' => 'Cambiar a ingles',
+	'Cambiar a gallego' => 'Cambiar a gallego',
 	'INGLES' => 'INGLES',
 	'ESPAÑOL' => 'ESPAÑOL',
-	'GALICIAN' => 'GALLEGO',
+	'GALLEGO' => 'GALLEGO',
 	'login' => 'Login',
 	'password' => 'Contraseña',
 	'DNI' => 'DNI',
@@ -46,6 +49,72 @@ array(
 	'Grupos' => 'Grupos',
 	'buscar' => 'Buscar',
 	
+	/*Diccionario acciones*/
+	'IdAccion' => 'IdAccion',
+	'NombreAccion' => 'NombreAccion',
+	'DescripAccion' => 'DescripAccion',
+	
+	/*Diccionario asignac_qa*/
+	'IdTrabajo' => 'IdTrabajo',
+	'LoginEvaluador' => 'LoginEvaluador', 
+	'LoginEvaluado' => 'LoginEvaluado',
+	'AliasEvaluado' => 'AliasEvaluado',
+	
+	/*Diccionario entregas*/
+	'Alias' => 'Alias',
+	'Horas' => 'Horas',
+	'Ruta' => 'Ruta',
+	
+	/*Diccionario evaluaciones*/
+	'IdHistoria' => 'IdHistoria', 
+	'CorrectoA' => 'CorrectoA',
+	'CorrectoP' => 'CorrectoP',
+	'OK' => 'Ok',
+	
+	/*Diccionario Funcionalidades*/
+	'IdFuncionalidad' => 'IdFuncionalidad',
+	'NombreFuncionalidad' => 'NombreFuncionalidad',
+	'DescripFuncionalidad' => 'DescripFuncionalidad',
+	
+	/*Diccionario grupos*/
+	'IdGrupo' => 'IdGrupo',
+	'NombreGrupo' => 'NombreGrupo',
+	'DescripGrupo' => 'DescripGrupo',
+	
+	/*Diccionario historia*/
+	'TextoHistoria' => 'TextoHistoria',
+	
+	/*Diccionario notas*/
+	'NotaTrabajo' => 'NotaTrabajo',
+	
+	/*Diccionario permisos*/
+	
+	/*Diccionario trabajo*/
+	'IdTrabajo' => 'IdTrabajo',
+	'NombreTrabajo' => 'NombreTrabajo',
+	'FechaIniTrabajo' => 'FechaIniTrabajo',
+	'FechaFinTrabajo' => 'FechaFinTrabajo',
+	
+	/*Diccionario menus*/
+	'Mostrar todo' => 'Mostrar todo',
+	'Añadir' => 'Añadir',
+	'Buscar' => 'Buscar',
+	'GENERAR ET1' => 'GENERAR ET1',
+	'ENTREGAS' => 'ENTREGAS',
+	'EVALUACIONES' => 'EVALUACIONES',
+	'RESULTADOS' => 'RESULTADOS',
+	'ET1' => 'ET1',
+	'USUARIOS' => 'USUARIOS',
+	'GRUPOS' => 'GRUPOS',
+	'FUNCIONALIDADES' => 'FUNCIONALIDADES',
+	'NOTAS' => 'NOTAS',
+	'EVALUACIONES' => 'EVALUACIONES',
+	'PERMISOS' => 'PERMISOS',
+	'HISTORIAS' => 'HISTORIAS',
+	'ASIGNACIONES' => 'ASIGNACIONES',
+	'TRABAJOS' => 'TRABAJOS',
+	'ACCIONES' => 'ACCIONES',
+	
 	/*Diccionario de titles*/
 	'Volver atrás' => 'Volver atrás',
 	'borrar el contenido introducido' => 'borrar el contenido introducido',
@@ -58,6 +127,8 @@ array(
 	'borrar línea' => 'Borrar línea',
 	'editar acciones' => 'editar acciones',
 	'editar permisos' => 'editar permisos',
+	'generar notas' => 'Generar notas',
+	'Registrarse' => 'Registrarse',
 	
 	
 	/*Diccionarios de permisos*/

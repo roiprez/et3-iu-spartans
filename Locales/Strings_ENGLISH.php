@@ -15,9 +15,12 @@ array(
 	'Usuario' => 'User',
 	'ENTREGAS' => 'Deliverables',
 	'QA' => 'QA',
+	'Cambiar a español' => 'Change to spanish',
+	'Cambiar a ingles' => 'Change to english',
+	'Cambiar a gallego' => 'Change to galician',
 	'INGLES' => 'ENGLISH',
 	'ESPAÑOL' => 'SPANISH',
-	'GALICIAN' => 'GALICIAN',
+	'GALLEGO' => 'GALICIAN',
 
 	'login' => 'Login',
 	'password' => 'Password',
@@ -50,6 +53,26 @@ array(
 	'No existe en la base de datos' => "Don't exist in the database",
 	'Error en la modificación' => 'Modification error',
 	
+	/*Diccionario submenus*/
+	'Mostrar todo' => 'Show Everything',
+	'Añadir' => 'ADD',
+	'Buscar' => 'SEARCH',
+	'GENERAR ET1' => 'GENERATE ET1',
+	'ENTREGAS' => 'DELIVERIES',
+	'EVALUACIONES' => 'EVALUATIONS',
+	'RESULTADOS' => 'RESULTS',
+	'ET1' => 'ET1',
+	'USUARIOS' => 'USERS',
+	'GRUPOS' => 'GROUPS',
+	'FUNCIONALIDADES' => 'FUNCTIONALITIES',
+	'NOTAS' => 'MARKS',
+	'EVALUACIONES' => 'EVALUATIONS',
+	'PERMISOS' => 'PERMISIONS',
+	'HISTORIAS' => 'HISTORIES',
+	'ASIGNACIONES' => 'ASIGNATIONS',
+	'TRABAJOS' => 'WORKS',
+	'ACCIONES' => 'ACTIONS',
+	
 	/*Diccionario de titles*/
 	'Volver atrás' => 'Come back',
 	'borrar el contenido introducido' => 'Reset',
@@ -63,6 +86,8 @@ array(
 	'buscar' => 'Search',
 	'editar acciones' => 'Edit actions',
 	'editar permisos' => 'Edit permisssion',
+	'generar notas' => 'Generate calification',
+	'Registrarse' => 'Register',
 
 	/*Diccionarios de permisos*/
 	'No tienes permiso para acceder a esta vista' => 'You can´t see this View',

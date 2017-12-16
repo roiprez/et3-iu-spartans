@@ -85,8 +85,8 @@ class Usu_Grupo_ADD// declaración de clase
                         </select>
                     	</td>
 						<td><div class="botones-formulario">
-						<button id="enviar" name = "action" value = "ADDGROUP" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></button>
-						<button class="borrar" type="reset" name="limpiar" title="borrar el contenido introducido"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
+						<button id="enviar" name = "action" value = "ADDGROUP" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>
+						<button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
 						</div></td>
         </form>
                     </tr>
@@ -95,7 +95,7 @@ class Usu_Grupo_ADD// declaración de clase
 
             
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action'  title="Volver atrás"><img class="button-td" src="../Iconos/back.png"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action'  title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//Fin else
     }//fin pinta

@@ -51,7 +51,7 @@ class Trabajo_SHOWCURRENT
 
         </table>
        <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//Fin else
     }//fin de pintar

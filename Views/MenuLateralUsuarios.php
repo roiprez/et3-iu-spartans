@@ -16,18 +16,18 @@ Vista que contiene el Menú lateral
 					<ul class="menu">
 						<li class="dropdown">
 							<form action="../Controllers/Index_Controller.php">
-								<input type="submit" name="Controlador" value="ENTREGAS" onclick="" class="dropbtn"></input>
+								<input type="submit" name="Controlador" value="<?php echo $strings['ENTREGAS']; ?>" onclick="" class="dropbtn"></input>
 							</form>
 						</li>
 						<li class="dropdown">
 							<form action="../Controllers/Index_Controller.php">
-								<input type="submit" name="Controlador" value="EVALUACIONES" onclick="" class="dropbtn"></input>
+								<input type="submit" name="Controlador" value="<?php echo $strings['EVALUACIONES'];?> " onclick="" class="dropbtn"></input>
 							</form>
 						</li>
 						<li class="dropdown">
-							<input onclick="dropdownMenu('submenu_resultados')" type="button" name="Controlador" value="Resultados" class="dropbtn"></input>
+							<input onclick="dropdownMenu('submenu_resultados')" type="button" name="Controlador" value="<?php echo $strings['RESULTADOS'];?>" class="dropbtn"></input>
 							<ul id="submenu_resultados" class="dropdown-content">
-								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=ET1">ET1</a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=ET1"><?php echo $strings['ET1'];?></a></li>
 							</ul>
 						</li>
 					</ul>
