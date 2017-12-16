@@ -53,6 +53,52 @@ array(
 	'No existe en la base de datos' => "Don't exist in the database",
 	'Error en la modificación' => 'Modification error',
 	
+	/*Diccionario acciones*/
+	'IdAccion' => 'IdAction',
+	'NombreAccion' => 'NameAction',
+	'DescripAccion' => 'DescripAction',
+	
+	/*Diccionario asignac_qa*/
+	'IdTrabajo' => 'IdTrabajo',
+	'LoginEvaluador' => 'LoginEvaluator', 
+	'LoginEvaluado' => 'LoginEvaluate',
+	'AliasEvaluado' => 'AliasEvaluate',
+	
+	/*Diccionario entregas*/
+	'Alias' => 'Alias',
+	'Horas' => 'Hours',
+	'Ruta' => 'Rout',
+	
+	/*Diccionario evaluaciones*/
+	'IdHistoria' => 'IdHistory', 
+	'CorrectoA' => 'CorrectS',
+	'CorrectoP' => 'CorrectP',
+	'OK' => 'Ok',
+	
+	/*Diccionario Funcionalidades*/
+	'IdFuncionalidad' => 'IdFuncionality',
+	'NombreFuncionalidad' => 'NameFuncionality',
+	'DescripFuncionalidad' => 'DescripFuncionality',
+	
+	/*Diccionario grupos*/
+	'IdGrupo' => 'IdGroup',
+	'NombreGrupo' => 'NameGroup',
+	'DescripGrupo' => 'DescripGroup',
+	
+	/*Diccionario historia*/
+	'TextoHistoria' => 'TextHistory',
+	
+	/*Diccionario notas*/
+	'NotaTrabajo' => 'MarkWork',
+	
+	/*Diccionario permisos*/
+	
+	/*Diccionario trabajo*/
+	'IdTrabajo' => 'IdWork',
+	'NombreTrabajo' => 'NameWork',
+	'FechaIniTrabajo' => 'DateStartWork',
+	'FechaFinTrabajo' => 'DateEndWork',
+	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Show Everything',
 	'Añadir' => 'ADD',

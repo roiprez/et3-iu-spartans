@@ -50,6 +50,52 @@ array(
 	'No existe en la base de datos' => 'Non existe na base de datos',
 	'Error en la modificación' => 'Erro na modificación',
 	
+	/*Diccionario acciones*/
+	'IdAccion' => 'IdAccion',
+	'NombreAccion' => 'NomeAccion',
+	'DescripAccion' => 'DescripAccion',
+	
+	/*Diccionario asignac_qa*/
+	'IdTrabajo' => 'IdTraballo',
+	'LoginEvaluador' => 'LoginEvaluador', 
+	'LoginEvaluado' => 'LoginEvaluado',
+	'AliasEvaluado' => 'AliasEvaluado',
+	
+	/*Diccionario entregas*/
+	'Alias' => 'Alias',
+	'Horas' => 'Horas',
+	'Ruta' => 'Ruta',
+	
+	/*Diccionario evaluaciones*/
+	'IdHistoria' => 'IdHistoria', 
+	'CorrectoA' => 'CorrectoA',
+	'CorrectoP' => 'CorrectoP',
+	'OK' => 'Ok',
+	
+	/*Diccionario Funcionalidades*/
+	'IdFuncionalidad' => 'IdFuncionalidade',
+	'NombreFuncionalidad' => 'NombreFuncionalidade',
+	'DescripFuncionalidad' => 'DescripFuncionalidade',
+	
+	/*Diccionario grupos*/
+	'IdGrupo' => 'IdGrupo',
+	'NombreGrupo' => 'NomeGrupo',
+	'DescripGrupo' => 'DescripGrupo',
+	
+	/*Diccionario historia*/
+	'TextoHistoria' => 'TextoHistoria',
+	
+	/*Diccionario notas*/
+	'NotaTrabajo' => 'NotaTrabalo',
+	
+	/*Diccionario permisos*/
+	
+	/*Diccionario trabajo*/
+	'IdTrabajo' => 'IdTraballo',
+	'NombreTrabajo' => 'NomeTraballo',
+	'FechaIniTrabajo' => 'FechaIniTraballo',
+	'FechaFinTrabajo' => 'FechaFinTraballo',
+	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Mostrar todo',
 	'Añadir' => 'Engadir',
