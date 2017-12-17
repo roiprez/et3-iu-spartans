@@ -49,7 +49,7 @@ class Resultados_SHOWCURRENT_ET
                 <tr>
                     <?php
                     for($j=0;$j<5;$j++){
-                        if($correctos[$j]==1){
+                        if($correctos[$j]==0){
                             ?>
                             <td class="celda-incorrecta"></td>
                             <?php
@@ -59,7 +59,7 @@ class Resultados_SHOWCURRENT_ET
                             <?php
                         } 
                     }
-                    if($correctoP==1){
+                    if($correctoP==0){
                         ?>
                         <td class="celda-incorrecta">P</td>
                         <?php
