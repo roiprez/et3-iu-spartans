@@ -41,7 +41,7 @@ class Permiso_SEARCH
 
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
-            <label>Id grupo
+            <label><?php echo $strings['Id grupo']; ?>
 
                 <select name="IdGrupo" id="IdGrupo">
                     <?php
@@ -56,7 +56,7 @@ class Permiso_SEARCH
                     ?>
                 </select>
             </label>
-            <label>In funcionalidad
+            <label><?php echo $strings['Id funcionalidad']; ?>
                 <select name="IdFuncionalidad" id="IdFuncionalidad">
                     <?php
                     foreach ($this->lista_Funcion as $funcion) {
@@ -70,7 +70,7 @@ class Permiso_SEARCH
                     ?>
                 </select>
             </label>
-            <label>id accion
+            <label><?php echo $strings['Id accion']; ?>
                 <select name="IdAccion" id="IdAccion" >
                     <?php
                     foreach ($this->lista_Accion as $accion) {

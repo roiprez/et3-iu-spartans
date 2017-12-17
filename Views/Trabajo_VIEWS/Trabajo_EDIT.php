@@ -34,23 +34,23 @@ class Trabajo_EDIT
         ?>
 
         <form id="formulario-edit" name="formulario_edit" method="post">
-            <label>Id trabajo
+            <label><?php echo $strings['Id Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true" readonly
                        size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo'] ?>"
                 />
             </label>
-            <label>NombreTrabajo
+            <label><?php echo $strings['Nombre Trabajo']; ?>
                 <input type="text" name="NombreTrabajo"
                        id="NombreTrabajo" required="true"
                        size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreTrabajo'] ?>"
                 />
             </label>
-            <label>Fecha inicio
+            <label><?php echo $strings['Fecha inicio']; ?>
                 <input type="text" name="FechaIniTrabajo" class="tcal" required="true" readonly="readonly" value="<?php echo $this->lista_valores['FechaIniTrabajo'] ?>"/>
             </label>
 
-            <label>Fecha fin
+            <label><?php echo $strings['Fecha fin']; ?>
                 <input type="text" name="FechaFinTrabajo" class="tcal" required="true" readonly="readonly" value="<?php echo $this->lista_valores['FechaFinTrabajo'] ?>"/>
             </label>
 

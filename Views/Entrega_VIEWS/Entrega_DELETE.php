@@ -33,7 +33,7 @@ class Entrega_DELETE{
 
                 ?>
                 <tr>
-                    <th><?php echo $this->lista_variables[$i]; ?></th>
+                    <th><?php $fila = $this->lista_variables[$i]; echo $strings[$fila]; ?></th>
                     <td class="celda"><?php echo $this->lista_valores[$this->lista_variables[$i]]; ?></td>
                 </tr>
                 <?php

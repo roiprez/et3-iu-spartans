@@ -28,73 +28,73 @@ class Evaluacion_EDIT// declaración de clase
         ?>
 
         <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit') && encriptar()">
-             <label>Id del trabajo
+             <label><?php echo $strings['Id del trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
                        size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo'] ?>" 
                 />
             </label>
-            <label>Login evaluador
+            <label><?php echo $strings['Login evaluador']; ?>
                 <input type="text" name="LoginEvaluador"
                        id="LoginEvaluador" required="true"
                        size="9" maxlength="9" value="<?php echo $this->lista_valores['LoginEvaluador'] ?>"
                 />
             </label>
-            <label>Alias evaluado
+            <label><?php echo $strings['Alias evaluado']; ?>
                 <input type="text" name="AliasEvaluado"
                        id="AliasEvaluado" required="true"
                        size="9" maxlength="9" value="<?php echo $this->lista_valores['AliasEvaluado'] ?>"
                 />
             </label>
-            <label>Id de la historia
+            <label><?php echo $strings['Id de la historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
                        size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria'] ?>"
                 />
             </label>
-            <label>Corrección de la historia
+            <label><?php echo $strings['Corrección de la historia']; ?>
                 <select name="CorrectoA" id="CorrectoA" required="true" size="1">
                   <option selected="true" value="<?php echo $this->lista_valores['CorrectoA'] ?>"><?php if($this->lista_valores['CorrectoA']==1){
-                    echo "Correcto";
+                    echo $this->lista_valores['Correcto'];
                   }else{
-                    echo "Incorrecto";
+                    echo $this->lista_valores['Incorrecto'];
                   }?>
                     
                   </option>
-                  <option value="1">Correcto</option>
-                  <option value="0">Incorrecto</option>
+                  <option value="1"><?php echo $this->lista_valores['Correcto'] ?></option>
+                  <option value="0"><?php echo $this->lista_valores['Inorrecto'] ?></option>
                 </select>
             </label>
-            <label>Comentario
+            <label><?php echo $strings['comentario']; ?>
                 <textarea form="formulario-edit" maxlength="300" name="ComenIncorrectoA"><?php echo $this->lista_valores['ComenIncorrectoA']?></textarea>
             </label>
-            <label>Corrección del profesor
+            <label><?php echo $strings['Corrección del profesor']; ?>
                 <select name="CorrectoP" id="CorrectoP" required="true" size="1">
                   <option selected="true" value="<?php echo $this->lista_valores['CorrectoP'] ?>"><?php if($this->lista_valores['CorrectoP']==1){
-                    echo "Correcto";
+                    echo $this->lista_valores['Correcto'];
                   }else{
-                    echo "Incorrecto";
+                    echo $this->lista_valores['Incorrecto'];
                   }?>
                     
                   </option>
-                  <option value="1">Correcto</option>
-                  <option value="0">Incorrecto</option>
+                  <option value="1"><?php echo $this->lista_valores['Correcto'] ?></option>
+                  <option value="0"><?php echo $this->lista_valores['Incorrecto'] ?></option>
                 </select>
             </label>
-            <label>Comentario
+            <label><?php echo $strings['comentario']; ?>
                 <textarea form="formulario-edit" maxlength="300" name="ComentIncorrectoP"><?php echo $this->lista_valores['ComentIncorrectoP'] ?></textarea>
             </label>
-            <label>Corrección de la evaluación
+            <label><?php echo $strings['Corrección de la evaluación']; ?>
                 <select name="OK" id="OK" required="true" size="1">
                   <option selected="true" value="<?php echo $this->lista_valores['OK'] ?>"><?php if($this->lista_valores['OK']==1){
-                    echo "Correcto";
+                     echo $this->lista_valores['Correcto'];
                   }else{
-                    echo "Incorrecto";
+                     echo $this->lista_valores['Correcto'];
                   }?>
                     
                   </option>
-                  <option value="1">Correcto</option>
-                  <option value="0">Incorrecto</option>
+                  <option value="1"><?php echo $this->lista_valores['Correcto'] ?>"></option>
+                  <option value="0"><?php echo $this->lista_valores['Incorrecto'] ?>"></option>
                 </select>
             </label>
             <div class="botones-formulario">

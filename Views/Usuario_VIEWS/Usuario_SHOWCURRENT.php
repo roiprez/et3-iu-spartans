@@ -33,13 +33,13 @@ class Usuario_SHOWCURRENT{  // declaración de clase
         ?>
         <table id="tabla-detail">
 
-            <h1 class="titulo-categoria">Detalle</h1>
+            <h1 class="titulo-categoria"><?php echo $strings['Detalle']; ?></h1>
 
             <?php
             for($i=0;$i<count($this->lista_variables);$i++){
                 ?>
                 <tr>
-                    <th><?php echo $this->lista_variables[$i]?></th>
+                    <th><?php $fila = $this->lista_variables[$i]; echo $strings[$fila];?></th>
                     <td class="celda"><?php echo $this->lista_valores[$this->lista_variables[$i]]; ?></td>
                 </tr>
                 <?php
