@@ -13,9 +13,12 @@ array(
 	'Usuario' => 'Usuario',
 	'ENTREGAS' => 'Entregas',
 	'QA' => 'QA',
+	'Cambiar a español' => 'Cambiar a español',
+	'Cambiar a ingles' => 'Cambiar a ingles',
+	'Cambiar a gallego' => 'Cambiar a galego',
 	'INGLES' => 'INGLES',
 	'ESPAÑOL' => 'ESPAÑOL',
-	'GALICIAN' => 'GALEGO',
+	'GALLEGO' => 'GALEGO',
 	'login' => 'Login',
 	'password' => 'Contrasinal',
 	'DNI' => 'DNI',
@@ -47,6 +50,72 @@ array(
 	'No existe en la base de datos' => 'Non existe na base de datos',
 	'Error en la modificación' => 'Erro na modificación',
 	
+	/*Diccionario acciones*/
+	'IdAccion' => 'IdAccion',
+	'NombreAccion' => 'NomeAccion',
+	'DescripAccion' => 'DescripAccion',
+	
+	/*Diccionario asignac_qa*/
+	'IdTrabajo' => 'IdTraballo',
+	'LoginEvaluador' => 'LoginEvaluador', 
+	'LoginEvaluado' => 'LoginEvaluado',
+	'AliasEvaluado' => 'AliasEvaluado',
+	
+	/*Diccionario entregas*/
+	'Alias' => 'Alias',
+	'Horas' => 'Horas',
+	'Ruta' => 'Ruta',
+	
+	/*Diccionario evaluaciones*/
+	'IdHistoria' => 'IdHistoria', 
+	'CorrectoA' => 'CorrectoA',
+	'CorrectoP' => 'CorrectoP',
+	'OK' => 'Ok',
+	
+	/*Diccionario Funcionalidades*/
+	'IdFuncionalidad' => 'IdFuncionalidade',
+	'NombreFuncionalidad' => 'NombreFuncionalidade',
+	'DescripFuncionalidad' => 'DescripFuncionalidade',
+	
+	/*Diccionario grupos*/
+	'IdGrupo' => 'IdGrupo',
+	'NombreGrupo' => 'NomeGrupo',
+	'DescripGrupo' => 'DescripGrupo',
+	
+	/*Diccionario historia*/
+	'TextoHistoria' => 'TextoHistoria',
+	
+	/*Diccionario notas*/
+	'NotaTrabajo' => 'NotaTrabalo',
+	
+	/*Diccionario permisos*/
+	
+	/*Diccionario trabajo*/
+	'IdTrabajo' => 'IdTraballo',
+	'NombreTrabajo' => 'NomeTraballo',
+	'FechaIniTrabajo' => 'FechaIniTraballo',
+	'FechaFinTrabajo' => 'FechaFinTraballo',
+	
+	/*Diccionario submenus*/
+	'Mostrar todo' => 'Mostrar todo',
+	'Añadir' => 'Engadir',
+	'Buscar' => 'Buscar',
+	'GENERAR ET1' => 'XENERAR ET1',
+	'ENTREGAS' => 'ENTREGAS',
+	'EVALUACIONES' => 'EVALUACIONS',
+	'RESULTADOS' => 'RESULTADOS',
+	'ET1' => 'ET1',
+	'USUARIOS' => 'USUARIOS',
+	'GRUPOS' => 'GRUPOS',
+	'FUNCIONALIDADES' => 'FUNCIONALIDADES',
+	'NOTAS' => 'NOTAS',
+	'EVALUACIONES' => 'EVALUACIONS',
+	'PERMISOS' => 'PERMISOS',
+	'HISTORIAS' => 'HISTORIAS',
+	'ASIGNACIONES' => 'ASIGNACIONS',
+	'TRABAJOS' => 'TRABALLOS',
+	'ACCIONES' => 'ACCIONS',
+	
 	/*Diccionario de titles*/
 	'Volver atrás' => 'Volver atrás',
 	'borrar el contenido introducido' => 'borrar o contenido introducido',
@@ -59,7 +128,9 @@ array(
 	'borrar línea' => 'Borrar línea',
 	'buscar' => 'Buscar',
 	'editar acciones' => 'editar acciones',
-	'editar permisos' => 'editar permisos'
+	'editar permisos' => 'editar permisos',
+	'generar notas' => 'Generar notas',
+	'Registrarse' => 'Rexistrarse',
 
 	/*Diccionarios de permisos*/
 	'No tienes permiso para acceder a esta vista' => 'Non podes acceder a esta vista',

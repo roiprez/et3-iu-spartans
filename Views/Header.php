@@ -38,6 +38,13 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 			<header>
 				<h1 class="header__h1"><?php echo $strings['Portal de Gestión']?></h1>
 				<div class="header__contenedor-usuario">	
+					
+					 <div class="cambio_idioma" >
+            <a id="desc" href='../Functions/CambioIdioma.php?idioma=SPANISH' title="<?php echo $strings['Cambiar a español']; ?>"><img style="width:5%; height:5%;" id="españa" src='../Iconos/español.png'></a>
+            <a id="desc" href='../Functions/CambioIdioma.php?idioma=ENGLISH' title="<?php echo $strings['Cambiar a ingles']; ?>"><img style="width:5%; height:5%;"id="ingles" src='../Iconos/ingles.png'></a>
+            <a id="desc" href='../Functions/CambioIdioma.php?idioma=GALICIAN' title="<?php echo $strings['Cambiar a gallego']; ?>"><img style="width:5%; height:5%;" id="ingles" src='../Iconos/gallego.png'></a>
+					</div>
+					
 					<p class="header__contenedor-usuario__usuario">
 						<?php	
 							if (IsAuthenticated()){
@@ -45,6 +52,7 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 							}
 						?>
 					</p>
+					
 					<a href='../Functions/Desconectar.php'>
 						<img class="header__icon" src="../Iconos/logout.png" title="desconectar">
 					</a>

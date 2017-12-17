@@ -42,47 +42,47 @@ class Usuario_SEARCH
             <label>DNI
                 <input type="text" name="DNI"
                        id="DNI"
-                       size="9" maxlength="9" onBlur="comprobarDni(this,'search')"
+                       size="9" maxlength="9" onChange="comprobarDni(this,'search')"
                 />
             </label>
             <label>Nombre
                 <input type="text" name="Nombre"
                        id="Nombre"
-                       size="30" maxlength="30" onBlur="comprobarAlfabetico(this, this.size, 'search')"
+                       size="30" maxlength="30" onChange="comprobarAlfabetico(this, this.size, 'search')"
                 />
             </label>
             <label>Apellidos
                 <input type="text" name="Apellidos"
                        id="Apellidos"
-                       size="50" maxlength="50" onBlur="comprobarAlfabetico(this, this.size, 'search')"
+                       size="50" maxlength="50" onChange="comprobarAlfabetico(this, this.size, 'search')"
                 />
             </label>
             <label>Correo
                 <input type="text" name="Correo"
                        id="Correo"
-                       size="40" maxlength="40" onBlur="comprobarEmail(this,this.size,'search')"
+                       size="40" maxlength="40" onChange="comprobarEmail(this,this.size,'search')"
                 />
             </label>
             <label>Direccion
                 <input type="text" name="Direccion"
                        id="Direccion"
-                       size="60" maxlength="60" onBlur="comprobarAlfabetico(this, this.size, 'search')"
+                       size="60" maxlength="60" onChange="comprobarAlfabetico(this, this.size, 'search')"
                 />
             </label>
             <label>Telefono
                 <input type="text" name="Telefono"
                        id="Telefono"
-                       size="11" maxlength="11" onBlur="comprobarTelf(this)"
+                       size="11" maxlength="11" onChange="comprobarTelf(this)"
                 />
             </label>
 
             <div class="botones-formulario">
-                <button id="buscar" name = "action" value = "SEARCH" type="submit" title="buscar"><img class="button-td" src="../Iconos/search.png" ></button>
-                <button class="borrar" type="reset" name="limpiar" title="borrar el contenido introducido"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
+                <button id="buscar" name = "action" value = "SEARCH" type="submit" title="<?php echo $strings['buscar']; ?>"><img class="button-td" src="../Iconos/search.png" ></button>
+                <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action'  title="Volver atrás"><img class="button-td" src="../Iconos/back.png"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action'  title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png"></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
       }//Fin else
     }//fin de pinta

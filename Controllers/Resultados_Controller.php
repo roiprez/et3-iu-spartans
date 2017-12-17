@@ -31,7 +31,7 @@ if($IdTrabajo[0] == 'E'){
       array_push($descrip_historias, $row[2]);
   }
 
-  $lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComenIncorrectoP','OK');
+  $lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComentIncorrectoP','OK');
   new Resultados_SHOWCURRENT_ET($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php'); 
 } else {
   $EVALUACION = new EVALUACIONES_Model($IdTrabajo, $LoginEvaluador, '', '','','', '', '','');
