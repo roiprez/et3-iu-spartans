@@ -33,8 +33,9 @@ class Resultados_SHOWCURRENT_ET
             ?>
             <table id="tabla-resultados">
             <?php
-                for($i=0;$i<count($this->lista_descripHist);$i++){
+                for($i=0;$i<count($this->lista_descripHist);$i++){//cuenta el numero de historias en base a sus descripciones
                     
+
                     foreach($this->datos as $tupla){//busca en el recordset las cinco correcciones de la historia
                         if($tupla['IdHistoria']==$i){
                             array_push($correctos,$tupla['CorrectoA']);//almacena en un array las correcciones
