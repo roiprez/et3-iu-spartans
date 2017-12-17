@@ -51,37 +51,37 @@ class Usuario_EDIT// declaración de clase
             <label>DNI
                 <input type="text" name="DNI"
                        id="DNI" required="true"
-                       size="9" maxlength="9" value="<?php echo $this->lista_valores['DNI'] ?>" onBlur="comprobarDni(this,'edit')"
+                       size="9" maxlength="9" value="<?php echo $this->lista_valores['DNI'] ?>" onChange="comprobarDni(this,'edit')"
                 />
             </label>
             <label>Nombre
                 <input type="text" name="Nombre"
                        id="Nombre" required="true"
-                       size="30" maxlength="30" value="<?php echo $this->lista_valores['Nombre'] ?>" onBlur="comprobarAlfabetico(this, this.size, 'edit')"
+                       size="30" maxlength="30" value="<?php echo $this->lista_valores['Nombre'] ?>" onChange="comprobarAlfabetico(this, this.size, 'edit')"
                 />
             </label>
             <label>Apellidos
                 <input type="text" name="Apellidos"
                        id="Apellidos" required="true"
-                       size="50" maxlength="50" value="<?php echo $this->lista_valores['Apellidos'] ?>" onBlur="comprobarAlfabetico(this, this.size, 'edit')"
+                       size="50" maxlength="50" value="<?php echo $this->lista_valores['Apellidos'] ?>" onChange="comprobarAlfabetico(this, this.size, 'edit')"
                 />
             </label>
             <label>Correo
                 <input type="text" name="Correo"
                        id="Correo" required="true"
-                       size="40" maxlength="40" value="<?php echo $this->lista_valores['Correo'] ?>" onBlur="comprobarEmail(this,this.size,'edit')"
+                       size="40" maxlength="40" value="<?php echo $this->lista_valores['Correo'] ?>" onChange="comprobarEmail(this,this.size,'edit')"
                 />
             </label>
             <label>Direccion
                 <input type="text" name="Direccion"
                        id="Direccion" required="true"
-                       size="60" maxlength="60" value="<?php echo $this->lista_valores['Direccion'] ?>" onBlur="comprobarAlfabetico(this, this.size, 'edit')"
+                       size="60" maxlength="60" value="<?php echo $this->lista_valores['Direccion'] ?>"
                 />
             </label>
             <label>Telefono
                 <input type="text" name="Telefono"
                        id="Telefono" required="true"
-                       size="11" maxlength="11" value="<?php echo $this->lista_valores['Telefono'] ?>" onBlur="comprobarTelf(this)"
+                       size="11" maxlength="11" value="<?php echo $this->lista_valores['Telefono'] ?>" onChange="comprobarTelf(this)"
                 />
             </label>
             <div class="botones-formulario">
