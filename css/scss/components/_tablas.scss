@@ -16,6 +16,22 @@ table tr th {
   text-align: center;
 }
 
+.celda-correcta {
+  font-size: $s-size;
+  padding: $s-size;
+  width: 50px;
+  background-color: rgba(152, 250, 152, 0.58);
+  text-align: center;
+}
+
+.celda-incorrecta {
+  font-size: $s-size;
+  padding: $s-size;
+  width: 50px;
+  background-color: rgba(255, 117, 117, 0.58);
+  text-align: center;
+}
+
 .celda-botones, .boton-atras {
   padding: $s-size;
   text-align: center;

@@ -33,7 +33,7 @@ if($IdTrabajo[0] == 'E'){
 
   $lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComentIncorrectoP','OK');
   new Resultados_SHOWCURRENT_ET($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php'); 
-} else {
+} elseif($IdTrabajo[0] == 'Q'){
   $EVALUACION = new EVALUACIONES_Model($IdTrabajo, $LoginEvaluador, '', '','','', '', '','');
   $datos = $EVALUACION->SEARCH();
 
@@ -41,14 +41,26 @@ if($IdTrabajo[0] == 'E'){
   $historias = $HISTORIA->SEARCH();
 
   $descrip_historias = [];
+  $qas;
+  $aliasActual = 'ninguno';
+  $i = 0; //Variable que contiene cada uno de los CorrectoA de $j.
+  $j = 0; //Variable que contiene cada una de las QAs realizadas, empieza en 1 y acaba en 5.
+
+  while($row = $datos->fetch_array()) {
+    if($aliasActual == 'ninguno' || $aliasActual != $row[2]){
+      $i = 0;
+      $j++;
+      $aliasActual = $row[2];
+    }
+    $qas[$j][$i] = $row[4];
+  }
 
   //Guardamos las descripciones de historias
   while($row = $historias->fetch_array()) {
       array_push($descrip_historias, $row[2]);
   }
 
-  $lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComenIncorrectoP','OK');
-  //new Resultados_SHOWCURRENT_QA($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php');	
-
+  $lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComentIncorrectoP','OK');
+  new Resultados_SHOWCURRENT_QA($lista, $qas, $descrip_historias, '../Controllers/Index_Controller.php');	
 }
 ?>
