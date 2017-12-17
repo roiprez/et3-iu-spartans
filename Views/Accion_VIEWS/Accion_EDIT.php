@@ -33,7 +33,9 @@ class Accion_EDIT
 
         ?>
 
+
         <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('accion','edit')">
+
             <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdFuncionaAccion"
                        id="IdFuncionaAccion" required="true" readonly

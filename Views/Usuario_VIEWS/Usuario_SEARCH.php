@@ -42,37 +42,37 @@ class Usuario_SEARCH
             <label><?php echo $strings['DNI']; ?>
                 <input type="text" name="DNI"
                        id="DNI"
-                       size="9" maxlength="9" onBlur="comprobarDni(this,'search')"
+                       size="9" maxlength="9" onChange="comprobarDni(this,'search')"
                 />
             </label>
             <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="Nombre"
                        id="Nombre"
-                       size="30" maxlength="30" onBlur="comprobarAlfabetico(this, this.size, 'search')"
+                       size="30" maxlength="30" onChange="comprobarAlfabetico(this, this.size, 'search')"
                 />
             </label>
             <label><?php echo $strings['Apellidos']; ?>
                 <input type="text" name="Apellidos"
                        id="Apellidos"
-                       size="50" maxlength="50" onBlur="comprobarAlfabetico(this, this.size, 'search')"
+                       size="50" maxlength="50" onChange="comprobarAlfabetico(this, this.size, 'search')"
                 />
             </label>
             <label><?php echo $strings['Correo']; ?>
                 <input type="text" name="Correo"
                        id="Correo"
-                       size="40" maxlength="40" onBlur="comprobarEmail(this,this.size,'search')"
+                       size="40" maxlength="40" onChange="comprobarEmail(this,this.size,'search')"
                 />
             </label>
             <label><?php echo $strings['Direccion']; ?>
                 <input type="text" name="Direccion"
                        id="Direccion"
-                       size="60" maxlength="60" onBlur="comprobarAlfabetico(this, this.size, 'search')"
+                       size="60" maxlength="60" onChange="comprobarAlfabetico(this, this.size, 'search')"
                 />
             </label>
             <label><?php echo $strings['Telefono']; ?>
                 <input type="text" name="Telefono"
                        id="Telefono"
-                       size="11" maxlength="11" onBlur="comprobarTelf(this)"
+                       size="11" maxlength="11" onChange="comprobarTelf(this)"
                 />
             </label>
 

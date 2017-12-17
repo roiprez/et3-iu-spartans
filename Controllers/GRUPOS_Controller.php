@@ -142,7 +142,7 @@ if (!isset($_REQUEST['action'])){
                 new Permiso_GESTION($datosGru,$funcAccion,$permisosYaAsignados); //Muestra la vista de USU_GRUPO
             }
             else{//Si se ha hecho un post
-                echo "en el else";
+                
                 $idGrupo=$_REQUEST['IdGrupo']; //Definimos idGrupo para poder utilizarlo tantas veces como select se hayan seleccionado
                 $PERMISOS_PREVIO= new PERMISOS_Model($idGrupo,'',''); //Definimos un modelo de USU_GRUPO con el login que se nos pasa para borrar todos los grupos que tenia seleccionados de antes
                 $borrado=$PERMISOS_PREVIO->reventarPermiso(); //Se revientan todos los grupos a los que pertenece el usuario

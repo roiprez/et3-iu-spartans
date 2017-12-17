@@ -114,6 +114,7 @@ array(
 	'Id historia' => 'Id historia', 
 	'Id trabajo' => 'Id trabajo',
 
+
 	
 	/*Diccionario notas*/
 	'NotaTrabajo' => 'NotaTrabajo',

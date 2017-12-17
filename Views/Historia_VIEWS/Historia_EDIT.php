@@ -34,7 +34,6 @@ class Historia_EDIT
             }else{
 
         ?>
-
         <form id="formulario-edit" name="formulario_edit" method="post"  onSubmit="return validarEntidad('historia','edit')">
             <label><?php echo $strings['Id trabajo']; ?>
 

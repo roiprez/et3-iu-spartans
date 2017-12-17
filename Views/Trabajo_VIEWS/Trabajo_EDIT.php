@@ -32,7 +32,6 @@ class Trabajo_EDIT
             }else{
 
         ?>
-
         <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('trabajo','edit')">
             <label><?php echo $strings['Id Trabajo']; ?>
                 <input type="text" name="IdTrabajo"

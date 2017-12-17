@@ -31,7 +31,6 @@ class Nota_Trabajo_EDIT
             }else{
 
         ?>
-
         <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('notaTrabajo','edit') && encriptar()">
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login" readonly="true" 
