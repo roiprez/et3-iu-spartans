@@ -23,7 +23,9 @@ array(
 	'GALLEGO' => 'GALICIAN',
 
 	'login' => 'Login',
+	'Login' => 'Login',
 	'password' => 'Password',
+	'Password' => 'Password',
 	'DNI' => 'DNI',
 	'Nombre' => 'Name',
 	'Apellidos' =>'Surname',
@@ -57,47 +59,85 @@ array(
 	'IdAccion' => 'IdAction',
 	'NombreAccion' => 'NameAction',
 	'DescripAccion' => 'DescripAction',
-	
+	'Id Accion' => 'Id Action',
+	'Nombre' => 'Name',
+	'Descripcion' => 'Description',
+	'Detalle' => 'Detail',
+
 	/*Diccionario asignac_qa*/
-	'IdTrabajo' => 'IdTrabajo',
+	'IdTrabajo' => 'IdWork',
 	'LoginEvaluador' => 'LoginEvaluator', 
 	'LoginEvaluado' => 'LoginEvaluate',
 	'AliasEvaluado' => 'AliasEvaluate',
+	'Login del evaluado' => 'Login of the evaluated',
+	'Alias' => 'Alias',
+	'Id del Trabajo' => 'Work Id',
+	'Login del evaluador' => 'Evaluator´s login',
 	
 	/*Diccionario entregas*/
 	'Alias' => 'Alias',
 	'Horas' => 'Hours',
 	'Ruta' => 'Rout',
+
 	
 	/*Diccionario evaluaciones*/
 	'IdHistoria' => 'IdHistory', 
 	'CorrectoA' => 'CorrectS',
 	'CorrectoP' => 'CorrectP',
 	'OK' => 'Ok',
+	'Incorrecto' => 'Incorrect',
+	'Corrrecto' => 'Correct',
+	'Comentario' => 'Commentary',
+	'Corrección de la evaluación' => 'correction of the evaluation',
+	'Corrección del profesor' => 'Teacher correction',
+	'Corrección de la historia' => 'Correction of history',
+	'Id de la historia' => 'History´s Id',
+	'Alias evaluado' => 'Alias evaluated',
+	'Login evaluador' => 'Evaluator´s login',
 	
 	/*Diccionario Funcionalidades*/
 	'IdFuncionalidad' => 'IdFuncionality',
 	'NombreFuncionalidad' => 'NameFuncionality',
 	'DescripFuncionalidad' => 'DescripFuncionality',
+	'Id funcionalidad' => 'Funcionality´s Id',
+	'Nombre' => 'Name',
+	'Descripcion' => 'Description',
 	
 	/*Diccionario grupos*/
 	'IdGrupo' => 'IdGroup',
 	'NombreGrupo' => 'NameGroup',
 	'DescripGrupo' => 'DescripGroup',
+	'Id del grupo' => 'Group´s Id',
+
+	/*Diccionario usu_grupos*/
+	'Accion' => 'Action',
 	
 	/*Diccionario historia*/
 	'TextoHistoria' => 'TextHistory',
+	'Texto' => 'Text',
+	'Id historia' => 'History´s id', 
+	'Id trabajo' => 'Work´s id',
 	
 	/*Diccionario notas*/
 	'NotaTrabajo' => 'MarkWork',
+	'Login' => 'Login',
+	'Id del Trabajo' => 'Work´s id',
+	'Nota del Trabajo' => 'Mark´s work',
 	
 	/*Diccionario permisos*/
+	'Id grupo' => 'Group´s id',
+	'Id funcionalidad' => 'Funcionality´s id',
+	'Id accion' => 'Action´s id',
 	
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdWork',
 	'NombreTrabajo' => 'NameWork',
 	'FechaIniTrabajo' => 'DateStartWork',
 	'FechaFinTrabajo' => 'DateEndWork',
+	'Id Trabajo' => 'Work´s Id',
+	'Nombre Trabajo' => 'Work´s Name',
+	'Fecha inicio' => 'Date start',
+	'Fecha fin' => 'Date end',
 	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Show Everything',
@@ -139,6 +179,12 @@ array(
 	'No tienes permiso para acceder a esta vista' => 'You can´t see this View',
 	
 	/*Diccionario para FUNC_ACCION*/
+	'Usuario' => 'User',
+	'Grupos' => 'Groups',
+	'Funcionalidad' => 'Funcionality',
+	'Acción' => 'Action',
+	'Asignado' => 'Assigned',
+	'Grupos a los que ya pertenece' => 'Groups to which you already belong',
 	'La accion ya esta asignada a esa funcionalidad' => 'Action is already assigned to that functionality',
 	'La accion no existe o el Id es incorrecto' => 'Action doesn´t exists or Id is incorrect',
 	'La funcionalidad no existe o el Id es incorrecto' => 'Functionality doesn´t exists or Id is incorrect',

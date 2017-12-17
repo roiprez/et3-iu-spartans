@@ -34,19 +34,19 @@ class Funcionalidad_EDIT
         ?>
 
         <form id="formulario-edit" name="formulario_edit" method="post">
-            <label>Id funcionalidad
+            <label><?php echo $strings['Id funcionalidad']; ?>
                 <input type="text" name="IdFuncionalidad"
                        id="IdFuncionalidad" required="true" readonly
                        size="6" maxlength="6" value="<?php echo $this->lista_valores['IdFuncionalidad'] ?>"
                 />
             </label>
-            <label>Nombre
+            <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="NombreFuncionalidad"
                        id="NombreFuncionalidad" required="true"
                        size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreFuncionalidad'] ?>"
                 />
             </label>
-            <label>Descripcion
+            <label><?php echo $strings['Descripcion']; ?>
                 <textarea form="formulario-edit" maxlength="100" name="DescripFuncionalidad" ><?php echo $this->lista_valores['DescripFuncionalidad'] ?></textarea>
             </label>
 

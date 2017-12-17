@@ -31,19 +31,19 @@ class Nota_Trabajo_ADD//eclaración de clase
 
         <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add') && encriptar()">
 
-            <label>Login
+            <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"
                        id="login" required="true"
                        size="9" maxlength="9"
                 />
             </label>
-            <label>Id del Trabajo
+            <label><?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
                        size="6" maxlength="6"
                 />
             </label>
-            <label>Nota del trabajo
+            <label><?php echo $strings['Nota del Trabajo']; ?>
                 <input type="text" name="NotaTrabajo"
                        id="NotaTrabajo" required="true"
                        size="4" maxlength="4"  

@@ -29,20 +29,20 @@ class Funcionalidad_ADD
 
         <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
 
-            <label>Id funcionalidad
+            <label><?php echo $strings['Id funcionalidad']; ?>
                 <input type="text" name="IdFuncionalidad"
                        id="IdFuncionalidad" required="true"
                        size="6" maxlength="6"
                 />
             </label>
 
-            <label>Nombre
+            <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="NombreFuncionalidad"
                        id="NombreFuncionalidad" required="true"
                        size="60" maxlength="60"
                 />
             </label>
-            <label>Descripcion
+            <label><?php echo $strings['Descripcion']; ?>
                 <textarea form="formulario-add" maxlength="100" name="DescripFuncionalidad" required="true"></textarea>
             </label>
             <div class="botones-formulario">

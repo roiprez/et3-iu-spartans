@@ -28,19 +28,19 @@ class Nota_Trabajo_SEARCH
         ?>
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
-            <label>Login
+            <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"
                        id="login" 
                        size="9" maxlength="9"
                 />
             </label>
-            <label>Id del Trabajo
+            <label><?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" 
                        size="6" maxlength="6"
                 />
             </label>
-            <label>Nota del trabajo
+            <label><?php echo $strings['Nota del Trabajo']; ?>
                 <input type="text" name="NotaTrabajo"
                        id="NotaTrabajo" 
                        size="4" maxlength="4"  

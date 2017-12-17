@@ -30,23 +30,23 @@ class Trabajo_ADD
 
         <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
 
-            <label>Id trabajo
+            <label><?php echo $strings['Id Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
                        size="6" maxlength="6"
                 />
             </label>
-            <label>NombreTrabajo
+            <label><?php echo $strings['Nombre Trabajo']; ?>
                 <input type="text" name="NombreTrabajo"
                        id="NombreTrabajo" required="true"
                        size="60" maxlength="60"
                 />
             </label>
-            <label>Fecha inicio
+            <label><?php echo $strings['Fecha inicio']; ?>
                 <input type="text" name="FechaIniTrabajo" class="tcal" required="true" readonly="readonly"/>
             </label>
 
-            <label>Fecha fin
+            <label><?php echo $strings['Fecha fin']; ?>
                 <input type="text" name="FechaFinTrabajo" class="tcal" required="true" readonly="readonly"/>
             </label>
 

@@ -20,7 +20,9 @@ array(
 	'ESPAÑOL' => 'ESPAÑOL',
 	'GALLEGO' => 'GALEGO',
 	'login' => 'Login',
+	'Login' => 'Login',
 	'password' => 'Contrasinal',
+	'Password' => 'Contrasinal',
 	'DNI' => 'DNI',
 	'Nombre' => 'Nome',
 	'Apellidos' =>'Apelidos',
@@ -54,12 +56,20 @@ array(
 	'IdAccion' => 'IdAccion',
 	'NombreAccion' => 'NomeAccion',
 	'DescripAccion' => 'DescripAccion',
-	
+	'Id Accion' => 'Id Accion',
+	'Nombre' => 'Nome',
+	'Descripcion' => 'Descripcion',
+	'Detalle' => 'Detalle',
+
 	/*Diccionario asignac_qa*/
 	'IdTrabajo' => 'IdTraballo',
 	'LoginEvaluador' => 'LoginEvaluador', 
 	'LoginEvaluado' => 'LoginEvaluado',
 	'AliasEvaluado' => 'AliasEvaluado',
+	'Login del evaluado' => 'Login do evaluado',
+	'Alias' => 'Alias',
+	'Id del Trabajo' => 'Id do Traballo',
+	'Login del evaluador' => 'Lodin do evaluador',
 	
 	/*Diccionario entregas*/
 	'Alias' => 'Alias',
@@ -71,30 +81,59 @@ array(
 	'CorrectoA' => 'CorrectoA',
 	'CorrectoP' => 'CorrectoP',
 	'OK' => 'Ok',
+	'Incorrecto' => 'Incorrecto',
+	'Corrrecto' => 'Correcto',
+	'Comentario' => 'Comentario',
+	'Corrección de la evaluación' => 'Corrección da evaluación',
+	'Corrección del profesor' => 'Corrección do profesor',
+	'Corrección de la historia' => 'Corrección da historia',
+	'Id de la historia' => 'Id da historia',
+	'Alias evaluado' => 'Alias do evaluado',
+	'Login evaluador' => 'Login do evaluador',
 	
 	/*Diccionario Funcionalidades*/
 	'IdFuncionalidad' => 'IdFuncionalidade',
 	'NombreFuncionalidad' => 'NombreFuncionalidade',
 	'DescripFuncionalidad' => 'DescripFuncionalidade',
-	
+	'Id funcionalidad' => 'Id funcionalidade',
+	'Nombre' => 'Nome',
+	'Descripcion' => 'Descricion',
+
 	/*Diccionario grupos*/
 	'IdGrupo' => 'IdGrupo',
 	'NombreGrupo' => 'NomeGrupo',
 	'DescripGrupo' => 'DescripGrupo',
+	'Id del grupo' => 'Id do grupo',
+
+	/*Diccionario usu_grupos*/
+	'Accion' => 'Accion',
 	
 	/*Diccionario historia*/
 	'TextoHistoria' => 'TextoHistoria',
+	'Texto' => 'Texto',
+	'Id historia' => 'Id historia', 
+	'Id trabajo' => 'Id traballo'
 	
 	/*Diccionario notas*/
 	'NotaTrabajo' => 'NotaTrabalo',
+	'Login' => 'Login',
+	'Id del Trabajo' => 'Id do traballo',
+	'Nota del Trabajo' => 'Nota do traballo',
 	
 	/*Diccionario permisos*/
-	
+	'Id grupo' => 'Id grupo',
+	'Id funcionalidad' => 'Id funcionalidade',
+	'Id accion' => 'Id accion',
+
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdTraballo',
 	'NombreTrabajo' => 'NomeTraballo',
 	'FechaIniTrabajo' => 'FechaIniTraballo',
 	'FechaFinTrabajo' => 'FechaFinTraballo',
+	'Id Trabajo' => 'Id Traballo',
+	'Nombre Trabajo' => 'Nome Traballo',
+	'Fecha inicio' => 'Fecha inicio',
+	'Fecha fin' => 'Fecha fin',
 	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Mostrar todo',
@@ -121,7 +160,7 @@ array(
 	'borrar el contenido introducido' => 'borrar o contenido introducido',
 	'borrar' => 'borrar',
 	'enviar' => 'enviar',
-	'añadir una fila' => 'añadir unha fila',
+	'añadir una fila' => 'engadir unha fila',
 	'buscar en la tabla' => 'buscar na tabla',
 	'Ver en detalle' => 'Ver ao detalle',
 	'editar' => 'Editar',
@@ -136,6 +175,12 @@ array(
 	'No tienes permiso para acceder a esta vista' => 'Non podes acceder a esta vista',
 	
 	/*Diccionario para FUNC_ACCION*/
+	'Usuario' => 'Usuario',
+	'Grupos' => 'Grupos',
+	'Funcionalidad' => 'Funcionalidade',
+	'Acción' => 'Acción',
+	'Asignado' => 'Asignado',
+	'Grupos a los que ya pertenece' => 'Grupos aos que xa pertence',
 	'La accion ya esta asignada a esa funcionalidad' => 'A accion xa esta asignada a esa funcionalidade',
 	'La accion no existe o el Id es incorrecto' => 'A accion non existe ou o Id e incorrecto',
 	'La funcionalidad no existe o el Id es incorrecto' => 'A funcionalidade non existe ou o Id e incorrecto',

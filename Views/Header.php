@@ -41,8 +41,8 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 					
 					 <div class="cambio_idioma" >
             <a id="desc" href='../Functions/CambioIdioma.php?idioma=SPANISH' title="<?php echo $strings['Cambiar a español']; ?>"><img style="width:5%; height:5%;" id="españa" src='../Iconos/español.png'></a>
-            <a id="desc" href='../Functions/CambioIdioma.php?idioma=ENGLISH' title="<?php echo $strings['Cambiar a ingles']; ?>"><img style="width:5%; height:5%;"id="ingles" src='../Iconos/ingles.png'></a>
-            <a id="desc" href='../Functions/CambioIdioma.php?idioma=GALICIAN' title="<?php echo $strings['Cambiar a gallego']; ?>"><img style="width:5%; height:5%;" id="ingles" src='../Iconos/gallego.png'></a>
+            <a id="desc" href='../Functions/CambioIdioma.php?idioma=ENGLISH' title="<?php echo $strings['Cambiar a ingles']; ?>"><img style="width:5%; height:5%;" id="ingles" src='../Iconos/ingles.png'></a>
+            <a id="desc" href='../Functions/CambioIdioma.php?idioma=GALICIAN' title="<?php echo $strings['Cambiar a gallego']; ?>"><img style="width:5%; height:5%;" id="gallego" src='../Iconos/gallego.png'></a>
 					</div>
 					
 					<p class="header__contenedor-usuario__usuario">

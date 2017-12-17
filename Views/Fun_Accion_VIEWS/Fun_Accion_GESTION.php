@@ -28,13 +28,13 @@ class Fun_Accion_GESTION// declaración de clase
             }else{
 
         ?>
-        <h1>Funcinalidad: <?php echo $this->accion?></h1>
+        <h1><?php echo $strings['Funcionalidad']; ?>: <?php echo $this->accion?></h1>
         <form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
 
         	<table>
             <tr>
-                <th>Acción</th>
-                <th>Asignado</th>
+                <th><?php echo $strings['Acción']; ?></th>
+                <th><?php echo $strings['Asignado']; ?></th>
             </tr>
 
             <?php
@@ -69,7 +69,7 @@ class Fun_Accion_GESTION// declaración de clase
         </table>
 
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADDACTION" type="submit" title="enviar"><img class="button-td" src="../../Iconos/send.png" ></button>
+                <button id="enviar" name = "action" value = "ADDACTION" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../../Iconos/send.png" ></button>
                 <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../../Iconos/borrar_campo.png" ></button>
             </div>
         </form>

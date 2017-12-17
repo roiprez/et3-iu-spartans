@@ -30,49 +30,49 @@ class Evaluacion_ADD// declaración de clase
 
         <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add') && encriptar()">
 
-            <label>Id del trabajo
+            <label<?php echo $strings['Id del trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
                        size="6" maxlength="6"
                 />
             </label>
-            <label>Login evaluador
+            <label><?php echo $strings['Login evaluador']; ?>
                 <input type="text" name="LoginEvaluador"
                        id="LoginEvaluador" required="true"
                        size="9" maxlength="9"
                 />
             </label>
-            <label>Alias evaluado
+            <label><?php echo $strings['Alias evaluado']; ?>
                 <input type="text" name="AliasEvaluado"
                        id="AliasEvaluado" required="true"
                        size="9" maxlength="9" 
                 />
             </label>
-            <label>Id de la historia
+            <label><?php echo $strings['Id de la historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
                        size="2" maxlength="2" 
                 />
             </label>
-            <label>Corrección de la historia
+            <label><?php echo $strings['Corrección de la historia']; ?>
                 <select name="CorrectoA" id="CorrectoA" required="true" size="1">
                   <option selected="true" value="1">Correcto</option>
                   <option value="0">Incorrecto</option>
                 </select>
             </label>
-            <label>Comentario
+            <label><?php echo $strings['comentario']; ?>
                 <textarea form="formulario-add" maxlength="300" name="ComenIncorrectoA"></textarea>
             </label>
-            <label>Corrección del profesor
+            <label><?php echo $strings['Corrección del profesor']; ?>
                 <select name="CorrectoP" id="CorrectoP" required="true" size="1">
                   <option selected="true" value="1">Correcto</option>
                   <option value="0">Incorrecto</option>
                 </select>
             </label>
-            <label>Comentario
+            <label><?php echo $strings['comentario']; ?>
                 <textarea form="formulario-add" maxlength="300" name="ComenIncorrectoP"></textarea>
             </label>
-            <label>Corrección de la evaluación
+            <label><?php echo $strings['Corrección de la evaluación']; ?>
                 <select name="OK" id="OK" required="true" size="1">
                   <option selected="true" value="1">Correcto</option>
                   <option value="0">Incorrecto</option>

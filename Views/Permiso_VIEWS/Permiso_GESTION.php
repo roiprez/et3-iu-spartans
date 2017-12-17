@@ -37,9 +37,9 @@ class Permiso_GESTION// declaración de clase
 
             <table>
                 <tr>
-                    <th>Grupo</th>
-                    <th>Funcionalidad y accion</th>
-                    <th>Accion</th>
+                    <th><?php echo $strings['Grupo']; ?></th>
+                    <th><?php echo $strings['Funcionalidad y Accion']; ?></th>
+                    <th><?php echo $strings['Accion']; ?></th>
                 </tr>
                 <tr>
                     <td>

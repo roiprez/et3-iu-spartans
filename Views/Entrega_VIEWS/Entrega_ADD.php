@@ -35,7 +35,7 @@ class Entrega_ADD// declaración de clase
 
         <form id="formulario-add" name="formulario_add" method="post" enctype="multipart/form-data" onSubmit="return validarFormulario('add') ">
 
-            <label>Login
+            <label><?php echo $strings['Login']; ?>
                 <select name="login" id="login" required="true" size="1">
                   <?php 
                     for($i=0;$i<count($this->lista_Usuarios);$i++){
@@ -46,7 +46,7 @@ class Entrega_ADD// declaración de clase
                   ?>
                 </select>
             </label>
-            <label>Id del Trabajo
+            <label><?php echo $strings['Id del Trabajo']; ?>
                 <select name="IdTrabajo" id="IdTrabajo" required="true" size="1">
                   <?php 
                     for($i=0;$i<count($this->lista_Trabajos);$i++){
@@ -57,26 +57,26 @@ class Entrega_ADD// declaración de clase
                   ?>
                 </select>
             </label>
-            <label>Alias
+            <label><?php echo $strings['Alias']; ?>
                 <input type="text" name="Alias" readonly="true"
                        id="Alias" required="true"
                        size="6" maxlength="6" value="<?php echo $this->alias?>" 
                 />
             </label>
-            <label>Horas
+            <label><?php echo $strings['Horas']; ?>
                 <input type="number" name="Horas"
                        id="Horas" 
                        size="2" maxlength="2"
                 />
             </label>
-            <label>Ruta
+            <label><?php echo $strings['Ruta']; ?>
                 <input type="file" name="Ruta"
                        id="Ruta" 
                        size="60" maxlength="60"
                 />
             </label>
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADD" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></button>
+                <button id="enviar" name = "action" value = "ADD" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>
                 <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>

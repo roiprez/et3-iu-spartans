@@ -26,22 +26,18 @@ class Resultados_SHOWCURRENT_ET
 
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-        $correctoP='';
-        $incorrectoP='';
-        $correctos=array();
-        $comentarios=array();
             ?>
             <table id="tabla-resultados">
             <?php
-                for($i=0;$i<count($this->lista_descripHist);$i++){//cuenta el numero de historias en base a sus descripciones
-                    
-
+                for($i=0;$i<count($this->lista_descripHist);$i++){
+                    $correctos=array();
+                    $comentarios=array();
                     foreach($this->datos as $tupla){//busca en el recordset las cinco correcciones de la historia
-                        if($tupla['IdHistoria']==$i){
-                            array_push($correctos,$tupla['CorrectoA']);//almacena en un array las correcciones
+                        if($tupla['idHistoria']==$i){
+                            array_push($correctos,$tupla['correctoA']);//almacena en un array las correcciones
                             array_push($comentarios,$tupla['ComenIncorrectoA']);//almacena en un array los comentarios
-                            $correctoP=$tupla['CorrectoP'];
-                            $incorrectoP=$tupla['ComentIncorrectoP'];
+                            $correctoP=$tupla['correctoP'];
+                            $incorrectoP=$tupla['comenIncorrectoP'];
                         }
                     }//fin bucle foreach
             ?>

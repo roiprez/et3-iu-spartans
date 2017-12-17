@@ -20,11 +20,11 @@ class Vista_LOGIN{
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 
         ?>
-        <h1>Login</h1>
+        <h1><?php echo $strings['Login']; ?></h1>
         <form id="formulario-login" name = 'formulario_login' action='./Login_Controller.php' method='post' onsubmit="return encriptar();">
 
-            <input type = 'text' name = 'login' placeholder = 'login' size = '9' maxlength="9" onchange="comprobarVacio(this) && comprobarTexto(this, 9)"  ><br>
-            <input type = 'password' name = 'password' id='password' placeholder = 'password' maxlength="20" size = '20' value = '' onchange="comprobarVacio(this) && comprobarTexto(this, 20)"  ><br>
+            <input type = 'text' name = 'login' placeholder = " <?php echo $strings['Login']; ?>" size = '9' maxlength="9" onchange="comprobarVacio(this) && comprobarTexto(this, 9)"  ><br>
+            <input type = 'password' name = 'password' id='password' placeholder =" <?php echo $strings['Password']; ?>" maxlength="20" size = '20' value = '' onchange="comprobarVacio(this) && comprobarTexto(this, 20)"  ><br>
 
             <button id="enviar" type='submit' name='action'  title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png"></img></button>
         </form>

@@ -37,7 +37,7 @@ class Historia_ADD
 
         <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
 
-            <label>Id trabajo
+            <label><?php echo $strings['Id trabajo']; ?>
 
                 <select name="IdTrabajo" id="IdTrabajo" required="true">
                     <?php
@@ -53,14 +53,14 @@ class Historia_ADD
                 </select>
             </label>
 
-            <label>Id historia
+            <label><?php echo $strings['Id historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
                        size="2" maxlength="2"
                 />
             </label>
 
-            <label>Texto
+            <label><?php echo $strings['Texto']; ?>
                 <textarea form="formulario-add" maxlength="300" name="TextoHistoria" required="true">
                 </textarea>
             </label>

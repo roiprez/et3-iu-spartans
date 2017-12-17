@@ -28,23 +28,23 @@ class Trabajo_SEARCH
         ?>
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
-            <label>Id trabajo
+            <label><?php echo $strings['Id Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo"
                        size="6" maxlength="6"
                 />
             </label>
-            <label>NombreTrabajo
+            <label><?php echo $strings['Nombre Trabajo']; ?>
                 <input type="text" name="NombreTrabajo"
                        id="NombreTrabajo"
                        size="60" maxlength="60"
                 />
             </label>
-            <label>Fecha inicio
+            <label><?php echo $strings['Fecha inicio']; ?>
                 <input type="text" name="FechaIniTrabajo" class="tcal"  readonly="readonly"/>
             </label>
 
-            <label>Fecha fin
+            <label><?php echo $strings['Fecha fin']; ?>
                 <input type="text" name="FechaFinTrabajo" class="tcal"  readonly="readonly"/>
             </label>
 

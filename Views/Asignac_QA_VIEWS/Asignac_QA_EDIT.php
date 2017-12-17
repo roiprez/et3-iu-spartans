@@ -33,28 +33,28 @@ class Asignac_QA_EDIT// declaración de clase
 
         <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit') ">
 
-            <label>Login del evaluado
+            <label><?php echo $strings['Login del evaluado']; ?>
                  <input type="text" name="login" readonly="true"
                        id="login"
                        size="9" maxlength="9" value="<?php echo $this->usuario?>"
                 />
             </label>
-            <label>Alias
+            <label><?php echo $strings['Alias']; ?>
                 <input type="text" name="Alias" readonly="true"
                        id="Alias" required="true"
                        size="9" maxlength="9" value="<?php echo $this->alias?>"
                 />
             </label>
-            <label>Id del Trabajo
+            <label>I<?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo" readonly="true"
                        id="IdTrabajo" required="true"
                        size="6" maxlength="6" value="<?php echo $this->trabajo?>" 
                 />
             </label>
-            <label>Login del evaluador
+            <label><?php echo $strings['Login del evaluador']; ?>
                 <select name="IdTrabajo" id="IdTrabajo" required="true" size="1">
                   
-                  <option selected="true"> value="<?php echo $this->corrector ?>"><?php echo $this->corrector ?></option>
+                  <option selected="true" value="<?php echo $this->corrector ?>"><?php echo $this->corrector ?></option>
                   <?php 
 
                     for($i=0;$i<count($this->lista_Usuarios);$i++){//recorremos todos los usuarios

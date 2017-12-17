@@ -29,20 +29,20 @@ include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
-            <label>Id funcionalidad
+            <label><?php echo $strings['Id funcionalidad']; ?>
                 <input type="text" name="IdFuncionalidad"
                        id="IdFuncionalidad"
                        size="6 maxlength="6"
                 />
             </label>
 
-            <label>Nombre
+            <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="NombreFuncionalidad"
                        id="NombreFuncionalidad"
                        size="60" maxlength="60"
                 />
             </label>
-            <label>Descripcion
+            <label><?php echo $strings['Descripcion']; ?>
                 <textarea form="formulario-search" maxlength="100" name="DescripFuncionalidad"></textarea>
             </label>
             <div class="botones-formulario">

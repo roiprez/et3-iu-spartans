@@ -34,19 +34,19 @@ class Accion_EDIT
         ?>
 
         <form id="formulario-edit" name="formulario_edit" method="post">
-            <label>Id accion
+            <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdFuncionaAccion"
                        id="IdFuncionaAccion" required="true" readonly
                        size="6" maxlength="6" value="<?php echo $this->lista_valores['IdAccion'] ?>"
                 />
             </label>
-            <label>Nombre
+            <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="NombreFuncionaAccion"
                        id="NombreFuncionaAccion" required="true"
                        size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreAccion'] ?>"
                 />
             </label>
-            <label>Descripcion
+            <label><?php echo $strings['Descripcion']; ?>
                 <textarea form="formulario-edit" maxlength="100" name="DescripAccion" >
                 <?php echo $this->lista_valores['DescripAccion'] ?>
                 </textarea>
