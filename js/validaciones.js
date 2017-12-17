@@ -12,51 +12,108 @@ function encriptar(){
   document.getElementById('password').value = hex_md5(document.getElementById('password').value);
   return true;
 }
-/*
+
+
+
 //Comprueba la entidad a la que pertenece el form y lo redirige a la función que comprueba sus campos
 function validarEntidad(entidad, formulario){
 	
-	switch(entidad)
+	switch(entidad){
 	
-	case 'usuario'
+	case 'usuario':
 	validarFormularioUsuario(formulario);
 	break;
-	case 'grupo'
+	case 'grupo':
 	validarFormularioGrupo(formulario);
 	break;
-	case 'funcionalidad'
+	case 'funcionalidad':
 	validarFormularioFuncionalidad(formulario);
 	break;
-	case 'accion'
+	case 'accion':
 	validarFormularioAccion(formulario);
 	break;
-	case 'trabajo'
+	case 'trabajo':
 	validarFormularioTrabajo(formulario);
 	break;
-	case 'nota_trabajo'
+	case 'nota_trabajo':
 	validarFormularioNota(formulario);
 	break;
-	case 'entrega'
+	case 'entrega':
 	validarFormularioEntrega(formulario);
 	break;
-	case 'historia'
+	case 'historia':
 	validarFormularioHistoria(formulario);
 	break;
-	case 'evaluacion'
+	case 'evaluacion':
 	validarFormularioEvaluacion(formulario);
 	break;
 	
 	default:
 	alert('algo ha petado');
-	
-}*/
+	}
+}
+
+
+
+/*Se encarga de validar los formularios de ADD, EDIT de la entidad Grupo,  una vez enviados, 
+la variable formulario nos indica cual de los tres formularios hay que validar.
+Si alguna validación falla devuelve false y termina la función, si llega al final
+sin incidencias devuelve true*/
+function validarFormularioGrupo(formulario){
+  //Contendrá la referencia al formulario que queremos validar
+  let objetivo;
+  //Contendrá la referencia al campo a validar
+  let campo;
+
+  //Comprueba que el formulario es el de ADD, de Registro o EDIT y le asigna a la variable objetivo la referencia correspondiente
+  if(formulario == "add"){
+    objetivo = document.formulario_add;   
+  }
+  else if(formulario == "edit"){
+    objetivo = document.formulario_edit;
+  } 
+  campo = objetivo.IdGrupo;
+  //Comprueba que el login no está vacío y tiene la cantidad de caracteres adecuada
+  if((comprobarVacio(campo)) == false){
+    return false;
+  }
+  if((comprobarTexto(campo, 6)) == false){
+    return false; 
+  }
+
+  //Comprueba que la contraseña no está vacía y tiene la cantidad de caracteres adecuada
+  campo = objetivo.NombreGrupo;
+  if((comprobarVacio(campo)) == false){
+    return false;
+   }
+
+  if((comprobarAlfabetico(campo, 60,'')) == false){
+    return false;
+  }
+
+  //Comprueba que el DNI no está vacía y tiene un formato válido
+  campo = objetivo.DescripGrupo;
+  if((comprobarVacio(campo)) == false){
+    return false;
+   }
+   if((comprobarTexto(campo, 100)) == false){
+    return false;
+  }
+  
+  
+  //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
+  return true;
+}
+
+
+
 
 
 /*Se encarga de validar los formularios de ADD, EDIT y REGISTER una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
-function validarFormulario(formulario){
+function validarFormularioUsuario(formulario){
   //Contendrá la referencia al formulario que queremos validar
   let objetivo;
   //Contendrá la referencia al campo a validar
@@ -307,30 +364,30 @@ if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que
 		  
 	  }else{
 
-  //Si supera la longitud que le pasamos por parámetro devuelve una alerta y un false
-  if (campo.value.length>size) {
-    alert('Longitud incorrecta. El atributo ' + campo.name + ' debe ser maximo ' + size + ' y es ' + campo.value.length);
-    campo.focus();
-    campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
-    return false;
-  }
-  //Si el campo está vacío devuelve falso pero reestablece el color de fondo
-  else if(campo.value.trim().length === 0){
-    campo.style.backgroundColor = "white";
-    return false;
-  }
-  //Comprueba con la expresión regular que solo se incluyen caracteres alfabéticos y devuelve true en caso afirmativo, y una alerta y false en el contrario
-  else if (/^[a-zA-ZÁÉÍÏÓÚÜáéíïóüúñÑ-\s]+$/.test(campo.value)){
-    campo.style.backgroundColor = "white";
-    return true;
-    }
-  else{
-    alert("El campo " + campo.name + " no admite caracteres no alfabéticos");
-    campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
-    return false;
-  }
-  
-	  }
+			  //Si supera la longitud que le pasamos por parámetro devuelve una alerta y un false
+			  if (campo.value.length>size) {
+				alert('Longitud incorrecta. El atributo ' + campo.name + ' debe ser maximo ' + size + ' y es ' + campo.value.length);
+				campo.focus();
+				campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
+				return false;
+			  }
+			  //Si el campo está vacío devuelve falso pero reestablece el color de fondo
+			  else if(campo.value.trim().length === 0){
+				campo.style.backgroundColor = "white";
+				return false;
+			  }
+			  //Comprueba con la expresión regular que solo se incluyen caracteres alfabéticos y devuelve true en caso afirmativo, y una alerta y false en el contrario
+			  else if (/^[a-zA-ZÁÉÍÏÓÚÜáéíïóüúñÑ-\s]+$/.test(campo.value)){
+				campo.style.backgroundColor = "white";
+				return false;
+				} 
+				else{
+				alert("El atributo " + campo.name + " no admite caracteres no alfabéticos");
+				campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
+				return false;
+			  }
+			  
+			}
 }
 
 //Comprueba que el formato del dni sea correcto

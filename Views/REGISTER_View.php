@@ -14,7 +14,7 @@ class Register{
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         ?>
         <h1><?php echo $strings['Registro']; ?></h1>
-        <form id="formulario-registro" name="formulario_registro" method="post" onsubmit="return validarFormulario('reg') && encriptar()">
+        <form id="formulario-registro" name="formulario_registro" method="post" onsubmit="return validarFormularioUsuario('reg') && encriptar()">
             <label>Login
                 <input type="text" name="login" id = 'login' required="true" size="9" maxlength="9" onchange="comprobarVacio(this) && comprobarTexto(this, 9)"/>
             </label>

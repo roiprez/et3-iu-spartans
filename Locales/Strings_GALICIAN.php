@@ -121,7 +121,7 @@ array(
 	'borrar el contenido introducido' => 'borrar o contenido introducido',
 	'borrar' => 'borrar',
 	'enviar' => 'enviar',
-	'añadir una fila' => 'añadir unha fila',
+	'añadir una fila' => 'engadir unha fila',
 	'buscar en la tabla' => 'buscar na tabla',
 	'Ver en detalle' => 'Ver ao detalle',
 	'editar' => 'Editar',

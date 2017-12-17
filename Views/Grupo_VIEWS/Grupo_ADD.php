@@ -27,7 +27,7 @@ class Grupo_ADD
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarEntidad('grupo','add')">
 
             <label>Id del grupo
                 <input type="text" name="IdGrupo"
@@ -39,7 +39,7 @@ class Grupo_ADD
             <label>Nombre
                 <input type="text" name="NombreGrupo"
                        id="NombreGrupo" required="true"
-                       size="60" maxlength="60"
+                       size="60" maxlength="60" onBlur="comprobarAlfabetico(this, this.size, 'edit')"
                 />
             </label>
             <label>Descripcion

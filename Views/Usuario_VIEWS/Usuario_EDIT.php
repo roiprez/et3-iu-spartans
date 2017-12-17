@@ -35,7 +35,7 @@ class Usuario_EDIT// declaración de clase
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit') && encriptar()">
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('usuario','edit') && encriptar()">
             <label>Login
                 <input type="text" name="login"
                        id="login" required="true" readonly
