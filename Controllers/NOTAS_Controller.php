@@ -8,6 +8,7 @@
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_SEARCH.php';
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_SHOWALL.php';
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_SHOWCURRENT.php';
+    include '../Views/MESSAGE_View.php';
 
 function get_data_form(){
     $login = $_REQUEST['login'];

@@ -29,7 +29,7 @@ class Resultados_SHOWCURRENT_ET
             ?>
             <table id="tabla-resultados">
             <?php
-                for($i=0;count($this->lista_descripHist);$i++){
+                for($i=0;$i<count($this->lista_descripHist);$i++){
                     $correctos=array();
                     $comentarios=array();
                     foreach($this->datos as $tupla){//busca en el recordset las cinco correcciones de la historia
