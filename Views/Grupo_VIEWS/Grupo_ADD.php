@@ -39,7 +39,7 @@ class Grupo_ADD
             <label><?php echo $strings['Nombre'];?>
                 <input type="text" name="NombreGrupo"
                        id="NombreGrupo" required="true"
-                       size="60" maxlength="60" onBlur="comprobarAlfabetico(this, this.size, 'edit')"
+                       size="60" maxlength="60" onBlur="comprobarAlfabetico(this, this.size, 'add')"
                 />
             </label>
             <label><?php echo $strings['Descripcion'];?>

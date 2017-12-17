@@ -33,7 +33,7 @@ class Entrega_ADD// declaración de clase
             }else{
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" enctype="multipart/form-data" onSubmit="return validarFormulario('add') ">
+        <form id="formulario-add" name="formulario_add" method="post" enctype="multipart/form-data" onSubmit="return validarEntidad('entrega','add') ">
 
             <label><?php echo $strings['Login']; ?>
                 <select name="login" id="login" required="true" size="1">
@@ -64,7 +64,7 @@ class Entrega_ADD// declaración de clase
                 />
             </label>
             <label><?php echo $strings['Horas']; ?>
-                <input type="number" name="Horas"
+                <input type="text" name="Horas"
                        id="Horas" 
                        size="2" maxlength="2"
                 />

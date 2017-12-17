@@ -17,7 +17,7 @@ class Usuario_ADD// declaración de clase
     }
     function pinta()
     {
-        //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
       //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAdmin()){

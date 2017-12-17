@@ -20,7 +20,7 @@ class Nota_Trabajo_EDIT
     }
     function pinta()
     {
-        //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAdmin()){
             $respuesta= "No tienes permiso para acceder a esta vista";
@@ -32,7 +32,7 @@ class Nota_Trabajo_EDIT
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post">
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('notaTrabajo','edit') && encriptar()">
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login" readonly="true" 
                        id="login" required="true"

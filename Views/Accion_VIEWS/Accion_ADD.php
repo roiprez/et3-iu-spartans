@@ -27,12 +27,12 @@ class Accion_ADD
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarEntidad('accion','add')">
 
             <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdAccion"
                        id="IdAccion" required="true"
-                       size="6 maxlength="6"
+                       size="6" maxlength="6"
                 />
             </label>
 

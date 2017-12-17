@@ -23,7 +23,7 @@ class Historia_ADD
     }
     function pinta()
     {
-        //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAdmin()){
             $respuesta= "No tienes permiso para acceder a esta vista";
@@ -35,7 +35,7 @@ class Historia_ADD
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarEntidad('historia','add')">
 
             <label><?php echo $strings['Id trabajo']; ?>
 
@@ -54,9 +54,9 @@ class Historia_ADD
             </label>
 
             <label><?php echo $strings['Id historia']; ?>
-                <input type="number" name="IdHistoria"
+                <input type="text" name="IdHistoria"
                        id="IdHistoria" required="true"
-                       size="2" maxlength="2"
+                       size="2" maxlength="2" onBlur="comprobarEntero(this, 0, 2)"
                 />
             </label>
 

@@ -34,7 +34,7 @@ class Grupo_EDIT
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post">
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('grupo','edit')">
             <label><?php echo $strings['Id del grupo'];?>
                 <input type="text" name="IdGrupo"
                        id="IdGrupo" required="true" readonly

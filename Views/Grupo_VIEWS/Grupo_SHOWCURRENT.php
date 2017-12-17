@@ -33,7 +33,7 @@ class Grupo_SHOWCURRENT
         ?>
         <table id="tabla-detail">
 
-            <h1 class="titulo-categoria"><?php echo $strings['Detalle'];?</h1>
+            <h1 class="titulo-categoria"><?php echo $strings['Detalle'];?></h1>
 
             <?php
             for($i=0;$i<count($this->lista_variables);$i++){
