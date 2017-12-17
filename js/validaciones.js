@@ -359,24 +359,6 @@ function validarFormularioEvaluacion(formulario){
    if((comprobarEntero(campo,0,2)) == false){
     return false;
   }
-
-   campo = objetivo.ComenIncorrectoA;
-  if((comprobarVacio(campo)) == false){
-    return false;
-   }
-   if((comprobarTexto(campo,300)) == false){
-    return false;
-  }
-
-  campo = objetivo.ComenIncorrectoP;
-  if((comprobarVacio(campo)) == false){
-    return false;
-   }
-   if((comprobarTexto(campo,300)) == false){
-    return false;
-  }
-
-  
   //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
   return true;
 }

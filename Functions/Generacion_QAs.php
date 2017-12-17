@@ -59,7 +59,7 @@ function evaluacion_gen($IdTrabajo, $LoginEvaluador, $AliasEvaluado){
   $lista_historias = [];
   //Recorre las historias y pasa el Id de historia al modelo de evaluaciones
   while($row = $historias->fetch_array()) {
-    $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$row[1],'','','','','');
+    $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$row[1],1,'',1,'',1);
     $respuesta = $EVALUACIONES->ADD();
   }
   notas_gen($IdTrabajo);
