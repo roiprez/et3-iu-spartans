@@ -6,14 +6,16 @@ class TRABAJOS_Model{   //Declaracion de la clase
     var $nombreTrabajo;
     var $fechIniTrabajo;
     var $fechFinTrabajo;
+    var $porcentajeNota;
 
     var $mysqli;
 
-    function __construct ($idTrabajo,$nombreTrabajo,$fechIniTrabajo, $fechFinTrabajo){
+    function __construct ($idTrabajo,$nombreTrabajo,$fechIniTrabajo, $fechFinTrabajo, $porcentajeNota){
         $this->idTrabajo = $idTrabajo;
         $this->nombreTrabajo = $nombreTrabajo;
         $this->fechIniTrabajo= $fechIniTrabajo;
         $this->fechFinTrabajo= $fechFinTrabajo;
+        $this->porcentajeNota= $porcentajeNota;
 
         //si la fechIniTrabajo viene vacia la asignamos vacia
         if ($fechIniTrabajo == ''){
@@ -48,12 +50,14 @@ class TRABAJOS_Model{   //Declaracion de la clase
                       IdTrabajo,
                       NombreTrabajo,
                       FechaIniTrabajo,
-                      FechaFinTrabajo)
+                      FechaFinTrabajo,
+                      PorcentajeNota)
                       VALUES (
                         '$this->idTrabajo',
                         '$this->nombreTrabajo',
                         '$this->fechIniTrabajo',
-                        '$this->fechFinTrabajo'
+                        '$this->fechFinTrabajo',
+                        '$this->porcentajeNota'
                       )";
                     if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
                         return 'Error en la inserción';
@@ -77,13 +81,15 @@ function SEARCH(){
             IdTrabajo,
             NombreTrabajo,
             FechaIniTrabajo,
-            FechaFinTrabajo
+            FechaFinTrabajo,
+            PorcentajeNota
             FROM TRABAJO
             WHERE (
             (IdTrabajo LIKE '%$this->idTrabajo%')&&
             (NombreTrabajo LIKE '%$this->nombreTrabajo%')&&
             (FechaIniTrabajo LIKE '%$this->fechIniTrabajo%')&&
-            (FechaFinTrabajo LIKE '%$this->fechFinTrabajo%')
+            (FechaFinTrabajo LIKE '%$this->fechFinTrabajo%')&&
+            (PorcentajeNota LIKE '%$this->porcentajeNota%')
             )";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
     if (!($resultado = $this->mysqli->query($sql))){
@@ -128,7 +134,8 @@ function EDIT(){
 					IdTrabajo = '$this->idTrabajo',
 					NombreTrabajo = '$this->nombreTrabajo',
 					FechaIniTrabajo = '$this->fechIniTrabajo',
-          FechaFinTrabajo = '$this->fechFinTrabajo'
+                    FechaFinTrabajo = '$this->fechFinTrabajo'
+                    PorcentajeNota = '$this->porcentajeNota'
 					
 				WHERE ( IdTrabajo = '$this->idTrabajo'
 				)";
