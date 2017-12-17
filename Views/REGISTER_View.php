@@ -15,13 +15,13 @@ class Register{
         ?>
         <h1><?php echo $strings['Registro']; ?></h1>
         <form id="formulario-registro" name="formulario_registro" method="post" onsubmit="return validarFormulario('reg') && encriptar()">
-            <label>Login
+            <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login" id = 'login' required="true" size="9" maxlength="9" onchange="comprobarVacio(this) && comprobarTexto(this, 9)"/>
             </label>
-            <label>Password
+            <label><?php echo $strings['Password']; ?>
                 <input type="password" name="password" id = 'password' required="true" size="20" maxlength="20" onchange="comprobarVacio(this) && comprobarTexto(this, 20)"/>
             </label>
-            <label>DNI
+            <label><?php echo $strings['DNI']; ?>
                 <input type="text" name="DNI" required="true" size="9" maxlength="9" onchange="comprobarDni(this)"/>
             </label>
             <label><?php echo $strings['Nombre']; ?>
@@ -30,11 +30,11 @@ class Register{
             <label><?php echo $strings['Apellidos']; ?>
                 <input type="text" name="Apellidos" required="true" size="50" maxlength="50" required="true" onchange="comprobarAlfabetico(this, 50)"/>
             </label>
-            <label>Email
+            <label><?php echo $strings['Correo']; ?>
                 <input type="text" name="Correo" required="true" size="40" maxlength="40" onchange="comprobarEmail(this, 40)"/>
             </label>
 
-            <label>Direccion
+            <label><?php echo $strings['Direccion']; ?>
                 <input type="text" name="Direccion" required="true" size="60" maxlength="60" />
             </label>
              <label><?php echo $strings['Teléfono']; ?>

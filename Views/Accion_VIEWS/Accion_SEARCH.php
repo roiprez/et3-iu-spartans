@@ -30,26 +30,26 @@ class Accion_SEARCH
 
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
-            <label>Id accion
+            <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdAccion"
                        id="IdAccion"
                        size="6 maxlength="6"
                 />
             </label>
 
-            <label>Nombre
+            <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="NombreAccion"
                        id="NombreAccion"
                        size="60" maxlength="60"
                 />
             </label>
-            <label>Descripcion
+            <label><?php echo $strings['Descripcion']; ?>
                 <textarea form="formulario-search" maxlength="100" name="DescripAccion">
 
         </textarea>
             </label>
             <div class="botones-formulario">
-                <button id="buscar" name = "action" value = "SEARCH" type="submit" title="buscar"><img class="button-td" src="../Iconos/search.png" ></button>
+                <button id="buscar" name = "action" value = "SEARCH" type="submit" title="<?php echo $strings['buscar']; ?>"><img class="button-td" src="../Iconos/search.png" ></button>
                 <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>

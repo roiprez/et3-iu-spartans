@@ -36,21 +36,22 @@ class Historia_EDIT
         ?>
 
         <form id="formulario-edit" name="formulario_edit" method="post">
-            <label>Id trabajo
+            <label><?php echo $strings['Id trabajo']; ?>
 
                 <select name="IdTrabajo" id="IdTrabajo" required="true">
                     <option selected value="<?php echo $this->lista_valores['IdTrabajo']?>"><?php echo $this->lista_valores['IdTrabajo']?></option>
                 </select>
             </label>
 
-            <label>Id historia
+            <label><?php echo $strings['Id historia']; ?>
+
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true" readonly
                        size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria']?>"
                 />
             </label>
 
-            <label>Texto
+            <label><?php echo $strings['Texto']; ?>
                 <textarea form="formulario-edit" maxlength="300" name="TextoHistoria" required="true">
                     <?php echo $this->lista_valores['TextoHistoria']?>
                 </textarea>

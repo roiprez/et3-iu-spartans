@@ -32,31 +32,31 @@ class Entrega_SEARCH// declaración de clase
 
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()" enctype="multipart/form-data" >
 
-            <label>Login
+            <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"
                        id="login" 
                        size="9" maxlength="9"
                 />
             </label>
-            <label>Id del Trabajo
+            <label><?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo" 
                        id="IdTrabajo"
                        size="6" maxlength="6"  
                 />
             </label>
-            <label>Alias
+            <label><?php echo $strings['Alias']; ?>
                 <input type="text" name="Alias"
                        id="Alias" 
                        size="9" maxlength="9" 
                 />
             </label>
-            <label>Horas
+            <label><?php echo $strings['Horas']; ?>
                 <input type="number" name="Horas"
                        id="Horas"
                        size="2" maxlength="2"
                 />
             </label>
-            <label>Ruta
+            <label><?php echo $strings['Ruta']; ?>
                 <input type="file" name="Ruta"
                        id="Ruta" required="true"
                        size="60" maxlength="60"

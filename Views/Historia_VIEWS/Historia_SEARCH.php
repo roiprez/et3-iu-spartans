@@ -38,7 +38,7 @@ class Historia_SEARCH
 
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
-            <label>Id trabajo
+            <label><?php echo $strings['Id trabajo']; ?>
 
                 <select name="IdTrabajo" id="IdTrabajo" >
                     <?php
@@ -54,14 +54,14 @@ class Historia_SEARCH
                 </select>
             </label>
 
-            <label>Id historia
+            <label><?php echo $strings['Id historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria"
                        size="2" maxlength="2"
                 />
             </label>
 
-            <label>Texto
+            <label><?php echo $strings['Texto']; ?>
                 <textarea form="formulario-add" maxlength="300" name="TextoHistoria">
                 </textarea>
             </label>

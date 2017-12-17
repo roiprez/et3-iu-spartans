@@ -34,9 +34,9 @@ class Fun_Accion_ADD// declaración de clase
 
         	<table>
             <tr>
-                <th>Usuario</th>
-                <th>Grupos</th>
-                <th>Grupos a los que ya pertenece</th> 
+                <th><?php echo $strings['Usuario']; ?></th>
+                <th><?php echo $strings['Grupos']; ?></th>
+                <th><?php echo $strings['Grupos a los que ya pertenece']; ?></th> 
             </tr>
 
             <?php
@@ -74,7 +74,7 @@ class Fun_Accion_ADD// declaración de clase
         </table>
 
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADD" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></button>
+                <button id="enviar" name = "action" value = "ADD" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>
                 <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>

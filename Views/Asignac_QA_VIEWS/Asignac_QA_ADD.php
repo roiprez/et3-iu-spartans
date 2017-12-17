@@ -23,25 +23,25 @@ class Asignac_QA_ADD// declaración de clase
 
         <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add') ">
 
-            <label>Login del evaluado
+            <label><?php echo $strings['Login del evaluado']; ?>
                  <input type="text" name="LoginEvaluado"
                        id="LoginEvaluado"
                        size="9" maxlength="9"
                 />
             </label>
-            <label>Alias
+            <label><?php echo $strings['Alias']; ?>
                 <input type="text" name="Alias"
                        id="Alias" required="true"
                        size="6" maxlength="6"
                 />
             </label>
-            <label>Id del Trabajo
+            <label><?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
                        size="6" maxlength="6"
                 />
             </label>
-            <label>Login del evaluador
+            <label><?php echo $strings['Login del evaluador']; ?>
                 <input type="text" name="LoginEvaluador"
                        id="LoginEvaluador"
                        size="9" maxlength="9"

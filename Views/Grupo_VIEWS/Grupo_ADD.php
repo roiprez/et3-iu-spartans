@@ -29,20 +29,20 @@ class Grupo_ADD
 
         <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add')">
 
-            <label>Id del grupo
+            <label><?php echo $strings['Id del grupo'];?>
                 <input type="text" name="IdGrupo"
                        id="IdGrupo" required="true"
                        size="6" maxlength="6"
                 />
             </label>
 
-            <label>Nombre
+            <label><?php echo $strings['Nombre'];?>
                 <input type="text" name="NombreGrupo"
                        id="NombreGrupo" required="true"
                        size="60" maxlength="60"
                 />
             </label>
-            <label>Descripcion
+            <label><?php echo $strings['Descripcion'];?>
                 <textarea form="formulario-add" maxlength="100" name="DescripGrupo" required="true"></textarea>
             </label>
             <div class="botones-formulario">

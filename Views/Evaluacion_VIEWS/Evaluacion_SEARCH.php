@@ -32,52 +32,52 @@ class Evaluacion_SEARCH// declaración de clase
 
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()"  >
 
-            <label>Id del trabajo
+            <label><?php echo $strings['Id del trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" 
                        size="6" maxlength="6"
                 />
             </label>
-            <label>Login evaluador
+            <label><?php echo $strings['Login evaluador']; ?>
                 <input type="text" name="LoginEvaluador"
                        id="LoginEvaluador" 
                        size="9" maxlength="9"
                 />
             </label>
-            <label>Alias evaluado
+            <label> <label><?php echo $strings['Alias evaluado']; ?>
                 <input type="text" name="AliasEvaluado"
                        id="AliasEvaluado" 
                        size="9" maxlength="9" 
                 />
             </label>
-            <label>Id de la historia
+            <label><?php echo $strings['Id de la historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" 
                        size="2" maxlength="2" 
                 />
             </label>
-            <label>Corrección de la historia
+            <label><?php echo $strings['Corrección de la historia']; ?>
                 <select name="CorrectoA" id="CorrectoA"  size="1">
-                  <option selected="true" value="1">Correcto</option>
-                  <option value="0">Incorrecto</option>
+                  <option selected="true" value="1"><?php echo $this->lista_valores['Correcto'];?></option>
+                  <option value="0"><?php echo $this->lista_valores['Incorrecto'];?></option>
                 </select>
             </label>
-            <label>Comentario
+            <label> <label><?php echo $strings['comentario']; ?>
                 <textarea form="formulario-search" maxlength="300" name="ComenIncorrectoA"></textarea>
             </label>
-            <label>Corrección del profesor
+            <label><?php echo $strings['Corrección del profesor']; ?>
                 <select name="CorrectoP" id="CorrectoP"  size="1">
-                  <option selected="true" value="1">Correcto</option>
-                  <option value="0">Incorrecto</option>
+                  <option selected="true" value="1"><?php echo $this->lista_valores['Correcto'] ?></option>
+                  <option value="0"><?php echo $this->lista_valores['Incorrecto'] ?></option>
                 </select>
             </label>
-            <label>Comentario
+            <label> <label><?php echo $strings['comentario']; ?>
                 <textarea form="formulario-search" maxlength="300" name="ComenIncorrectoP"></textarea>
             </label>
-            <label>Corrección de la evaluación
+            <label><?php echo $strings['Corrección de la evaluación']; ?>
                 <select name="OK" id="OK"  size="1">
-                  <option selected="true" value="1">Correcto</option>
-                  <option value="0">Incorrecto</option>
+                  <option selected="true" value="1"><?php echo $this->lista_valores['Correcto'] ?></option>
+                  <option value="0"><?php echo $this->lista_valores['Incorrecto'] ?></option>
                 </select>
             </label>
             <div class="botones-formulario">

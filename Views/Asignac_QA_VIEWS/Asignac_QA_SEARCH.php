@@ -20,25 +20,25 @@ class Asignac_QA_SEARCH
         ?>
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
-            <label>Login del evaluado
+            <label><?php echo $strings['Login del evaluado']; ?>
                  <input type="text" name="login"
                        id="login"
                        size="9" maxlength="9" 
                 />
             </label>
-            <label>Alias
+            <label><?php echo $strings['Alias']; ?>
                 <input type="text" name="Alias" 
                        id="Alias" 
                        size="6" maxlength="6" 
                 />
             </label>
-            <label>Id del Trabajo
+            <label><?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" 
                        size="6" maxlength="6" 
                 />
             </label>
-            <label>Login del evaluador
+            <label><?php echo $strings['Login del evaluador']; ?>
                 <input type="text" name="login" 
                        id="login"
                        size="9" maxlength="9"  
@@ -46,7 +46,7 @@ class Asignac_QA_SEARCH
             </label>
 
             <div class="botones-formulario">
-                <button id="buscar" name = "action" value = "SEARCH" type="submit" title="buscar"><img class="button-td" src="../Iconos/search.png" ></button>
+                <button id="buscar" name = "action" value = "SEARCH" type="submit" title="<?php echo $strings['buscar']; ?>"><img class="button-td" src="../Iconos/search.png" ></button>
                 <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>

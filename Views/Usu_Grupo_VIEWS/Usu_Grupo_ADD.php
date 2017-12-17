@@ -37,9 +37,9 @@ class Usu_Grupo_ADD// declaración de clase
 
         	<table>
             <tr>
-                <th>Usuario</th>
-                <th>Grupos</th>
-				<th>Accion</th>
+                <th><?php echo $strings['Usuario']; ?></th>
+                <th><?php echo $strings['Grupos']; ?></th>
+				<th><?php echo $strings['Accion']; ?></th>
             </tr>
                     <tr>
                     	<td>
