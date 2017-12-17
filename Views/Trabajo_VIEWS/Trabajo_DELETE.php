@@ -50,12 +50,12 @@ function pinta(){
         <tr>
             <form id="formulario-borrado" method="post">
                 <td class="celda-botones">
-                    <button type = "submit" name = "action" value = "DELETE" title="borrar"><img class="button-td" src="../Iconos/borrar.png" ></button>
+                    <button type = "submit" name = "action" value = "DELETE" title="<?php echo $strings['borrar']; ?>"><img class="button-td" src="../Iconos/borrar.png" ></button>
                 </td>
             </form>
              <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
                     <td class="celda-botones">
-        <button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></td></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+        <button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button></td></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         </tr>
     </table>
 

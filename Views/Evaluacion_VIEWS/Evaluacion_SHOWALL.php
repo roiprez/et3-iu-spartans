@@ -72,7 +72,8 @@ class Evaluacion_SHOWALL{  // declaración de clase
                 <?php
                 for ($i = 0; $i < count($this->lista); $i++) {
                     ?>
-                    <th><?php echo $this->lista[$i];?></th>
+                    <th><?php $columna = $this->lista[$i];
+					echo $strings[$columna];?></th>
                     <?php
                 }
                 ?>

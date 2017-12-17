@@ -21,7 +21,7 @@ class Nota_Trabajo_SHOWALL
     }
 
     function pinta(){
-        //include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+        include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAdmin()){
                 ?>
@@ -66,7 +66,7 @@ class Nota_Trabajo_SHOWALL
         ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">
-                <button type = "submit" name = "action" value="SEARCH" title="buscar en la tabla"><img src="../Iconos/search.png" ></button>
+                <button type = "submit" name = "action" value="SEARCH" title="<?php echo $strings['buscar en la tabla']; ?>"><img src="../Iconos/search.png" ></button>
             </div>
         </form>
         <table id="tabla-showall">
@@ -74,7 +74,8 @@ class Nota_Trabajo_SHOWALL
                 <?php
                 for ($i = 0; $i < count($this->lista); $i++) {
                     ?>
-                    <th><?php echo $this->lista[$i];?></th>
+                    <th><?php $columna = $this->lista[$i];
+					echo $strings[$columna];?></th>
                     <?php
                 }
                 ?>
@@ -93,7 +94,7 @@ class Nota_Trabajo_SHOWALL
                             <?php
                         }
                         ?>
-                        <td><button type = "submit" name = "action" value="SHOWCURRENT" title="detalles"><img class="button-td" src="../Iconos/details.png" ></img></button></td>
+                        <td><button type = "submit" name = "action" value="SHOWCURRENT" title="<?php echo $strings['Ver en detalle']; ?>"><img class="button-td" src="../Iconos/details.png" ></img></button></td>
                     </tr>
                 </form>
                 <?php
@@ -102,7 +103,7 @@ class Nota_Trabajo_SHOWALL
 
         </table>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//Fin else
     }

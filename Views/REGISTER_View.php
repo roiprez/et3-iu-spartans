@@ -42,13 +42,13 @@ class Register{
             </label>
 
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADD" type="submit" title="enviar"><img class="button-td" src="../Iconos/send.png" ></img></button>
-                <button class="borrar" type="reset" name="limpiar" title="borrar el contenido introducido"> <img class="button-td" src="../Iconos/borrar_campo.png" ></img></button>
+                <button id="enviar" name = "action" value = "ADD" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></img></button>
+                <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></img></button>
             </div>
         </form>
 				
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-		<button id="boton-mensaje" type='submit' name='action' title="Registrarse"><img class="button-td" src="../Iconos/back.png" ></img></button> <!--Imagen para la accion back,que permite volver al menu principal-->
+		<button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Registrarse']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button> <!--Imagen para la accion back,que permite volver al menu principal-->
 		</center></form>
 		
         <?php
