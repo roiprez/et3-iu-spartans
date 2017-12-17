@@ -112,7 +112,8 @@ array(
 	'TextoHistoria' => 'TextoHistoria',
 	'Texto' => 'Texto',
 	'Id historia' => 'Id historia', 
-	'Id trabajo' => 'Id traballo'
+	'Id trabajo' => 'Id traballo',
+
 	
 	/*Diccionario notas*/
 	'NotaTrabajo' => 'NotaTrabalo',

@@ -17,7 +17,7 @@ class Usuario_ADD// declaración de clase
     }
     function pinta()
     {
-        //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
       //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAdmin()){
@@ -30,51 +30,51 @@ class Usuario_ADD// declaración de clase
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarFormulario('add') && encriptar()">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarEntidad('usuario', 'add') && encriptar()">
 
-            <label>Login
+            <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"
                        id="login" required="true"
                        size="9" maxlength="9"
                 />
             </label>
-            <label>Password
+            <label><?php echo $strings['Password']; ?>
                 <input type="password" name="password"
                        id="password" required="true"
                        size="20" maxlength="20"
                 />
             </label>
-            <label>DNI
+            <label><?php echo $strings['DNI']; ?>
                 <input type="text" name="DNI"
                        id="DNI" required="true"
                        size="9" maxlength="9" onChange="comprobarDni(this,'add')"
                 />
             </label>
-            <label>Nombre
+            <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="Nombre"
                        id="Nombre" required="true"
                        size="30" maxlength="30" onChange="comprobarAlfabetico(this, this.size, 'add')"
                 />
             </label>
-            <label>Apellidos
+            <label><?php echo $strings['Apellidos']; ?>
                 <input type="text" name="Apellidos"
                        id="Apellidos" required="true"
                        size="50" maxlength="50" onChange="comprobarAlfabetico(this, this.size, 'add')"
                 />
             </label>
-            <label>Correo
+            <label><?php echo $strings['Correo']; ?>
                 <input type="text" name="Correo"
                        id="Correo" required="true"
                        size="40" maxlength="40" onChange="comprobarEmail(this,this.size,'add')"
                 />
             </label>
-            <label>Direccion
+            <label><?php echo $strings['Direccion']; ?>
                 <input type="text" name="Direccion"
                        id="Direccion" required="true"
                        size="60" maxlength="60"
                 />
             </label>
-            <label>Telefono
+            <label><?php echo $strings['Telefono']; ?>
                 <input type="text" name="Telefono"
                        id="Telefono" required="true"
                        size="11" maxlength="11" onChange="comprobarTelf(this)"

@@ -23,7 +23,7 @@ class Entrega_EDIT// declaración de clase
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post" enctype="multipart/form-data" onSubmit="return validarFormulario('edit') ">
+        <form id="formulario-edit" name="formulario_edit" method="post" enctype="multipart/form-data" onSubmit="return validarEntidad('entrega','edit') ">
 
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"
@@ -44,7 +44,7 @@ class Entrega_EDIT// declaración de clase
                 />
             </label>
             <label><?php echo $strings['Horas']; ?>
-                <input type="number" name="Horas"
+                <input type="text" name="Horas"
                        id="Horas" required="true"
                        size="2" maxlength="2" value="<?php echo $this->lista_Valores['Horas']?>" 
                 />

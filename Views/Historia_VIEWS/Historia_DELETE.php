@@ -34,7 +34,7 @@ class Historia_DELETE
         ?>
         <table id="tabla-delete">
             <div id="mensaje-de-borrado">
-                <img src="../../Iconos/error.png">
+                <img src="../Iconos/error.png">
                 <p id="frase-borrado-tupla"><?php echo $strings['¿Está seguro de querer borrar los siguientes datos?'] ?></p>
             </div>
             <?php for($i=0;$i<count($this->lista_variables);$i++){

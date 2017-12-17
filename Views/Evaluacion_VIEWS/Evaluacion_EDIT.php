@@ -27,7 +27,7 @@ class Evaluacion_EDIT// declaración de clase
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit') && encriptar()">
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('evaluacion','edit') && encriptar()">
              <label><?php echo $strings['Id del trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"

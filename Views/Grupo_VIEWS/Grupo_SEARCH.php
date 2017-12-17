@@ -31,20 +31,20 @@ include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
 <form id="formulario-search" name="formulario-search" method="post" onSubmit="return validarBusqueda()">
 
-    <label>Id del grupo
+    <label><?php echo $strings['Id del grupo'];?>
         <input type="text" name="IdGrupo"
                id="IdGrupo"
                size="6" maxlength="6"
         />
     </label>
 
-    <label>Nombre
+    <label><?php echo $strings['Nombre'];?>
         <input type="text" name="NombreGrupo"
                id="NombreGrupo"
                size="60" maxlength="60"
         />
     </label>
-    <label>Descripcion
+    <label><?php echo $strings['Descripcion'];?>
         <textarea form="formulario-search" maxlength="100" name="DescripGrupo"></textarea>
     </label>
     <div class="botones-formulario">

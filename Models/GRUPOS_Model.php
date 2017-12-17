@@ -154,11 +154,11 @@ function __construct($login,$idGrupo)
    $sql="DELETE
 		FROM USU_GRUPO
 		WHERE (login LIKE '$this->login')";
-		if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
+		if (!$this->mysqli->query($sql)) { // si da error en la ejecución del delete devolvemos mensaje
 			return 'Error en el borrado';
 		}
-		else{ //si no da error en la insercion devolvemos mensaje de exito
-			return 'Inserción realizada con éxito'; //operacion de insertado correcta
+		else{ //si no da error en el borrado devolvemos mensaje de exito
+			return 'Borrado correctamente'; //operacion de borrado correcta
 		}
 		
 	}

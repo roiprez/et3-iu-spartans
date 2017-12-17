@@ -33,7 +33,7 @@ class Funcionalidad_EDIT
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post">
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('funcionalidad','edit')">
             <label><?php echo $strings['Id funcionalidad']; ?>
                 <input type="text" name="IdFuncionalidad"
                        id="IdFuncionalidad" required="true" readonly

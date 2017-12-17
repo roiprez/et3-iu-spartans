@@ -24,7 +24,7 @@ class Historia_EDIT
     }
     function pinta()
     {
-        //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+        include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAdmin()){
             $respuesta= "No tienes permiso para acceder a esta vista";
@@ -34,8 +34,7 @@ class Historia_EDIT
             }else{
 
         ?>
-
-        <form id="formulario-edit" name="formulario_edit" method="post">
+        <form id="formulario-edit" name="formulario_edit" method="post"  onSubmit="return validarEntidad('historia','edit')">
             <label><?php echo $strings['Id trabajo']; ?>
 
                 <select name="IdTrabajo" id="IdTrabajo" required="true">
@@ -47,7 +46,7 @@ class Historia_EDIT
 
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true" readonly
-                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria']?>"
+                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria']?>" onBlur="comprobarEntero(this, 0, 2)"
                 />
             </label>
 

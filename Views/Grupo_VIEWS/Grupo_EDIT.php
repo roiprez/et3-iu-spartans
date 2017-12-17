@@ -34,20 +34,20 @@ class Grupo_EDIT
 
         ?>
 
-        <form id="formulario-edit" name="formulario_edit" method="post">
-            <label>Id del grupo
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('grupo','edit')">
+            <label><?php echo $strings['Id del grupo'];?>
                 <input type="text" name="IdGrupo"
                        id="IdGrupo" required="true" readonly
                        size="6" maxlength="6"  value="<?php echo $this->lista_valores['IdGrupo'] ?>"
                 />
             </label>
-            <label>Nombre
+            <label><?php echo $strings['Nombre'];?>
                 <input type="text" name="NombreGrupo"
                        id="NombreGrupo" required="true"
                        size="60" maxlength="60"value="<?php echo $this->lista_valores['NombreGrupo'] ?>"
                 />
             </label>
-            <label>Descripcion
+            <label><?php echo $strings['Descripcion'];?>
                 <textarea form="formulario-edit" maxlength="100" name="DescripGrupo" ><?php echo $this->lista_valores['DescripGrupo'] ?></textarea>
             </label>
 
