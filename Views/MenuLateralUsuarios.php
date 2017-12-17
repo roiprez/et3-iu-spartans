@@ -16,12 +16,12 @@ Vista que contiene el Menú lateral
 					<ul class="menu">
 						<li class="dropdown">
 							<form action="../Controllers/Index_Controller.php">
-								<input type="submit" name="Controlador" value="<?php echo $strings['ENTREGAS']; ?>" onclick="" class="dropbtn"></input>
+								<input type="submit" name="Controlador" value="<?php echo $strings['ENTREGAS']; ?>" class="dropbtn"></input>
 							</form>
 						</li>
 						<li class="dropdown">
 							<form action="../Controllers/Index_Controller.php">
-								<input type="submit" name="Controlador" value="<?php echo $strings['EVALUACIONES'];?> " onclick="" class="dropbtn"></input>
+								<input type="submit" name="Controlador" value="<?php echo $strings['EVALUACIONES']; ?>" class="dropbtn"></input>
 							</form>
 						</li>
 						<li class="dropdown">
