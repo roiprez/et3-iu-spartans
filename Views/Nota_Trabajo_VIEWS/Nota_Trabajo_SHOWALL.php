@@ -24,10 +24,42 @@ class Nota_Trabajo_SHOWALL
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAdmin()){
-            $respuesta= "No tienes permiso para acceder a esta vista";
-            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
-            
-            
+                ?>
+            <table id="tabla-showall">
+                <tr>
+                    <?php
+                    for ($i = 0; $i < count($this->lista); $i++) {
+                        ?>
+                        <th><?php echo $this->lista[$i];?></th>
+                        <?php
+                    }
+                    ?>
+                </tr>
+    
+                <?php
+                while($row = $this->datos->fetch_array())
+                {
+                    if($row[0] == $_SESSION['login']){
+                    ?>
+                    <form class="formulario-tupla" method="">
+                        <tr>
+                            <?php
+                            for ($i = 0; $i < count($this->lista); $i++) {
+                                ?>
+                                <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
+                                <?php
+                            }
+                            ?>
+                            <td><button type = "submit" name = "action" value="SHOWCURRENT" title="detalles"><img class="button-td" src="../Iconos/details.png" ></img></button></td>
+                        </tr>
+                    </form>
+                    <?php
+                    }
+                }
+                ?>
+    
+            </table>
+            <?php
             //Si esta autenticado y es administrador
             }else{
 

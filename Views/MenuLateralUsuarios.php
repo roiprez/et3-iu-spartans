@@ -30,6 +30,11 @@ Vista que contiene el Menú lateral
 								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=ET1"><?php echo $strings['ET1'];?></a></li>
 							</ul>
 						</li>
+						<li class="dropdown">
+							<form action="../Controllers/Index_Controller.php">
+								<input type="submit" name="Controlador" value="NOTAS" onclick="" class="dropbtn"></input>
+							</form>
+						</li>
 					</ul>
 				</aside>
         <?php				

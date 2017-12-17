@@ -24,8 +24,41 @@ class Evaluacion_SHOWALL{  // declaración de clase
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if (IsAuthenticated() && !isAdmin()){
-           $respuesta= "No tienes permiso para acceder a esta vista";
-            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
+           ?>
+            <table id="tabla-showall">
+                <tr>
+                    <?php
+                    for ($i = 0; $i < count($this->lista); $i++) {
+                        ?>
+                        <th><?php echo $this->lista[$i];?></th>
+                        <?php
+                    }
+                    ?>
+                </tr>
+
+                <?php
+                while($row = $this->datos->fetch_array())
+                {
+                    if($row[1] == $_SESSION['login']){
+                    ?>
+                    <form class="formulario-tupla" method="">
+                        <tr>
+                            <?php
+                            for ($i = 0; $i < count($this->lista); $i++) {
+                                ?>
+                                <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
+                                <?php
+                            }
+                            ?>
+                            <td><button type = "submit" name = "action" value="EDIT" title="<?php echo $strings['editar']; ?>"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
+                        </tr>
+                    </form>
+                <?php
+                    }
+                }
+                ?>
+                </table>
+                <?php
             }else{
         ?>
         <form id="formulario-showall" method="">
@@ -72,7 +105,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
 		<button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
-    }//Fin else
+        }//Fin else
     }
 }
 
