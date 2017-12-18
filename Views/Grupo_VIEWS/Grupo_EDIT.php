@@ -48,7 +48,7 @@ class Grupo_EDIT
                 />
             </label>
             <label><?php echo $strings['Descripcion'];?>
-                <textarea form="formulario-edit" maxlength="100" name="DescripGrupo" ><?php echo $this->lista_valores['DescripGrupo'] ?></textarea>
+                <textarea form="formulario-edit" maxlength="100" required="true" name="DescripGrupo" ><?php echo $this->lista_valores['DescripGrupo'] ?></textarea>
             </label>
 
             <div class="botones-formulario">

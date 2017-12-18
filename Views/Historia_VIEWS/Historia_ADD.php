@@ -56,7 +56,7 @@ class Historia_ADD
             <label><?php echo $strings['Id historia']; ?>
                 <input type="text" name="IdHistoria"
                        id="IdHistoria" required="true"
-                       size="2" maxlength="2" onBlur="comprobarEntero(this, 0, 2)"
+                       size="2" maxlength="2" min="0" onBlur="comprobarEntero(this, 0, 2)"
                 />
             </label>
 
