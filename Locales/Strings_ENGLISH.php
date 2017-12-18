@@ -205,7 +205,7 @@ array(
 	
 	/*Diccionario Notas*/
 	'IdTrabajo' => 'IdWork',
-	'NOTAS' => 'Notes',
+	'NOTAS' => 'NOTES',
 	
 	/*Traducciones en validaciones*/
 	'El campo Nombre no puede ser vacio' => 'Name can´t be empty',

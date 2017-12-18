@@ -201,7 +201,7 @@ array(
 	
 	/*Diccionario Notas*/
 	'IdTrabajo' => 'IdTrabajo',
-	'NOTAS' => 'Notas',
+	'NOTAS' => 'NOTAS',
 	
 	
 	/*Diccionario Evaluaciones*/

@@ -198,7 +198,7 @@ array(
 	
 	/*Diccionario Notas*/
 	'IdTrabajo' => 'IdTraballo',
-	'NOTAS' => 'Notas',
+	'NOTAS' => 'NOTAS',
 	
 	/*Diccionario Evaluaciones*/
 	'El login no tiene que evaluar el trabajo o al alias indicado' => '0 login non ten que evaluar o traballo ou ao alias indicado',
