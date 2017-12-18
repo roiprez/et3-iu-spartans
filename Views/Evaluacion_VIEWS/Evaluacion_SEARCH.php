@@ -30,7 +30,7 @@ class Evaluacion_SEARCH// declaración de clase
 
         ?>
 
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()"  >
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('entidad','search')"  >
 
             <label><?php echo $strings['Id del trabajo']; ?>
                 <input type="text" name="IdTrabajo"

@@ -17,42 +17,80 @@ function encriptar(){
 
 //Comprueba la entidad a la que pertenece el form y lo redirige a la función que comprueba sus campos
 function validarEntidad(entidad, formulario){
-	
+	if (formulario == 'search'){
 	switch(entidad){
 	
 	case 'usuario':
-	return validarFormularioUsuario(formulario);
+	return validarBusquedaUsuario(formulario);
 	break;
 	case 'grupo':
-	return validarFormularioGrupo(formulario);
+	return validarBusquedaGrupo(formulario);
 	break;
 	case 'funcionalidad':
-	return validarFormularioFuncionalidad(formulario);
+	return validarBusquedaFuncionalidad(formulario);
 	break;
 	case 'accion':
-	return validarFormularioAccion(formulario);
+	return validarBusquedaAccion(formulario);
 	break;
 	case 'trabajo':
-	return validarFormularioTrabajo(formulario);
+	return validarBusquedaTrabajo(formulario);
 	break;
 	case 'nota_trabajo':
-	return validarFormularioNota(formulario);
+	return validarBusquedaNota(formulario);
 	break;
 	case 'entrega':
-	return validarFormularioEntrega(formulario);
+	return validarBusquedaEntrega(formulario);
 	break;
 	case 'historia':
-	return validarFormularioHistoria(formulario);
+	return validarBusquedaHistoria(formulario);
 	break;
 	case 'evaluacion':
-	return validarFormularioEvaluacion(formulario);
+	return validarBusquedaEvaluacion(formulario);
 	break;
 	
 	default:
 	alert('algo ha petado');
 	}
+		
+		
+	}else{
+	
+	switch(entidad){
+	
+	case 'usuario':
+	return validarFormularioUsuario();
+	break;
+	case 'grupo':
+	return validarFormularioGrupo();
+	break;
+	case 'funcionalidad':
+	return validarFormularioFuncionalidad();
+	break;
+	case 'accion':
+	return validarFormularioAccion();
+	break;
+	case 'trabajo':
+	return validarFormularioTrabajo();
+	break;
+	case 'nota_trabajo':
+	return validarFormularioNota();
+	break;
+	case 'entrega':
+	return validarFormularioEntrega();
+	break;
+	case 'historia':
+	return validarFormularioHistoria();
+	break;
+	case 'evaluacion':
+	return validarFormularioEvaluacion();
+	break;
+	
+	default:
+	alert('algo ha petado');
+	}//Fin switch
+	
+	}//Fin else
 }
-
 
 
 
@@ -589,8 +627,8 @@ function validarFormularioNotaTrabajo(formulario){
 
 
 
-//Valida la búsqueda
-function validarBusqueda(){
+//Valida la búsqueda de un usuario
+function validarBusquedaUsuario(){
  
  //Contendrá la referencia al formulario search
   let objetivo;
@@ -598,7 +636,7 @@ function validarBusqueda(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario_search;
+  objetivo = document.formulario-search;
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.login;
@@ -659,6 +697,323 @@ function validarBusqueda(){
   //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
   return true;
 }
+
+
+
+//Valida la búsqueda de un grupo
+function validarBusquedaGrupo(){
+ 
+ //Contendrá la referencia al formulario search
+  let objetivo;
+  //Contendrá la referencia al campo a validar
+  let campo;
+ 
+  //Se le asigna a objetivo el valor del formulario_search
+  objetivo = document.formulario-search;
+  
+  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.IdGrupo;
+  if(!comprobarTexto(campo, 6)){
+    return false; 
+  }
+  
+  
+  //Comprueba que el nombre de grupo tenga la cantidad de caracteres adecuada y el formato válido
+  campo = objetivo.NombreGrupo;
+  if(!comprobarAlfabetico(campo, 60,'search')){
+    return false;
+  }
+  
+  
+  //Comprueba que los apellidos tengan la cantidad de caracteres adecuada y el formato válido
+  campo = objetivo.DescripGrupo;
+
+  if(!comprobarTexto(campo, 100)){
+    return false;
+  }
+  
+  //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
+  return true;
+}
+
+
+//Valida la búsqueda de una funcionalidad
+function validarBusquedaFuncionalidad(){
+ 
+ //Contendrá la referencia al formulario search
+  let objetivo;
+  //Contendrá la referencia al campo a validar
+  let campo;
+ 
+  //Se le asigna a objetivo el valor del formulario_search
+  objetivo = document.formulario-search;
+  
+  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.IdFuncionalidad;
+  if(!comprobarTexto(campo, 6)){
+    return false; 
+  }
+  
+  
+  //Comprueba que el nombre tenga la cantidad de caracteres adecuada y el formato válido
+  campo = objetivo.NombreFuncionalidad;
+  if(!comprobarAlfabetico(campo, 60,'search')){
+    return false;
+  }
+  
+  
+  //Comprueba que la descripcfion tengan la cantidad de caracteres adecuada y el formato válido
+  campo = objetivo.DescripFuncionalidad;
+
+  if(!comprobarTexto(campo, 100,'search')){
+    return false;
+  }
+  
+  
+  //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
+  return true;
+}
+
+
+//Valida la búsqueda de un usuario
+function validarBusquedaAccion(){
+ 
+ //Contendrá la referencia al formulario search
+  let objetivo;
+  //Contendrá la referencia al campo a validar
+  let campo;
+ 
+  //Se le asigna a objetivo el valor del formulario_search
+  objetivo = document.formulario-search;
+  
+  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.IdAccion;
+  if(!comprobarTexto(campo, 6)){
+    return false; 
+  }
+  
+  //Comprueba que el nombre tenga la cantidad de caracteres adecuada y el formato válido
+  campo = objetivo.NombreAccion;
+  if(!comprobarAlfabetico(campo, 60,'search')){
+    return false;
+  }
+  
+  
+  //Comprueba que los apellidos tengan la cantidad de caracteres adecuada y el formato válido
+  campo = objetivo.DescripAccion;
+
+  if(!comprobarTexto(campo, 100,'search')){
+    return false;
+  }
+  
+  //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
+  return true;
+}
+
+
+
+//Valida la búsqueda de un trabajo
+function validarBusquedaTrabajo(){
+ 
+ //Contendrá la referencia al formulario search
+  let objetivo;
+  //Contendrá la referencia al campo a validar
+  let campo;
+ 
+  //Se le asigna a objetivo el valor del formulario_search
+  objetivo = document.formulario-search;
+  
+  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.IdTrabajo;
+  if(!comprobarTexto(campo, 6)){
+    return false; 
+  }
+  
+  
+  
+  
+  //Comprueba que el nombre tenga la cantidad de caracteres adecuada y el formato válido
+  campo = objetivo.NombreTrabajo;
+  if(!comprobarAlfabetico(campo, 60,'search')){
+    return false;
+  }
+  
+  
+  //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
+  return true;
+}
+
+
+
+//Valida la búsqueda de una nota
+function validarBusquedaNota(){
+ 
+ //Contendrá la referencia al formulario search
+  let objetivo;
+  //Contendrá la referencia al campo a validar
+  let campo;
+ 
+  //Se le asigna a objetivo el valor del formulario_search
+  objetivo = document.formulario-search;
+  
+  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.login;
+  if(!comprobarTexto(campo, 9)){
+    return false; 
+  }
+  
+  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.IdTrabajo;
+  if(!comprobarTexto(campo, 6)){
+    return false; 
+  }
+  
+  //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+  campo = objetivo.NotaTrabajo;
+  if(!comprobarTexto(campo, 4)){
+    return false;
+  }
+  
+  
+  //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
+  return true;
+}
+
+//Valida la búsqueda de un usuario
+function validarBusquedaEntrega(){
+ 
+ //Contendrá la referencia al formulario search
+  let objetivo;
+  //Contendrá la referencia al campo a validar
+  let campo;
+ 
+  //Se le asigna a objetivo el valor del formulario_search
+  objetivo = document.formulario-search;
+  
+  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.login;
+  if(!comprobarTexto(campo, 9)){
+    return false; 
+  }
+  
+   //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.IdTrabajo;
+  if(!comprobarTexto(campo, 6)){
+    return false; 
+  }
+  
+  //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+  campo = objetivo.Alias;
+  if(!comprobarTexto(campo, 9)){
+    return false;
+  }
+  
+  //Comprueba que el DNI tenga un formato válido
+  campo = objetivo.Horas;
+
+  if(!comprobarTexto(campo,2)){
+    return false;
+  }
+  
+  
+  //Comprueba que el nombre tenga la cantidad de caracteres adecuada y el formato válido
+  campo = objetivo.Ruta;
+  if(!comprobarTexto(campo, 60)){
+    return false;
+  }
+  
+  
+  //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
+  return true;
+}
+
+
+
+//Valida la búsqueda de una historia
+function validarBusquedaHistoria(){
+ 
+ //Contendrá la referencia al formulario search
+  let objetivo;
+  //Contendrá la referencia al campo a validar
+  let campo;
+ 
+  //Se le asigna a objetivo el valor del formulario_search
+  objetivo = document.formulario-search;
+  
+  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.IdTrabajo;
+  if(!comprobarTexto(campo, 6)){
+    return false; 
+  }
+  
+  //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+  campo = objetivo.TextoHistoria;
+  if(!comprobarTexto(campo, 300)){
+    return false;
+  }
+ 
+  //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
+  return true;
+}
+
+
+
+//Valida la búsqueda de una evaluacion
+function validarBusquedaEvaluacion(){
+ 
+ //Contendrá la referencia al formulario search
+  let objetivo;
+  //Contendrá la referencia al campo a validar
+  let campo;
+ 
+  //Se le asigna a objetivo el valor del formulario_search
+  objetivo = document.formulario-search;
+  
+   //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.IdTrabajo;
+  if(!comprobarTexto(campo, 6)){
+    return false; 
+  }
+  
+  //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+  campo = objetivo.LoginEvaluador;
+  if(!comprobarTexto(campo, 9)){
+    return false;
+  }
+  
+   //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+  campo = objetivo.AliasEvaluado;
+  if(!comprobarTexto(campo, 9)){
+    return false;
+  }
+  
+  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  campo = objetivo.IdHistoria;
+  if(!comprobarTexto(campo, 2)){
+    return false; 
+  }
+  
+  
+  //Comprueba que el DNI tenga un formato válido
+  campo = objetivo.ComenIncorrectoA;
+
+  if(!comprobarTexto(campo,300)){
+    return false;
+  }
+  
+  
+  //Comprueba que el DNI tenga un formato válido
+  campo = objetivo.ComenIncorrectoP;
+
+  if(!comprobarTexto(campo,300)){
+    return false;
+  }
+  
+  //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
+  return true;
+}
+
+
 
 
 //Comprueba que el campo no está vacío

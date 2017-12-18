@@ -26,7 +26,7 @@ class Trabajo_SEARCH
             //Si esta autenticado y es administrador
             }else{
         ?>
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('trabajo','search');">
 
             <label><?php echo $strings['Id Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
