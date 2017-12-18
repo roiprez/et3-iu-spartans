@@ -635,7 +635,7 @@ function validarBusquedaUsuario(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario-search;
+  objetivo = document.formulario_search;
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.login;
@@ -708,7 +708,7 @@ function validarBusquedaGrupo(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario-search;
+  objetivo = document.formulario_search;
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.IdGrupo;
@@ -745,7 +745,7 @@ function validarBusquedaFuncionalidad(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario-search;
+  objetivo = document.formulario_search;
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.IdFuncionalidad;
@@ -783,7 +783,7 @@ function validarBusquedaAccion(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario-search;
+  objetivo = document.formulario_search;
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.IdAccion;
@@ -820,7 +820,7 @@ function validarBusquedaTrabajo(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario-search;
+  objetivo = document.formulario_search;
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;
@@ -853,7 +853,7 @@ function validarBusquedaNota(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario-search;
+  objetivo = document.formulario_search;
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.login;
@@ -887,7 +887,7 @@ function validarBusquedaEntrega(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario-search;
+  objetivo = document.formulario_search;
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.login;
@@ -937,7 +937,7 @@ function validarBusquedaHistoria(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario-search;
+  objetivo = document.formulario_search;
   
   //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;
@@ -966,7 +966,7 @@ function validarBusquedaEvaluacion(){
   let campo;
  
   //Se le asigna a objetivo el valor del formulario_search
-  objetivo = document.formulario-search;
+  objetivo = document.formulario_search;
   
    //Comprueba que el login tenga la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;

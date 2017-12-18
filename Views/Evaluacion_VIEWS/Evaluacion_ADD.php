@@ -51,7 +51,7 @@ class Evaluacion_ADD// declaración de clase
             <label><?php echo $strings['Id de la historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
-                       size="2" maxlength="2" onChange ="return comprobarEntero(this,this.size,'edit');"
+                       size="2" maxlength="2" onChange ="return comprobarEntero(this,0,99);"
                 />
             </label>
             <label><?php echo $strings['Corrección de la historia']; ?>
