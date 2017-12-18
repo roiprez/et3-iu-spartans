@@ -54,7 +54,7 @@ class Historia_ADD
             </label>
 
             <label><?php echo $strings['Id historia']; ?>
-                <input type="text" name="IdHistoria"
+                <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
                        size="2" maxlength="2" min="0" onBlur="comprobarEntero(this, 0, 2)"
                 />
