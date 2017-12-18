@@ -42,6 +42,12 @@ class Trabajo_ADD
                        size="60" maxlength="60"
                 />
             </label>
+            <label><?php echo $strings['Porcentaje Trabajo']; ?>
+                <input type="text" name="PorcentajeTrabajo"
+                       id="PorcentajeTrabajo" required="true"
+                       size="2" maxlength="2"
+                />
+            </label>
             <label><?php echo $strings['Fecha inicio']; ?>
                 <input type="text" name="FechaIniTrabajo" class="tcal" required="true" readonly="readonly"/>
             </label>

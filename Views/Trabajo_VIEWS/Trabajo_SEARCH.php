@@ -40,6 +40,12 @@ class Trabajo_SEARCH
                        size="60" maxlength="60"
                 />
             </label>
+            <label><?php echo $strings['Porcentaje Trabajo']; ?>
+                <input type="text" name="PorcentajeTrabajo"
+                       id="PorcentajeTrabajo"
+                       size="2" maxlength="2"
+                />
+            </label>
             <label><?php echo $strings['Fecha inicio']; ?>
                 <input type="text" name="FechaIniTrabajo" class="tcal"  readonly="readonly"/>
             </label>
