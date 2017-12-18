@@ -135,6 +135,8 @@ array(
 	'Nombre Trabajo' => 'Nome Traballo',
 	'Fecha inicio' => 'Fecha inicio',
 	'Fecha fin' => 'Fecha fin',
+	'PorcentajeNota' => 'PorcentaxeNota',
+	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Xeráronse as asignacions e as súas correspondentes evaluacions con éxito',
 	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Mostrar todo',

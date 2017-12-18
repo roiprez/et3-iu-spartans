@@ -137,6 +137,7 @@ array(
 	'Fecha inicio' => 'Fecha inicio',
 	'Fecha fin' => 'Fecha fin',
 	'PorcentajeNota' => 'PorcentajeNota',
+	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito',
 	
 	/*Diccionario menus*/
 	'Mostrar todo' => 'Mostrar todo',

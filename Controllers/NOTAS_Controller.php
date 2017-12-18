@@ -1,5 +1,6 @@
 <?php
     include_once '../Models/NOTAS_Model.php';
+    include_once '../Models/TRABAJOS_Model.php';
     include_once '../Models/ENTREGAS_Model.php';
     include_once '../Functions/Generacion_Notas.php';
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_ADD.php';
@@ -53,11 +54,14 @@ if (!isset($_REQUEST['action'])){
 
 Switch ($_REQUEST['action']){
     case 'ADD':
+        $TRABAJO = new TRABAJOS_Model($_REQUEST['IdTrabajo'], '','','','');
+        $trabajo = $TRABAJO->SEARCH()->fetch_array();
+        $valores = $NOTAS->RellenaDatos();
         $ENTREGA = get_data_form2();
         $valorentrega = $ENTREGA->SEARCH();
         $alias_v = $valorentrega->fetch_array();
         $NOTAS = get_data_form();
-        $NOTAS['NotaTrabajo'] = generarNotasEntrega($IdTrabajo,$alias_v[2]);
+        $NOTAS['NotaTrabajo'] = generarNotasEntrega($IdTrabajo,$alias_v[2],$trabajo[4]);
         $respuesta = $NOTAS->ADD();
         new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         

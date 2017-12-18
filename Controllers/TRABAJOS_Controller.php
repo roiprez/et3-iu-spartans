@@ -8,7 +8,7 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 include_once '../Models/TRABAJOS_Model.php';
 include_once '../Models/NOTAS_Model.php';
 include_once '../Models/ENTREGAS_Model.php';
-include_once '../Functions/Generacion_Notas.php';
+include_once '../Functions/Generacion_QAs.php';
 include '../Views/Trabajo_VIEWS/Trabajo_SHOWALL.php';
 include '../Views/Trabajo_VIEWS/Trabajo_SEARCH.php';
 include '../Views/Trabajo_VIEWS/Trabajo_ADD.php';
@@ -97,6 +97,10 @@ if (!isset($_REQUEST['action'])){
       $lista = array('IdTrabajo', 'NombreTrabajo', 'FechaIniTrabajo','FechaFinTrabajo','PorcentajeNota');
 			$valores = $TRABAJO->RellenaDatos();
 			new Trabajo_SHOWCURRENT($lista, $valores);
+			break;
+		case 'GENERAR_ASIG':
+			$respuesta = qa_gen($_REQUEST['IdTrabajo']);
+			new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			break;
 		default:
 			if (!$_POST){
