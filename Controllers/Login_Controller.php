@@ -17,7 +17,7 @@ else{
 	$usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],'','','','','','');
 	$respuesta = $usuario->login();
 
-	if ($respuesta == 'true' && !isAdmin()){
+	if ($respuesta == 'true' && !isAllow()){
 		session_start();
 		$_SESSION['login'] = $_REQUEST['login'];
 		$_SESSION['controlador'] = 'ENTREGAS_Controller';

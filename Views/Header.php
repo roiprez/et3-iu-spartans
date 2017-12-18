@@ -60,7 +60,14 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 			</header>
 			<div id="cuerpo">
         <?php
-        	if(IsAuthenticated()){	
+        	//Si el usuarios está autenticado y es administrador 
+			if (IsAuthenticated() && isAllow()){
+			include '../Views/MenuLateral.php'; 
+			$MenuLateral = new MenuLateral();
+			
+			//Si esta autenticado pero no es administrador
+			}else if(IsAuthenticated()){
+				
 			include '../Views/MenuLateralUsuarios.php'; 
 			$MenuLateral = new MenuLateralUsuarios();
 			}                 

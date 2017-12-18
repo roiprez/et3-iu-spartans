@@ -17,7 +17,10 @@ function encriptar(){
 
 //Comprueba la entidad a la que pertenece el form y lo redirige a la función que comprueba sus campos
 function validarEntidad(entidad, formulario){
+  //Si el formulario introducido tiene es search
 	if (formulario == 'search'){
+
+    //Lo manda a distintas funciones segun el valor de la entidad
 	switch(entidad){
 	
   	case 'usuario':
@@ -60,9 +63,10 @@ function validarEntidad(entidad, formulario){
   	alert('algo ha petado');
   	}// fin switch
 		
-		
+		//Si el valor de formulario no es search
 	}else{
 	
+  //Lo manda a distintas funciones en funcion del valor del formulario
 	switch(entidad){
 	
 	case 'usuario':
@@ -105,7 +109,7 @@ function validarEntidad(entidad, formulario){
 
 
 
-/*Se encarga de validar los formularios de ADD, EDIT y REGISTER una vez enviados, 
+/*Se encarga de validar los formularios de ADD, EDIT y REGISTER de la entidad USUARIOS, una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
@@ -126,7 +130,7 @@ function validarFormularioUsuario(formulario){
     objetivo = document.formulario_edit;
   } 
   campo = objetivo.login;
-  //Comprueba que el login no está vacío y tiene la cantidad de caracteres adecuada
+  //Comprueba que el login no está vacío y que tiene la cantidad de caracteres adecuada
   if(!comprobarVacio(campo)){
     return false;
   }
@@ -143,7 +147,7 @@ function validarFormularioUsuario(formulario){
     return false;
   }
 
-  //Comprueba que el DNI no está vacía y tiene un formato válido
+  //Comprueba que el DNI no esté vacío y tiene un formato válido
   campo = objetivo.DNI;
   if(!comprobarVacio(campo)){
     return false;
@@ -152,7 +156,7 @@ function validarFormularioUsuario(formulario){
     return false;
   }
   
-  //Comprueba que el nombre no está vacío y tiene la cantidad de caracteres adecuada
+  //Comprueba que el nombre no esté vacío, que tiene el formato adecuado y que tiene la cantidad de caracteres adecuada
   campo = objetivo.Nombre;
   if(!comprobarVacio(campo)){
     return false;
@@ -161,7 +165,7 @@ function validarFormularioUsuario(formulario){
     return false;
   }
 
-  //Comprueba que los apellidos no están vacíos y tiene la cantidad de caracteres adecuada
+  //Comprueba que el apellidos no esté vacío, que tiene el formato adecuado y que tiene la cantidad de caracteres adecuada
   campo = objetivo.Apellidos;
   if(!comprobarVacio(campo)){
     return false;
@@ -179,7 +183,7 @@ function validarFormularioUsuario(formulario){
     return false;
   }
   
-//Comprueba que la direccion tenga un formato válido
+//Comprueba que la direccion tenga un formato válido y que no esté vacía
   campo = objetivo.Direccion;
   
   if(!comprobarVacio(campo)){
@@ -190,7 +194,7 @@ function validarFormularioUsuario(formulario){
     return false;
   }
 
-   //Comprueba que el Teléfono no esté vacío y tiene un formato válido
+   //Comprueba que el Teléfono no esté vacío y que tiene un formato válido
   campo = objetivo.Telefono;
   if(!comprobarVacio(campo)){
     return false;
@@ -198,6 +202,7 @@ function validarFormularioUsuario(formulario){
   if(!comprobarTelf(campo)){
     return false;
   }
+
   //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
   return true;
 }
@@ -205,7 +210,7 @@ function validarFormularioUsuario(formulario){
 
 
 
-/*Se encarga de validar los formularios de ADD, EDIT de la entidad Grupo,  una vez enviados, 
+/*Se encarga de validar los formularios de ADD o EDIT de la entidad GRUPOS,  una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
@@ -223,7 +228,7 @@ function validarFormularioGrupo(formulario){
     objetivo = document.formulario_edit;
   } 
   campo = objetivo.IdGrupo;
-  //Comprueba que el login no está vacío y tiene la cantidad de caracteres adecuada
+  //Comprueba que IdGrupo no está vacío y que tiene la cantidad de caracteres adecuada
   if((comprobarVacio(campo)) == false){
     return false;
   }
@@ -231,7 +236,7 @@ function validarFormularioGrupo(formulario){
     return false; 
   }
 
-  //Comprueba que la contraseña no está vacía y tiene la cantidad de caracteres adecuada
+  //Comprueba que NombreGrupo no esté vacío, que tiene la cantidad de caracteres adecuada y que tenga el formato válido
   campo = objetivo.NombreGrupo;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -241,7 +246,7 @@ function validarFormularioGrupo(formulario){
     return false;
   }
 
-  //Comprueba que el DNI no está vacía y tiene un formato válido
+  //Comprueba que DescripGrupo no esté vacío y que tiene un formato válido
   campo = objetivo.DescripGrupo;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -257,7 +262,7 @@ function validarFormularioGrupo(formulario){
 
 
 
-/*Se encarga de validar los formularios de ADD, EDIT de la entidad Historia,  una vez enviados, 
+/*Se encarga de validar los formularios de ADD, EDIT de la entidad HISTORIAS,  una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
@@ -267,7 +272,7 @@ function validarFormularioHistoria(formulario){
   //Contendrá la referencia al campo a validar
   let campo;
 
-  //Comprueba que el formulario es el de ADD, de Registro o EDIT y le asigna a la variable objetivo la referencia correspondiente
+  //Comprueba que el formulario es el de ADD o EDIT y le asigna a la variable objetivo la referencia correspondiente
   if(formulario == "add"){
     objetivo = document.formulario_add;   
   }
@@ -301,7 +306,7 @@ function validarFormularioHistoria(formulario){
 
 
 
-/*Se encarga de validar los formularios de ADD, EDIT de la entidad Funcionalidad,  una vez enviados, 
+/*Se encarga de validar los formularios de ADD o EDIT de la entidad Funcionalidad,  una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
@@ -311,7 +316,7 @@ function validarFormularioFuncionalidad(formulario){
   //Contendrá la referencia al campo a validar
   let campo;
 
-  //Comprueba que el formulario es el de ADD, de Registro o EDIT y le asigna a la variable objetivo la referencia correspondiente
+  //Comprueba que el formulario es el de  ADD o EDIT y le asigna a la variable objetivo la referencia correspondiente
   if(formulario == "add"){
     objetivo = document.formulario_add;   
   }
@@ -327,7 +332,7 @@ function validarFormularioFuncionalidad(formulario){
     return false; 
   }
 
-  //Comprueba que la contraseña no está vacía y tiene la cantidad de caracteres adecuada
+  //Comprueba que NombreFuncionalidad no esté vacío, que tiene la cantidad de caracteres adecuada y el formato válido
   campo = objetivo.NombreFuncionalidad;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -337,7 +342,7 @@ function validarFormularioFuncionalidad(formulario){
     return false;
   }
 
-  //Comprueba que el DNI no está vacía y tiene un formato válido
+  //Comprueba que DescripFuncionalidad no esté vacío y tenga la cantidad de carácteres adecuada
   campo = objetivo.DescripFuncionalidad;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -353,7 +358,7 @@ function validarFormularioFuncionalidad(formulario){
 
 
 
-/*Se encarga de validar los formularios de ADD, EDIT de la entidad Grupo,  una vez enviados, 
+/*Se encarga de validar los formularios de ADD o EDIT de la entidad EVALUACIONES,  una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
@@ -363,7 +368,7 @@ function validarFormularioEvaluacion(formulario){
   //Contendrá la referencia al campo a validar
   let campo;
 
-  //Comprueba que el formulario es el de ADD, de Registro o EDIT y le asigna a la variable objetivo la referencia correspondiente
+  //Comprueba que el formulario es el de  ADD o EDIT y le asigna a la variable objetivo la referencia correspondiente
   if(formulario == "add"){
     objetivo = document.formulario_add;   
   }
@@ -371,7 +376,7 @@ function validarFormularioEvaluacion(formulario){
     objetivo = document.formulario_edit;
   } 
   campo = objetivo.IdTrabajo;
-  //Comprueba que el login no está vacío y tiene la cantidad de caracteres adecuada
+  //Comprueba que IdTrabajo no está vacío y tiene la cantidad de caracteres adecuada
   if((comprobarVacio(campo)) == false){
     return false;
   }
@@ -379,7 +384,7 @@ function validarFormularioEvaluacion(formulario){
     return false; 
   }
 
-  //Comprueba que la contraseña no está vacía y tiene la cantidad de caracteres adecuada
+  //Comprueba que LoginEvaluador no esté vacío y que tiene la cantidad de caracteres adecuada
   campo = objetivo.LoginEvaluador;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -389,7 +394,7 @@ function validarFormularioEvaluacion(formulario){
     return false; 
   }
 
-  //Comprueba que el DNI no está vacía y tiene un formato válido
+  //Comprueba que AliasEvaluado no esté vacío y que tiene la cantidad de crácteres adecuada
   campo = objetivo.AliasEvaluado;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -397,12 +402,12 @@ function validarFormularioEvaluacion(formulario){
    if((comprobarTexto(campo, 9)) == false){
     return false;
   }
-
+//Comprueba que IdHistoria no está vacio, solo acepta enteros entre 0 y 99 y que sean enteros
   campo = objetivo.IdHistoria;
   if((comprobarVacio(campo)) == false){
     return false;
    }
-   if((comprobarEntero(campo,0,2)) == false){
+   if((comprobarEntero(campo,0,99)) == false){
     return false;
   }
   //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
@@ -413,7 +418,7 @@ function validarFormularioEvaluacion(formulario){
 
 
 
-/*Se encarga de validar los formularios de ADD, EDIT de la entidad Entrega,  una vez enviados, 
+/*Se encarga de validar los formularios de ADD o EDIT de la entidad ENTREGAS,  una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
@@ -423,7 +428,7 @@ function validarFormularioEntrega(formulario){
   //Contendrá la referencia al campo a validar
   let campo;
 
-  //Comprueba que el formulario es el de ADD, de Registro o EDIT y le asigna a la variable objetivo la referencia correspondiente
+  //Comprueba que el formulario es el de  ADD o EDIT y le asigna a la variable objetivo la referencia correspondiente
   if(formulario == "add"){
     objetivo = document.formulario_add;   
   }
@@ -439,7 +444,7 @@ function validarFormularioEntrega(formulario){
     return false; 
   }
 
-  //Comprueba que la contraseña no está vacía y tiene la cantidad de caracteres adecuada
+  //Comprueba que IdTrabajo no esté vacío y que tiene la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -448,7 +453,7 @@ function validarFormularioEntrega(formulario){
     return false; 
   }
 
-  //Comprueba que el DNI no está vacía y tiene un formato válido
+  //Comprueba que Alias no esté vacía y tiene la cantidad de carácteres adecuada
   campo = objetivo.Alias;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -456,15 +461,15 @@ function validarFormularioEntrega(formulario){
   if((comprobarTexto(campo, 9)) == false){
     return false; 
   }
-
+//Comprueba que Horas sea un entero entre 0 y 99 y que no esté vacío
   campo = objetivo.Horas;
   if((comprobarVacio(campo)) == false){
     return false;
   }
-  if((comprobarEntero(campo,0,2)) == false){
+  if((comprobarEntero(campo,0,99)) == false){
     return false; 
   }
-
+//Si el formulario tiene el valor add comprueba el valor de ruta y se asegura de que no esté vacío
   if(formulario=='add'){
 
         campo = objetivo.Ruta;
@@ -480,7 +485,7 @@ function validarFormularioEntrega(formulario){
 }
 
 
-/*Se encarga de validar los formularios de ADD, EDIT de la entidad Entrega,  una vez enviados, 
+/*Se encarga de validar los formularios de ADD o EDIT de la entidad TRABAJO,  una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
@@ -490,7 +495,7 @@ function validarFormularioTrabajo(formulario){
   //Contendrá la referencia al campo a validar
   let campo;
 
-  //Comprueba que el formulario es el de ADD, de Registro o EDIT y le asigna a la variable objetivo la referencia correspondiente
+  //Comprueba que el formulario es el de ADD o EDIT y le asigna a la variable objetivo la referencia correspondiente
   if(formulario == "add"){
     objetivo = document.formulario_add;   
   }
@@ -522,7 +527,7 @@ function validarFormularioTrabajo(formulario){
 
 
 
-/*Se encarga de validar los formularios de ADD, EDIT de la entidad Accion,  una vez enviados, 
+/*Se encarga de validar los formularios de ADD o EDIT de la entidad Accion,  una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
@@ -532,7 +537,7 @@ function validarFormularioAccion(formulario){
   //Contendrá la referencia al campo a validar
   let campo;
 
-  //Comprueba que el formulario es el de ADD, de Registro o EDIT y le asigna a la variable objetivo la referencia correspondiente
+  //Comprueba que el formulario es el de  ADD o EDIT y le asigna a la variable objetivo la referencia correspondiente
   if(formulario == "add"){
     objetivo = document.formulario_add;   
   }
@@ -540,7 +545,7 @@ function validarFormularioAccion(formulario){
     objetivo = document.formulario_edit;
   } 
   campo = objetivo.IdAccion;
-  //Comprueba que el login no está vacío y tiene la cantidad de caracteres adecuada
+  //Comprueba que el IdAccion no está vacío y tiene la cantidad de caracteres adecuada
   if((comprobarVacio(campo)) == false){
     return false;
   }
@@ -548,7 +553,7 @@ function validarFormularioAccion(formulario){
     return false; 
   }
 
-  //Comprueba que la contraseña no está vacía y tiene la cantidad de caracteres adecuada
+  //Comprueba que NombreAccion no esté vacío y tiene el formato válido
   campo = objetivo.NombreAccion;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -558,7 +563,7 @@ function validarFormularioAccion(formulario){
     return false;
   }
 
-  //Comprueba que el DNI no está vacía y tiene un formato válido
+  //Comprueba que el DescripAcccion no está vacío y tiene un numero de carácteres válido
   campo = objetivo.DescripAccion;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -574,7 +579,7 @@ function validarFormularioAccion(formulario){
 
 
 
-/*Se encarga de validar los formularios de ADD, EDIT de la entidad Accion,  una vez enviados, 
+/*Se encarga de validar los formularios de ADD o EDIT de la entidad NOTA_TRABAJO,  una vez enviados, 
 la variable formulario nos indica cual de los tres formularios hay que validar.
 Si alguna validación falla devuelve false y termina la función, si llega al final
 sin incidencias devuelve true*/
@@ -584,7 +589,7 @@ function validarFormularioNotaTrabajo(formulario){
   //Contendrá la referencia al campo a validar
   let campo;
 
-  //Comprueba que el formulario es el de ADD, de Registro o EDIT y le asigna a la variable objetivo la referencia correspondiente
+  //Comprueba que el formulario es el de  ADD o EDIT y le asigna a la variable objetivo la referencia correspondiente
   if(formulario == "add"){
     objetivo = document.formulario_add;   
   }
@@ -600,7 +605,7 @@ function validarFormularioNotaTrabajo(formulario){
     return false; 
   }
 
-  //Comprueba que la contraseña no está vacía y tiene la cantidad de caracteres adecuada
+  //Comprueba que IdTrabajo no esté vacío y tiene la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -610,7 +615,7 @@ function validarFormularioNotaTrabajo(formulario){
     return false;
   }
 
-  //Comprueba que el DNI no está vacía y tiene un formato válido
+  //Comprueba que el NotaTrabajo no esté vacía y que sea un entero con valores entre 0 y 10
   campo = objetivo.NotaTrabajo;
   if((comprobarVacio(campo)) == false){
     return false;
@@ -710,7 +715,7 @@ function validarBusquedaGrupo(){
   //Se le asigna a objetivo el valor del formulario_search
   objetivo = document.formulario_search;
   
-  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  //Comprueba que IdGrupo tenga la cantidad de caracteres adecuada
   campo = objetivo.IdGrupo;
   if(!comprobarTexto(campo, 6)){
     return false; 
@@ -724,7 +729,7 @@ function validarBusquedaGrupo(){
   }
   
   
-  //Comprueba que los apellidos tengan la cantidad de caracteres adecuada y el formato válido
+  //Comprueba que DescripGrupo tengan la cantidad de caracteres adecuada y el formato válido
   campo = objetivo.DescripGrupo;
 
   if(!comprobarTexto(campo, 100)){
@@ -747,21 +752,21 @@ function validarBusquedaFuncionalidad(){
   //Se le asigna a objetivo el valor del formulario_search
   objetivo = document.formulario_search;
   
-  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  //Comprueba que el IdFuncionalidad tenga la cantidad de caracteres adecuada
   campo = objetivo.IdFuncionalidad;
   if(!comprobarTexto(campo, 6)){
     return false; 
   }
   
   
-  //Comprueba que el nombre tenga la cantidad de caracteres adecuada y el formato válido
+  //Comprueba que el nombreFuncionalidad tenga la cantidad de caracteres adecuada y el formato válido
   campo = objetivo.NombreFuncionalidad;
   if(!comprobarAlfabetico(campo, 60,'search')){
     return false;
   }
   
   
-  //Comprueba que la descripcfion tengan la cantidad de caracteres adecuada y el formato válido
+  //Comprueba que la descripFuncionalidad tengan la cantidad de caracteres adecuada y el formato válido
   campo = objetivo.DescripFuncionalidad;
 
   if(!comprobarTexto(campo, 100,'search')){
@@ -774,7 +779,7 @@ function validarBusquedaFuncionalidad(){
 }
 
 
-//Valida la búsqueda de un usuario
+//Valida la búsqueda de una accion
 function validarBusquedaAccion(){
  
  //Contendrá la referencia al formulario search
@@ -785,20 +790,20 @@ function validarBusquedaAccion(){
   //Se le asigna a objetivo el valor del formulario_search
   objetivo = document.formulario_search;
   
-  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  //Comprueba que IdAccion tenga la cantidad de caracteres adecuada
   campo = objetivo.IdAccion;
   if(!comprobarTexto(campo, 6)){
     return false; 
   }
   
-  //Comprueba que el nombre tenga la cantidad de caracteres adecuada y el formato válido
+  //Comprueba que el nombreAccion tenga la cantidad de caracteres adecuada y el formato válido
   campo = objetivo.NombreAccion;
   if(!comprobarAlfabetico(campo, 60,'search')){
     return false;
   }
   
   
-  //Comprueba que los apellidos tengan la cantidad de caracteres adecuada y el formato válido
+  //Comprueba que DescripAccion tengan la cantidad de caracteres adecuada
   campo = objetivo.DescripAccion;
 
   if(!comprobarTexto(campo, 100,'search')){
@@ -822,16 +827,13 @@ function validarBusquedaTrabajo(){
   //Se le asigna a objetivo el valor del formulario_search
   objetivo = document.formulario_search;
   
-  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  //Comprueba que IdTrabajo tenga la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;
   if(!comprobarTexto(campo, 6)){
     return false; 
   }
   
-  
-  
-  
-  //Comprueba que el nombre tenga la cantidad de caracteres adecuada y el formato válido
+  //Comprueba que NombreTrabajo tenga la cantidad de caracteres adecuada y el formato válido
   campo = objetivo.NombreTrabajo;
   if(!comprobarAlfabetico(campo, 60,'search')){
     return false;
@@ -861,13 +863,13 @@ function validarBusquedaNota(){
     return false; 
   }
   
-  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  //Comprueba que IdTrabajo tenga la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;
   if(!comprobarTexto(campo, 6)){
     return false; 
   }
   
-  //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+  //Comprueba que NotaTrabajo tenga la cantidad de caracteres adecuada
   campo = objetivo.NotaTrabajo;
   if(!comprobarTexto(campo, 4)){
     return false;
@@ -895,19 +897,19 @@ function validarBusquedaEntrega(){
     return false; 
   }
   
-   //Comprueba que el login tenga la cantidad de caracteres adecuada
+   //Comprueba que IdTrabajo tenga la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;
   if(!comprobarTexto(campo, 6)){
     return false; 
   }
   
-  //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+  //Comprueba que Alias tenga la cantidad de caracteres adecuada
   campo = objetivo.Alias;
   if(!comprobarTexto(campo, 9)){
     return false;
   }
   
-  //Comprueba que el DNI tenga un formato válido
+  //Comprueba que Horas tenga la cantidad de carácteres adecuada
   campo = objetivo.Horas;
 
   if(!comprobarTexto(campo,2)){
@@ -915,7 +917,7 @@ function validarBusquedaEntrega(){
   }
   
   
-  //Comprueba que el nombre tenga la cantidad de caracteres adecuada y el formato válido
+  //Comprueba que la ruta tenga la cantidad de caracteres adecuada
   campo = objetivo.Ruta;
   if(!comprobarTexto(campo, 60)){
     return false;
@@ -939,13 +941,13 @@ function validarBusquedaHistoria(){
   //Se le asigna a objetivo el valor del formulario_search
   objetivo = document.formulario_search;
   
-  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  //Comprueba que IdTrabajo tenga la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;
   if(!comprobarTexto(campo, 6)){
     return false; 
   }
   
-  //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+  //Comprueba que TextoHistoria tenga la cantidad de caracteres adecuada
   campo = objetivo.TextoHistoria;
   if(!comprobarTexto(campo, 300)){
     return false;
@@ -968,32 +970,32 @@ function validarBusquedaEvaluacion(){
   //Se le asigna a objetivo el valor del formulario_search
   objetivo = document.formulario_search;
   
-   //Comprueba que el login tenga la cantidad de caracteres adecuada
+   //Comprueba que IdTrabajo tenga la cantidad de caracteres adecuada
   campo = objetivo.IdTrabajo;
   if(!comprobarTexto(campo, 6)){
     return false; 
   }
   
-  //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+  //Comprueba que LoginEvaluador tenga la cantidad de caracteres adecuada
   campo = objetivo.LoginEvaluador;
   if(!comprobarTexto(campo, 9)){
     return false;
   }
   
-   //Comprueba que la contraseña tenga la cantidad de caracteres adecuada
+   //Comprueba que AliasEvaluado tenga la cantidad de caracteres adecuada
   campo = objetivo.AliasEvaluado;
   if(!comprobarTexto(campo, 9)){
     return false;
   }
   
-  //Comprueba que el login tenga la cantidad de caracteres adecuada
+  //Comprueba que IdHistoria tenga la cantidad de caracteres adecuada
   campo = objetivo.IdHistoria;
   if(!comprobarTexto(campo, 2)){
     return false; 
   }
   
   
-  //Comprueba que el DNI tenga un formato válido
+  //Comprueba que ComenIncorrectoA tenga un formato válido
   campo = objetivo.ComenIncorrectoA;
 
   if(!comprobarTexto(campo,300)){
@@ -1001,7 +1003,7 @@ function validarBusquedaEvaluacion(){
   }
   
   
-  //Comprueba que el DNI tenga un formato válido
+  //Comprueba que ComenIncorrectoP tenga un formato válido
   campo = objetivo.ComenIncorrectoP;
 
   if(!comprobarTexto(campo,300)){
@@ -1047,26 +1049,28 @@ function comprobarTexto(campo, size){
 
  //Comprueba que el campo solo contenga carácteres alfabéticos 
   function comprobarAlfabetico(campo, size, formulario){
-	  if(formulario == 'search'){
+	  //Si el formulario es search
+    if(formulario == 'search'){
 		  if(campo.value.length==0){//Si el valor del campo está vacio, que devuelva cierto
 		
 		return true;
 	}
 if (!campo.value.match(/^[a-zA-ZÁÉÍÓÚÜáéíóüúñÑ-\s]*$/)){//Si el valor del campo contiene algo que no sea un caracter alfabetico permitido en nuestro idioma,devuelve falso y un aviso indicando el campo que tiene el error
-		if(campo.name=='Nombre'){
+		//Si el campo es nombre
+    if(campo.name=='Nombre'){
 		alert('El campo nombre solo puede contener letras');
 		
 		campo.focus();
 		return false;
 		}
-		
+		//Si el campo es direccion
 		if(campo.name=='Direccion'){
 		alert('El campo direccion solo puede contener letras');
 		
 		campo.focus();
 		return false;
 		}
-		
+		//Si el campo es apellidos
 		if(campo.name=='Apellidos'){
 		alert('El campo apellidos solo puede contener letras');
 		campo.focus();
@@ -1074,20 +1078,21 @@ if (!campo.value.match(/^[a-zA-ZÁÉÍÓÚÜáéíóüúñÑ-\s]*$/)){//Si el va
 		}
 }
 if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que el tamaño permitido, que devuelva false{
-		if(campo.name=='Nombre'){
+		//Si el campo es nombre
+    if(campo.name=='Nombre'){
 			alert( 'El tamaño de nombre sobrepasa');
 			
 			campo.focus();
 			return false;
 		}
-		
+		//Si el campo es direccion
 		if(campo.name=='Direccion'){
 		alert('El tamaño de direccion sobrepasa');
 		
 		campo.focus();
 		return false;
 		}
-		
+		//Si el campo es apellidos
 		if(campo.name=='Apellidos'){
 			alert('El tamaño de apellidos sobrepasa');
 			
@@ -1099,7 +1104,7 @@ if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que
 	return true;//Si ninguno de los if anteriores se cumple,devuelve true	
 		  
 		  
-	  }else{
+	  }else{//Sino
 
 			  //Si supera la longitud que le pasamos por parámetro devuelve una alerta y un false
 			  if (campo.value.length>size) {
@@ -1118,7 +1123,7 @@ if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que
 				campo.style.backgroundColor = "white";
 				return true;
 				} 
-				else{
+				else{//Sino
 				alert("El atributo " + campo.name + " no admite caracteres no alfabéticos");
 				campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
 				return false;
@@ -1159,7 +1164,7 @@ function comprobarEntero(campo, valormenor, valormayor){
         return false;
         }else //Si lo anterior no se cumple,devuelve true
             return true;
-      }else{//
+      }else{//Sino
         alert('Solo puedes escribir numeros');
         return false;
         }
@@ -1204,12 +1209,13 @@ function comprobarReal(campo, numerosdecimales, valormenor, valormayor){
 
 //Comprueba que el formato del dni sea correcto
 function comprobarDni(campo,formulario){
-	
+	//Si el formulario es search
 	if(formulario == 'search'){
-					
+					//Si la longitud del campo es 0
 					if(campo.value.length==0){
 						return true;
-				}else if(campo.value.length<9){ // Sino, comprueba si la longitud del dni es menor que nueve
+            //Sino si el valor del campo es menor de 9(tamaño maximo de dni)
+				}else if(campo.value.length<9){
 					if(/[a-z-A-Z]{2,}/.test(campo.value)){//Comprueba que solo haya una letra 
 						alert('Los dni solo tienen una letra mayúscula');
 						campo.focus();
@@ -1278,7 +1284,8 @@ function comprobarDni(campo,formulario){
 								alert('Dni erroneo');
 								campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
 								campo.focus();
-								if(campo.value.trim().length === 0){
+                //Si el valor del campo sin espacios es 0
+								if(campo.value.trim().length == 0){
 								campo.style.backgroundColor = "white";
 								return false;
 								}
@@ -1295,7 +1302,7 @@ function comprobarDni(campo,formulario){
 function comprobarEmail(campo,size,formulario){
 	
 	if(formulario == 'search'){
-					//Comprueba que el campo tenga una longitud superior a la indicada y lanza una alerta y devuelve un flase en ese caso
+					//Comprueba que el campo tenga una longitud superior a la indicada y lanza una alerta y devuelve un false en ese caso
 			  if (campo.value.length>size) {
 				alert('Longitud incorrecta. El atributo ' + campo.name + 'debe ser maximo ' + size + ' y es ' + campo.value.length);
 				campo.focus();
@@ -1303,12 +1310,11 @@ function comprobarEmail(campo,size,formulario){
 				return false;
 			  }
 
-			  
 			  return true;
 					
-				
 	}else{
-	if(campo.value.trim().length === 0){
+    //Si el valor del campo sin espacios es igual a 0
+	if(campo.value.trim().length == 0){
     campo.style.backgroundColor = "white";
     return false;}
   //Comprueba que el campo tenga una longitud superior a la indicada y lanza una alerta y devuelve un false en ese caso
@@ -1330,20 +1336,20 @@ function comprobarEmail(campo,size,formulario){
 	}
 }
 
-
+//Funcion que comprueba que el campo telefono que se le pase tenga un formato válido
 function comprobarTelf(campo) {
 	if(campo.value.length==0){//Si el campo telefono esta vacio que devuelva true
 	campo.style.backgroundColor = "white";
 		return true;
 	}
 	
-	if(/^[0-9]+$/.test(campo.value)==false){
+	if(/^[0-9]+$/.test(campo.value)==false){//Si el formato del campo  tiene algo que no sea un numero devuelve un alert
 		alert('El telefono solo tiene numeros');
 		campo.focus();
 		campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
 		return false;
 	}
-	//Expresion regular que indica los numeros de telefono validos
+	//Si el campo no coincide con la expresion regular que indica los numeros de telefono validos
 	if(/^(((34)?)?[9|8|6|7]((\d{1}([ \t|\-])?[0-9]{3})|(\d{2}([ \t|\-])?[0-9]{2}))([ \t|\-])?[0-9]{2}([ \t|\-])?[0-9]{2})$/.test(campo.value)){
 		campo.style.backgroundColor = "white";
 		return true;
@@ -1356,28 +1362,30 @@ function comprobarTelf(campo) {
 		}
 }
 
-
+//Funcion que comprueba que el formato de telefono para la vista search de usuarios sea válido
 function comprobarTelfSearch(campo) {
 	if(campo.value.length==0){//Si el campo telefono esta vacio que devuelva true
 	
 		return true;
 	}
+  //Si el campo tiene algo que no sean numeros devuelve un alert
 	if(/^[0-9]+$/.test(campo.value)==false){
 		alert('El telefono solo tiene numeros');
 		
 		campo.focus();
 		return false;
 	}
-	
+	//Si la longitud es menor a 11 devuelve cierto siempre
 	if(campo.value.length<11){
 		 
 		return true;
+    //Si no lo es, comprueba que el campo tenga un formato válido
 	}else if(/^((34)?[9|6|7]((\d{1}([ \t|\-])?[0-9]{3})|(\d{2}([ \t|\-])?[0-9]{2}))([ \t|\-])?[0-9]{2}([ \t|\-])?[0-9]{2})$/.test(campo.value)){
 		 
 		return true;
-	}else{
+	}else{ //Si no tiene un formato válido
 		
-		//Si el numero no coincide,devuelve false y un aviso explicando los formatos de numero permitidos
+		//devuelve false y un aviso explicando los formatos de numero permitidos
 		alert('Telefono malo, indicalo en uno de los siguientes formatos: 34(puedes escribirlo o no) 9XXXXXXXX | 6XXXXXXXX ');
 		
 		campo.focus();

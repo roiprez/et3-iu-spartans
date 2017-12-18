@@ -13,9 +13,6 @@ function isAllow($idFun,$idAcci){
 			return true;
 		}
 		$funcAccion=  new PERMISOS_Model($row[1],$idFun,$idAcci);
-		
-
-
 		if($funcAccion->SEARCH()) return true;
 	}
 	return false;
