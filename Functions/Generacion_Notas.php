@@ -12,7 +12,7 @@ function generarNotaEntrega($idTrabajo, $alias, $porcentajeNota){
   $numero_correctos = 0;
   
   while($row = $evaluaciones->fetch_array()){  
-      if($row[6]==1){
+      if($row[6] == 1){
         $numero_correctos++;
       }   
       $numero_historias++;

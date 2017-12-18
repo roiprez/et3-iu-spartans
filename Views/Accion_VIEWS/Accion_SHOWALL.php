@@ -24,7 +24,7 @@ class Accion_SHOWALL
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
-            if (IsAuthenticated() && !isAllow('Action','Show')){
+            if (IsAuthenticated() && !isAllow('Action','ShowAll')){
             $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
             

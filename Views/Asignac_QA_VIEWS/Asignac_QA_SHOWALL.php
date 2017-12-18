@@ -23,7 +23,7 @@ class Asignac_QA_SHOWALL
 
     function pinta()
     {
-        if (IsAuthenticated() && !isAllow()) {
+        if (IsAuthenticated() && !isAllow('Aisg_Qua','ShowAll')) {
             $respuesta = "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
 
