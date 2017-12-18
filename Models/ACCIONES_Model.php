@@ -60,9 +60,9 @@ class ACCIONES_Model{
             DescripAccion
             FROM ACCION
             WHERE (
-            (IdAccion LIKE '%$this->idAccion%')&&
-            (NombreAccion LIKE '%$this->nombreAccion%')&&
-            (DescripAccion LIKE '%$this->descripAccion%')
+            (IdAccion LIKE REPLACE('%$this->idAccion%', ' ', '' ))&&
+            (NombreAccion LIKE REPLACE('%$this->nombreAccion%', ' ', '' ))&&
+            (DescripAccion LIKE REPLACE('%$this->descripAccion%', ' ', '' ))
             )";
         // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
         if (!($resultado = $this->mysqli->query($sql))){

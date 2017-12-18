@@ -90,9 +90,9 @@ function SEARCH(){
             TextoHistoria
             FROM HISTORIA
             WHERE (
-            (IdTrabajo LIKE '%$this->idTrabajo%')&&
-            (IdHistoria LIKE '%$this->idHistoria%')&&
-            (TextoHistoria LIKE '%$this->textoHistoria%')
+            (IdTrabajo LIKE REPLACE('%$this->idTrabajo%', ' ', '' ))&&
+            (IdHistoria LIKE REPLACE('%$this->idHistoria%', ' ', '' ))&&
+            (TextoHistoria LIKE REPLACE('%$this->textoHistoria%', ' ', '' ))
             )";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
     if (!($resultado = $this->mysqli->query($sql))){
