@@ -27,7 +27,7 @@ class Permiso_GESTION// declaración de clase
             
             //Si esta autenticado y es administrador
         }else{
-            //include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
+            include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
 		
             $this->grupo = $this->datos_grupo->fetch_array(); //Asignamos al array usuario la tupla contenida en el sql datosUsuario

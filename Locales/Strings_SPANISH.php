@@ -82,7 +82,7 @@ array(
 	'CorrectoP' => 'CorrectoP',
 	'OK' => 'Ok',
 	'Incorrecto' => 'Incorrecto',
-	'Corrrecto' => 'Correcto',
+	'Correcto' => 'Correcto',
 	'Comentario' => 'Comentario',
 	'Corrección de la evaluación' => 'Corrección de la evaluación',
 	'Corrección del profesor' => 'Corrección del profesor',
