@@ -70,7 +70,7 @@ class Evaluacion_EDIT// declaración de clase
             </label>
 
             <?php
-            if (IsAuthenticated() && isAdmin()){//campos solo visibles para el admin
+            if (IsAuthenticated() && isAllow('Eval','Edit')){//campos solo visibles para el admin
                 ?>
                 <label><?php echo $strings['Corrección del profesor']; ?>
                     <select name="CorrectoP" id="CorrectoP" required="true" size="1">

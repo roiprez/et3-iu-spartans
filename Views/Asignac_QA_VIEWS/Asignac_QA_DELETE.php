@@ -22,6 +22,13 @@ class Asignac_QA_DELETE
 
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+         if (IsAuthenticated() && !isAllow('Asig_Qua','Delete')){
+            $respuesta= "No tienes permiso para acceder a esta vista";
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
+            
+            
+            //Si esta autenticado y es administrador
+            }else{
         ?>
         <table id="tabla-delete">
             <div id="mensaje-de-borrado">
@@ -52,6 +59,7 @@ class Asignac_QA_DELETE
         </table>
 
         <?php
+    }//Fin else
     }//fin pinta
 }//fin clase
 ?>

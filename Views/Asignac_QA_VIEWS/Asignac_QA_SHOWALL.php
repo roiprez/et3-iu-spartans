@@ -23,7 +23,7 @@ class Asignac_QA_SHOWALL
 
     function pinta()
     {
-        if (IsAuthenticated() && !isAdmin()) {
+        if (IsAuthenticated() && !isAllow('Aisg_Qua','ShowAll')) {
             $respuesta = "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
 
@@ -31,6 +31,13 @@ class Asignac_QA_SHOWALL
             //Si esta autenticado y es administrador
         } else {
             include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+             if (IsAuthenticated() && !isAllow('Asig_Qua','ShowAll')){
+            $respuesta= "No tienes permiso para acceder a esta vista";
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
+            
+            
+            //Si esta autenticado y es administrador
+            }else{
 
             ?>
             <form id="formulario-showall" method="">

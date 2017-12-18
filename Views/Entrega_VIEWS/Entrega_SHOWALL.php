@@ -24,7 +24,7 @@ class Entrega_SHOWALL{  // declaración de clase
     function pinta(){
 
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-        if (IsAuthenticated() && !isAdmin()){
+        if (IsAuthenticated() && !isAllow('Entre','ShowAll')){
         ?>
         <table id="tabla-showall">
             <tr>
