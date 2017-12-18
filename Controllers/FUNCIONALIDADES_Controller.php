@@ -111,7 +111,7 @@ if (!isset($_REQUEST['action'])){
 					}
 					array_push($lista_funcionalidades_accion, $contained);
 				}
-				new Fun_Accion_GESTION($lista_acciones,$_REQUEST['IdFuncionalidad'],$lista_funcionalidades_accion);
+				new Fun_Accion_GESTION($lista_acciones,$_REQUEST['NombreFuncionalidad'],$lista_funcionalidades_accion);
 			}
 			else{//Si se ha hehco un post	
 				$funcionalidad = $_REQUEST['IdFuncionalidad'];

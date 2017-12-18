@@ -28,25 +28,25 @@ class Entrega_EDIT// declaración de clase
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"
                        id="login" required="true" readonly="true"
-                       size="9" maxlength="9" value="<?php echo $this->lista_Valores['login']?>" 
+                       size="9" maxlength="9" value="<?php echo $this->lista_Valores['login']?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo" readonly="true"
                        id="IdTrabajo" required="true"
-                       size="6" maxlength="6" value="<?php echo $this->lista_Valores['IdTrabajo']?>" 
+                       size="6" maxlength="6" value="<?php echo $this->lista_Valores['IdTrabajo']?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Alias']; ?>
                 <input type="text" name="Alias" readonly="true"
                        id="Alias" required="true"
-                       size="9" maxlength="9" value="<?php echo $this->lista_Valores['Alias']?>" 
+                       size="9" maxlength="9" value="<?php echo $this->lista_Valores['Alias']?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Horas']; ?>
                 <input type="text" name="Horas"
                        id="Horas" required="true"
-                       size="2" maxlength="2" value="<?php echo $this->lista_Valores['Horas']?>" 
+                       size="2" maxlength="2" value="<?php echo $this->lista_Valores['Horas']?>" onChange ="return comprobarEntero(this,0,99);"
                 />
             </label>
             <label><?php echo $strings['Ruta']; ?>

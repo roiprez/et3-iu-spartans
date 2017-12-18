@@ -33,25 +33,25 @@ class Evaluacion_ADD// declaración de clase
             <label<?php echo $strings['Id del trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
-                       size="6" maxlength="6"
+                       size="6" maxlength="6" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Login evaluador']; ?>
                 <input type="text" name="LoginEvaluador"
                        id="LoginEvaluador" required="true"
-                       size="9" maxlength="9"
+                       size="9" maxlength="9" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Alias evaluado']; ?>
                 <input type="text" name="AliasEvaluado"
                        id="AliasEvaluado" required="true"
-                       size="9" maxlength="9" 
+                       size="9" maxlength="9" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Id de la historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
-                       size="2" maxlength="2" 
+                       size="2" maxlength="2" onChange ="return comprobarEntero(this,this.size,'edit');"
                 />
             </label>
             <label><?php echo $strings['Corrección de la historia']; ?>
@@ -61,7 +61,7 @@ class Evaluacion_ADD// declaración de clase
                 </select>
             </label>
             <label><?php echo $strings['comentario']; ?>
-                <textarea form="formulario-add" maxlength="300" name="ComenIncorrectoA"></textarea>
+                <textarea form="formulario-add" maxlength="300" name="ComenIncorrectoA" onChange ="return comprobarTexto(this,this.size);"></textarea>
             </label>
             <label><?php echo $strings['Corrección del profesor']; ?>
                 <select name="CorrectoP" id="CorrectoP" required="true" size="1">
@@ -70,7 +70,7 @@ class Evaluacion_ADD// declaración de clase
                 </select>
             </label>
             <label><?php echo $strings['comentario']; ?>
-                <textarea form="formulario-add" maxlength="300" name="ComenIncorrectoP"></textarea>
+                <textarea form="formulario-add" maxlength="300" name="ComenIncorrectoP" onChange ="return comprobarTexto(this,this.size);"></textarea>
             </label>
             <label><?php echo $strings['Corrección de la evaluación']; ?>
                 <select name="OK" id="OK" required="true" size="1">

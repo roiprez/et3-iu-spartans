@@ -35,19 +35,19 @@ class Nota_Trabajo_EDIT
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login" readonly="true" 
                        id="login" required="true"
-                       size="9" maxlength="9" value="<?php echo $this->lista_valores['login']?>" 
+                       size="9" maxlength="9" value="<?php echo $this->lista_valores['login']?>" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
-                       id="IdTrabajo" required="true" readonly="true">
-                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo']?>" 
+                       id="IdTrabajo" required="true" readonly="true"
+                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo']?>" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Nota del Trabajo']; ?>
                 <input type="text" name="NotaTrabajo"
                        id="NotaTrabajo" required="true"
-                       size="4" maxlength="4" value="<?php echo $this->lista_valores['NotaTrabajo']?>" 
+                       size="4" maxlength="4" value="<?php echo $this->lista_valores['NotaTrabajo']?>" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <div class="botones-formulario">

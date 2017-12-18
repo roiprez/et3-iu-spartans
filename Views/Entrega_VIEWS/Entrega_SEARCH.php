@@ -30,7 +30,7 @@ class Entrega_SEARCH// declaración de clase
 
         ?>
 
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()" enctype="multipart/form-data" >
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('entrega','search');" enctype="multipart/form-data" >
 
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"

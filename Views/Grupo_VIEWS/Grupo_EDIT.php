@@ -38,13 +38,13 @@ class Grupo_EDIT
             <label><?php echo $strings['Id del grupo'];?>
                 <input type="text" name="IdGrupo"
                        id="IdGrupo" required="true" readonly
-                       size="6" maxlength="6"  value="<?php echo $this->lista_valores['IdGrupo'] ?>"
+                       size="6" maxlength="6"  value="<?php echo $this->lista_valores['IdGrupo'] ?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Nombre'];?>
                 <input type="text" name="NombreGrupo"
                        id="NombreGrupo" required="true"
-                       size="60" maxlength="60"value="<?php echo $this->lista_valores['NombreGrupo'] ?>"
+                       size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreGrupo'] ?>" onChange ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
             <label><?php echo $strings['Descripcion'];?>
