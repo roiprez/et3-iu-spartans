@@ -4,7 +4,7 @@
 Controlador que se encarga de hacer login en la aplicación
 25/11/2017 por 
 */
-include '../Functions/comprobarAdmin.php';
+include '../Functions/ComprobarAdmin.php';
 
 session_start();
 $_SESSION['login'] = null;
@@ -17,7 +17,7 @@ else{
 	$usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],'','','','','','');
 	$respuesta = $usuario->login();
 
-	if ($respuesta == 'true' && !isAllow()){
+	if ($respuesta == 'true' && !isAdmin()){
 		session_start();
 		$_SESSION['login'] = $_REQUEST['login'];
 		$_SESSION['controlador'] = 'ENTREGAS_Controller';

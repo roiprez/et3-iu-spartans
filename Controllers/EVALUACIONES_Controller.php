@@ -86,7 +86,7 @@ if (!isset($_REQUEST['action'])){
 			else{	
 				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComentIncorrectoP'], $_REQUEST['OK']);							
 				$respuesta = $EVALUACION->EDIT();
-				notas_update($_REQUEST['IdTrabajo']);
+				notas_update($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado']);
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			

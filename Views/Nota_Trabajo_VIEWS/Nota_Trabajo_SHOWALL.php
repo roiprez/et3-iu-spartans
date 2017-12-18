@@ -23,7 +23,7 @@ class Nota_Trabajo_SHOWALL
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
-            if (IsAuthenticated() && !isAllow('Nota','Show')){
+            if (IsAuthenticated() && !isAllow('Nota','ShowAll')){
                 ?>
             <table id="tabla-showall">
                 <tr>

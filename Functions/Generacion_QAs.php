@@ -86,7 +86,7 @@ function notas_gen($IdTrabajo){
   }
 }
 
-function notas_update($IdTrabajo){
+function notas_update($IdTrabajo, $loginEvaluador, $AliasEvaluado){
   $TRABAJO = new TRABAJOS_Model($IdTrabajo, '', '','','');
   $trabajo = $TRABAJO->SEARCH()->fetch_array();
 
