@@ -136,6 +136,7 @@ array(
 	'Nombre Trabajo' => 'Nombre Trabajo',
 	'Fecha inicio' => 'Fecha inicio',
 	'Fecha fin' => 'Fecha fin',
+	'PorcentajeNota' => 'PorcentajeNota',
 	
 	/*Diccionario menus*/
 	'Mostrar todo' => 'Mostrar todo',
