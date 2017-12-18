@@ -6,7 +6,7 @@
  * Time: 13:19
  */
 
-
+ 
 
 class Evaluacion_EDIT// declaración de clase
 {
@@ -29,27 +29,27 @@ class Evaluacion_EDIT// declaración de clase
 
         <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('evaluacion','edit') && encriptar()">
             <label><?php echo $strings['Id del trabajo']; ?>
-                <input type="text" name="IdTrabajo"
+                <input type="text" name="IdTrabajo" readonly="true"
                        id="IdTrabajo" required="true"
                        size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo'] ?>" 
                 />
             </label>
             <label><?php echo $strings['Login evaluador']; ?>
                 <input type="text" name="LoginEvaluador"
-                       id="LoginEvaluador" required="true"
+                       id="LoginEvaluador" required="true" readonly="true"
                        size="9" maxlength="9" value="<?php echo $this->lista_valores['LoginEvaluador'] ?>"
                 />
             </label>
             <label><?php echo $strings['Alias evaluado']; ?>
                 <input type="text" name="AliasEvaluado"
-                       id="AliasEvaluado" required="true"
+                       id="AliasEvaluado" required="true" readonly="true"
                        size="9" maxlength="9" value="<?php echo $this->lista_valores['AliasEvaluado'] ?>"
                 />
             </label>
             <label><?php echo $strings['Id de la historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
-                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria'] ?>"
+                       size="2" maxlength="2" min="0" readonly="true" value="<?php echo $this->lista_valores['IdHistoria'] ?>"
                 />
             </label>
             <label><?php echo $strings['Corrección de la historia']; ?>
