@@ -11,7 +11,7 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 
 		function render(){
 			include_once '../Functions/Authentication.php';
-			include_once '../Functions/ComprobarAdmin.php';
+			include_once '../Functions/comprobarAdmin.php';
 			include_once '../Functions/Generacion_QAs.php';
 			include_once '../Functions/comprobarPermiso.php';
 			if (!isset($_SESSION['idioma']) || !$_SESSION['idioma']) {
