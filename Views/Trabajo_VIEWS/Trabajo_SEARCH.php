@@ -26,7 +26,7 @@ class Trabajo_SEARCH
             //Si esta autenticado y es administrador
             }else{
         ?>
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('trabajo','search');">
 
             <label><?php echo $strings['Id Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
@@ -37,7 +37,7 @@ class Trabajo_SEARCH
             <label><?php echo $strings['Nombre Trabajo']; ?>
                 <input type="text" name="NombreTrabajo"
                        id="NombreTrabajo"
-                       size="60" maxlength="60"
+                       size="60" maxlength="60" onChange();
                 />
             </label>
             <label><?php echo $strings['Porcentaje Trabajo']; ?>

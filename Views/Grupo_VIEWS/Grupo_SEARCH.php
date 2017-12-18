@@ -29,7 +29,7 @@ include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
 
 ?>
 
-<form id="formulario-search" name="formulario-search" method="post" onSubmit="return validarBusqueda()">
+<form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('grupo','search')">
 
     <label><?php echo $strings['Id del grupo'];?>
         <input type="text" name="IdGrupo"

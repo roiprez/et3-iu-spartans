@@ -32,18 +32,18 @@ class Grupo_ADD
             <label><?php echo $strings['Id del grupo'];?>
                 <input type="text" name="IdGrupo"
                        id="IdGrupo" required="true"
-                       size="6" maxlength="6"
+                       size="6" maxlength="6" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
 
             <label><?php echo $strings['Nombre'];?>
                 <input type="text" name="NombreGrupo"
                        id="NombreGrupo" required="true"
-                       size="60" maxlength="60" onBlur="comprobarAlfabetico(this, this.size, 'add')"
+                       size="60" maxlength="60" onChange="comprobarAlfabetico(this, this.size, 'add')"
                 />
             </label>
             <label><?php echo $strings['Descripcion'];?>
-                <textarea form="formulario-add" maxlength="100" name="DescripGrupo" required="true"></textarea>
+                <textarea form="formulario-add" maxlength="100" name="DescripGrupo" required="true" onChange ="return comprobarTexto(this,this.size);"></textarea>
             </label>
             <div class="botones-formulario">
                 <button id="enviar" name = "action" value = "ADD" type="submit" title="<?php echo $strings['enviar'];?>"><img class="button-td" src="../Iconos/send.png" ></button>

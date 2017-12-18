@@ -34,19 +34,19 @@ class Nota_Trabajo_ADD//eclaración de clase
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"
                        id="login" required="true"
-                       size="9" maxlength="9"
+                       size="9" maxlength="9" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
-                       size="6" maxlength="6"
+                       size="6" maxlength="6" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Nota del Trabajo']; ?>
                 <input type="text" name="NotaTrabajo"
                        id="NotaTrabajo" required="true"
-                       size="4" maxlength="4"  
+                       size="4" maxlength="4"  onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <div class="botones-formulario">

@@ -35,22 +35,18 @@ class Usuario_EDIT// declaración de clase
 
         ?>
 
-<<<<<<< HEAD
-        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('usuario','edit') && encriptar()">
-            <label>Login
-=======
         <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit') && encriptar()">
             <label><?php echo $strings['Login']; ?>
->>>>>>> 35e5dae373e1192a94492902db99b9654a44b31f
+
                 <input type="text" name="login"
                        id="login" required="true" readonly
-                       size="9" maxlength="9"  value="<?php echo $this->lista_valores['login'] ?>" 
+                       size="9" maxlength="9"  value="<?php echo $this->lista_valores['login'] ?>" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Password']; ?>
                 <input type="password" name="password"
                        id="password" required="true"
-                       size="20" maxlength="20" value="<?php echo $this->lista_valores['password'] ?>"
+                       size="20" maxlength="20" value="<?php echo $this->lista_valores['password'] ?>" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['DNI']; ?>
@@ -80,7 +76,7 @@ class Usuario_EDIT// declaración de clase
             <label><?php echo $strings['Direccion']; ?>
                 <input type="text" name="Direccion"
                        id="Direccion" required="true"
-                       size="60" maxlength="60" value="<?php echo $this->lista_valores['Direccion'] ?>"
+                       size="60" maxlength="60" value="<?php echo $this->lista_valores['Direccion'] ?>" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Telefono']; ?>

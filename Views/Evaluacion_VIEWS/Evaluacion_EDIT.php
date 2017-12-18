@@ -31,25 +31,25 @@ class Evaluacion_EDIT// declaración de clase
             <label><?php echo $strings['Id del trabajo']; ?>
                 <input type="text" name="IdTrabajo" readonly="true"
                        id="IdTrabajo" required="true"
-                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo'] ?>" 
+                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo'] ?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Login evaluador']; ?>
                 <input type="text" name="LoginEvaluador"
-                       id="LoginEvaluador" required="true" readonly="true"
-                       size="9" maxlength="9" value="<?php echo $this->lista_valores['LoginEvaluador'] ?>"
+                       id="LoginEvaluador" required="true"
+                       size="9" maxlength="9" value="<?php echo $this->lista_valores['LoginEvaluador'] ?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Alias evaluado']; ?>
                 <input type="text" name="AliasEvaluado"
-                       id="AliasEvaluado" required="true" readonly="true"
-                       size="9" maxlength="9" value="<?php echo $this->lista_valores['AliasEvaluado'] ?>"
+                       id="AliasEvaluado" required="true"
+                       size="9" maxlength="9" value="<?php echo $this->lista_valores['AliasEvaluado'] ?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Id de la historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
-                       size="2" maxlength="2" min="0" readonly="true" value="<?php echo $this->lista_valores['IdHistoria'] ?>"
+                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria'] ?>" onChange ="return comprobarEntero(this,0,99);"
                 />
             </label>
             <label><?php echo $strings['Corrección de la historia']; ?>

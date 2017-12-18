@@ -32,18 +32,18 @@ class Funcionalidad_ADD
             <label><?php echo $strings['Id funcionalidad']; ?>
                 <input type="text" name="IdFuncionalidad"
                        id="IdFuncionalidad" required="true"
-                       size="6" maxlength="6"
+                       size="6" maxlength="6" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
 
             <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="NombreFuncionalidad"
                        id="NombreFuncionalidad" required="true"
-                       size="60" maxlength="60"
+                       size="60" maxlength="60" onChange ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
             <label><?php echo $strings['Descripcion']; ?>
-                <textarea form="formulario-add" maxlength="100" name="DescripFuncionalidad" required="true"></textarea>
+                <textarea form="formulario-add" maxlength="100" name="DescripFuncionalidad" required="true" onChange ="return comprobarTexto(this,this.size);"></textarea>
             </label>
             <div class="botones-formulario">
                 <button id="enviar" name = "action" value = "ADD" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>

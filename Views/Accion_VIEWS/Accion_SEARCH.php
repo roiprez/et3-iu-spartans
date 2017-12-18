@@ -28,7 +28,7 @@ class Accion_SEARCH
 
         ?>
 
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('accion','search');">
 
             <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdAccion"
