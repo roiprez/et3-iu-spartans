@@ -224,7 +224,7 @@ function SEARCH()
        			FROM EVALUACION
     			WHERE
     				(
-					(IdTrabajo LIKE '%$this->IdTrabajo') &&
+					(IdTrabajo LIKE '%$this->IdTrabajo%') &&
 					(LoginEvaluador LIKE '%$this->LoginEvaluador%') &&
 	 				(AliasEvaluado LIKE '%$this->AliasEvaluado%') &&
 	 				(IdHistoria LIKE '%$this->IdHistoria%')
