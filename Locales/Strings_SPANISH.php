@@ -198,6 +198,12 @@ array(
 	'El Usuario no existe o el codigo es incorrecto' => 'El Usuario no existe o el codigo es incorrecto',
 	'El grupo no existe o el codigo es incorrecto' => 'El grupo no existe o el codigo es incorrecto',
 	
+	
+	/*Diccionario Notas*/
+	'IdTrabajo' => 'IdTrabajo',
+	'NOTAS' => 'Notas',
+	
+	
 	/*Diccionario Evaluaciones*/
 	'El login no tiene que evaluar el trabajo o al alias indicado' => 'El login no tiene que evaluar el trabajo o al alias indicado',
 	'La historia de este trabajo ya existe' => 'La historia de este trabajo ya existe',

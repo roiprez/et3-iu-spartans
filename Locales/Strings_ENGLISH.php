@@ -203,6 +203,10 @@ array(
 	'El login no tiene que evaluar el trabajo o al alias indicado' => 'The login does not have to evaluate the work or alias indicated',
 	'La historia de este trabajo ya existe' => 'History already exists to this work',
 	
+	/*Diccionario Notas*/
+	'IdTrabajo' => 'IdWork',
+	'NOTAS' => 'Notes',
+	
 	/*Traducciones en validaciones*/
 	'El campo Nombre no puede ser vacio' => 'Name can´t be empty',
 	'El campo Apellidos no puede ser vacio' => 'Surname can´t be empty',
