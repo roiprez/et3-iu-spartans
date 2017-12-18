@@ -52,22 +52,27 @@ INSERT INTO FUNCIONALIDAD
                         IdFuncionalidad,
                         NombreFuncionalidad,
                         DescripFuncionalidad)
-                        VALUES (
+                        VALUES
 ('User','Gestion Usuarios','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Usuarios'),
 ('Perm','Gestion de Permisos','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Permisos'),
 ('Jobs','Gestion de Trabajos','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Trabajos'),
 ('Group','Gestion de Grupos','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Grupos'),
+('UsuGru','Gestion de Usuarios por Grupo','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con la asignacion de usuarios a grupos'),
 ('Action','Gestion de Acciones','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Acciones'),
 ('Func','Gestion de Funcionalidades','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Funcionalides'),
 ('Hist','Gestion de Historias','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Historias'),
 ('Nota','Gestion de Notas','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Notas'),
 ('Eval','Gestion de Evaluaciones','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Evaluaciones'),
-('Entre','Gestion de Entregas','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Entregas'));
+('Entre','Gestion de Entregas','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Entregas');
 
 /*Insercion de Acciones*/
-INSERT INTO ACCION(
-                  IdAccion,
-                  
-                  )
-                  Values()
+
+
+INSERT INTO ACCION(IdAccion,NombreAccion,DescripAccion)
+  VALUES
+('Add','Añadir','Esta Accion es la encargada de añadir las entidades asociadas a la funcionalidad'),
+('Edit','Editar','Esta Accion es la encargada de editar las entidades asociadas a la funcionalidad'),
+('Delete','Borrar','Esta Accion es la encargada de borrar las entidades asociadas a la funcionalidad'),
+('Show','Visualizar','Esta Accion es la encargada de visualizar las entidades asociadas a la funcionalidad'),
+('Search','Buscar','Esta Accion es la encargada de buscar las entidades especificadas asociadas a la funcionalidad');
 
