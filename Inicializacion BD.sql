@@ -44,5 +44,30 @@ INSERT INTO USU_GRUPO
                                             IdGrupo)
                                             VALUES (
                                             'admin',
-                                            'Admin'
-                                            )
+                                            'Admin');
+
+/*Insercion de Funcionalidades*/
+INSERT INTO FUNCIONALIDAD
+                        (
+                        IdFuncionalidad,
+                        NombreFuncionalidad,
+                        DescripFuncionalidad)
+                        VALUES (
+('User','Gestion Usuarios','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Usuarios'),
+('Perm','Gestion de Permisos','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Permisos'),
+('Jobs','Gestion de Trabajos','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Trabajos'),
+('Group','Gestion de Grupos','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Grupos'),
+('Action','Gestion de Acciones','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Acciones'),
+('Func','Gestion de Funcionalidades','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Funcionalides'),
+('Hist','Gestion de Historias','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Historias'),
+('Nota','Gestion de Notas','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Notas'),
+('Eval','Gestion de Evaluaciones','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Evaluaciones'),
+('Entre','Gestion de Entregas','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Entregas'));
+
+/*Insercion de Acciones*/
+INSERT INTO ACCION(
+                  IdAccion,
+                  
+                  )
+                  Values()
+
