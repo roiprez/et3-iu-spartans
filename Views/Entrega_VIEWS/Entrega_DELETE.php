@@ -16,7 +16,7 @@ class Entrega_DELETE{
 
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-         if (IsAuthenticated() && !isAdmin()){
+         if (IsAuthenticated() && !isAllow('Entre','Delete')){
             $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
             
