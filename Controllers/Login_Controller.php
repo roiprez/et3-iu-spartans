@@ -4,7 +4,7 @@
 Controlador que se encarga de hacer login en la aplicación
 25/11/2017 por 
 */
-include '../Functions/ComprobarAdmin.php';
+include '../Functions/comprobarAdmin.php';
 
 session_start();
 $_SESSION['login'] = null;
