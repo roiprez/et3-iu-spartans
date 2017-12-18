@@ -1,6 +1,6 @@
 <?php
 include_once  '../Models/ASIGNAC_QA_Model.php';
-include '../Models/TRABAJOS_Model.php';
+include_once '../Models/TRABAJOS_Model.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_ADD.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_EDIT.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_DELETE.php';
