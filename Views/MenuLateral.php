@@ -102,12 +102,6 @@ Vista que contiene el Menú lateral
 								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNAC_QA&action=SEARCH"><?php echo $strings['Buscar']; ?></a></li>
 							</ul>
 						</li>
-						<li>					
-							<form>
-								<input type="hidden" name="qa_gen" value="<?php echo $strings['ET1']; ?>"/>
-								<input type="submit" value="<?php echo $strings['GENERAR ET1']; ?>"/>
-							</form>
-						</li>
 					</ul>
 				</aside>
         <?php				

@@ -1,6 +1,7 @@
 <?php
 
 include_once '../Models/ENTREGAS_Model.php';
+include_once '../Models/TRABAJOS_Model.php';
 include_once '../Models/HISTORIA_Model.php';
 include_once '../Models/EVALUACIONES_Model.php';
 include_once '../Models/ASIGNAC_QA_Model.php';
@@ -50,6 +51,7 @@ function qa_gen($IdTrabajo){
         $j+=5;
       }    
     }
+    return 'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito';
 }
 
 function evaluacion_gen($IdTrabajo, $LoginEvaluador, $AliasEvaluado){
@@ -66,32 +68,38 @@ function evaluacion_gen($IdTrabajo, $LoginEvaluador, $AliasEvaluado){
 }
 
 function notas_gen($IdTrabajo){
+  $TRABAJO = new TRABAJOS_Model($IdTrabajo, '', '','','');
+  $trabajo = $TRABAJO->SEARCH()->fetch_array();
+
   $ENTREGAS = new ENTREGAS_Model($IdTrabajo, '', '','','');
   $entregas = $ENTREGAS->SEARCH();
   
   while($row = $entregas->fetch_array()) {
     $NOTAS;
     if($IdTrabajo[0] == 'E'){
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2], $trabajo[4]));
     }
     else{
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
     }
     $NOTAS->ADD();			
   }
 }
 
 function notas_update($IdTrabajo, $loginEvaluador, $AliasEvaluado){
+  $TRABAJO = new TRABAJOS_Model($IdTrabajo, '', '','','');
+  $trabajo = $TRABAJO->SEARCH()->fetch_array();
+
   $ENTREGAS = new ENTREGAS_Model($IdTrabajo, '', '','','');
   $entregas = $ENTREGAS->SEARCH();
 
   while($row = $entregas->fetch_array()) {
     $NOTAS;
     if($IdTrabajo[0] == 'E'){
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2], $trabajo[4]));
     }
     else{
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
     }
     $NOTAS->EDIT();				
   } 		

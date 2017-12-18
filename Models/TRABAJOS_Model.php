@@ -21,16 +21,10 @@ class TRABAJOS_Model{   //Declaracion de la clase
         if ($fechIniTrabajo == ''){
             $this->fechIniTrabajo = $fechIniTrabajo;
         }
-        
-
         //si la fechFinTrabajo viene vacia la asignamos vacia
         if ($fechFinTrabajo == ''){
             $this->fechFinTrabajo = $fechFinTrabajo;
         }
-        else{ // si no viene vacia le cambiamos el formato para que se adecue al de la bd
-           
-        }
-
         //Creamos el conector a la base de datos
         include_once '../Models/Access_DB.php';
         $this->mysqli = ConectarBD();

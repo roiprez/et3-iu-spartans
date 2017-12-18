@@ -43,8 +43,8 @@ class Trabajo_ADD
                 />
             </label>
             <label><?php echo $strings['Porcentaje Trabajo']; ?>
-                <input type="text" name="PorcentajeTrabajo"
-                       id="PorcentajeTrabajo" required="true"
+                <input type="text" name="PorcentajeNota"
+                       id="PorcentajeNota" required="true"
                        size="2" maxlength="2"
                 />
             </label>
