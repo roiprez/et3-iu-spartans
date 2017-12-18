@@ -21,14 +21,14 @@ class Asignac_QA_SEARCH
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
 
             <label><?php echo $strings['Login del evaluado']; ?>
-                 <input type="text" name="login"
-                       id="login"
+                 <input type="text" name="LoginEvaluado"
+                       id="LoginEvaluado"
                        size="9" maxlength="9" 
                 />
             </label>
             <label><?php echo $strings['Alias']; ?>
-                <input type="text" name="Alias" 
-                       id="Alias" 
+                <input type="text" name="AliasEvaluado" 
+                       id="AliasEvaluado" 
                        size="6" maxlength="6" 
                 />
             </label>
@@ -39,8 +39,8 @@ class Asignac_QA_SEARCH
                 />
             </label>
             <label><?php echo $strings['Login del evaluador']; ?>
-                <input type="text" name="login" 
-                       id="login"
+                <input type="text" name="LoginEvaluador" 
+                       id="LoginEvaluador"
                        size="9" maxlength="9"  
                 />
             </label>
