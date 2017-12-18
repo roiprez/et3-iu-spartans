@@ -62,8 +62,8 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 			<div id="cuerpo">
         <?php
         	if(IsAuthenticated()){	
-			include '../Views/MenuLateralUsuarios.php'; 
-			$MenuLateral = new MenuLateralUsuarios();
+			include '../Views/MenuLateral.php'; 
+			$MenuLateral = new MenuLateral();
 			}                 
         ?>
 				<div id="root">

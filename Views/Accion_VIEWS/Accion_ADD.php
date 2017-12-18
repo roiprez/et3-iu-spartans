@@ -27,7 +27,7 @@ class Accion_ADD
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarEntidad('accion','add')">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarEntidad('Action','add')">
 
             <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdAccion"
