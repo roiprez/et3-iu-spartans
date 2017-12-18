@@ -744,14 +744,13 @@ if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que
 			  //Comprueba con la expresión regular que solo se incluyen caracteres alfabéticos y devuelve true en caso afirmativo, y una alerta y false en el contrario
 			  else if (/^[a-zA-ZÁÉÍÏÓÚÜáéíïóüúñÑ-\s]+$/.test(campo.value)){
 				campo.style.backgroundColor = "white";
-				return false;
+				return true;
 				} 
 				else{
 				alert("El atributo " + campo.name + " no admite caracteres no alfabéticos");
 				campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
 				return false;
-			  }
-			  
+			  }	  
 			}
 }
 
