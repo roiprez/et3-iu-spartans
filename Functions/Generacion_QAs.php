@@ -80,13 +80,13 @@ function notas_gen($IdTrabajo){
       $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2], $trabajo[4]));
     }
     else{
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
+      //$NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
     }
     $NOTAS->ADD();			
   }
 }
 
-function notas_update($IdTrabajo, $loginEvaluador, $AliasEvaluado){
+function notas_update($IdTrabajo){
   $TRABAJO = new TRABAJOS_Model($IdTrabajo, '', '','','');
   $trabajo = $TRABAJO->SEARCH()->fetch_array();
 
@@ -99,7 +99,7 @@ function notas_update($IdTrabajo, $loginEvaluador, $AliasEvaluado){
       $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2], $trabajo[4]));
     }
     else{
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
+      //$NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
     }
     $NOTAS->EDIT();				
   } 		

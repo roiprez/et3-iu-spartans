@@ -28,8 +28,6 @@ class Resultados_SHOWCURRENT_ET
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         $correctoP='';
         $incorrectoP='';
-        $correctos=array();
-        $comentarios=array();
             for($i=1;$i<=count($this->lista_descripHist);$i++){
                 $correctos=array();
                 $comentarios=array();
@@ -44,7 +42,7 @@ class Resultados_SHOWCURRENT_ET
             ?>
             <table id="tabla-resultados">    
                 <tr>
-                    <h3><?php echo $i . "   " . $this->lista_descripHist[$i-1]?></h3>
+                    <h3><?php echo $i . "   " . $this->lista_descripHist[$i-1] . "   " . $correctos[0]. "   " . $correctoP?></h3>
                 </tr>
                 <tr>
                     <?php
@@ -59,13 +57,13 @@ class Resultados_SHOWCURRENT_ET
                             <?php
                         } 
                     }
-                    if($correctoP==0){
+                    if($correctoP==1){
                         ?>
-                        <td class="celda-incorrecta">P</td>
+                        <td class="celda-correcta">P</td>
                         <?php
                     } else {
                         ?>
-                        <td class="celda-correcta">P</td>
+                        <td class="celda-incorrecta">P</td>
                         <?php
                     } 
                     ?>
