@@ -35,13 +35,13 @@ class Usuario_ADD// declaración de clase
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"
                        id="login" required="true"
-                       size="9" maxlength="9"
+                       size="9" maxlength="9" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Password']; ?>
                 <input type="password" name="password"
                        id="password" required="true"
-                       size="20" maxlength="20"
+                       size="20" maxlength="20" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['DNI']; ?>
@@ -71,7 +71,7 @@ class Usuario_ADD// declaración de clase
             <label><?php echo $strings['Direccion']; ?>
                 <input type="text" name="Direccion"
                        id="Direccion" required="true"
-                       size="60" maxlength="60"
+                       size="60" maxlength="60" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Telefono']; ?>

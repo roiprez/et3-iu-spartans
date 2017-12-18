@@ -36,13 +36,13 @@ class Trabajo_EDIT
             <label><?php echo $strings['Id Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true" readonly
-                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo'] ?>"
+                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo'] ?>" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Nombre Trabajo']; ?>
                 <input type="text" name="NombreTrabajo"
                        id="NombreTrabajo" required="true"
-                       size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreTrabajo'] ?>"
+                       size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreTrabajo'] ?>" onBlur ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
             <label><?php echo $strings['Porcentaje Trabajo']; ?>

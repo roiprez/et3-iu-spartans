@@ -33,13 +33,13 @@ class Trabajo_ADD
             <label><?php echo $strings['Id Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
-                       size="6" maxlength="6"
+                       size="6" maxlength="6" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Nombre Trabajo']; ?>
                 <input type="text" name="NombreTrabajo"
                        id="NombreTrabajo" required="true"
-                       size="60" maxlength="60"
+                       size="60" maxlength="60" onBlur ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
             <label><?php echo $strings['Porcentaje Trabajo']; ?>
@@ -49,7 +49,7 @@ class Trabajo_ADD
                 />
             </label>
             <label><?php echo $strings['Fecha inicio']; ?>
-                <input type="text" name="FechaIniTrabajo" class="tcal" required="true" readonly="readonly"/>
+                <input type="text" name="FechaIniTrabajo" class="tcal" required="true" readonly="readonly" />
             </label>
 
             <label><?php echo $strings['Fecha fin']; ?>

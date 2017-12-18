@@ -26,7 +26,7 @@ class Nota_Trabajo_SEARCH
             //Si esta autenticado y es administrador
             }else{
         ?>
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarBusqueda()">
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('nota_trabajo','search');"">
 
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"
