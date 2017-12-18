@@ -80,7 +80,7 @@ function notas_gen($IdTrabajo){
       $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2], $trabajo[4]));
     }
     else{
-      //$NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
     }
     $NOTAS->ADD();			
   }
@@ -99,7 +99,7 @@ function notas_update($IdTrabajo){
       $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2], $trabajo[4]));
     }
     else{
-      //$NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
     }
     $NOTAS->EDIT();				
   } 		
