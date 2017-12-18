@@ -1,5 +1,5 @@
 <?php
-    include '../Models/PERMISOS_Model.php';
+
     include_once '../Models/GRUPOS_Model.php';
     include_once '../Models/FUNCIONALIDADES_Model.php';
     include_once '../Models/ACCIONES_Model.php';
