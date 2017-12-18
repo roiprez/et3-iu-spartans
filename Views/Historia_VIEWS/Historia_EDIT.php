@@ -46,12 +46,12 @@ class Historia_EDIT
 
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true" readonly
-                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria']?>" onBlur="comprobarEntero(this, 0, 2)"
+                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria']?>" onChange="comprobarEntero(this, 0, 99)"
                 />
             </label>
 
             <label><?php echo $strings['Texto']; ?>
-                <textarea form="formulario-edit" maxlength="300" name="TextoHistoria" required="true">
+                <textarea form="formulario-edit" maxlength="300" name="TextoHistoria" required="true" onChange ="return comprobarTexto(this,this.size);">
                     <?php echo $this->lista_valores['TextoHistoria']?>
                 </textarea>
             </label>

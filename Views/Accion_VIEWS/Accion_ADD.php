@@ -32,18 +32,18 @@ class Accion_ADD
             <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdAccion"
                        id="IdAccion" required="true"
-                       size="6" maxlength="6"
+                       size="6" maxlength="6" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
 
             <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="NombreAccion"
                        id="NombreAccion" required="true"
-                       size="60" maxlength="60"
+                       size="60" maxlength="60" onChange ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
             <label><?php echo $strings['Descripcion']; ?>
-                <textarea form="formulario-add" maxlength="100" name="DescripAccion" required="true">
+                <textarea form="formulario-add" maxlength="100" name="DescripAccion" required="true" onChange ="return comprobarTexto(this,this.size);">
                 </textarea>
             </label>
             <div class="botones-formulario">

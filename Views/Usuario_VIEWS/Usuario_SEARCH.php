@@ -25,7 +25,7 @@ class Usuario_SEARCH
             //Si esta autenticado y es administrador
             }else{
         ?>
-        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('usuario','search');"">
+        <form id="formulario-search" name="formulario-search" method="post" onSubmit="return validarEntidad('usuario', 'search')" >
 
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"

@@ -39,17 +39,17 @@ class Accion_EDIT
             <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdFuncionaAccion"
                        id="IdFuncionaAccion" required="true" readonly
-                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdAccion'] ?>"
+                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdAccion'] ?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Nombre']; ?>
                 <input type="text" name="NombreFuncionaAccion"
                        id="NombreFuncionaAccion" required="true"
-                       size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreAccion'] ?>"
+                       size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreAccion'] ?>" onChange ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
             <label><?php echo $strings['Descripcion']; ?>
-                <textarea form="formulario-edit" maxlength="100" name="DescripAccion" >
+                <textarea form="formulario-edit" maxlength="100" name="DescripAccion" onChange ="return comprobarTexto(this,this.size);">
                 <?php echo $this->lista_valores['DescripAccion'] ?>
                 </textarea>
             </label>

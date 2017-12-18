@@ -60,19 +60,19 @@ class Entrega_ADD// declaración de clase
             <label><?php echo $strings['Alias']; ?>
                 <input type="text" name="Alias" readonly="true"
                        id="Alias" required="true"
-                       size="6" maxlength="6" value="<?php echo $this->alias?>" 
+                       size="6" maxlength="6" value="<?php echo $this->alias?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Horas']; ?>
                 <input type="text" name="Horas"
                        id="Horas" 
-                       size="2" maxlength="2"
+                       size="2" maxlength="2" onChange ="return comprobarEntero(this,0,99);"
                 />
             </label>
             <label><?php echo $strings['Ruta']; ?>
                 <input type="file" name="Ruta"
                        id="Ruta" 
-                       size="60" maxlength="60"
+                       size="60" maxlength="60" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <div class="botones-formulario">

@@ -20,37 +20,45 @@ function validarEntidad(entidad, formulario){
 	if (formulario == 'search'){
 	switch(entidad){
 	
-	case 'usuario':
-	return validarBusquedaUsuario(formulario);
-	break;
-	case 'grupo':
-	return validarBusquedaGrupo(formulario);
-	break;
-	case 'funcionalidad':
-	return validarBusquedaFuncionalidad(formulario);
-	break;
-	case 'accion':
-	return validarBusquedaAccion(formulario);
-	break;
-	case 'trabajo':
-	return validarBusquedaTrabajo(formulario);
-	break;
-	case 'nota_trabajo':
-	return validarBusquedaNota(formulario);
-	break;
-	case 'entrega':
-	return validarBusquedaEntrega(formulario);
-	break;
-	case 'historia':
-	return validarBusquedaHistoria(formulario);
-	break;
-	case 'evaluacion':
-	return validarBusquedaEvaluacion(formulario);
-	break;
-	
-	default:
-	alert('algo ha petado');
-	}
+  	case 'usuario':
+  	return validarBusquedaUsuario();
+  	break;
+
+  	case 'grupo':
+  	return validarBusquedaGrupo();
+  	break;
+
+  	case 'funcionalidad':
+  	return validarBusquedaFuncionalidad();
+  	break;
+
+  	case 'accion':
+  	return validarBusquedaAccion();
+  	break;
+
+  	case 'trabajo':
+  	return validarBusquedaTrabajo();
+  	break;
+
+  	case 'nota_trabajo':
+  	return validarBusquedaNota();
+  	break;
+
+  	case 'entrega':
+  	return validarBusquedaEntrega();
+  	break;
+
+  	case 'historia':
+  	return validarBusquedaHistoria();
+  	break;
+
+  	case 'evaluacion':
+  	return validarBusquedaEvaluacion();
+  	break;
+  	
+  	default:
+  	alert('algo ha petado');
+  	}// fin switch
 		
 		
 	}else{
@@ -58,31 +66,31 @@ function validarEntidad(entidad, formulario){
 	switch(entidad){
 	
 	case 'usuario':
-	return validarFormularioUsuario();
+	return validarFormularioUsuario(formulario);
 	break;
 	case 'grupo':
-	return validarFormularioGrupo();
+	return validarFormularioGrupo(formulario);
 	break;
 	case 'funcionalidad':
-	return validarFormularioFuncionalidad();
+	return validarFormularioFuncionalidad(formulario);
 	break;
 	case 'accion':
-	return validarFormularioAccion();
+	return validarFormularioAccion(formulario);
 	break;
 	case 'trabajo':
-	return validarFormularioTrabajo();
+	return validarFormularioTrabajo(formulario);
 	break;
 	case 'nota_trabajo':
-	return validarFormularioNota();
+	return validarFormularioNota(formulario);
 	break;
 	case 'entrega':
-	return validarFormularioEntrega();
+	return validarFormularioEntrega(formulario);
 	break;
 	case 'historia':
-	return validarFormularioHistoria();
+	return validarFormularioHistoria(formulario);
 	break;
 	case 'evaluacion':
-	return validarFormularioEvaluacion();
+	return validarFormularioEvaluacion(formulario);
 	break;
 	
 	default:
@@ -473,6 +481,15 @@ function validarFormularioEntrega(formulario){
   }
   if((comprobarEntero(campo,0,2)) == false){
     return false; 
+  }
+
+  if(formulario=='add'){
+
+        campo = objetivo.Ruta;
+      if((comprobarVacio(campo)) == false){
+        return false;
+      }
+  
   }
   
   

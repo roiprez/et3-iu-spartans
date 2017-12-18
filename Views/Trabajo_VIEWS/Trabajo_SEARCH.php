@@ -37,7 +37,7 @@ class Trabajo_SEARCH
             <label><?php echo $strings['Nombre Trabajo']; ?>
                 <input type="text" name="NombreTrabajo"
                        id="NombreTrabajo"
-                       size="60" maxlength="60"
+                       size="60" maxlength="60" onChange();
                 />
             </label>
             <label><?php echo $strings['Fecha inicio']; ?>

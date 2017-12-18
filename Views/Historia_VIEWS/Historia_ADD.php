@@ -56,12 +56,12 @@ class Historia_ADD
             <label><?php echo $strings['Id historia']; ?>
                 <input type="text" name="IdHistoria"
                        id="IdHistoria" required="true"
-                       size="2" maxlength="2" onBlur="comprobarEntero(this, 0, 2)"
+                       size="2" maxlength="2" onBlur="comprobarEntero(this, 0, 99)"
                 />
             </label>
 
             <label><?php echo $strings['Texto']; ?>
-                <textarea form="formulario-add" maxlength="300" name="TextoHistoria" required="true">
+                <textarea form="formulario-add" maxlength="300" name="TextoHistoria" required="true" onChange ="return comprobarTexto(this,this.size);">
                 </textarea>
             </label>
 
