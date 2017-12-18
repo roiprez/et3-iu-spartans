@@ -49,7 +49,7 @@ class Evaluacion_EDIT// declaración de clase
             <label><?php echo $strings['Id de la historia']; ?>
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true"
-                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria'] ?>" onChange ="return comprobarEntero(this,this.size);"
+                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria'] ?>" onChange ="return comprobarEntero(this,0,99);"
                 />
             </label>
             <label><?php echo $strings['Corrección de la historia']; ?>
@@ -70,7 +70,7 @@ class Evaluacion_EDIT// declaración de clase
             </label>
 
             <?php
-            if (IsAuthenticated() && isAdmin()){//campos solo visibles para el admin
+            if (IsAuthenticated() && isAllow('Eval','Edit')){//campos solo visibles para el admin
                 ?>
                 <label><?php echo $strings['Corrección del profesor']; ?>
                     <select name="CorrectoP" id="CorrectoP" required="true" size="1">

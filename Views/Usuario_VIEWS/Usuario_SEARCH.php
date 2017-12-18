@@ -17,7 +17,7 @@ class Usuario_SEARCH
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
       //Si el usuarios está autenticado pero no es administrador 
-            if (IsAuthenticated() && !isAdmin()){
+            if (IsAuthenticated() && !isAllow('User','Search')){
             $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
             
@@ -25,7 +25,7 @@ class Usuario_SEARCH
             //Si esta autenticado y es administrador
             }else{
         ?>
-        <form id="formulario-search" name="formulario-search" method="post" onSubmit="return validarEntidad('usuario', 'search')" >
+        <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('usuario', 'search')" >
 
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login"

@@ -3,15 +3,15 @@
 class Fun_Accion_GESTION// declaración de clase
 {
 //declaracion de atributos
-	var $lista_funcionalidades;
-	var $accion;
+	var $lista_acciones;
+	var $funcionalidad;
 	var $lista_valores;
 
     //Constructor
-    function __construct($lista_funcionalidades,$accion,$lista_valores)
+    function __construct($lista_acciones,$funcionalidad,$lista_valores)
     {	
-    	$this->lista_funcionalidades=$lista_funcionalidades;
-    	$this->accion=$accion;
+    	$this->lista_funcionalidades=$lista_acciones;
+    	$this->funcionalidad=$funcionalidad;
     	$this->lista_valores=$lista_valores;
         $this->pinta();
     }
@@ -19,7 +19,7 @@ class Fun_Accion_GESTION// declaración de clase
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         //Si el usuarios está autenticado pero no es administrador 
-            if (IsAuthenticated() && !isAdmin()){
+            if (IsAuthenticated() && !isAllow('Func','Add')){
             $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
             
@@ -28,7 +28,7 @@ class Fun_Accion_GESTION// declaración de clase
             }else{
 
         ?>
-        <h1><?php echo $strings['Funcionalidad']; ?>: <?php echo $this->accion?></h1>
+        <h1><?php echo $strings['Funcionalidad']; ?>: <?php echo $this->funcionalidad?></h1>
         <form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
 
         	<table>
@@ -38,24 +38,24 @@ class Fun_Accion_GESTION// declaración de clase
             </tr>
 
             <?php
-            for ($i = 0; $i<count($this->lista_funcionalidades);$i++)//recorre todos las funcionalidades creadas creando una fila por funcionalidad
+            for ($i = 0; $i<count($this->lista_acciones);$i++)//recorre todos las funcionalidades creadas creando una fila por funcionalidad
             {
                 ?>
                     <tr>
                     	<td class="celda">
-                            <?php echo $this->lista_funcionalidades[$i]?>
-                            <input type="text" hidden value="<?php echo $this->lista_funcionalidades[$i]?>">
+                            <?php echo $this->lista_acciones[$i]?>
+                            <input type="text" hidden value="<?php echo $this->lista_acciones[$i]?>">
                         </td>
                     	<td class="celda">
                         <?php
                             if($this->lista_valores[$i]){
                                 ?>   
-                                <input type="checkbox" name='IdAccion[<?php echo $i?>]' value="<?php echo $this->lista_funcionalidades[$i]?>" checked/>
+                                <input type="checkbox" name='IdAccion[<?php echo $i?>]' value="<?php echo $this->lista_acciones[$i]?>" checked/>
                                 <?php
                             }
                             else {
                                 ?>
-                                <input type="checkbox" name='IdAccion[<?php echo $i?>]' value="<?php echo $this->lista_funcionalidades[$i]?>"/>
+                                <input type="checkbox" name='IdAccion[<?php echo $i?>]' value="<?php echo $this->lista_acciones[$i]?>"/>
                                 <?php
                             }
                         ?>
