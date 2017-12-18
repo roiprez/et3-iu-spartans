@@ -45,6 +45,12 @@ class Trabajo_EDIT
                        size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreTrabajo'] ?>" onBlur ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
+            <label><?php echo $strings['Porcentaje Trabajo']; ?>
+                <input type="text" name="PorcentajeTrabajo"
+                       id="PorcentajeTrabajo" required="true"
+                       size="2" maxlength="2" value="<?php echo $this->lista_valores['PorcentajeTrabajo'] ?>"
+                />
+            </label>
             <label><?php echo $strings['Fecha inicio']; ?>
                 <input type="text" name="FechaIniTrabajo" class="tcal" required="true" readonly="readonly" value="<?php echo $this->lista_valores['FechaIniTrabajo'] ?>"/>
             </label>

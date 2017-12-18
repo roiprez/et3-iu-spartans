@@ -33,7 +33,7 @@ class Accion_SEARCH
             <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdAccion"
                        id="IdAccion"
-                       size="6 maxlength="6"
+                       size="6" maxlength="6"
                 />
             </label>
 
@@ -44,9 +44,7 @@ class Accion_SEARCH
                 />
             </label>
             <label><?php echo $strings['Descripcion']; ?>
-                <textarea form="formulario-search" maxlength="100" name="DescripAccion">
-
-        </textarea>
+                <textarea form="formulario-search" maxlength="100" name="DescripAccion"></textarea>
             </label>
             <div class="botones-formulario">
                 <button id="buscar" name = "action" value = "SEARCH" type="submit" title="<?php echo $strings['buscar']; ?>"><img class="button-td" src="../Iconos/search.png" ></button>

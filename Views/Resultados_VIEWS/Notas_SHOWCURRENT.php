@@ -73,7 +73,9 @@ class Notas_SHOWCURRENT
             ?>
             <tr>
                 <td>Nota total</td>
-                <td><?php for($i=0;$i<count($notas_totales);$i++){
+                <td><?php
+                    $notas=0;
+                    for($i=0;$i<count($notas_totales);$i++){
                     $notas+=$notas_totales[$i];
                 }
                 echo $notas;

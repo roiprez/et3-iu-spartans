@@ -97,16 +97,10 @@ Vista que contiene el Menú lateral
 						<li class="dropdown">
 							<input onclick="dropdownMenu('submenu_asignaciones')" type="button" name="Controlador" value="<?php echo $strings['ASIGNACIONES']; ?>" class="dropbtn"></input>
 							<ul id="submenu_asignaciones" class="dropdown-content">
-								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNACIONES"><?php echo $strings['Mostrar todo']; ?></a></li>
-								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNACIONES&action=ADD"><?php echo $strings['Añadir']; ?></a></li>
-								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNACIONES&action=SEARCH"><?php echo $strings['Buscar']; ?></a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNAC_QA"><?php echo $strings['Mostrar todo']; ?></a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNAC_QA&action=ADD"><?php echo $strings['Añadir']; ?></a></li>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=ASIGNAC_QA&action=SEARCH"><?php echo $strings['Buscar']; ?></a></li>
 							</ul>
-						</li>
-						<li>					
-							<form>
-								<input type="hidden" name="qa_gen" value="<?php echo $strings['ET1']; ?>"/>
-								<input type="submit" value="<?php echo $strings['GENERAR ET1']; ?>"/>
-							</form>
 						</li>
 					</ul>
 				</aside>

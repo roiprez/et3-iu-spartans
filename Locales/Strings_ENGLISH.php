@@ -138,6 +138,8 @@ array(
 	'Nombre Trabajo' => 'Work´s Name',
 	'Fecha inicio' => 'Date start',
 	'Fecha fin' => 'Date end',
+	'PorcentajeNota' => 'MarkPercent',
+	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Asgnations and evaluations have been generated succesfully',
 	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Show Everything',

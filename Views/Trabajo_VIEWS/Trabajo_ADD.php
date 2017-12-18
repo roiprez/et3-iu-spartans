@@ -42,6 +42,12 @@ class Trabajo_ADD
                        size="60" maxlength="60" onBlur ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
+            <label><?php echo $strings['Porcentaje Trabajo']; ?>
+                <input type="text" name="PorcentajeNota"
+                       id="PorcentajeNota" required="true"
+                       size="2" maxlength="2"
+                />
+            </label>
             <label><?php echo $strings['Fecha inicio']; ?>
                 <input type="text" name="FechaIniTrabajo" class="tcal" required="true" readonly="readonly" />
             </label>
@@ -52,7 +58,7 @@ class Trabajo_ADD
 
 
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADD" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>
+                <button id="enviar" name="action" value="ADD" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>
                 <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>

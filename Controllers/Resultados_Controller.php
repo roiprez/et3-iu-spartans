@@ -18,37 +18,55 @@ $entregas = $ENTREGAS->RellenaDatos();
 $AliasEvaluado = $entregas[2];
 
 if($IdTrabajo[0] == 'E'){
-  $EVALUACION = new EVALUACIONES_Model($IdTrabajo, '', $AliasEvaluado, '','','', '', '','');
-  $datos = $EVALUACION->SEARCH();
+    $EVALUACION = new EVALUACIONES_Model($IdTrabajo, '', $AliasEvaluado, '','','', '', '','');
+    $datos = $EVALUACION->SEARCH();
 
-  $HISTORIA = new HISTORIA_Model($IdTrabajo, '', '');
-  $historias = $HISTORIA->SEARCH();
+    $HISTORIA = new HISTORIA_Model($IdTrabajo, '', '');
+    $historias = $HISTORIA->SEARCH();
 
-  $descrip_historias = [];
+    $descrip_historias = [];
 
-  //Guardamos las descripciones de historias
-  while($row = $historias->fetch_array()) {
-      array_push($descrip_historias, $row[2]);
-  }
+    //Guardamos las descripciones de historias
+    while($row = $historias->fetch_array()) {
+        array_push($descrip_historias, $row[2]);
+    }
 
-  $lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComentIncorrectoP','OK');
-  new Resultados_SHOWCURRENT_ET($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php'); 
-} else {
-  $EVALUACION = new EVALUACIONES_Model($IdTrabajo, $LoginEvaluador, '', '','','', '', '','');
-  $datos = $EVALUACION->SEARCH();
+    $lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComentIncorrectoP','OK');
+    new Resultados_SHOWCURRENT_ET($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php');
+} elseif($IdTrabajo[0] == 'Q'){
+    $EVALUACION = new EVALUACIONES_Model($IdTrabajo, $LoginEvaluador, '', '','','', '', '','');
+    $datos = $EVALUACION->SEARCH();
 
-  $HISTORIA = new HISTORIA_Model($IdTrabajo, '', '');
-  $historias = $HISTORIA->SEARCH();
+    $HISTORIA = new HISTORIA_Model($IdTrabajo, '', '');
 
-  $descrip_historias = [];
+    //Guardará la descripción de las historias
+    $descrip_historias = [];
+  
+    //Guardará el CorrectoA del alumno para las 5 qas
+    $qas = [];
+    //Guardará el OK del profesor para las 5 qas del alumno
+    $oks = [];
 
-  //Guardamos las descripciones de historias
-  while($row = $historias->fetch_array()) {
-      array_push($descrip_historias, $row[2]);
-  }
+    //Recorremos un bucle para las 5 qas
+    for($i=0;$i<5;$i++){
+        //Rellenamos la variable historias
+        $historias = $HISTORIA->SEARCH();
+        //Define el número de historia
+        $j = 0;
+        while($row = $historias->fetch_array()) {
+            //Guardamos en la qa $i, y en la historia $j el valor de CorrectoA
+            $qas[$i][$j] = $row[4];
+            //Guardamos en la qa $i, y en la historia $j el valor de OK
+            $oks[$i][$j] = $row[8];
+            $j++;
+        }
+    }
+  
 
-  $lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComenIncorrectoP','OK');
-  //new Resultados_SHOWCURRENT_QA($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php');	
-
+    //Guardamos las descripciones de historias
+    while($row = $historias->fetch_array()) {
+        array_push($descrip_historias, $row[2]);
+    }
+    new Resultados_SHOWCURRENT_QA($qas, $oks, $descrip_historias, '../Controllers/Index_Controller.php');
 }
 ?>

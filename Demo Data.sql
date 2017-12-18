@@ -1,6 +1,4 @@
 INSERT INTO `USUARIO` (`login`, `password`, `DNI`, `Nombre`, `Apellidos`, `Correo`, `Direccion`, `Telefono`) VALUES
-('admin', 'e10adc3949ba59abbe56e057f20f883e', '12345678Z', 'Admin', 'Admin', 'admin@admin.com', 'adminitracion', '666666666'),
-('dpersol', '37c2e0ab1c14826730a1eef0a5e91424', '53185680C', 'Diego', 'perez Solla', 'dpersol@hotmail.com', 'calle', '648748636'),
 ('Usu1', 'e25d7c6cd66f11492b040391ea0b895a', '62698744P', 'Usu1', 'Usu1', 'Usu1@Usu1.com', 'Dir-Usu1', '666666666'),
 ('Usu10', 'e25d7c6cd66f11492b040391ea0b895a', '32615542R', 'Usu10', 'Usu10', 'Usu10@Usu10.com', 'Dir-Usu10', '666666666'),
 ('Usu11', 'e25d7c6cd66f11492b040391ea0b895a', '94860322L', 'Usu11', 'Usu11', 'Usu11@Usu11.com', 'Dir-Usu11', '666666666'),

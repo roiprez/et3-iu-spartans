@@ -1,6 +1,7 @@
 <?php
 
 include_once '../Models/ENTREGAS_Model.php';
+include_once '../Models/TRABAJOS_Model.php';
 include_once '../Models/HISTORIA_Model.php';
 include_once '../Models/EVALUACIONES_Model.php';
 include_once '../Models/ASIGNAC_QA_Model.php';
@@ -31,12 +32,10 @@ function qa_gen($IdTrabajo){
     //Recorre en bucle todos los login
     for($i = 0;$i<count($lista_login);$i++){
       //Asigna como primer alias el quinto que sigue al login
-      //$j = $i+5;
-      $j = $i+1;
+      $j = $i+5;
       $contador = 0;
       //Mientras no haya cinco asignaciones sigue asignando
-      //while($contador < 5){
-      while($contador < 2){
+      while($contador < 5){
         //Comprueba que no haya sobrepasado la variable de control de acceso al tamaño del array
         if($j >= count($lista_alias)){
           $j = $j - count($lista_alias);
@@ -48,13 +47,11 @@ function qa_gen($IdTrabajo){
         $ASIGNAC_QA = new ASIGNAC_QA_Model($IdTrabajo, $lista_login[$i],$lista_login_evaluado[$j], $lista_alias[$j]);
         $respuesta = $ASIGNAC_QA->ADD();
         evaluacion_gen($IdTrabajo, $lista_login[$i], $lista_alias[$j]);
-        //echo $respuesta;
-				// new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         $contador++;
-        //$j+=5;
-        $j+=1; 
+        $j+=5;
       }    
     }
+    return 'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito';
 }
 
 function evaluacion_gen($IdTrabajo, $LoginEvaluador, $AliasEvaluado){
@@ -64,39 +61,45 @@ function evaluacion_gen($IdTrabajo, $LoginEvaluador, $AliasEvaluado){
   $lista_historias = [];
   //Recorre las historias y pasa el Id de historia al modelo de evaluaciones
   while($row = $historias->fetch_array()) {
-    $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$row[1],'','','','','');
+    $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo,$LoginEvaluador,$AliasEvaluado,$row[1],1,'',1,'',1);
     $respuesta = $EVALUACIONES->ADD();
   }
   notas_gen($IdTrabajo);
 }
 
 function notas_gen($IdTrabajo){
+  $TRABAJO = new TRABAJOS_Model($IdTrabajo, '', '','','');
+  $trabajo = $TRABAJO->SEARCH()->fetch_array();
+
   $ENTREGAS = new ENTREGAS_Model($IdTrabajo, '', '','','');
   $entregas = $ENTREGAS->SEARCH();
   
   while($row = $entregas->fetch_array()) {
     $NOTAS;
     if($IdTrabajo[0] == 'E'){
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2], $trabajo[4]));
     }
     else{
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
     }
     $NOTAS->ADD();			
   }
 }
 
 function notas_update($IdTrabajo, $loginEvaluador, $AliasEvaluado){
+  $TRABAJO = new TRABAJOS_Model($IdTrabajo, '', '','','');
+  $trabajo = $TRABAJO->SEARCH()->fetch_array();
+
   $ENTREGAS = new ENTREGAS_Model($IdTrabajo, '', '','','');
   $entregas = $ENTREGAS->SEARCH();
 
   while($row = $entregas->fetch_array()) {
     $NOTAS;
     if($IdTrabajo[0] == 'E'){
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2], $trabajo[4]));
     }
     else{
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1]));
+      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
     }
     $NOTAS->EDIT();				
   } 		

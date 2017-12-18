@@ -46,7 +46,7 @@ class Historia_EDIT
 
                 <input type="number" name="IdHistoria"
                        id="IdHistoria" required="true" readonly
-                       size="2" maxlength="2" value="<?php echo $this->lista_valores['IdHistoria']?>" onChange="comprobarEntero(this, 0, 99)"
+                       size="2" maxlength="2" min="0" value="<?php echo $this->lista_valores['IdHistoria']?>" onChange="comprobarEntero(this, 0, 99)"
                 />
             </label>
 

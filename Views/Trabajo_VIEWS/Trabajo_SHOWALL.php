@@ -107,9 +107,12 @@ class Trabajo_SHOWALL
                         ?>
                         <td><button type = "submit" name = "action" value="SHOWCURRENT" title="<?php echo $strings['Ver en detalle']; ?>"><img class="button-td" src="../Iconos/details.png" ></img></button></td>
                         <td><button type = "submit" name = "action" value="EDIT" title="<?php echo $strings['editar']; ?>"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
-                        <td><button type = "submit" name = "action" value="GENERAR_NOTAS" title="<?php echo $strings['generar notas']; ?>"><img class="button-td" src="../Iconos/functionality_add.png" ></img></button></td>
+                        <?php
+                        if($row[0][0]=='E'){
+                            ?><td><button type = "submit" name = "action" value="GENERAR_ASIG" title="<?php echo $strings['generar asignaciones']; ?>"><img class="button-td" src="../Iconos/functionality_add.png" ></img></button></td><?php
+                        }
+                        ?>
                         <td><button type = "submit" name = "action" value="DELETE" title="<?php echo $strings['borrar linea']; ?>"><img class="button-td" src="../Iconos/borrar.png" ></img></button></td>
-                        
                     </tr>
                 </form>
                 <?php
