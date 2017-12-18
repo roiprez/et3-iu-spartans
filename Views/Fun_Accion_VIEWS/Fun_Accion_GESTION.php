@@ -69,8 +69,8 @@ class Fun_Accion_GESTION// declaración de clase
         </table>
 
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADDACTION" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../../Iconos/send.png" ></button>
-                <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../../Iconos/borrar_campo.png" ></button>
+                <button id="enviar" name = "action" value = "ADDACTION" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>
+                <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">

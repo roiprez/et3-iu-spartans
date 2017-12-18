@@ -125,6 +125,8 @@ array(
 	'Id grupo' => 'Id grupo',
 	'Id funcionalidad' => 'Id funcionalidade',
 	'Id accion' => 'Id accion',
+	'Grupo' => 'Grupo',
+    'Funcionalidad y Accion' => 'Funcionalidade e Accion',
 
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdTraballo',
@@ -137,6 +139,7 @@ array(
 	'Fecha fin' => 'Fecha fin',
 	'PorcentajeNota' => 'PorcentaxeNota',
 	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Xeráronse as asignacions e as súas correspondentes evaluacions con éxito',
+	'Porcentaje Trabajo' => 'Porcentaxe Traballo',
 	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Mostrar todo',
