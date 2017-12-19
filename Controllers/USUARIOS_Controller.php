@@ -21,15 +21,15 @@ include_once '../Models/GRUPOS_Model.php';
 
 function get_data_form(){
 	$login = $_REQUEST['login'];
-	$password = $_REQUEST['password'];
-	$DNI = $_REQUEST['DNI'];
-	$Nombre = $_REQUEST['Nombre'];
-	$Apellidos = $_REQUEST['Apellidos'];
-	$Correo = $_REQUEST['Correo'];
-	$Direccion = $_REQUEST['Direccion'];
-	$Telefono = $_REQUEST['Telefono'];
-	$action = $_REQUEST['action'];
-	$IdGrupo = $_REQUEST['IdGrupo'];
+	$password = $_REQUEST['password'].trim();
+	$DNI = $_REQUEST['DNI'].trim();
+	$Nombre = $_REQUEST['Nombre'].trim();
+	$Apellidos = $_REQUEST['Apellidos'].trim();
+	$Correo = $_REQUEST['Correo'].trim();
+	$Direccion = $_REQUEST['Direccion'].trim();
+	$Telefono = $_REQUEST['Telefono'].trim();
+	$action = $_REQUEST['action'].trim();
+	$IdGrupo = $_REQUEST['IdGrupo'].trim();
 
 	$USUARIOS = new USUARIOS_Model(
 		$login,

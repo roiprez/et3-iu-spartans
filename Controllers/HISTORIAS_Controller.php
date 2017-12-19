@@ -1,6 +1,5 @@
 <?php
     include_once '../Models/HISTORIA_Model.php';
-    include '../Models/TRABAJOS_Model.php';
     include '../Views/MESSAGE_View.php';
     include '../Views/Historia_VIEWS/Historia_ADD.php';
     include '../Views/Historia_VIEWS/Historia_DELETE.php';
@@ -32,7 +31,7 @@ if (!isset($_REQUEST['action'])){
 Switch ($_REQUEST['action']){
     case 'ADD':
         if (!$_POST){
-            $TRABAJOS=new TRABAJOS_Model('','','','');//Nuevo modelo de Trabajo
+            $TRABAJOS=new TRABAJOS_Model('','','','','');//Nuevo modelo de Trabajo
             $datosTrabajos= $TRABAJOS->SEARCH();
             $trabajosTotales = array();
             while($rowTrabajo= $datosTrabajos->fetch_array()){
@@ -63,7 +62,7 @@ Switch ($_REQUEST['action']){
         if (!$_POST){
             $HISTORIAS = new HISTORIA_Model($_REQUEST['IdTrabajo'], $_REQUEST['IdHistoria'], '');
             $valores = $HISTORIAS->RellenaDatos();
-            $TRABAJOS=new TRABAJOS_Model();//Nuevo modelo de Trabajo
+            $TRABAJOS=new TRABAJOS_Model('','','','','');//Nuevo modelo de Trabajo
             $datosTrabajos= $TRABAJOS->SEARCH();
             $trabajosTotales = array();
             while($rowTrabajo= $datosTrabajos->fetch_array()){

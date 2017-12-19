@@ -19,7 +19,7 @@ class Fun_Accion_GESTION// declaración de clase
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         //Si el usuarios está autenticado pero no es administrador 
-            if (IsAuthenticated() && !isAllow('Func','Add')){
+            if (IsAuthenticated() && !isAllow('FunAct','Gest')){
             $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
             
@@ -69,8 +69,8 @@ class Fun_Accion_GESTION// declaración de clase
         </table>
 
             <div class="botones-formulario">
-                <button id="enviar" name = "action" value = "ADDACTION" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../../Iconos/send.png" ></button>
-                <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../../Iconos/borrar_campo.png" ></button>
+                <button id="enviar" name = "action" value = "ADDACTION" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>
+                <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">

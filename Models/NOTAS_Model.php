@@ -125,9 +125,9 @@ function SEARCH(){
             NotaTrabajo
             FROM NOTA_TRABAJO
             WHERE (
-            (login LIKE '%$this->login%')&&
-            (IdTrabajo LIKE '%$this->idTrabajo%')&&
-            (NotaTrabajo LIKE '%$this->notaTrabajo%')
+            (login LIKE REPLACE('%$this->login%', ' ', '' ))&&
+            (IdTrabajo LIKE REPLACE('%$this->idTrabajo%', ' ', '' ))&&
+            (NotaTrabajo LIKE REPLACE('%$this->notaTrabajo%', ' ', '' ))
             )";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
     if (!($resultado = $this->mysqli->query($sql))){

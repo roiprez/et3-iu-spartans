@@ -128,6 +128,8 @@ array(
 	'Id grupo' => 'Group´s id',
 	'Id funcionalidad' => 'Funcionality´s id',
 	'Id accion' => 'Action´s id',
+	'Grupo' => 'Group',
+    'Funcionalidad y Accion' => 'Funcionality and Action',
 	
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdWork',
@@ -140,6 +142,7 @@ array(
 	'Fecha fin' => 'Date end',
 	'PorcentajeNota' => 'MarkPercent',
 	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Asgnations and evaluations have been generated succesfully',
+	'Porcentaje Trabajo' => 'WorkPercent',
 	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Show Everything',
@@ -199,6 +202,10 @@ array(
 	/*Diccionario Evaluaciones*/
 	'El login no tiene que evaluar el trabajo o al alias indicado' => 'The login does not have to evaluate the work or alias indicated',
 	'La historia de este trabajo ya existe' => 'History already exists to this work',
+	
+	/*Diccionario Notas*/
+	'IdTrabajo' => 'IdWork',
+	'NOTAS' => 'NOTES',
 	
 	/*Traducciones en validaciones*/
 	'El campo Nombre no puede ser vacio' => 'Name can´t be empty',

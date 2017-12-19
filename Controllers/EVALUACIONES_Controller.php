@@ -86,7 +86,7 @@ if (!isset($_REQUEST['action'])){
 			else{	
 				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComentIncorrectoP'], $_REQUEST['OK']);							
 				$respuesta = $EVALUACION->EDIT();
-				notas_update($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado']);
+				notas_update($_REQUEST['IdTrabajo']);
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			
@@ -106,7 +106,7 @@ if (!isset($_REQUEST['action'])){
 		case 'SHOWCURRENT':
 			$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], '', '', '', '', '');
 			$valores = $EVALUACION->RellenaDatos();
-			$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'ComenIncorrectoA', 'CorrectoP','ComentIncorrectoP','OK');
+			$lista = array('IdTrabajo', 'LoginEvaluador', 'AliasEvaluado', 'IdHistoria', 'CorrectoA', 'CorrectoP','OK');
 			new Evaluacion_SHOWCURRENT($lista, $valores);
 			break;
 			

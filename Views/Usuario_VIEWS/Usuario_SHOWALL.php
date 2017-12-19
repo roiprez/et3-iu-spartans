@@ -25,7 +25,7 @@ class Usuario_SHOWALL{  // declaración de clase
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 
             //Si el usuarios está autenticado pero no es administrador 
-            if (IsAuthenticated() && !isAllow('User','Show')){
+            if (IsAuthenticated() && !isAllow('Usu','Show')){
             $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
             

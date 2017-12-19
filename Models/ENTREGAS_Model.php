@@ -100,11 +100,11 @@ function SEARCH(){
             Ruta
             FROM ENTREGA
             WHERE (
-            (IdTrabajo LIKE '%$this->idTrabajo%')&&
-            (login LIKE '%$this->login%')&&
-            (Alias LIKE '%$this->alias%')&&
-            (Horas LIKE '%$this->horas%')&&
-            (Ruta LIKE '%$this->ruta%')
+            (IdTrabajo LIKE REPLACE('%$this->idTrabajo%', ' ', '' ))&&
+            (login LIKE REPLACE('%$this->login%', ' ', '' ))&&
+            (Alias LIKE REPLACE('%$this->alias%', ' ', '' ))&&
+            (Horas LIKE REPLACE('%$this->horas%', ' ', '' ))&&
+            (Ruta LIKE REPLACE('%$this->ruta%', ' ', '' ))
             )";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
     if (!($resultado = $this->mysqli->query($sql))){
