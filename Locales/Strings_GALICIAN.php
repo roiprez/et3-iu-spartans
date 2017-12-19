@@ -84,6 +84,7 @@ array(
 	'Incorrecto' => 'Incorrecto',
 	'Correcto' => 'Correcto',
 	'Comentario' => 'Comentario',
+	'Comentario' => 'Comentario',
 	'Corrección de la evaluación' => 'Corrección da evaluación',
 	'Corrección del profesor' => 'Corrección do profesor',
 	'Corrección de la historia' => 'Corrección da historia',
@@ -127,9 +128,13 @@ array(
 	'Id accion' => 'Id accion',
 	'Grupo' => 'Grupo',
     'Funcionalidad y Accion' => 'Funcionalidade e Accion',
+    'MIS NOTAS' => 'AS MIÑAS NOTAS',
+	'Ver resultados de ET' => 'Ver resultados das ET',
+	'Ver resultados de Qa' => 'Ver resultados das Qa',
 
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdTraballo',
+	'Id del trabajo' => 'Id do Traballo',
 	'NombreTrabajo' => 'NomeTraballo',
 	'FechaIniTrabajo' => 'FechaIniTraballo',
 	'FechaFinTrabajo' => 'FechaFinTraballo',

@@ -109,6 +109,7 @@ Switch ($_REQUEST['action']){
         $valores = $NOTAS->RellenaDatos();
         new Nota_Trabajo_SHOWCURRENT($lista, $valores);
         break;
+        
     default:
         if (!$_POST){
             $NOTAS = new NOTAS_Model('','','');

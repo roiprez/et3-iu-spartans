@@ -58,8 +58,8 @@ class Evaluacion_SEARCH// declaración de clase
             </label>
             <label><?php echo $strings['Corrección de la historia']; ?>
                 <select name="CorrectoA" id="CorrectoA"  size="1">
-                  <option selected="true" value="1"><?php echo $this->lista_valores['Correcto'];?></option>
-                  <option value="0"><?php echo $this->lista_valores['Incorrecto'];?></option>
+                  <option selected="true" value="1"><?php echo $strings['Correcto'];?></option>
+                  <option value="0"><?php echo $strings['Incorrecto'];?></option>
                 </select>
             </label>
             <label> <label><?php echo $strings['comentario']; ?>
@@ -67,8 +67,8 @@ class Evaluacion_SEARCH// declaración de clase
             </label>
             <label><?php echo $strings['Corrección del profesor']; ?>
                 <select name="CorrectoP" id="CorrectoP"  size="1">
-                  <option selected="true" value="1"><?php echo $this->lista_valores['Correcto'] ?></option>
-                  <option value="0"><?php echo $this->lista_valores['Incorrecto'] ?></option>
+                  <option selected="true" value="1"><?php echo $strings['Correcto'];?></option>
+                  <option value="0"><?php echo $strings['Incorrecto'];?></option>
                 </select>
             </label>
             <label> <label><?php echo $strings['comentario']; ?>
@@ -76,8 +76,8 @@ class Evaluacion_SEARCH// declaración de clase
             </label>
             <label><?php echo $strings['Corrección de la evaluación']; ?>
                 <select name="OK" id="OK"  size="1">
-                  <option selected="true" value="1"><?php echo $this->lista_valores['Correcto'] ?></option>
-                  <option value="0"><?php echo $this->lista_valores['Incorrecto'] ?></option>
+                  <option selected="true" value="1"><?php echo $strings['Correcto'];?></option>
+                  <option value="0"><?php echo $strings['Incorrecto'];?></option>
                 </select>
             </label>
             <div class="botones-formulario">

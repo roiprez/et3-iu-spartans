@@ -69,6 +69,7 @@ array(
 	'Login del evaluado' => 'Login del evaluado',
 	'Alias' => 'Alias',
 	'Id del Trabajo' => 'Id del Trabajo',
+	'Id del trabajo' => 'Id del Trabajo',
 	'Login del evaluador' => 'Login del evaluador',
 	
 	/*Diccionario entregas*/
@@ -84,6 +85,7 @@ array(
 	'Incorrecto' => 'Incorrecto',
 	'Correcto' => 'Correcto',
 	'Comentario' => 'Comentario',
+	'comentario' => 'Comentario',
 	'Corrección de la evaluación' => 'Corrección de la evaluación',
 	'Corrección del profesor' => 'Corrección del profesor',
 	'Corrección de la historia' => 'Corrección de la historia',
@@ -128,7 +130,10 @@ array(
 	'Id accion' => 'Id accion',
 	'Grupo' => 'Grupo',
     'Funcionalidad y Accion' => 'Funcionalidad y Accion',
-	
+	'MIS NOTAS' => 'MIS NOTAS',
+	'Ver resultados de ET' => 'Ver resultados de ET',
+	'Ver resultados de Qa' => 'Ver resultados de Qa',
+
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdTrabajo',
 	'NombreTrabajo' => 'NombreTrabajo',
