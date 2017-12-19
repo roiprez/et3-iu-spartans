@@ -93,6 +93,6 @@ class Asignac_QA_SHOWALL
         }
     }
 }
-
+}
 
 ?>

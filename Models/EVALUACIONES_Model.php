@@ -224,7 +224,7 @@ function SEARCH()
        			FROM EVALUACION
     			WHERE
     				(
-					(IdTrabajo LIKE REPLACE('%$this->IdTrabajo%', ' ', '' ))) &&
+					(IdTrabajo LIKE REPLACE('%$this->IdTrabajo%', ' ', '' )) &&
 					(LoginEvaluador LIKE REPLACE('%$this->LoginEvaluador%', ' ', '' )) &&
 	 				(AliasEvaluado LIKE REPLACE('%$this->AliasEvaluado%', ' ', '' )) &&
 	 				(IdHistoria LIKE REPLACE('%$this->IdHistoria%', ' ', '' ))

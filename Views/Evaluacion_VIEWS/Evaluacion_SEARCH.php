@@ -72,7 +72,7 @@ class Evaluacion_SEARCH// declaración de clase
                 </select>
             </label>
             <label> <label><?php echo $strings['comentario']; ?>
-                <textarea form="formulario-search" maxlength="300" name="ComenIncorrectoP"></textarea>
+                <textarea form="formulario-search" maxlength="300" name="ComentIncorrectoP"></textarea>
             </label>
             <label><?php echo $strings['Corrección de la evaluación']; ?>
                 <select name="OK" id="OK"  size="1">

@@ -81,7 +81,7 @@ function SEARCH(){
             WHERE (
             (IdTrabajo LIKE REPLACE('%$this->idTrabajo%', ' ', '' ))&&
             (NombreTrabajo LIKE REPLACE('%$this->nombreTrabajo%', ' ', '' ))&&
-            (FechaIniTrabajo LIKE REPLACE('%$this->FechIniTrabajo%', ' ', '' ))&&
+            (FechaIniTrabajo LIKE REPLACE('%$this->fechIniTrabajo%', ' ', '' ))&&
             (FechaFinTrabajo LIKE REPLACE('%$this->fechFinTrabajo', ' ', '' ))&&
             (PorcentajeNota LIKE REPLACE('%$this->porcentajeNota%', ' ', '' ))
             )";

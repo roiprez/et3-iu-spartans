@@ -68,9 +68,10 @@ if (!isset($_REQUEST['IdGrupo'])){
 				$USUARIOS = new USUARIOS_Model($temp_login, $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);
 				$respuesta = $USUARIOS->ADD();
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
-				$USU_GRUP = new USU_GRUPO_Model($temp_login,'Alumno'); //Todo nuevo usuario es asginado por defecto al grupo mas basico
+				$USU_GRUP = new USU_GRUPO_Model($temp_login,'Alumnos'); //Todo nuevo usuario es asginado por defecto al grupo mas basico
 				$USU_GRUP->ADD();
-			}
+
+            }
 			break;
 		case 'DELETE':
 			if (!$_POST){
