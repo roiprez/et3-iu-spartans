@@ -20,7 +20,7 @@ $AliasEvaluado = $entregas[2];
 
 if($_REQUEST['Generar'][0] == 'E'){
     $EVALUACION = new EVALUACIONES_Model($IdTrabajo, '', $AliasEvaluado, '','','', '', '','');
-    $datos = $EVALUACION->SEARCH();
+    $datos = $EVALUACION->SEARCH_STRICT_EV();
 
     $HISTORIA = new HISTORIA_Model($IdTrabajo, '', '');
     $historias = $HISTORIA->SEARCH();

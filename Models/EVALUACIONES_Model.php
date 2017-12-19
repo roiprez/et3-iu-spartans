@@ -238,6 +238,44 @@ function SEARCH()
 	}
 } // fin metodo SEARCH
 
+function SEARCH_STRICT_EV()
+{ 	// construimos la sentencia de busqueda con LIKE y los atributos de la entidad
+	$sql = "SELECT
+				*
+					 FROM EVALUACION
+				WHERE
+					(
+						(IdTrabajo LIKE REPLACE('$this->IdTrabajo', ' ', '' )) &&
+						 (AliasEvaluado LIKE REPLACE('$this->AliasEvaluado', ' ', '' ))
+					)";
+	// si se produce un error en la busqueda mandamos el mensaje de error en la consulta
+	if (!($resultado = $this->mysqli->query($sql))){
+	return 'Error en la consulta sobre la base de datos';
+}
+	else{ // si la busqueda es correcta devolvemos el recordset resultado
+	return $resultado;
+}
+} // fin metodo SEARCH
+
+function SEARCH_STRICT_QA()
+{ 	// construimos la sentencia de busqueda con LIKE y los atributos de la entidad
+	$sql = "SELECT
+				*
+					 FROM EVALUACION
+				WHERE
+					(
+						(IdTrabajo LIKE REPLACE('$this->IdTrabajo', ' ', '' )) &&
+						(LoginEvaluador LIKE REPLACE('$this->LoginEvaluador', ' ', '' ))
+					)";
+	// si se produce un error en la busqueda mandamos el mensaje de error en la consulta
+	if (!($resultado = $this->mysqli->query($sql))){
+	return 'Error en la consulta sobre la base de datos';
+}
+	else{ // si la busqueda es correcta devolvemos el recordset resultado
+	return $resultado;
+}
+} // fin metodo SEARCH
+
 // funcion DELETE()
 // comprueba que exista el valor de clave por el que se va a borrar,si existe se ejecuta el borrado, sino
 // se manda un mensaje de que ese valor de clave no existe
