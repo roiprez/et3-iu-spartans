@@ -188,9 +188,22 @@ Vista que contiene el Menú lateral
 							</ul>
 						</li>
 						<?php }?>
+						
+						<li class="dropdown">
+							<?php if (isAllow('Nota','ShowCurrentEt') || isAllow('Nota','ShowCurrentQA')){?>
+							<input onclick="dropdownMenu('submenu_resultados')" type="button" name="Controlador" value="<?php echo $strings['RESULTADOS'];?>" class="dropbtn"></input>
+							<ul id="submenu_resultados" class="dropdown-content">
+								<?php if (isAllow('Nota','ShowCurrentEt')){?>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=ET1&Generar=ET1"><?php echo $strings['ET1'];?></a></li>
+								<?php }if (isAllow('Nota','ShowCurrentQA')){?>	
+								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=ET1&Generar=QA1"><?php echo $strings['QA1'];?></a></li>
+								<?php }?>
+							</ul>
+						</li>
+						<?php }?>
 					</ul>
 				</aside>
         <?php				
         }
-      }
+			}
 ?>
