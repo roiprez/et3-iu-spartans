@@ -26,7 +26,7 @@ class Resultados_SHOWCURRENT_ET
 
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-		if(!isAllow('Res','ShowC')){
+		if(!isAllow('ResEt','Show')){
 
 			echo $strings['No tienes permiso para acceder a esta vista'];
 
