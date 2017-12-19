@@ -98,9 +98,6 @@ function notas_update($IdTrabajo){
     if($IdTrabajo[0] == 'E'){
       $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaEntrega($IdTrabajo, $row[2], $trabajo[4]));
     }
-    else{
-      $NOTAS = new NOTAS_Model($row[1], $IdTrabajo, generarNotaQA($IdTrabajo, $row[1], $trabajo[4]));
-    }
     $NOTAS->EDIT();				
   } 		
 }

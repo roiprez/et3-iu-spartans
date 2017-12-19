@@ -22,33 +22,7 @@ INSERT INTO `USUARIO` (`login`, `password`, `DNI`, `Nombre`, `Apellidos`, `Corre
 ('Usu28', 'e25d7c6cd66f11492b040391ea0b895a', '70433372N', 'Usu28', 'Usu28', 'Usu28@Usu28.com', 'Dir-Usu28', '666666666'),
 ('Usu29', 'e25d7c6cd66f11492b040391ea0b895a', '35437504R', 'Usu29', 'Usu29', 'Usu29@Usu29.com', 'Dir-Usu29', '666666666'),
 ('Usu3', 'e25d7c6cd66f11492b040391ea0b895a', '37846864L', 'Usu3', 'Usu3', 'Usu2@Usu3.com', 'Dir-Usu3', '666666666'),
-('Usu30', 'e25d7c6cd66f11492b040391ea0b895a', '52395384G', 'Usu30', 'Usu30', 'Usu30@Usu30.com', 'Dir-Usu30', '666666666'),
-('Usu31', 'e25d7c6cd66f11492b040391ea0b895a', '07235854P', 'Usu31', 'Usu31', 'Usu2@Usu31.com', 'Dir-Usu31', '666666666'),
-('Usu32', 'e25d7c6cd66f11492b040391ea0b895a', '91619754J', 'Usu32', 'Usu32', 'Usu32@Usu32.com', 'Dir-Usu32', '666666666'),
-('Usu33', 'e25d7c6cd66f11492b040391ea0b895a', '60235964E', 'Usu33', 'Usu33', 'Usu33@Usu33.com', 'Dir-Usu33', '666666666'),
-('Usu34', 'e25d7c6cd66f11492b040391ea0b895a', '38995242F', 'Usu34', 'Usu34', 'Usu34@Usu34.com', 'Dir-Usu34', '666666666'),
-('Usu35', 'e25d7c6cd66f11492b040391ea0b895a', '89631372G', 'Usu35', 'Usu35', 'Usu35@Usu35.com', 'Dir-Usu35', '666666666'),
-('Usu36', 'e25d7c6cd66f11492b040391ea0b895a', '31550206W', 'Usu36', 'Usu36', 'Usu36@Usu36.com', 'Dir-Usu36', '666666666'),
-('Usu37', 'e25d7c6cd66f11492b040391ea0b895a', '20682202G', 'Usu37', 'Usu37', 'Usu37@Usu37.com', 'Dir-Usu37', '666666666'),
-('Usu38', 'e25d7c6cd66f11492b040391ea0b895a', '31514230K', 'Usu38', 'Usu38', 'Usu38@Usu38.com', 'Dir-Usu38', '666666666'),
-('Usu39', 'e25d7c6cd66f11492b040391ea0b895a', '80430544G', 'Usu39', 'Usu39', 'Usu39@Usu39.com', 'Dir-Usu39', '666666666'),
-('Usu4', 'e25d7c6cd66f11492b040391ea0b895a', '34739858Z', 'Usu4', 'Usu4', 'Usu2@Usu4.com', 'Dir-Usu4', '666666666'),
-('Usu40', 'e25d7c6cd66f11492b040391ea0b895a', '74481126L', 'Usu40', 'Usu40', 'Usu40@Usu40.com', 'Dir-Usu40', '666666666'),
-('Usu41', 'e25d7c6cd66f11492b040391ea0b895a', '03831985R', 'Usu41', 'Usu41', 'Usu41@Usu41.com', 'Dir-Usu41', '666666666'),
-('Usu42', 'e25d7c6cd66f11492b040391ea0b895a', '41467446X', 'Usu42', 'Usu42', 'Usu42@Usu42.com', 'Dir-Usu42', '666666666'),
-('Usu43', 'e25d7c6cd66f11492b040391ea0b895a', '60129358K', 'Usu43', 'Usu43', 'Usu43@Usu43.com', 'Dir-Usu43', '666666666'),
-('Usu44', 'e25d7c6cd66f11492b040391ea0b895a', '85730457G', 'Usu44', 'Usu44', 'Usu44@Usu44.com', 'Dir-Usu44', '666666666'),
-('Usu45', 'e25d7c6cd66f11492b040391ea0b895a', '09059951K', 'Usu45', 'Usu45', 'Usu45@Usu45.com', 'Dir-Usu45', '666666666'),
-('Usu46', 'e25d7c6cd66f11492b040391ea0b895a', '16342787E', 'Usu46', 'Usu46', 'Usu46@Usu46.com', 'Dir-Usu46', '666666666'),
-('Usu47', 'e25d7c6cd66f11492b040391ea0b895a', '49742327C', 'Usu47', 'Usu47', 'Usu47@Usu47.com', 'Dir-Usu47', '666666666'),
-('Usu48', 'e25d7c6cd66f11492b040391ea0b895a', '98050885E', 'Usu48', 'Usu48', 'Usu48@Usu48.com', 'Dir-Usu48', '666666666'),
-('Usu49', 'e25d7c6cd66f11492b040391ea0b895a', '79320752P', 'Usu49', 'Usu49', 'Usu49@Usu49.com', 'Dir-Usu49', '666666666'),
-('Usu5', 'e25d7c6cd66f11492b040391ea0b895a', '56785097Y', 'Usu5', 'Usu5', 'Usu5@Usu5.com', 'Dir-Usu5', '666666666'),
-('Usu50', 'e25d7c6cd66f11492b040391ea0b895a', '07895935N', 'Usu50', 'Usu50', 'Usu50@Usu50.com', 'Dir-Usu50', '666666666'),
-('Usu6', 'e25d7c6cd66f11492b040391ea0b895a', '44829786A', 'Usu6', 'Usu6', 'Usu6@Usu6.com', 'Dir-Usu6', '666666666'),
-('Usu7', 'e25d7c6cd66f11492b040391ea0b895a', '00735618D', 'Usu7', 'Usu7', 'Usu2@Usu7.com', 'Dir-Usu7', '666666666'),
-('Usu8', 'e25d7c6cd66f11492b040391ea0b895a', '81724564K', 'Usu8', 'Usu8', 'Usu8@Usu8.com', 'Dir-Usu8', '666666666'),
-('Usu9', 'e25d7c6cd66f11492b040391ea0b895a', '35950172E', 'Usu9', 'Usu9', 'Usu9@Usu9.com', 'Dir-Usu9', '666666666');
+('Usu30', 'e25d7c6cd66f11492b040391ea0b895a', '52395384G', 'Usu30', 'Usu30', 'Usu30@Usu30.com', 'Dir-Usu30', '666666666');
 
 /*Insercion dde un trabajo*/
 INSERT INTO TRABAJO (IdTrabajo,NombreTrabajo,FechaIniTrabajo,FechaFinTrabajo,PorcentajeNota)
@@ -269,194 +243,30 @@ INSERT INTO ENTREGA (login,IdTrabajo,
 							'ET1',
 							'AC',
 							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu31',
-							'ET1',
-							'AD',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu32',
-							'ET1',
-							'AE',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu33',
-							'ET1',
-							'AF',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu34',
-							'ET1',
-							'AG',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu35',
-							'ET1',
-							'AH',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu36',
-							'ET1',
-							'AI',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu37',
-							'ET1',
-							'AJ',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu38',
-							'ET1',
-							'AK',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu39',
-							'ET1',
-							'AL',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu40',
-							'ET1',
-							'AM',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu41',
-							'ET1',
-							'AN',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu42',
-							'ET1',
-							'ANH',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu43',
-							'ET1',
-							'AO',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu44',
-							'ET1',
-							'AP',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu45',
-							'ET1',
-							'AQ',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu46',
-							'ET1',
-							'AR',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu47',
-							'ET1',
-							'AS',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu48',
-							'ET1',
-							'AT',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu49',
-							'ET1',
-							'AU',
-							'20','ruta');
-INSERT INTO ENTREGA (login,IdTrabajo,
-					Alias,Horas,Ruta)
-						VALUES (
-							'Usu50',
-							'ET1',
-							'AZ',
-							'20','ruta');
+
 /*Insercion Historias de Prueba*/
 INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
 						VALUES (
 							'ET1',
 							'1',
-							'Pedazo Texto');
+							'Pedazo Texto 1');
 INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
 						VALUES (
 							'ET1',
 							'2',
-							'Pedazo Texto');
+							'Pedazo Texto 2');
 INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
 						VALUES (
 							'ET1',
 							'3',
-							'Pedazo Texto');
+							'Pedazo Texto 3');
 INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
 						VALUES (
 							'ET1',
 							'4',
-							'Pedazo Texto');
+							'Pedazo Texto 4');
 INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
 						VALUES (
 							'ET1',
 							'5',
-							'Pedazo Texto');
-INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
-						VALUES (
-							'ET1',
-							'6',
-							'Pedazo Texto');
-INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
-						VALUES (
-							'ET1',
-							'7',
-							'Pedazo Texto');
-INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
-						VALUES (
-							'ET1',
-							'8',
-							'Pedazo Texto');
-INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
-						VALUES (
-							'ET1',
-							'9',
-							'Pedazo Texto');
-INSERT INTO HISTORIA (IdTrabajo,IdHistoria,TextoHistoria)
-						VALUES (
-							'ET1',
-							'10',
-							'Pedazo Texto');
+							'Pedazo Texto 5');
