@@ -157,19 +157,6 @@ Vista que contiene el Menú lateral
 						</li>
 						<?php }?>
 
-							<!--Si no es administrador y tiene permisos-->
-						<?php if (!isAdmin() && (isAllow('ResEt','Show') || isAllow('ResQa','Show'))){?>
-						<li class="dropdown">
-							<input onclick="dropdownMenu('submenu_notas')" type="button" name="Controlador" value="<?php echo $strings['MIS NOTAS']; ?>" class="dropbtn"></input>
-							<ul id="submenu_notas" class="dropdown-content">
-								<?php if (isAllow('ResEt','Show')){?>
-								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados"><?php echo $strings['Ver resultados de ET']; ?></a></li>
-								<?php }if (isAllow('ResQa','Show')){?>
-								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados"><?php echo $strings['Ver resultados de Qa']; ?></a></li>
-								<?php }?>
-							</ul>
-						</li>
-						<?php }?>
 						
 						
 						<?php if (isAllow('Eval','Show') || isAllow('Eval','Add') || isAllow('Eval','Search')){?>
@@ -204,13 +191,13 @@ Vista que contiene el Menú lateral
 						<?php }?>
 						
 						<li class="dropdown">
-							<?php if (isAllow('Nota','ShowCurrentEt') || isAllow('Nota','ShowCurrentQA')){?>
+							<?php if (!isAdmin() && (isAllow('ResEt','Show') && isAllow('ResQa','Show'))){?>
 							<input onclick="dropdownMenu('submenu_resultados')" type="button" name="Controlador" value="<?php echo $strings['RESULTADOS'];?>" class="dropbtn"></input>
 							<ul id="submenu_resultados" class="dropdown-content">
-								<?php if (isAllow('Nota','ShowCurrentEt')){?>
-								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=ET1&Generar=ET1"><?php echo $strings['ET1'];?></a></li>
-								<?php }if (isAllow('Nota','ShowCurrentQA')){?>	
-								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=ET1&Generar=QA1"><?php echo $strings['QA1'];?></a></li>
+							<?php $trabajos = getTrabajos();
+								for($i=0;$i<count($trabajos);$i++){ ?>
+									<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=<?php echo $trabajos[$i]?>&Generar=<?php echo $trabajos[$i]?>"><?php echo $trabajos[$i];?></a></li>
+									<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados&IdTrabajo=<?php echo $trabajos[$i]?>&Generar=<?php echo 'QA' . $trabajos[$i][2]?>"><?php echo 'QA' . $trabajos[$i][2];?></a></li>
 								<?php }?>
 							</ul>
 						</li>
