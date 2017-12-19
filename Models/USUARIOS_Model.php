@@ -103,6 +103,7 @@ function __destruct()
 } // fin del metodo destruct
 
 
+
 //funcion SEARCH: hace una búsqueda en la tabla con
 //los datos proporcionados. Si van vacios devuelve todos
 function SEARCH()
@@ -118,13 +119,13 @@ function SEARCH()
        			from USUARIO
     			where 
     				(
-					(login LIKE '%$this->login%') &&
-					(DNI LIKE '%$this->DNI%') &&
-	 				(Nombre LIKE '%$this->Nombre%') &&
-	 				(Apellidos LIKE '%$this->Apellidos%') &&
-	 				(Correo LIKE '%$this->Correo%') &&
-	 				(Direccion LIKE '%$this->Direccion%') &&
-	 				(Telefono LIKE '%$this->Telefono%') 
+					(login LIKE REPLACE('%$this->login%', ' ', '' )) &&
+					(DNI LIKE REPLACE('%$this->DNI%', ' ', '' )) &&
+	 				(Nombre LIKE REPLACE('%$this->Nombre%', ' ', '' )) &&
+	 				(Apellidos LIKE REPLACE('%$this->Apellidos%', ' ', '' )) &&
+	 				(Correo LIKE REPLACE('%$this->Correo%', ' ', '' )) &&
+	 				(Direccion LIKE REPLACE('%$this->Direccion%', ' ', '' )) &&
+	 				(Telefono LIKE REPLACE('%$this->Telefono%', ' ', '' )) 
     				)";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
     if (!($resultado = $this->mysqli->query($sql))){

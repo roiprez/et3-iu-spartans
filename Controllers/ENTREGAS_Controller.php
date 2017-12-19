@@ -47,7 +47,7 @@ if (!isset($_REQUEST['action'])){
 Switch ($_REQUEST['action']){
     case 'ADD':
         if (!$_POST){
-            $TRABAJOS = new TRABAJOS_Model('', '', '', '');    
+            $TRABAJOS = new TRABAJOS_Model('', '', '', '','');    
             $trabajos = $TRABAJOS->SEARCH();
             
             $USUARIOS = new USUARIOS_Model('', '', '', '', '', '', '', '');    

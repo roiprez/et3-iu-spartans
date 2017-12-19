@@ -11,6 +11,7 @@ function isAllow($idFun,$idAcci){
 	$gruposLogin = $GRUPOS_LOGIN->SEARCH();
 	while($row = $gruposLogin->fetch_array()) {
 		if($row[1] == 'Admin'){
+			
 			return true;
 		}
 		$funcAccion=  new PERMISOS_Model($row[1],$idFun,$idAcci);

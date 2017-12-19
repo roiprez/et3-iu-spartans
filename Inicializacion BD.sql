@@ -63,7 +63,8 @@ INSERT INTO FUNCIONALIDAD
 ('Hist','Gestion de Historias','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Historias'),
 ('Nota','Gestion de Notas','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Notas'),
 ('Eval','Gestion de Evaluaciones','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Evaluaciones'),
-('Entre','Gestion de Entregas','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Entregas');
+('Entre','Gestion de Entregas','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con Entregas'),
+('FunAct','Gestion de Funcion_Accion','Esta funcionalidad es la encargada de la gestion de todo lo relacionado con los pares Funcionalidad_accion');
 
 /*Insercion de Acciones*/
 
@@ -74,56 +75,81 @@ INSERT INTO ACCION(IdAccion,NombreAccion,DescripAccion)
 ('Edit','Editar','Esta Accion es la encargada de editar las entidades asociadas a la funcionalidad'),
 ('Delete','Borrar','Esta Accion es la encargada de borrar las entidades asociadas a la funcionalidad'),
 ('Show','Visualizar','Esta Accion es la encargada de visualizar las entidades asociadas a la funcionalidad'),
-('Search','Buscar','Esta Accion es la encargada de buscar las entidades especificadas asociadas a la funcionalidad');
+('Search','Buscar','Esta Accion es la encargada de buscar las entidades especificadas asociadas a la funcionalidad'),
+('Gest','Gestionar','Esta Accion es la encargada de gestionar las entidades especificadas asociadas a la funcionalidad');
+
 
 INSERT INTO `FUNC_ACCION` (`IdFuncionalidad`, `IdAccion`) VALUES
+
+('FunAct', 'Add'),
+('FunAct', 'Gest'),
+
+('Asig_Qua', 'Add'),
+('Asig_Qua', 'Delete'),
+('Asig_Qua', 'Edit'),
+('Asig_Qua', 'Search'),
+('Asig_Qua', 'Show'),
+
 ('Action', 'Add'),
 ('Action', 'Delete'),
 ('Action', 'Edit'),
 ('Action', 'Search'),
 ('Action', 'Show'),
+
 ('Entre', 'Add'),
 ('Entre', 'Delete'),
 ('Entre', 'Edit'),
 ('Entre', 'Search'),
 ('Entre', 'Show'),
+
 ('Eval', 'Add'),
 ('Eval', 'Delete'),
 ('Eval', 'Edit'),
 ('Eval', 'Search'),
 ('Eval', 'Show'),
+
 ('Func', 'Add'),
 ('Func', 'Delete'),
 ('Func', 'Edit'),
 ('Func', 'Search'),
 ('Func', 'Show'),
+
 ('Group', 'Add'),
 ('Group', 'Delete'),
 ('Group', 'Edit'),
 ('Group', 'Search'),
 ('Group', 'Show'),
+
 ('Hist', 'Add'),
 ('Hist', 'Delete'),
 ('Hist', 'Edit'),
 ('Hist', 'Search'),
 ('Hist', 'Show'),
+
 ('Jobs', 'Add'),
 ('Jobs', 'Delete'),
 ('Jobs', 'Edit'),
 ('Jobs', 'Search'),
 ('Jobs', 'Show'),
+
 ('Nota', 'Add'),
 ('Nota', 'Delete'),
 ('Nota', 'Edit'),
 ('Nota', 'Search'),
 ('Nota', 'Show'),
+
 ('Perm', 'Add'),
-('Perm', 'Delete'),
-('Perm', 'Edit'),
 ('Perm', 'Search'),
 ('Perm', 'Show'),
-('User', 'Add'),
-('User', 'Delete'),
-('User', 'Edit'),
-('User', 'Search'),
-('User', 'Show');
+
+('UsuGru', 'Add'),
+('UsuGru', 'Delete'),
+('UsuGru', 'Edit'),
+('UsuGru', 'Search'),
+('UsuGru', 'Show'),
+
+('Usu', 'Add'),
+('Usu', 'Delete'),
+('Usu', 'Edit'),
+('Usu', 'Search'),
+('Usu', 'Show');

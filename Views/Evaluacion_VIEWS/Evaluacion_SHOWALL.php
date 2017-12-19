@@ -23,7 +23,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
 
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-         if (IsAuthenticated() && !isAllow('Eval','ShowAll')){
+         if (IsAuthenticated() && !isAllow('Eval','Show')){
            ?>
             <table id="tabla-showall">
                 <tr>

@@ -1016,7 +1016,6 @@ function validarBusquedaEvaluacion(){
 
 
 
-
 //Comprueba que el campo no está vacío
 function comprobarVacio(campo){
   //Valor almacena el valor del campo quitando los espacios en blanco al principio y final del fichero

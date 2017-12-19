@@ -54,7 +54,7 @@ if (!isset($_REQUEST['action'])){
 
 Switch ($_REQUEST['action']){
     case 'ADD':
-        $TRABAJO = new TRABAJOS_Model($_REQUEST['IdTrabajo'], '','','','');
+        $TRABAJO = new TRABAJOS_Model($_REQUEST['IdTrabajo'],'','','','');
         $trabajo = $TRABAJO->SEARCH()->fetch_array();
         $valores = $NOTAS->RellenaDatos();
         $ENTREGA = get_data_form2();
