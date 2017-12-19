@@ -141,8 +141,8 @@ Vista que contiene el Menú lateral
 						</li>
 						<?php }?>
 						
-						<!--Si eres administrador-->
-						<?php if (isAdmin() && (isAllow('Nota','Add') || isAllow('Nota','Show') || isAllow('Nota','Search'))){?>
+						<!--Si es administrador o tiene permisos-->
+						<?php if (isAdmin() || (isAllow('Nota','Show') || isAllow('Nota','Add') || isAllow('Nota','Search'))){?>
 						<li class="dropdown">
 							<input onclick="dropdownMenu('submenu_notas')" type="button" name="Controlador" value="<?php echo $strings['NOTAS']; ?>" class="dropbtn"></input>
 							<ul id="submenu_notas" class="dropdown-content">
@@ -157,7 +157,7 @@ Vista que contiene el Menú lateral
 						</li>
 						<?php }?>
 
-
+							<!--Si no es administrador y tiene permisos-->
 						<?php if (!isAdmin() && (isAllow('ResEt','Show') || isAllow('ResQa','Show'))){?>
 						<li class="dropdown">
 							<input onclick="dropdownMenu('submenu_notas')" type="button" name="Controlador" value="<?php echo $strings['MIS NOTAS']; ?>" class="dropbtn"></input>
