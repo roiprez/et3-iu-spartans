@@ -32,19 +32,21 @@ class Resultados_SHOWCURRENT_ET
 
 		//Si tiene permisos pero no es adminitrador
 		}else if (!isAdmin() && isAllow('ResEt','Show')){
-        $correctoP='';
-        $incorrectoP='';
         $correctos=array();
         $comentarios=array();
             for($i=1;$i<=count($this->lista_descripHist);$i++){
+                $correctoP='1';
+                $incorrectoP='';
                 $correctos=array();
                 $comentarios=array();
                 foreach($this->datos as $tupla){//busca en el recordset las cinco correcciones de la historia
                     if($tupla['IdHistoria']==$i){
                         array_push($correctos,$tupla['CorrectoA']);//almacena en un array las correcciones
                         array_push($comentarios,$tupla['ComenIncorrectoA']);//almacena en un array los comentarios
-                        $correctoP=$tupla['CorrectoP'];
-                        $incorrectoP=$tupla['ComentIncorrectoP'];
+                        if($tupla['CorrectoP']==0){
+                             $correctoP=$tupla['CorrectoP'];
+                             $incorrectoP=$tupla['ComentIncorrectoP'];
+                        }
                     }
                 }//fin bucle foreach
             ?>
