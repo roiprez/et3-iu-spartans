@@ -25,7 +25,7 @@ class Trabajo_SHOWALL
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
-            if (IsAuthenticated() && !isAllow('Jobs','ShowAll')){
+            if (IsAuthenticated() && !isAllow('Jobs','Show')){
                   ?>
         <form id="formulario-showall" method="">
             <div id="botones-comunes">

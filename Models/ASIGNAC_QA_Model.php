@@ -65,10 +65,10 @@ class ASIGNAC_QA_Model{
             AliasEvaluado
             FROM ASIGNAC_QA
             WHERE (
-            (IdTrabajo LIKE '%$this->IdTrabajo%')&&
-            (LoginEvaluador LIKE '%$this->LoginEvaluador%')&&
-            (LoginEvaluado LIKE '%$this->LoginEvaluado%')&&
-            (AliasEvaluado LIKE '%$this->AliasEvaluado%')
+            (IdTrabajo LIKE REPLACE('%$this->IdTrabajo%', ' ', '' ))&&
+            (LoginEvaluador LIKE REPLACE('%$this->LoginEvaluador%', ' ', '' ))&&
+            (LoginEvaluado LIKE REPLACE('%$this->LoginEvaluado%', ' ', '' ))&&
+            (AliasEvaluado LIKE REPLACE('%$this->AliasEvaluado%', ' ', '' ))
             )";
         // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
         if (!($resultado = $this->mysqli->query($sql))){

@@ -8,7 +8,6 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 include_once '../Models/GRUPOS_Model.php';
 include '../Models/FUNCIONALIDADES_Model.php';
 include '../Models/ACCIONES_Model.php';
-include '../Models/PERMISOS_Model.php';
 include '../Views/Grupo_VIEWS/Grupo_SHOWALL.php';
 include '../Views/Grupo_VIEWS/Grupo_SEARCH.php';
 include '../Views/Grupo_VIEWS/Grupo_ADD.php';

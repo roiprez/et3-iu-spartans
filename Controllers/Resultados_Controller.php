@@ -7,6 +7,7 @@ include_once '../Models/EVALUACIONES_Model.php';
 include_once '../Models/HISTORIA_Model.php';
 include_once '../Models/ENTREGAS_Model.php';
 include '../Views/Resultados_VIEWS/Resultados_SHOWCURRENT_ET.php';
+include '../Views/Resultados_VIEWS/Resultados_SHOWCURRENT_QA.php';
 include '../Views/MESSAGE_View.php';
 
 $IdTrabajo = $_REQUEST['IdTrabajo'];
@@ -35,8 +36,8 @@ if($_REQUEST['Generar'][0] == 'E'){
     new Resultados_SHOWCURRENT_ET($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php');
 
 } elseif($_REQUEST['Generar'][0] == 'Q'){
-        $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo, $LoginEvaluador, '', '','','', '', '','');
-        $datos = $EVALUACIONES->SEARCH();
+    $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo, $LoginEvaluador, '', '','','', '', '','');
+    $datos = $EVALUACIONES->SEARCH();
 
     $HISTORIA = new HISTORIA_Model($IdTrabajo, '', '');
     $historias = $HISTORIA->SEARCH();
@@ -68,6 +69,6 @@ if($_REQUEST['Generar'][0] == 'E'){
             $j++;
         }
     }
-    new Resultados_SHOWCURRENT_QA($qas, $oks, $descrip_historias, '../Controllers/Index_Controller.php');
+    new ResultadosSHOWCURRENT_QA($qas, $oks, $descrip_historias, '../Controllers/Index_Controller.php');
 }
 ?>

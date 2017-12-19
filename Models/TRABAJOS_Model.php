@@ -79,11 +79,11 @@ function SEARCH(){
             PorcentajeNota
             FROM TRABAJO
             WHERE (
-            (IdTrabajo LIKE '%$this->idTrabajo%')&&
-            (NombreTrabajo LIKE '%$this->nombreTrabajo%')&&
-            (FechaIniTrabajo LIKE '%$this->fechIniTrabajo%')&&
-            (FechaFinTrabajo LIKE '%$this->fechFinTrabajo%')&&
-            (PorcentajeNota LIKE '%$this->porcentajeNota%')
+            (IdTrabajo LIKE REPLACE('%$this->idTrabajo%', ' ', '' ))&&
+            (NombreTrabajo LIKE REPLACE('%$this->nombreTrabajo%', ' ', '' ))&&
+            (FechaIniTrabajo LIKE REPLACE('%$this->fechIniTrabajo%', ' ', '' ))&&
+            (FechaFinTrabajo LIKE REPLACE('%$this->fechFinTrabajo', ' ', '' ))&&
+            (PorcentajeNota LIKE REPLACE('%$this->porcentajeNota%', ' ', '' ))
             )";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
     if (!($resultado = $this->mysqli->query($sql))){

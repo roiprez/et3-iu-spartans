@@ -77,9 +77,9 @@ $sql= "SELECT
             IdGrupo
             FROM PERMISO
             WHERE (
-            (IdAccion LIKE '%$this->idAccion%')&&
-            (IdFuncionalidad LIKE '%$this->idFuncionalidad%')&&
-            (IdGrupo LIKE '%$this->idGrupo%')
+            (IdAccion LIKE REPLACE('%$this->idAccion%', ' ', '' ))&&
+            (IdFuncionalidad LIKE REPLACE('%$this->idFuncionalidad%', ' ', '' ))&&
+            (IdGrupo LIKE REPLACE('%$this->idGrupo%', ' ', '' ))
             )";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
 if (!($resultado = $this->mysqli->query($sql))){

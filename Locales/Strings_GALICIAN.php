@@ -125,6 +125,8 @@ array(
 	'Id grupo' => 'Id grupo',
 	'Id funcionalidad' => 'Id funcionalidade',
 	'Id accion' => 'Id accion',
+	'Grupo' => 'Grupo',
+    'Funcionalidad y Accion' => 'Funcionalidade e Accion',
 
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdTraballo',
@@ -137,6 +139,7 @@ array(
 	'Fecha fin' => 'Fecha fin',
 	'PorcentajeNota' => 'PorcentaxeNota',
 	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Xeráronse as asignacions e as súas correspondentes evaluacions con éxito',
+	'Porcentaje Trabajo' => 'Porcentaxe Traballo',
 	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Mostrar todo',
@@ -192,6 +195,10 @@ array(
 	'El usuario ya esta asignado a ese grupo' => 'O usuario xa esta asignado a ese grupo',
 	'El Usuario no existe o el codigo es incorrecto' => 'O Usuario non existe ou o codigo e incorrecto',
 	'El grupo no existe o el codigo es incorrecto' => 'O grupo non existe ou o codigo e incorrecto',
+	
+	/*Diccionario Notas*/
+	'IdTrabajo' => 'IdTraballo',
+	'NOTAS' => 'NOTAS',
 	
 	/*Diccionario Evaluaciones*/
 	'El login no tiene que evaluar el trabajo o al alias indicado' => '0 login non ten que evaluar o traballo ou ao alias indicado',

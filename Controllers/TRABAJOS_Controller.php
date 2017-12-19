@@ -5,10 +5,8 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
 25/11/2017
 */
 
-include_once '../Models/TRABAJOS_Model.php';
-include_once '../Models/NOTAS_Model.php';
-include_once '../Models/ENTREGAS_Model.php';
-include_once '../Functions/Generacion_QAs.php';
+
+
 include '../Views/Trabajo_VIEWS/Trabajo_SHOWALL.php';
 include '../Views/Trabajo_VIEWS/Trabajo_SEARCH.php';
 include '../Views/Trabajo_VIEWS/Trabajo_ADD.php';

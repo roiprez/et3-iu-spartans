@@ -61,9 +61,9 @@ class FUNCIONALIDADES_MODEL{
             DescripFuncionalidad
             FROM FUNCIONALIDAD
             WHERE (
-            (IdFuncionalidad LIKE '%$this->idFuncionalidad%')&&
-            (NombreFuncionalidad LIKE '%$this->nombreFuncionalidad%')&&
-            (DescripFuncionalidad LIKE '%$this->descripFuncionalidad%')
+            (IdFuncionalidad LIKE REPLACE('%$this->idFuncionalidad%', ' ', '' ))&&
+            (NombreFuncionalidad LIKE REPLACE('%$this->nombreFuncionalidad%', ' ', '' ))&&
+            (DescripFuncionalidad LIKE REPLACE('%$this->descripFuncionalidad%', ' ', '' ))
             )";
         // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
         if (!($resultado = $this->mysqli->query($sql))){

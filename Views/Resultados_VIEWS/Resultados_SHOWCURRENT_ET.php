@@ -26,6 +26,13 @@ class Resultados_SHOWCURRENT_ET
 
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
+		if (IsAuthenticated() && !isAllow('Nota','ShowCurrentEt')){
+            $respuesta= "No tienes permiso para acceder a esta vista";
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
+            
+            
+            //Si esta autenticado y es administrador
+            }else{
         $correctoP='';
         $incorrectoP='';
         $correctos=array();
@@ -88,7 +95,7 @@ class Resultados_SHOWCURRENT_ET
                 <button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button>
             </form> <!--Imagen para la accion back,que permite volver al menu principal-->
             <?php
-    
+			}
     }
 }
 

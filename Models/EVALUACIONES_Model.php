@@ -224,10 +224,10 @@ function SEARCH()
        			FROM EVALUACION
     			WHERE
     				(
-					(IdTrabajo LIKE '%$this->IdTrabajo%') &&
-					(LoginEvaluador LIKE '%$this->LoginEvaluador%') &&
-	 				(AliasEvaluado LIKE '%$this->AliasEvaluado%') &&
-	 				(IdHistoria LIKE '%$this->IdHistoria%')
+					(IdTrabajo LIKE REPLACE('%$this->IdTrabajo%', ' ', '' )) &&
+					(LoginEvaluador LIKE REPLACE('%$this->LoginEvaluador%', ' ', '' )) &&
+	 				(AliasEvaluado LIKE REPLACE('%$this->AliasEvaluado%', ' ', '' )) &&
+	 				(IdHistoria LIKE REPLACE('%$this->IdHistoria%', ' ', '' ))
     				)";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
     if (!($resultado = $this->mysqli->query($sql))){
