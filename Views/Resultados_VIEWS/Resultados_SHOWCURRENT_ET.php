@@ -26,13 +26,12 @@ class Resultados_SHOWCURRENT_ET
 
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-		if (IsAuthenticated() && !isAllow('Res','ShowC')){
-            $respuesta= "No tienes permiso para acceder a esta vista";
-            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
-            
-            
-            //Si esta autenticado y es administrador
-            }else{
+		if(!isAllow('Res','ShowC')){
+
+			echo $strings['No tienes permiso para acceder a esta vista'];
+
+		//Si tiene permisos pero no es adminitrador
+		}else if (!isAdmin() && isAllow('ResEt','Show')){
         $correctoP='';
         $incorrectoP='';
         $correctos=array();

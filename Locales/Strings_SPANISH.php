@@ -130,7 +130,10 @@ array(
 	'Id accion' => 'Id accion',
 	'Grupo' => 'Grupo',
     'Funcionalidad y Accion' => 'Funcionalidad y Accion',
-	
+	'MIS NOTAS' => 'MIS NOTAS',
+	'Ver resultados de ET' => 'Ver resultados de ET',
+	'Ver resultados de Qa' => 'Ver resultados de Qa',
+
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdTrabajo',
 	'NombreTrabajo' => 'NombreTrabajo',

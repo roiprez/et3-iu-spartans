@@ -141,8 +141,8 @@ Vista que contiene el Menú lateral
 						</li>
 						<?php }?>
 						
-						
-						<?php if (isAllow('Nota','Add') || isAllow('Nota','Show') || isAllow('Nota','Search')){?>
+						<!--Si eres administrador-->
+						<?php if (isAdmin() && (isAllow('Nota','Add') || isAllow('Nota','Show') || isAllow('Nota','Search'))){?>
 						<li class="dropdown">
 							<input onclick="dropdownMenu('submenu_notas')" type="button" name="Controlador" value="<?php echo $strings['NOTAS']; ?>" class="dropbtn"></input>
 							<ul id="submenu_notas" class="dropdown-content">
@@ -152,6 +152,20 @@ Vista que contiene el Menú lateral
 								<li><a href="../Controllers/Index_Controller.php?Controlador=NOTAS&action=ADD"><?php echo $strings['Añadir']; ?></a></li>
 								<?php }if (isAllow('Nota','Search')){?>
 								<li><a href="../Controllers/Index_Controller.php?Controlador=NOTAS&action=SEARCH"><?php echo $strings['Buscar']; ?></a></li>
+								<?php }?>
+							</ul>
+						</li>
+						<?php }?>
+
+
+						<?php if (!isAdmin() && (isAllow('ResEt','Show') || isAllow('ResQa','Show'))){?>
+						<li class="dropdown">
+							<input onclick="dropdownMenu('submenu_notas')" type="button" name="Controlador" value="<?php echo $strings['MIS NOTAS']; ?>" class="dropbtn"></input>
+							<ul id="submenu_notas" class="dropdown-content">
+								<?php if (isAllow('ResEt','Show')){?>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados"><?php echo $strings['Ver resultados de ET']; ?></a></li>
+								<?php }if (isAllow('ResQa','Show')){?>
+								<li><a href="../Controllers/Index_Controller.php?Controlador=Resultados"><?php echo $strings['Ver resultados de Qa']; ?></a></li>
 								<?php }?>
 							</ul>
 						</li>

@@ -23,7 +23,11 @@ class Evaluacion_SHOWALL{  // declaración de clase
 
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-         if (IsAuthenticated() && !isAllow('Eval','Show')){
+         if(!isAllow('Eval','Show')){
+            echo $strings['No tienes permiso para acceder a esta vista'];
+
+         }
+         else  if (!IsAdmin() && isAllow('Eval','Show')){
            ?>
             <table id="tabla-showall">
                 <tr>

@@ -132,7 +132,10 @@ array(
 	'Id accion' => 'Action´s id',
 	'Grupo' => 'Group',
     'Funcionalidad y Accion' => 'Funcionality and Action',
-	
+	'MIS NOTAS' => 'MARKS',
+	'Ver resultados de ET' => 'See Et Marks',
+	'Ver resultados de Qa' => 'See Qa Marks',
+
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdWork',
 	'NombreTrabajo' => 'NameWork',

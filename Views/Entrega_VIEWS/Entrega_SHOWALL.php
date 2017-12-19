@@ -24,7 +24,12 @@ class Entrega_SHOWALL{  // declaración de clase
     function pinta(){
 
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-        if (IsAuthenticated() && !isAllow('Entre','Show')){
+       //Si no tiene permiso
+        if(!isAllow('Entre','Show')){
+            echo $strings['No tienes permiso para acceder a esta vista'];
+
+        }//Si no es administrador pero tiene permisos
+       else if (!isAdmin() && isAllow('Entre','Show')){
         ?>
         <table id="tabla-showall">
             <tr>
