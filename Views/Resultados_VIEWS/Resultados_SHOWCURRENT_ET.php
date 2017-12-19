@@ -26,7 +26,7 @@ class Resultados_SHOWCURRENT_ET
 
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
-		if (IsAuthenticated() && !isAllow('Nota','ShowCurrentEt')){
+		if (IsAuthenticated() && !isAllow('Res','ShowC')){
             $respuesta= "No tienes permiso para acceder a esta vista";
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
             
