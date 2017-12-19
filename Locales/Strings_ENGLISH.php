@@ -66,6 +66,7 @@ array(
 
 	/*Diccionario asignac_qa*/
 	'IdTrabajo' => 'IdWork',
+	'Id del trabajo' => 'IdWork',
 	'LoginEvaluador' => 'LoginEvaluator', 
 	'LoginEvaluado' => 'LoginEvaluate',
 	'AliasEvaluado' => 'AliasEvaluate',
@@ -88,6 +89,7 @@ array(
 	'Incorrecto' => 'Incorrect',
 	'Correcto' => 'Correct',
 	'Comentario' => 'Commentary',
+	'Comentario' => 'Comentary',
 	'Corrección de la evaluación' => 'correction of the evaluation',
 	'Corrección del profesor' => 'Teacher correction',
 	'Corrección de la historia' => 'Correction of history',

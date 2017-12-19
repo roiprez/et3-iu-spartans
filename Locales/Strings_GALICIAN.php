@@ -84,6 +84,7 @@ array(
 	'Incorrecto' => 'Incorrecto',
 	'Correcto' => 'Correcto',
 	'Comentario' => 'Comentario',
+	'Comentario' => 'Comentario',
 	'Corrección de la evaluación' => 'Corrección da evaluación',
 	'Corrección del profesor' => 'Corrección do profesor',
 	'Corrección de la historia' => 'Corrección da historia',
@@ -130,6 +131,7 @@ array(
 
 	/*Diccionario trabajo*/
 	'IdTrabajo' => 'IdTraballo',
+	'Id del trabajo' => 'Id do Traballo',
 	'NombreTrabajo' => 'NomeTraballo',
 	'FechaIniTrabajo' => 'FechaIniTraballo',
 	'FechaFinTrabajo' => 'FechaFinTraballo',

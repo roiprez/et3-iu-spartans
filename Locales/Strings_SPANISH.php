@@ -69,6 +69,7 @@ array(
 	'Login del evaluado' => 'Login del evaluado',
 	'Alias' => 'Alias',
 	'Id del Trabajo' => 'Id del Trabajo',
+	'Id del trabajo' => 'Id del Trabajo',
 	'Login del evaluador' => 'Login del evaluador',
 	
 	/*Diccionario entregas*/
@@ -84,6 +85,7 @@ array(
 	'Incorrecto' => 'Incorrecto',
 	'Correcto' => 'Correcto',
 	'Comentario' => 'Comentario',
+	'comentario' => 'Comentario',
 	'Corrección de la evaluación' => 'Corrección de la evaluación',
 	'Corrección del profesor' => 'Corrección del profesor',
 	'Corrección de la historia' => 'Corrección de la historia',
