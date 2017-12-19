@@ -1,4 +1,4 @@
-/*Insercion del Grupo de Adminitradores*/
+﻿/*Insercion del Grupo de Adminitradores*/
 INSERT INTO GRUPO (
             IdGrupo,
             NombreGrupo,
@@ -78,17 +78,34 @@ INSERT INTO ACCION(IdAccion,NombreAccion,DescripAccion)
 ('Search','Buscar','Esta Accion es la encargada de buscar las entidades especificadas asociadas a la funcionalidad'),
 ('Gest','Gestionar','Esta Accion es la encargada de gestionar las entidades especificadas asociadas a la funcionalidad');
 
+/*edit de entregas/
+showall de entregas(solo sus entregas)/
+showall de notas(sus)/
+showall de resultados(suyos)/
+showall y edit de las evaluaciones que tiene que corregir
+*/
 
-INSERT INTO `FUNC_ACCION` (`IdFuncionalidad`, `IdAccion`) VALUES
+INSERT INTO `PERMISO` (IdGrupo,IdFuncionalidad,IdAccion) VALUES
+('Alumnos','Entre','Show'),
+('Alumnos','Notas','show'),
+('Alumnos','ResEt','Show'),
+('Alumnos','ResQa','Show'),
+('Alumnos','Eval','Show'),
+('Alumnos','Eval','Edit');
+
+INSERT INTO `FUNC_ACCION` (IdFuncionalidad, IdAccion) VALUES
+
+('ResEt','Show'),
+('ResQa','Show'),
 
 ('FunAct', 'Add'),
 ('FunAct', 'Gest'),
 
-('Asig_Qua', 'Add'),
-('Asig_Qua', 'Delete'),
-('Asig_Qua', 'Edit'),
-('Asig_Qua', 'Search'),
-('Asig_Qua', 'Show'),
+('Asig_Qa', 'Add'),
+('Asig_Qa', 'Delete'),
+('Asig_Qa', 'Edit'),
+('Asig_Qa', 'Search'),
+('Asig_Qa', 'Show'),
 
 ('Action', 'Add'),
 ('Action', 'Delete'),
