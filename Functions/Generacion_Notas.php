@@ -25,7 +25,7 @@ function generarNotaEntrega($idTrabajo, $alias, $porcentajeNota){
 } 
 function generarNotaQA($idTrabajo, $login, $porcentajeNota){
 	$EVALUACIONES = new EVALUACIONES_Model($idTrabajo, $login, '', '', '', '', '', '', '');   
-  $evaluaciones = $EVALUACIONES->SEARCH();
+  $evaluaciones = $EVALUACIONES->SEARCH_STRICT_QA();
 
   $numero_historias = 0;
   $numero_correctos = 0;

@@ -49,55 +49,41 @@ class NOTAS_Model{   //Declaracion de la clase
 
                         }else if($result->num_rows==1){//Si existe el usuario
 
-                            //Sentencia sql que comprueba que hay una entrega con ese id de trabajo y ese login
-                            $sql = "SELECT * FROM ENTREGA WHERE (login= '$this->login' AND IdTrabajo= '$this->idTrabajo')";
+
+                            //sql busca si existe ya una nota para ese trabajo
+                            $sql= "SELECT * FROM NOTA_TRABAJO WHERE (login= '$this->login' AND IdTrabajo= '$this->idTrabajo')";
 
                             if(!$result = $this->mysqli->query($sql)){ // si da error la ejecución de la query
-                             return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
-                             }
+                                return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
+                            }
 
-                             if($result->num_rows==1){//Si hay un unico trabajo con ese id para esa persona
+                            //Si no existe una nota para el trabajo del usuario
+                            if($result->num_rows==0){
 
-                                //sql busca si existe ya una nota para ese trabajo
-                                $sql= "SELECT * FROM NOTA_TRABAJO WHERE (login= '$this->login' AND IdTrabajo= '$this->idTrabajo')";
+                                //sql inserta nota
+                                $sql =  "INSERT INTO NOTA_TRABAJO (
+                                login,
+                                IdTrabajo,
+                                NotaTrabajo)
+                                VALUES (
+                                '$this->login',
+                                '$this->idTrabajo',
+                                '$this->notaTrabajo'
+                                )";
 
-                                if(!$result = $this->mysqli->query($sql)){ // si da error la ejecución de la query
-                                 return 'No se ha podido conectar con la base de datos'; // error en la consulta (no se ha podido conectar con la bd). Devolvemos un mensaje que el controlador manejara
+                                    if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
+                        
+                                    return 'Error en la inserción';
+                    
+                                }else{ //si no da error en la insercion devolvemos mensaje de exito
+                    
+                                    return 'Inserción realizada con éxito'; //operacion de insertado correcta
                                 }
 
-                                //Si no existe una nota para el trabajo del usuario
-                                if($result->num_rows==0){
-
-                                    //sql inserta nota
-                                 $sql =  "INSERT INTO NOTA_TRABAJO (
-                                 login,
-                                 IdTrabajo,
-                                 NotaTrabajo)
-                                  VALUES (
-                                    '$this->login',
-                                    '$this->idTrabajo',
-                                    '$this->notaTrabajo'
-                                    )";
-
-                                     if (!$this->mysqli->query($sql)) { // si da error en la ejecución del insert devolvemos mensaje
-                            
-                                     return 'Error en la inserción';
-                        
-                                    }else{ //si no da error en la insercion devolvemos mensaje de exito
-                        
-                                     return 'Inserción realizada con éxito'; //operacion de insertado correcta
-                                    }
-
-                                }else{
-
-                                    return 'Ya existe una nota para este trabajo';
-                                     }
-                            
                             }else{
 
-                             return 'No existe una entrega con este login y este id de trabajo';
-                                 }
-                        
+                                return 'Ya existe una nota para este trabajo';
+                                    }                      
                         }
 
                         }else{
