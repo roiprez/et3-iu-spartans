@@ -1,3 +1,4 @@
+<script type="text/javascript">
 /*
 Este fichero se encarga de las validaciones de los formularios.
 A lo largo del fichero hay validaciones que si se usan en campos del formulario cambian el estilo del campo a rojo si el valor es incorrecto
@@ -1123,7 +1124,7 @@ if (campo.value.length>size){//Si el numero de caracteres del campo es mayor que
 				return true;
 				} 
 				else{//Sino
-				alert("El atributo " + campo.name + " no admite caracteres no alfabéticos");
+				alert('El atributo '+ campo.name +'  no admite caracteres no alfabéticos');
 				campo.style.backgroundColor = "rgba(255, 117, 117, 0.58)";
 				return false;
 			  }	  
@@ -1391,3 +1392,4 @@ function comprobarTelfSearch(campo) {
 		return false;
 		}
 }
+</script>

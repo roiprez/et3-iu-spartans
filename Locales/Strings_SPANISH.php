@@ -52,6 +52,11 @@ array(
 	'Grupos' => 'Grupos',
 	'buscar' => 'Buscar',
 	
+	
+	/*Diccionario js*/
+	'Longitud incorrecta. El atributo nombre debe ser maximo 30',
+	'El atributo nombre no admite caracteres no alfabéticos' => 'El atributo nombre no admite caracteres no alfabéticos',
+	'El campo nombre solo puede contener letras' => 'El campo nombre solo puede contener letras',
 	/*Diccionario acciones*/
 	'IdAccion' => 'IdAccion',
 	'NombreAccion' => 'NombreAccion',
