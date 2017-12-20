@@ -145,6 +145,8 @@ array(
 	'PorcentajeNota' => 'PorcentaxeNota',
 	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Xeráronse as asignacions e as súas correspondentes evaluacions con éxito',
 	'Porcentaje Trabajo' => 'Porcentaxe Traballo',
+	'generar asignaciones' => 'xenerar asignacions',
+	'borrar linea' => 'borrar linea',
 	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Mostrar todo',

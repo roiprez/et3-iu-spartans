@@ -90,6 +90,7 @@ array(
 	'OK' => 'Ok',
 	'Incorrecto' => 'Incorrecto',
 	'Correcto' => 'Correcto',
+	'correcto' => 'Correcto',
 	'Comentario' => 'Comentario',
 	'comentario' => 'Comentario',
 	'Corrección de la evaluación' => 'Corrección de la evaluación',
@@ -152,6 +153,8 @@ array(
 	'PorcentajeNota' => 'PorcentajeNota',
 	'Porcentaje Trabajo' => 'Porcentaje Trabajo',
 	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito',
+	'generar asignaciones' => 'generar asignaciones',
+	'borrar linea' => 'borrar linea',
 	
 	/*Diccionario menus*/
 	'Mostrar todo' => 'Mostrar todo',
