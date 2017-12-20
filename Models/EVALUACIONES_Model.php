@@ -250,11 +250,11 @@ function SEARCH_STRICT_EV()
 					)";
 	// si se produce un error en la busqueda mandamos el mensaje de error en la consulta
 	if (!($resultado = $this->mysqli->query($sql))){
-	return 'Error en la consulta sobre la base de datos';
-}
+		return 'Error en la consulta sobre la base de datos';
+	}
 	else{ // si la busqueda es correcta devolvemos el recordset resultado
-	return $resultado;
-}
+		return $resultado;
+	}
 } // fin metodo SEARCH
 
 function SEARCH_STRICT_QA()
@@ -269,11 +269,11 @@ function SEARCH_STRICT_QA()
 					)";
 	// si se produce un error en la busqueda mandamos el mensaje de error en la consulta
 	if (!($resultado = $this->mysqli->query($sql))){
-	return 'Error en la consulta sobre la base de datos';
-}
+		return 'Error en la consulta sobre la base de datos';
+	}
 	else{ // si la busqueda es correcta devolvemos el recordset resultado
-	return $resultado;
-}
+		return $resultado;
+	}
 } // fin metodo SEARCH
 
 // funcion DELETE()
