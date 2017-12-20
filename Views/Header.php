@@ -10,11 +10,7 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 		}
 
 		function render(){
-			
-<<<<<<< HEAD
-=======
 			include_once '../Functions/getTrabajos.php';
->>>>>>> b31778e905e322eb8290de2e7a8a0178e97efd3e
 			include_once '../Functions/Authentication.php';
 			include_once '../Functions/comprobarAdmin.php';
 			include_once '../Functions/Generacion_QAs.php';
