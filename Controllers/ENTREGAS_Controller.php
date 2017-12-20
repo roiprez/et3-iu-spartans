@@ -25,7 +25,6 @@ function get_data_form(){
         $Alias,
         $Horas, 
         $Ruta
-  
     );
 
     return $ENTREGAS;

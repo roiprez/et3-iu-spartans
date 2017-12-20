@@ -16,7 +16,7 @@ class Register{
         <h1><?php echo $strings['Registro']; ?></h1>
         <form id="formulario-registro" name="formulario_registro" method="post" onsubmit="return validarFormularioUsuario('reg') && encriptar()">
             <label><?php echo $strings['Login']; ?>
-                <input type="text" name="login" id = 'login' required="true" size="9" maxlength="9" onchange="comprobarVacio(this) && comprobarTexto(this, 9)"/>
+                <input type="text" name="login" id = 'login' required title= "Se requiere un nombre" size="9" maxlength="9" onchange="comprobarVacio(this) && comprobarTexto(this, 9)"/>
             </label>
             <label><?php echo $strings['Password']; ?>
                 <input type="password" name="password" id = 'password' required="true" size="20" maxlength="20" onchange="comprobarVacio(this) && comprobarTexto(this, 20)"/>

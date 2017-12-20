@@ -6,7 +6,7 @@ include_once '../Models/EVALUACIONES_Model.php';
 
 function generarNotaEntrega($idTrabajo, $alias, $porcentajeNota){
 	$EVALUACIONES = new EVALUACIONES_Model($idTrabajo, '', $alias, '', '', '', '', '', '');   
-  $evaluaciones = $EVALUACIONES->SEARCH();
+  $evaluaciones = $EVALUACIONES->SEARCH_STRICT_EV();
 
   $numero_historias = 0; 
   $numero_correctos = 0;
@@ -25,7 +25,7 @@ function generarNotaEntrega($idTrabajo, $alias, $porcentajeNota){
 } 
 function generarNotaQA($idTrabajo, $login, $porcentajeNota){
 	$EVALUACIONES = new EVALUACIONES_Model($idTrabajo, $login, '', '', '', '', '', '', '');   
-  $evaluaciones = $EVALUACIONES->SEARCH();
+  $evaluaciones = $EVALUACIONES->SEARCH_STRICT_QA();
 
   $numero_historias = 0;
   $numero_correctos = 0;

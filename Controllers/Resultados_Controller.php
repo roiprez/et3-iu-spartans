@@ -20,7 +20,7 @@ $AliasEvaluado = $entregas[2];
 
 if($_REQUEST['Generar'][0] == 'E'){
     $EVALUACION = new EVALUACIONES_Model($IdTrabajo, '', $AliasEvaluado, '','','', '', '','');
-    $datos = $EVALUACION->SEARCH();
+    $datos = $EVALUACION->SEARCH_STRICT_EV();
 
     $HISTORIA = new HISTORIA_Model($IdTrabajo, '', '');
     $historias = $HISTORIA->SEARCH();
@@ -36,8 +36,8 @@ if($_REQUEST['Generar'][0] == 'E'){
     new Resultados_SHOWCURRENT_ET($lista, $datos, $descrip_historias, '../Controllers/Index_Controller.php');
 
 } elseif($_REQUEST['Generar'][0] == 'Q'){
-    $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo, $LoginEvaluador, '', '','','', '', '','');
-    $datos = $EVALUACIONES->SEARCH();
+    $EVALUACIONES = new EVALUACIONES_Model($IdTrabajo,$LoginEvaluador, '', '','','', '', '','');
+    $datos = $EVALUACIONES->SEARCH_STRICT_QA();
 
     $HISTORIA = new HISTORIA_Model($IdTrabajo, '', '');
     $historias = $HISTORIA->SEARCH();
@@ -60,7 +60,7 @@ if($_REQUEST['Generar'][0] == 'E'){
         //Rellenamos la variable historias
         $historias = $HISTORIA->SEARCH();
         //Define el número de historia
-        $j = 0;
+        $j = 1;
         while($j<=count($descrip_historias) && $row = $datos->fetch_array()) {
             //Guardamos en la qa $i, y en la historia $j el valor de CorrectoA
             $qas[$i][$j] = $row[4];

@@ -30,7 +30,7 @@ class Evaluacion_ADD// declaración de clase
 
         <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarEntidad('evaluacion','add') && encriptar()">
 
-            <label<?php echo $strings['Id del trabajo']; ?>
+            <label><?php echo $strings['Id del trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true"
                        size="6" maxlength="6" onChange ="return comprobarTexto(this,this.size);"
