@@ -219,6 +219,7 @@ array(
 	'CorrectoP' => 'CorrectT',
 	'ComentIncorrectoP' => 'ComenIncorrectT',
 	'OK' => 'OK',
+	'borrar el contenido introducido' => 'delete content entered',
 	
 	/*Diccionario Notas*/
 	'IdTrabajo' => 'IdWork',

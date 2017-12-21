@@ -109,6 +109,7 @@ array(
 	'CorrectoP' => 'CorrectoP',
 	'ComentIncorrectoP' => 'ComentIncorrectoP',
 	'OK' => 'OK',
+	'borrar el contenido introducido' => 'borrar el contenido introducido',
 	
 	/*Diccionario Funcionalidades*/
 	'IdFuncionalidad' => 'IdFuncionalidad',
