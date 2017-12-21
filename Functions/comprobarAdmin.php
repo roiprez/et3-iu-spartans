@@ -6,8 +6,14 @@ Devuelve true si el usuario pertenece al grupo de Admin
 include_once '../Models/GRUPOS_Model.php';
 
 function isAdmin(){
-	$GRUPOSLOGIN = new USU_GRUPO_Model($_SESSION['login'],'');
-	$gruposLogin = $GRUPOSLOGIN->SEARCH();
+	if(!isset($_REQUEST['login'])){
+		$_REQUEST['login']='';
+	}
+	$GRUPOS_LOGIN = new USU_GRUPO_Model($_REQUEST['login'],'');
+	
+	$gruposLogin = $GRUPOS_LOGIN->SEARCH();
+	
+	
 	while($row = $gruposLogin->fetch_array()) {
 		if($row[1] == 'Admin'){
 			return true;

@@ -17,16 +17,17 @@ else{
 	$usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],'','','','','','');
 	$respuesta = $usuario->login();
 
-	if ($respuesta == 'true' && !isAdmin()){
+	if ($respuesta == 'true' && isAdmin()){
 		session_start();
 		$_SESSION['login'] = $_REQUEST['login'];
-		$_SESSION['controlador'] = 'ENTREGAS_Controller';
+		$_SESSION['controlador'] = 'USUARIOS_Controller';
 		header('Location:../index.php');
+		
 	}
 	else if ($respuesta == 'true'){
 		session_start();
 		$_SESSION['login'] = $_REQUEST['login'];
-		$_SESSION['controlador'] = 'USUARIOS_Controller';
+		$_SESSION['controlador'] = 'ENTREGAS_Controller';
 		header('Location:../index.php');
 	}else{
 		include '../Views/MESSAGE_View.php';

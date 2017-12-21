@@ -142,7 +142,7 @@ Vista que contiene el Menú lateral
 						<?php }?>
 						
 						<!--Si es administrador o tiene permisos-->
-						<?php if (isAdmin() || (isAllow('Nota','Show') || isAllow('Nota','Add') || isAllow('Nota','Search'))){?>
+						<?php if ((isAllow('Nota','Show') || isAllow('Nota','Add') || isAllow('Nota','Search'))){?>
 						<li class="dropdown">
 							<input onclick="dropdownMenu('submenu_notas')" type="button" name="Controlador" value="<?php echo $strings['NOTAS']; ?>" class="dropbtn"></input>
 							<ul id="submenu_notas" class="dropdown-content">
