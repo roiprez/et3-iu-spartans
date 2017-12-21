@@ -212,7 +212,7 @@ function __construct($login,$idGrupo)
     } // fin del metodo ADD
     
 	function SEARCH(){
-      $sql = "SELECT * FROM USU_GRUPO WHERE ((login LIKE REPLACE('%$this->login%', ' ', '' )) && (IdGrupo LIKE REPLACE('%$this->idGrupo%', ' ', '' )))";
+      $sql = "SELECT * FROM USU_GRUPO WHERE ((login LIKE REPLACE('$this->login', ' ', '' )) && (IdGrupo LIKE REPLACE('%$this->idGrupo%', ' ', '' )))";
     // si se produce un error en la busqueda mandamos el mensaje de error en la consulta
     if (!($resultado = $this->mysqli->query($sql))){
         return 'Error en la consulta sobre la base de datos';
