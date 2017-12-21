@@ -7,7 +7,7 @@ Controlador que se encarga de hacer login en la aplicación
 include '../Functions/comprobarAdmin.php';
 
 session_start();
-$_SESSION['login'] = null;
+
 if(!isset($_REQUEST['login']) && !(isset($_REQUEST['password']))){
 	include '../Views/LOGIN_View.php';
 	$login = new Vista_LOGIN();
@@ -17,21 +17,21 @@ else{
 	$usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],'','','','','','');
 	$respuesta = $usuario->login();
 
-	if ($respuesta == 'true' && isAdmin()){
+	if ($respuesta == 'true')
+	{
 		session_start();
 		$_SESSION['login'] = $_REQUEST['login'];
+		if(isAdmin())
+		{
 		$_SESSION['controlador'] = 'USUARIOS_Controller';
 		header('Location:../index.php');
-		
-	}
-	else if ($respuesta == 'true'){
-		session_start();
-		$_SESSION['login'] = $_REQUEST['login'];
-		$_SESSION['controlador'] = 'ENTREGAS_Controller';
-		header('Location:../index.php');
+		}else{
+				$_SESSION['controlador'] = 'ENTREGAS_Controller';
+				header('Location:../index.php');
+			}
 	}else{
-		include '../Views/MESSAGE_View.php';
-		new Vista_MESSAGE($respuesta, './Login_Controller.php');
+	include '../Views/MESSAGE_View.php';
+	new Vista_MESSAGE($respuesta, './Login_Controller.php');
 	}
 }
 ?>
