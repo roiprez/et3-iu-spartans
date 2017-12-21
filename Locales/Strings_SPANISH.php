@@ -99,6 +99,16 @@ array(
 	'Id de la historia' => 'Id de la historia',
 	'Alias evaluado' => 'Alias evaluado',
 	'Login evaluador' => 'Login evaluador',
+	'Detalles' => 'Detalles',
+	'IdTrabajo' => 'IdTrabajo',
+	'LoginEvaluador' => 'LoginEvaluador',
+	'AliasEvaluado' => 'AliasEvaluado',
+	'IdHistoria' => 'IdHistoria',
+	'CorrectoA' => 'CorrectoA',
+	'ComenIncorrectoA' => 'ComenIncorrectoA',
+	'CorrectoP' => 'CorrectoP',
+	'ComentIncorrectoP' => 'ComentIncorrectoP',
+	'OK' => 'OK',
 	
 	/*Diccionario Funcionalidades*/
 	'IdFuncionalidad' => 'IdFuncionalidad',
