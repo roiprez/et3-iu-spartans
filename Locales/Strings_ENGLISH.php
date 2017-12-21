@@ -89,7 +89,7 @@ array(
 	'Incorrecto' => 'Incorrect',
 	'Correcto' => 'Correct',
 	'Comentario' => 'Commentary',
-	'Comentario' => 'Comentary',
+	'comentario' => 'Comentary',
 	'Corrección de la evaluación' => 'correction of the evaluation',
 	'Corrección del profesor' => 'Teacher correction',
 	'Corrección de la historia' => 'Correction of history',
@@ -148,6 +148,8 @@ array(
 	'PorcentajeNota' => 'MarkPercent',
 	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Asgnations and evaluations have been generated succesfully',
 	'Porcentaje Trabajo' => 'WorkPercent',
+	'generar asignaciones' => 'generate asignations',
+	'borrar linea' => 'delete line',
 	
 	/*Diccionario submenus*/
 	'Mostrar todo' => 'Show Everything',

@@ -55,14 +55,14 @@ class Evaluacion_EDIT// declaración de clase
             <label><?php echo $strings['Corrección de la historia']; ?>
                 <select name="CorrectoA" id="CorrectoA" required="true" size="1">
                     <option selected="true" value="<?php echo $this->lista_valores['CorrectoA'] ?>"><?php if($this->lista_valores['CorrectoA']==1){
-                            echo $this->lista_valores['Correcto'];
+                             echo $strings['Correcto'];
                         }else{
-                            echo $this->lista_valores['Incorrecto'];
+                             echo $strings['Incorrecto'];
                         }?>
                     
                     </option>
-                    <option value="1"><?php echo $this->lista_valores['Correcto'] ?></option>
-                    <option value="0"><?php echo $this->lista_valores['Inorrecto'] ?></option>
+                    <option value="1"><?php echo $strings['Correcto'];?></option>
+                    <option value="0"><?php echo $strings['Incorrecto']; ?></option>
                 </select>
             </label>
             <label><?php echo $strings['comentario']; ?>
@@ -75,14 +75,14 @@ class Evaluacion_EDIT// declaración de clase
                 <label><?php echo $strings['Corrección del profesor']; ?>
                     <select name="CorrectoP" id="CorrectoP" required="true" size="1">
                         <option selected="true" value="<?php echo $this->lista_valores['CorrectoP'] ?>"><?php if($this->lista_valores['CorrectoP']==1){
-                                echo $this->lista_valores['Correcto'];
+                               echo $strings['Correcto'];
                             }else{
-                                echo $this->lista_valores['Incorrecto'];
+                                echo $strings['Incorrecto'];
                             }?>
                     
                         </option>
-                        <option value="1"><?php echo $this->lista_valores['Correcto'] ?></option>
-                        <option value="0"><?php echo $this->lista_valores['Incorrecto'] ?></option>
+                       <option value="1"><?php echo $strings['Correcto'];?></option>
+                    <option value="0"><?php echo $strings['Incorrecto']; ?></option>
                     </select>
                 </label>
                 <label><?php echo $strings['comentario']; ?>
@@ -91,14 +91,14 @@ class Evaluacion_EDIT// declaración de clase
                 <label><?php echo $strings['Corrección de la evaluación']; ?>
                     <select name="OK" id="OK" required="true" size="1">
                         <option selected="true" value="<?php echo $this->lista_valores['OK'] ?>"><?php if($this->lista_valores['OK']==1){
-                                echo $this->lista_valores['Correcto'];
+                                echo  $strings['Correcto']; 
                             }else{
-                                echo $this->lista_valores['Correcto'];
+                                echo $strings['Incorrecto'];
                             }?>
                     
                         </option>
-                        <option value="1"><?php echo $this->lista_valores['Correcto'] ?>"></option>
-                        <option value="0"><?php echo $this->lista_valores['Incorrecto'] ?>"></option>
+                        <option value="1"><?php echo $strings['Correcto'];?></option>
+                    <option value="0"><?php echo $strings['Incorrecto']; ?></option>
                     </select>
                 </label>
                 <?php

@@ -10,7 +10,6 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 		}
 
 		function render(){
-			
 			include_once '../Functions/getTrabajos.php';
 			include_once '../Functions/Authentication.php';
 			include_once '../Functions/comprobarAdmin.php';
@@ -33,8 +32,8 @@ Vista que contiene el Header y el menú lateral de la aplicación, en el se cont
 			<title><?php echo $strings['Portal de Gestión']?></title>
 			<link href="../css/index.css" type="text/css" rel="stylesheet">
 			<link href="../css/tcal.css" type="text/css" rel="stylesheet">
-			<script type="text/javascript" src="../js/validaciones.js"></script>
-            <script type="text/javascript" src="../js/tcal.js"></script>
+			<?php include '../js/validaciones.js'; ?>
+
 			<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans" rel="stylesheet">
 		</head>
 		<body>
