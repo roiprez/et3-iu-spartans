@@ -38,7 +38,7 @@ array(
 	'Gestión Asignatura IU' => 'Gestión Asignatura IU',
 	'Borrado correctamente' => 'Borrado correctamente',
 	'Modificado correctamente' => 'Modificado correctamente',
-	
+	'QA realizadas' => 'QA realizadas',
 	'Detalle del usuario' => 'Detalle del usuario',
 	'¿Está seguro de querer borrar los siguientes datos?' => '¿Está seguro de querer borrar los siguientes datos?',
 	'Ya existe en la base de datos' => 'Ya existe en la base de datos',

@@ -33,7 +33,7 @@ array(
 	'Direccion' => 'Addres',
 	'Telefono' =>'Phone',
 	'Teléfono' =>'Phone',
-
+	'QA realizadas' => 'QA done',
 	'El login no existe' => 'The login dont exists',
 	'Volver' => 'Back',
 	'La password para este usuario no es correcta' => 'Incorrect password for this login',
@@ -43,7 +43,7 @@ array(
 	'El usuario ya existe' => 'The user already exists',
 	'Gestión Asignatura IU' => 'User Interface Management',
 	'Borrado correctamente' => 'Deleted successfully',
-
+	'Corrección del profesor' => 'Teacher correction',
 	'Modificado correctamente' => 'Modified successfully',
 	'Detalle del usuario' => 'User detail',
 	'¿Está seguro de querer borrar los siguientes datos?' => 'Are you sure that you want to delete the following data?',
