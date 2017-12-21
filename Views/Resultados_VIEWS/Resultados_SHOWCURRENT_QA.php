@@ -34,65 +34,59 @@ class ResultadosSHOWCURRENT_QA
             
             
             //Si esta autenticado y es administrador
-            }else{
+        }else{
 
-        for($i=1;$i<=count($this->lista_descripHist);$i++){//recorre todas las historias, $i=numero de historia actual
-           ?>
-            <table id="tabla-resultados">
-                <tr>
-                    <h3><?php echo $i . "   " . $this->lista_descripHist[$i-1]?></h3>
-                </tr>
-                <tr>
-                    <td></td>
-                    <th>QA1</th>
-                    <th>QA2</th>
-                    <th>QA3</th>
-                    <th>QA4</th>
-                    <th>QA5</th>
-                </tr>
-                <tr>
-                    <td>QA realizadas</td>
-                    <?php
-                    for($j=0;$j<5;$j++){
-                        if($this->QAS[$j][$i]==0){
-                            ?>
-                            <td class="celda-incorrecta"></td>
-                            <?php
-                        } else {
-                            ?>
-                            <td class="celda-correcta"></td>
-                            <?php
+            for($i=1;$i<=count($this->lista_descripHist);$i++){//recorre todas las historias, $i=numero de historia actual
+            ?>
+                <table id="tabla-resultados">
+                    <tr>
+                        <h3><?php echo $i . "   " . $this->lista_descripHist[$i-1]?></h3>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <th>QA1</th>
+                        <th>QA2</th>
+                        <th>QA3</th>
+                        <th>QA4</th>
+                        <th>QA5</th>
+                    </tr>
+                    <tr>
+                        <td>QA realizadas</td>
+                        <?php
+                        for($j=0;$j<5;$j++){
+                            if($this->QAS[$j][$i]==0){
+                                ?>
+                                <td class="celda-incorrecta"></td>
+                                <?php
+                            } else {
+                                ?>
+                                <td class="celda-correcta"></td>
+                                <?php
+                            }
                         }
-                    }
-                    ?>
-                </tr>
-                <tr>
-                    <td>Corrección del profesor</td>
-                    <?php
-                    for($j=0;$j<5;$j++){
-                        if($this->OKS[$j][$i]==0){
-                            ?>
-                            <td class="celda-incorrecta"></td>
-                            <?php
-                        } else {
-                            ?>
-                            <td class="celda-correcta"></td>
-                            <?php
+                        ?>
+                    </tr>
+                    <tr>
+                        <td>Corrección del profesor</td>
+                        <?php
+                        for($j=0;$j<5;$j++){
+                            if($this->OKS[$j][$i]==0){
+                                ?>
+                                <td class="celda-incorrecta"></td>
+                                <?php
+                            } else {
+                                ?>
+                                <td class="celda-correcta"></td>
+                                <?php
+                            }
                         }
-                    }
-                    ?>
-                </tr>
-            </table>
+                        ?>
+                    </tr>
+                </table>
 
-            <?php
-        } //fin bucle for
-        ?>
-
-        <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
-            <button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button>
-        </form> <!--Imagen para la accion back,que permite volver al menu principal-->
-        <?php
-			}
+                <?php
+            } //fin bucle for
+        }
     }
 }
 
