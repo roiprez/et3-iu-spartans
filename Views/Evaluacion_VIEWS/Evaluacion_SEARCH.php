@@ -44,7 +44,7 @@ class Evaluacion_SEARCH// declaración de clase
                        size="9" maxlength="9"
                 />
             </label>
-            <label> <label><?php echo $strings['Alias evaluado']; ?>
+             <label><?php echo $strings['Alias evaluado']; ?>
                 <input type="text" name="AliasEvaluado"
                        id="AliasEvaluado" 
                        size="9" maxlength="9" 
@@ -62,7 +62,7 @@ class Evaluacion_SEARCH// declaración de clase
                   <option value="0"><?php echo $strings['Incorrecto'];?></option>
                 </select>
             </label>
-            <label> <label><?php echo $strings['comentario']; ?>
+            <label><?php echo $strings['comentario']; ?>
                 <textarea form="formulario-search" maxlength="300" name="ComenIncorrectoA"></textarea>
             </label>
             <label><?php echo $strings['Corrección del profesor']; ?>
@@ -71,7 +71,7 @@ class Evaluacion_SEARCH// declaración de clase
                   <option value="0"><?php echo $strings['Incorrecto'];?></option>
                 </select>
             </label>
-            <label> <label><?php echo $strings['comentario']; ?>
+            <label><?php echo $strings['comentario']; ?>
                 <textarea form="formulario-search" maxlength="300" name="ComentIncorrectoP"></textarea>
             </label>
             <label><?php echo $strings['Corrección de la evaluación']; ?>

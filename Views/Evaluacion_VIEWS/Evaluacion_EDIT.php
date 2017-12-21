@@ -118,7 +118,7 @@ class Evaluacion_EDIT// declaración de clase
             ?>
             <div class="botones-formulario">
                 <button id="enviar" name = "action" value = "EDIT" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>
-                <button class="borrar" type="reset" name="limpiar" title="<?php echo['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
+                <button class="borrar" type="reset" name="limpiar" title="<?php echo $strings['borrar el contenido introducido']; ?>"> <img class="button-td" src="../Iconos/borrar_campo.png" ></button>
             </div>
         </form>
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">

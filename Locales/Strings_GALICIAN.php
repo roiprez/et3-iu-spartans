@@ -91,6 +91,17 @@ array(
 	'Id de la historia' => 'Id da historia',
 	'Alias evaluado' => 'Alias do evaluado',
 	'Login evaluador' => 'Login do evaluador',
+	'Detalles' => 'Detalles',
+	'IdTrabajo' => 'IdTraballo',
+	'LoginEvaluador' => 'LoginEvaluador',
+	'AliasEvaluado' => 'AliasEvaluado',
+	'IdHistoria' => 'IdHistoria',
+	'CorrectoA' => 'CorrectoA',
+	'ComenIncorrectoA' => 'ComenIncorrectoA',
+	'CorrectoP' => 'CorrectoP',
+	'ComentIncorrectoP' => 'ComentIncorrectoP',
+	'OK' => 'OK',
+	'borrar el contenido introducido' => 'borrar o contido introducido',
 	
 	/*Diccionario Funcionalidades*/
 	'IdFuncionalidad' => 'IdFuncionalidade',

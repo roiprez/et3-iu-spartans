@@ -209,6 +209,17 @@ array(
 	/*Diccionario Evaluaciones*/
 	'El login no tiene que evaluar el trabajo o al alias indicado' => 'The login does not have to evaluate the work or alias indicated',
 	'La historia de este trabajo ya existe' => 'History already exists to this work',
+	'Detalles' => 'Details',
+	'IdTrabajo' => 'IdWork',
+	'LoginEvaluador' => 'LoginEvaluator',
+	'AliasEvaluado' => 'AliasEvaluate',
+	'IdHistoria' => 'IdHistoria',
+	'CorrectoA' => 'CorrectS',
+	'ComenIncorrectoA' => 'ComenIncorrectS',
+	'CorrectoP' => 'CorrectT',
+	'ComentIncorrectoP' => 'ComenIncorrectT',
+	'OK' => 'OK',
+	'borrar el contenido introducido' => 'delete content entered',
 	
 	/*Diccionario Notas*/
 	'IdTrabajo' => 'IdWork',
