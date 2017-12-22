@@ -190,6 +190,7 @@ array(
 	'editar' => 'Editar',
 	'borrar línea' => 'Borrar línea',
 	'buscar' => 'Buscar',
+	'editar grupos' => 'Editar grupos',
 	'editar acciones' => 'editar acciones',
 	'editar permisos' => 'editar permisos',
 	'generar notas' => 'Generar notas',

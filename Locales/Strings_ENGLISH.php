@@ -182,6 +182,7 @@ array(
 	'editar' => 'Edit',
 	'borrar línea' => 'Delete line',
 	'buscar' => 'Search',
+	'editar grupos' => 'Edit groups',
 	'editar acciones' => 'Edit actions',
 	'editar permisos' => 'Edit permisssion',
 	'generar notas' => 'Generate calification',
