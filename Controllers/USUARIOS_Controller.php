@@ -108,7 +108,7 @@ if (!isset($_REQUEST['IdGrupo'])){
 			else{
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);
 				$datos = $USUARIOS->SEARCH();
-				$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion', 'Telefono');				
+				$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo');				
 				new Usuario_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 			}
 			break;
@@ -159,7 +159,7 @@ if (!isset($_REQUEST['IdGrupo'])){
 				$USUARIOS = get_data_form();
 			}
 			$datos = $USUARIOS->SEARCH();
-			$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
+			$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo');
 			new Usuario_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 						
 	}
