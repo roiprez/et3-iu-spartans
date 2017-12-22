@@ -200,6 +200,7 @@ array(
 	'La accion ya esta asignada a esa funcionalidad' => 'Action is already assigned to that functionality',
 	'La accion no existe o el Id es incorrecto' => 'Action doesn´t exists or Id is incorrect',
 	'La funcionalidad no existe o el Id es incorrecto' => 'Functionality doesn´t exists or Id is incorrect',
+	'Se han registrado sus cambios' => 'Your changes have been succesfully commited',
 	
 	/*Diccionario para GRUPOS_Model*/
 	'El usuario ya esta asignado a ese grupo' => 'User is already assigned to this group',

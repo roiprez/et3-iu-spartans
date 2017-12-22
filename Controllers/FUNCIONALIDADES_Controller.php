@@ -97,10 +97,12 @@ if (!isset($_REQUEST['action'])){
 				$acciones = $ACCIONES->SEARCH();
 
 				$lista_acciones = [];
+				$lista_nombre_acciones = [];
 				$lista_funcionalidades_accion = [];
 
 				while($row = $acciones->fetch_array()) {
 					array_push($lista_acciones, $row[0]);
+					array_push($lista_nombre_acciones, $row[1]);
 					$contained = false;
 					$FUNC_ACCION = new FUNC_ACCION_Model($_REQUEST['IdFuncionalidad'],''); 
 					$datos_func_accion = $FUNC_ACCION->SEARCH();
@@ -111,7 +113,7 @@ if (!isset($_REQUEST['action'])){
 					}
 					array_push($lista_funcionalidades_accion, $contained);
 				}
-				new Fun_Accion_GESTION($lista_acciones,$_REQUEST['IdFuncionalidad'],$lista_funcionalidades_accion);
+				new Fun_Accion_GESTION($lista_acciones,$lista_nombre_acciones,$_REQUEST['IdFuncionalidad'], $_REQUEST['NombreFuncionalidad'],$lista_funcionalidades_accion);
 			}
 			else{//Si se ha hehco un post	
 				$funcionalidad = $_REQUEST['IdFuncionalidad'];

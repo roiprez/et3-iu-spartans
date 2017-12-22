@@ -54,17 +54,26 @@ if (!isset($_REQUEST['action'])){
 
 Switch ($_REQUEST['action']){
     case 'ADD':
-        $TRABAJO = new TRABAJOS_Model($_REQUEST['IdTrabajo'],'','','','');
-        $trabajo = $TRABAJO->SEARCH()->fetch_array();
-        $valores = $NOTAS->RellenaDatos();
-        $ENTREGA = get_data_form2();
-        $valorentrega = $ENTREGA->SEARCH();
-        $alias_v = $valorentrega->fetch_array();
-        $NOTAS = get_data_form();
-        $NOTAS['NotaTrabajo'] = generarNotasEntrega($IdTrabajo,$alias_v[2],$trabajo[4]);
-        $respuesta = $NOTAS->ADD();
-        new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+        // $TRABAJO = new TRABAJOS_Model($_REQUEST['IdTrabajo'],'','','','');
+        // $trabajo = $TRABAJO->SEARCH()->fetch_array();
+        // $valores = $NOTAS->RellenaDatos();
+        // $ENTREGA = get_data_form2();
+        // $valorentrega = $ENTREGA->SEARCH();
+        // $alias_v = $valorentrega->fetch_array();
+        // $NOTAS = get_data_form();
+        // $NOTAS['NotaTrabajo'] = generarNotasEntrega($IdTrabajo,$alias_v[2],$trabajo[4]);
+        // $respuesta = $NOTAS->ADD();
+        // new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         
+        case 'ADD':
+        if (!$_POST){
+            new Nota_Trabajo_ADD();
+        }
+        else{		
+            $NOTAS = get_data_form();
+            $respuesta = $NOTAS->ADD();
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
+        }
         break;
     case 'DELETE':
         if (!$_POST){
