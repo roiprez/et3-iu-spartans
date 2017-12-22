@@ -10,7 +10,7 @@ class Fun_Accion_GESTION// declaración de clase
     //Constructor
     function __construct($lista_acciones,$funcionalidad,$lista_valores)
     {	
-    	$this->lista_funcionalidades=$lista_acciones;
+    	$this->lista_acciones=$lista_acciones;
     	$this->funcionalidad=$funcionalidad;
     	$this->lista_valores=$lista_valores;
         $this->pinta();
@@ -19,13 +19,11 @@ class Fun_Accion_GESTION// declaración de clase
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         //Si el usuarios está autenticado pero no es administrador 
-            if (IsAuthenticated() && !isAllow('FunAct','Gest')){
+        if (IsAuthenticated() && !isAllow('FunAct','Gest')){
             $respuesta= "No tienes permiso para acceder a esta vista";
-            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
-            
-            
-            //Si esta autenticado y es administrador
-            }else{
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción    
+        //Si esta autenticado y es administrador
+        }else{
 
         ?>
         <h1><?php echo $strings['Funcionalidad']; ?>: <?php echo $this->funcionalidad?></h1>
