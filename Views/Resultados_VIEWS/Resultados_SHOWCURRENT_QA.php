@@ -51,7 +51,7 @@ class ResultadosSHOWCURRENT_QA
                         <th>QA5</th>
                     </tr>
                     <tr>
-                        <td>QA realizadas</td>
+                        <td><?php echo $strings['QA realizadas'];?></td>
                         <?php
                         for($j=0;$j<5;$j++){
                             if($this->QAS[$j][$i]==0){
@@ -67,7 +67,7 @@ class ResultadosSHOWCURRENT_QA
                         ?>
                     </tr>
                     <tr>
-                        <td>Corrección del profesor</td>
+                        <td><?php echo $strings['Corrección del profesor']; ?></td>
                         <?php
                         for($j=0;$j<5;$j++){
                             if($this->OKS[$j][$i]==0){

@@ -40,10 +40,10 @@ array(
 	'Gestión Asignatura IU' => 'Xestión Asignatura IU',
 	'Borrado correctamente' => 'Borrado correctamente',
 	'Modificado correctamente' => 'Modificado correctamente',
-	
+	'QA realizadas' => 'QA realizadas',
 	'Detalle del usuario' => 'Detalle do usuario',
 	'¿Está seguro de querer borrar los siguientes datos?' => '¿Está seguro de querer borrar os seguintes datos?',
-	
+	'Corrección del profesor' => 'Correción do profesor',
 	'Ya existe en la base de datos' => 'Xa existe na base de datos',
 	'No se ha podido conectar con la base de datos' => 'Non se fixo a conexión coa base de datos',
 	'Introduzca un valor' => 'Introduza un valor',
