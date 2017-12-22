@@ -4,14 +4,18 @@ class Fun_Accion_GESTION// declaración de clase
 {
 //declaracion de atributos
 	var $lista_acciones;
-	var $funcionalidad;
+    var $lista_nombre_acciones;
+    var $funcionalidad;
+	var $nombre_funcionalidad;
 	var $lista_valores;
 
     //Constructor
-    function __construct($lista_acciones,$funcionalidad,$lista_valores)
+    function __construct($lista_acciones,$lista_nombre_acciones,$funcionalidad,$nombre_funcionalidad,$lista_valores)
     {	
-    	$this->lista_funcionalidades=$lista_acciones;
-    	$this->funcionalidad=$funcionalidad;
+        $this->lista_acciones=$lista_acciones;
+        $this->lista_nombre_acciones=$lista_nombre_acciones;
+        $this->funcionalidad=$funcionalidad;      
+    	$this->nombre_funcionalidad=$nombre_funcionalidad;
     	$this->lista_valores=$lista_valores;
         $this->pinta();
     }
@@ -19,16 +23,14 @@ class Fun_Accion_GESTION// declaración de clase
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         //Si el usuarios está autenticado pero no es administrador 
-            if (IsAuthenticated() && !isAllow('FunAct','Gest')){
+        if (IsAuthenticated() && !isAllow('FunAct','Gest')){
             $respuesta= "No tienes permiso para acceder a esta vista";
-            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción
-            
-            
-            //Si esta autenticado y es administrador
-            }else{
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php'); //Mostramos el resultado de la ultima inserción    
+        //Si esta autenticado y es administrador
+        }else{
 
         ?>
-        <h1><?php echo $strings['Funcionalidad']; ?>: <?php echo $this->funcionalidad?></h1>
+        <h1><?php echo $strings['Funcionalidad']; ?>: <?php echo $this->nombre_funcionalidad?></h1>
         <form id="formulario-usu_grupo" name="formulario_usu_grupo" method="post">
 
         	<table>
@@ -43,7 +45,7 @@ class Fun_Accion_GESTION// declaración de clase
                 ?>
                     <tr>
                     	<td class="celda">
-                            <?php echo $this->lista_acciones[$i]?>
+                            <?php echo $this->lista_nombre_acciones[$i]?>
                             <input type="text" hidden value="<?php echo $this->lista_acciones[$i]?>">
                         </td>
                     	<td class="celda">

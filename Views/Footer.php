@@ -18,6 +18,7 @@ Vista que contiene el footer de la aplicación junto con los scripts de javascri
 		</div>
 		</div>
 		<footer><?php echo date("d-M-Y", mktime()); ?> - IU SPARTANS</footer>
+		<script type="text/javascript" src="../js/tcal.js"></script> 
 			<script type="text/javascript" src="../js/md5.js"></script> 
 			<script src="../js/menu.js" type="text/javascript"></script>
 			<script src="../js/validaciones.js" type="text/javascript"></script>

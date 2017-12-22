@@ -61,7 +61,7 @@ function validarEntidad(entidad, formulario){
   	break;
   	
   	default:
-  	alert('algo ha petado');
+  	alert('Se ha alcanzado el default, el nombre de la entidad está mal en el submit de la vista');
   	}// fin switch
 		
 		//Si el valor de formulario no es search
@@ -99,7 +99,7 @@ function validarEntidad(entidad, formulario){
 	break;
 	
 	default:
-	alert('algo ha petado');
+  alert('Se ha alcanzado el default, el nombre de la entidad está mal en el submit de la vista');
 	}//Fin switch
 	
 	}//Fin else
