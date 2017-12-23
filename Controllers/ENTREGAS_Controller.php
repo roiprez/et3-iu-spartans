@@ -118,18 +118,6 @@ Switch ($_REQUEST['action']){
             new Entrega_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
         }
         break;
-    case 'QACHECK':
-        if (!$_POST){
-            $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['AliasEvaluado'],'','','', '','','');
-            $datos= $ENTREGAAEVALUAR->SEARCH();
-            $HISTORIAS= new HISTORIA_Model($_REQUEST['IdTrabajo'],'','');
-            $datosHistorias= $HISTORIAS->SEARCH();
-            new Entrega_CHECK_QA($_REQUEST['IdTrabajo'],$_REQUEST['AliasEvaluado'],$datos,$datosHistorias);
-        }
-        else{
-
-        }
-        break;
     case 'SHOWCURRENT':
         $ENTREGAS = new ENTREGAS_Model($_REQUEST['IdTrabajo'], $_REQUEST['login'], '', '', '');
         $lista = array('IdTrabajo', 'login', 'Alias', 'Horas', 'Ruta');
