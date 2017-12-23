@@ -118,10 +118,10 @@ Switch ($_REQUEST['action']){
             $datos= $ENTREGAAEVALUAR->SEARCH();
             $HISTORIAS= new HISTORIA_Model($_REQUEST['IdTrabajo'],'','');
             $datosHistorias= $HISTORIAS->SEARCH();
-            new Entrega_SEARCH($_REQUEST['IdTrabajo'],$_REQUEST['AliasEvaluado'],$datos,$datosHistorias);
+            new Entrega_CHECK_QA($_REQUEST['IdTrabajo'],$_REQUEST['AliasEvaluado'],$datos,$datosHistorias);
         }
         else{
-            
+
         }
         break;
     case 'SHOWCURRENT':

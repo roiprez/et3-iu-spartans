@@ -58,6 +58,19 @@ if (!isset($_REQUEST['action'])){
 			else{
 				$ACCIONES = new ACCIONES_Model($_REQUEST['IdAccion'], '', '');
 				$respuesta = $ACCIONES->DELETE();
+                $FUNCACCION= new FUNC_ACCION_Model('',$_REQUEST['IdAccion']);
+                $datos= $FUNCACCION->SEARCH();
+                while($rowFuncAccion= $datos->fetch_array()){
+                    $FUNCACCION= new FUNC_ACCION_Model($rowFuncAccion[0],$rowFuncAccion[1]);
+                    $FUNCACCION->DELETE();
+                    $PERMISO= new PERMISOS_Model('',$rowFuncAccion[0],$rowFuncAccion[1]);
+                    $datosPermisos= $PERMISO->SEARCH();
+                    while($rowPermiso= $datosPermisos->fetch_array()){
+                        $PERMISO= new PERMISOS_Model($rowPermiso[0],$rowPermiso[1],$rowPermiso[2]);
+                        $PERMISO->DELETE();
+                    }
+                }
+
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			break;
