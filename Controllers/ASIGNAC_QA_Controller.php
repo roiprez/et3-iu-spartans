@@ -55,12 +55,15 @@ Switch ($_REQUEST['action']){
         break;
     case 'EDIT':
         if (!$_POST){
-            $ASIG_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], '',$_REQUEST['AliasEvaluado']);
+            $ASIGNA_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], '',$_REQUEST['AliasEvaluado']);
             $valores = $ASIGNA_QA->RellenaDatos();
-
-            new Asignac_QA_EDIT($valores);
-        }
-        else{
+			             
+		   $IdTrabajo  = $valores[0];
+		   $LoginEvaluador = $valores[1];
+		   $LoginEvaluado = $valores[2];
+		   $AliasEvaluado = $valores[3];  
+            new Asignac_QA_EDIT($IdTrabajo,$LoginEvaluador,$LoginEvaluado,$AliasEvaluado);
+	} else{
             $ASIGNA_QA = new ASIGNAC_QA_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'],$_REQUEST['LoginEvaluado'] ,$_REQUEST['AliasEvaluado']);
             $respuesta = $ASIGNA_QA->EDIT();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
