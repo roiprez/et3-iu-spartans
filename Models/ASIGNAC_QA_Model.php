@@ -106,8 +106,8 @@ class ASIGNAC_QA_Model{
     } // fin metodo DELETE
     function EDIT(){
 // se construye la sentencia de busqueda de la tupla en la bd
-        $sql = "SELECT * FROM ASIGNAC_QA WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador')
-                                                                                    &&(AliasEvaluado= '$this->AliasEvaluado'))";
+        $sql = "SELECT * FROM ASIGNAC_QA WHERE ((IdTrabajo LIKE '$this->IdTrabajo') && (LoginEvaluador LIKE '$this->LoginEvaluador')
+                                                                                    && (AliasEvaluado LIKE '$this->AliasEvaluado'))";
         // se ejecuta la query
         $result = $this->mysqli->query($sql);
         // si el numero de filas es igual a uno es que lo encuentra

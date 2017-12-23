@@ -40,7 +40,7 @@ class Asignac_QA_EDIT// declaración de clase
         <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('edit') ">
 
             <label><?php echo $strings['Login del evaluado']; ?>
-                 <input type="text" name="login" readonly="true"
+                 <input type="text" name="LoginEvaluado" readonly="true"
                        id="login"
                        size="9" maxlength="9" value="<?php echo $this->usuario?>"
                 />
@@ -58,7 +58,7 @@ class Asignac_QA_EDIT// declaración de clase
                 />
             </label>
             <label><?php echo $strings['Login del evaluador']; ?>
-                <select name="IdTrabajo" id="IdTrabajo" required="true" size="1">
+                <select name="LoginEvaluador" id="LoginEvaluador" required="true" size="1">
                   
                   <option selected="true" value="<?php echo $this->corrector ?>"><?php echo $this->corrector ?></option>
                   <?php 
