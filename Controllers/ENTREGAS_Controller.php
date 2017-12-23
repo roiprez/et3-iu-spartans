@@ -10,7 +10,6 @@
     include '../Views/Entrega_VIEWS/Entrega_SEARCH.php';
     include '../Views/Entrega_VIEWS/Entrega_SHOWALL.php';
     include '../Views/Entrega_VIEWS/Entrega_SHOWCURRENT.php';
-    include '../Views/Entrega_VIEWS/Entrega_CHECK_QA.php';
     include '../Views/MESSAGE_View.php';
     include '../Functions/upload.php';
 
@@ -120,36 +119,15 @@ Switch ($_REQUEST['action']){
         }
         break;
     case 'QACHECK':
-<<<<<<< HEAD
         if (!$_POST){
             $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['AliasEvaluado'],'','','', '','','');
-=======
-         //Si no hay post
-         if (!$_POST){
-            $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['Alias'],'','','', '','','');
->>>>>>> 9560e2778b3c678a88d6c7b07198d244938417b5
             $datos= $ENTREGAAEVALUAR->SEARCH();
             $HISTORIAS= new HISTORIA_Model($_REQUEST['IdTrabajo'],'','');
             $datosHistorias= $HISTORIAS->SEARCH();
-            $arrayDescripciones= array();
-             while($rowHistoria = $datosHistorias->fetch_array()){
-                 $arrayDescripciones[]=$rowHistoria[2];
-             }
-            new Correccion_Conjunta_QAS($_REQUEST['IdTrabajo'],$_REQUEST['Alias'],$datos,$arrayDescripciones,'../Controllers/Index_Controller.php');
+            new Entrega_CHECK_QA($_REQUEST['IdTrabajo'],$_REQUEST['AliasEvaluado'],$datos,$datosHistorias);
         }
         else{
-<<<<<<< HEAD
 
-=======
-            $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['Alias'],'','','', '','','');
-            $ENTREGAAEVALUAR= $ENTREGAAEVALUAR->SEARCH();
-            foreach($ENTREGAAEVALUAR->fetch_array() as $rowEvaluacion){
-                $ok= $_REQUEST($rowEvaluacion[3]."_".$rowEvaluacion[1]);
-                $EVALUACION= new EVALUACIONES_Model($rowEvaluacion[0],$rowEvaluacion[1],$rowEvaluacion[2],$rowEvaluacion[3],$rowEvaluacion[4],$rowEvaluacion[5],$rowEvaluacion[6],$rowEvaluacion[7],$ok);
-                $respuesta= $EVALUACION->EDIT();
-            }
-            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
->>>>>>> 9560e2778b3c678a88d6c7b07198d244938417b5
         }
         break;
     case 'SHOWCURRENT':
