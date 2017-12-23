@@ -117,6 +117,7 @@ class Entrega_SHOWALL{  // declaración de clase
                         ?>
                         <td><button type = "submit" name = "action" value="SHOWCURRENT"  title="<?php echo $strings['Ver en detalle']; ?>"><img class="button-td" src="../Iconos/details.png"></img></button></td>
                         <td><button type = "submit" name = "action" value="EDIT" title="<?php echo $strings['editar']; ?>"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
+                        <td><button type = "submit" name = "action" value="QACHECK" title="<?php echo $strings['qaChek']; ?>"><img class="button-td" src="../Iconos/functionality_add.png" ></img></button></td>
                         <td><button type = "submit" name = "action" value="DELETE"  title="<?php echo $strings['borrar línea']; ?>"><img class="button-td" src="../Iconos/borrar.png"></img></button></td>
                     </tr>
                 </form>

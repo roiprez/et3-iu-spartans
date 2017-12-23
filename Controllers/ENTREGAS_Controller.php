@@ -16,6 +16,7 @@ Controlador que se encarga de gestionar las peticiones de lectura y escritura de
     include '../Views/Entrega_VIEWS/Entrega_SEARCH.php';
     include '../Views/Entrega_VIEWS/Entrega_SHOWALL.php';
     include '../Views/Entrega_VIEWS/Entrega_SHOWCURRENT.php';
+    include '../Views/Entrega_VIEWS/Entrega_CHECK_QA.php';
     include '../Views/MESSAGE_View.php';
     include '../Functions/upload.php';
 
@@ -149,14 +150,14 @@ if (!isset($_REQUEST['action'])){
     case 'QACHECK':
          //Si no hay post
          if (!$_POST){
-            $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['AliasEvaluado'],'','','', '','','');
+            $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['Alias'],'','','', '','','');
             $datos= $ENTREGAAEVALUAR->SEARCH();
             $HISTORIAS= new HISTORIA_Model($_REQUEST['IdTrabajo'],'','');
             $datosHistorias= $HISTORIAS->SEARCH();
-            new Entrega_CHECK_QA($_REQUEST['IdTrabajo'],$_REQUEST['AliasEvaluado'],$datos,$datosHistorias);
+            new Correccion_Conjunta_QAS($_REQUEST['IdTrabajo'],$_REQUEST['Alias'],$datos,$datosHistorias,'../Controllers/Index_Controller.php');
         }
         else{
-            $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['AliasEvaluado'],'','','', '','','');
+            $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['Alias'],'','','', '','','');
             $ENTREGAAEVALUAR= $ENTREGAAEVALUAR->SEARCH();
             foreach($ENTREGAAEVALUAR->fetch_array() as $rowEvaluacion){
                 $ok= $_REQUEST($rowEvaluacion[3]."_".$rowEvaluacion[1]);
