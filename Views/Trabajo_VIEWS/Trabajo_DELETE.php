@@ -1,14 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 10:56
- */
+* Author: IU Spartans
+* Vista de Delete de Trabajos
+* Date: 02/12/2017
+*/
 
 class Trabajo_DELETE
 {
-
+//Declaracion de los atributos
   var $lista_variables;
 var $lista_valores;
 
@@ -21,6 +20,7 @@ function __construct($lista_variables,$lista_valores){
     $this->pinta();
 }
 
+//Envía contenido al navegador
 function pinta(){
     include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
     //Si el usuarios está autenticado pero no es administrador 
@@ -37,7 +37,7 @@ function pinta(){
             <img src="../Iconos/error.png">
             <p id="frase-borrado-tupla"><?php echo $strings['¿Está seguro de querer borrar los siguientes datos?'] ?></p>
         </div>
-        <?php for($i=0;$i<count($this->lista_variables);$i++){
+        <?php for($i=0;$i<count($this->lista_variables);$i++){//recorre la lista de variables
 
             ?>
             <tr>

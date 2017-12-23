@@ -1,13 +1,13 @@
 <?php
 /**
- 
- * User: Diego
- * Date: 07/12/2017
- * Time: 13:02
- */
+* Author: IU Spartans
+* Vista de Showall de Entrega
+* Date: 07/12/2017
+*/
 
 class Entrega_SHOWALL{  // declaración de clase
 
+    //Declaracion de los atributos
     var $lista;
     var $datos;
     var $indexphp;
@@ -18,9 +18,12 @@ class Entrega_SHOWALL{  // declaración de clase
         $this->lista = $lista;
         $this->datos = $datos;
         $this->indexphp = $indexphp;
+
+        //Envía contenido al navegador
         $this->pinta();
 	}
 
+//Envía contenido al navegador
     function pinta(){
 
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
@@ -34,7 +37,7 @@ class Entrega_SHOWALL{  // declaración de clase
         <table id="tabla-showall">
             <tr>
                 <?php
-                for ($i = 0; $i < count($this->lista); $i++) {
+                for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                     ?>
                     <th><?php $columna = $this->lista[$i];
 					echo $strings[$columna];?></th>
@@ -44,7 +47,7 @@ class Entrega_SHOWALL{  // declaración de clase
             </tr>
 
             <?php
-            while($row = $this->datos->fetch_array())
+            while($row = $this->datos->fetch_array())//recorre el recordset de datos tupla a tupla
             {
                 //Comprobamos si el login de la entrega coincide con el usuario que está logeado y si coincide se muestra la entrega
                 if($row[1] == $_SESSION['login']){
@@ -52,7 +55,7 @@ class Entrega_SHOWALL{  // declaración de clase
                 <form class="formulario-tupla" method="">
                     <tr>
                         <?php
-                        for ($i = 0; $i < count($this->lista); $i++) {
+                        for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                             ?>
 
                             <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
@@ -90,7 +93,7 @@ class Entrega_SHOWALL{  // declaración de clase
         <table id="tabla-showall">
             <tr>
                 <?php
-                for ($i = 0; $i < count($this->lista); $i++) {
+                for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                     ?>
                     <th><?php $columna = $this->lista[$i];
                     echo $strings[$columna];?></th>
@@ -100,13 +103,13 @@ class Entrega_SHOWALL{  // declaración de clase
             </tr>
 
             <?php
-            while($row = $this->datos->fetch_array())
+            while($row = $this->datos->fetch_array())//recorre el recordset de datos tupla a tupla
             {
                 ?>
                 <form class="formulario-tupla" method="">
                     <tr>
                         <?php
-                        for ($i = 0; $i < count($this->lista); $i++) {
+                        for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                             ?>
                             <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
                             <?php

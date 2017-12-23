@@ -1,9 +1,9 @@
 <?php
+
 /**
- 
- * User: Diego
+* Author: IU Spartans
+ * Vista de Edit de Evaluacion
  * Date: 02/12/2017
- * Time: 13:19
  */
 
  
@@ -21,6 +21,7 @@ class Evaluacion_EDIT// declaración de clase
 
         $this->pinta();
     }
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

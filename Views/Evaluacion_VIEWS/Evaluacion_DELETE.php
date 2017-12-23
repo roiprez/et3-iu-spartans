@@ -1,8 +1,8 @@
 <?php
 /**
- * User: Diego
+* Author: IU Spartans
+ * Vista de Delete de Evaluacion
  * Date: 07/12/2017
- * Time: 21:02
  */
 class Evaluacion_DELETE{
 
@@ -18,6 +18,7 @@ class Evaluacion_DELETE{
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if (IsAuthenticated() && !isAllow('Eval','Delete')){
@@ -33,7 +34,7 @@ class Evaluacion_DELETE{
                 <img src="../Iconos/error.png">
                 <p id="frase-borrado-tupla"><?php echo $strings['¿Está seguro de querer borrar los siguientes datos?'] ?></p>
             </div>
-            <?php for($i=0;$i<count($this->lista_variables);$i++){
+            <?php for($i=0;$i<count($this->lista_variables);$i++){//recorre la lista de variables
 
                 ?>
                 <tr>

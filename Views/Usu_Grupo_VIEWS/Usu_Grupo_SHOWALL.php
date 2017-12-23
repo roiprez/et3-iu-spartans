@@ -1,8 +1,12 @@
 <?php
-
+/**
+ * Author: IU Spartans
+ * Vista de Showall de Usu_Grupo
+ * Date: 02/12/2017
+ */
 
 class Usu_Grupo_SHOWALL{  // declaración de clase
-
+//declaracion de atributos
     var $lista;
     var $datos;
     var $indexphp;

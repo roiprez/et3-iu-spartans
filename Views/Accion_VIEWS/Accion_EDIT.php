@@ -1,5 +1,6 @@
 <?php
 /**
+* Author: IU Spartans
  * Vista de edit de accion
  * Date: 01/12/2017
  */
@@ -7,11 +8,12 @@
 class Accion_EDIT
 {
     //Declaracion de los atributos
-    var $lista_valores;//valores de las variables
+    var $lista_valores;//lista de valores originales
 
     //Constructor
     function __construct($lista_valores)
     {
+    //asignación de valores de parámetro a los atributos de la clase
         $this->lista_valores=$lista_valores;
         $this->pinta();
     }

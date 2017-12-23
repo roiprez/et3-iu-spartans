@@ -1,5 +1,6 @@
 <?php
 /**
+* Author: IU Spartans
  * Vista de showcurrent de accion
  * Date: 01/12/2017
  */

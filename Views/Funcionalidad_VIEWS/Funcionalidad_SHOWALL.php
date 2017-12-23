@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Showall de Funcionalidad
  * Date: 01/12/2017
- * Time: 18:05
  */
 
 class Funcionalidad_SHOWALL
 {
+    //Declaracion de los atributos
     var $lista;
     var $datos;
     var $indexphp;
@@ -21,6 +21,7 @@ class Funcionalidad_SHOWALL
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAllow('Func','Show')){
@@ -42,7 +43,7 @@ class Funcionalidad_SHOWALL
         <table id="tabla-showall">
             <tr>
                 <?php
-                for ($i = 0; $i < count($this->lista); $i++) {
+                for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                     ?>
                     <th><?php $columna = $this->lista[$i];
 					echo $strings[$columna];?></th>
@@ -53,7 +54,7 @@ class Funcionalidad_SHOWALL
 
             <?php
             while($row = $this->datos->fetch_array())
-            {
+            {//recorre el recordset de datos tupla a tupla
                 ?>
                 <form class="formulario-tupla" method="">
                     <tr>
@@ -71,7 +72,7 @@ class Funcionalidad_SHOWALL
                     </tr>
                 </form>
                 <?php
-            }
+            }//fin del while
             ?>
 
         </table>
@@ -79,7 +80,7 @@ class Funcionalidad_SHOWALL
 		<button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás'];?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//Fin else
-    }
-}
+    }//fin de pinta
+}//fin de la clase
 
 ?>

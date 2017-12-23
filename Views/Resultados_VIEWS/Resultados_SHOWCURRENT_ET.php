@@ -1,14 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+* Author: IU Spartans
+ * Vista de Showcurrent de ET
  * Date: 13/12/2017
- * Time: 11:42
  */
 
 class Resultados_SHOWCURRENT_ET
 {
-
+//Declaracion de los atributos
     var $datos;
     var $lista_descripHist;
     var $indexphp;
@@ -24,6 +23,7 @@ class Resultados_SHOWCURRENT_ET
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 		if(!isAllow('ResEt','Show')){
@@ -34,7 +34,7 @@ class Resultados_SHOWCURRENT_ET
 		}else if (!isAdmin() && isAllow('ResEt','Show')){
         $correctos=array();
         $comentarios=array();
-            for($i=1;$i<=count($this->lista_descripHist);$i++){
+            for($i=1;$i<=count($this->lista_descripHist);$i++){//recorre las descripciones de historias
                 $correctoP='1';
                 $incorrectoP='';
                 $correctos=array();

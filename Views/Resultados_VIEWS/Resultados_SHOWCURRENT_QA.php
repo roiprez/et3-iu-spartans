@@ -1,16 +1,15 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+* Author: IU Spartans
+ * Vista de Showcurrent de Resultados
  * Date: 18/12/2017
- * Time: 11:37
  */
 
 class ResultadosSHOWCURRENT_QA
 {
+    //Declaracion de los atributos
     var $QAS;
     var $OKS;
-
     var $lista_descripHist;
     var $indexphp;
 
@@ -26,6 +25,7 @@ class ResultadosSHOWCURRENT_QA
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 		if (IsAuthenticated() && !isAllow('ResQa','Show')){

@@ -1,12 +1,13 @@
 <?php
 /**
- * User: Diego
+* Author: IU Spartans
+ * Vista de Showcurrent de Nota_Trabajo
  * Date: 08/12/2017
- * Time: 10:53
  */
 
 class Nota_Trabajo_SHOWCURRENT
 {
+    //Declaracion de los atributos
     var $lista_variables;//lista de variables a mostrar
     var $lista_valores;//lista de valores de las variables
 
@@ -19,6 +20,7 @@ class Nota_Trabajo_SHOWCURRENT
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 

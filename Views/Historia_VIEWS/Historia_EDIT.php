@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Edit de Historia
  * Date: 02/12/2017
- * Time: 12:24
  */
 
 class Historia_EDIT
@@ -16,12 +15,14 @@ class Historia_EDIT
     //Constructor
     function __construct($lista_valores,$lista_Trabajos)
     {
-
+//asignación de valores de parámetro a los atributos de la clase
         $this->lista_valores=$lista_valores;
         $this->lista_Trabajos=$lista_Trabajos;
 
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

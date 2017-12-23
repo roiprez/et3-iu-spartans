@@ -1,10 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 10:57
- */
+* Author: IU Spartans
+* Vista de Search de Trabajos
+* Date: 02/12/2017
+*/
 
 class Trabajo_SEARCH
 {
@@ -15,6 +14,7 @@ class Trabajo_SEARCH
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 

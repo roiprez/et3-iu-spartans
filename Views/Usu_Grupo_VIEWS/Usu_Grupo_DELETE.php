@@ -1,13 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Delete de Usu_Grupo
  * Date: 02/12/2017
- * Time: 21:01
  */
 
 class Usu_Grupo_DELETE{
-
+//declaracion de atributos
     var $lista_variables;
     var $lista_valores;
 

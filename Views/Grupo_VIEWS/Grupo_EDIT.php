@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Edit de Grupo
  * Date: 30/11/2017
- * Time: 13:29
  */
 
 class Grupo_EDIT
@@ -15,11 +14,13 @@ class Grupo_EDIT
     //Constructor
     function __construct($lista_valores)
     {
-
+//asignación de valores de parámetro a los atributos de la clase
         $this->lista_valores=$lista_valores;
 
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

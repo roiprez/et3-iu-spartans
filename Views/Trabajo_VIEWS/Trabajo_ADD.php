@@ -1,10 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 10:42
- */
+* Author: IU Spartans
+* Vista de Add de Trabajos
+* Date: 02/12/2017
+*/
 
 class Trabajo_ADD
 {
@@ -14,6 +13,8 @@ class Trabajo_ADD
     {
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

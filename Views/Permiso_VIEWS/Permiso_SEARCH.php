@@ -1,15 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+* Author: IU Spartans
+ * Vista de Search de Permiso
  * Date: 02/12/2017
- * Time: 11:57
  */
 
 class Permiso_SEARCH
 {
 
-    //recordset de datos
+    //declaracion de atributos
     var $lista_Grupos;
     var $lista_Funcion;
     var $lista_Accion;
@@ -19,12 +18,14 @@ class Permiso_SEARCH
     //Constructor
     function __construct($lista_Grupos,$lista_Funcion,$lista_Accion)
     {
-
+//asignación de valores de parámetro a los atributos de la clase
         $this->lista_Grupos=$lista_Grupos;
         $this->lista_Funcion=$lista_Funcion;
         $this->lista_Accion=$lista_Accion;
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         //Si el usuarios está autenticado pero no es administrador 
@@ -45,7 +46,7 @@ class Permiso_SEARCH
 
                 <select name="IdGrupo" id="IdGrupo">
                     <?php
-                    foreach($this->lista_Grupos as $grupo) {
+                    foreach($this->lista_Grupos as $grupo) {//recorre lista de grupos
 
                         ?>
                         <option value="<?php echo $grupo['IdGrupo']?>"><?php echo $grupo['NombreGrupo']?></option>
@@ -59,7 +60,7 @@ class Permiso_SEARCH
             <label><?php echo $strings['Id funcionalidad']; ?>
                 <select name="IdFuncionalidad" id="IdFuncionalidad">
                     <?php
-                    foreach ($this->lista_Funcion as $funcion) {
+                    foreach ($this->lista_Funcion as $funcion) {//recorre lista de funciones
 
                         ?>
                         <option value="<?php echo $funcion['idFuncionalidad']?>"><?php echo $funcion['NombreFuncionalidad']?></option>
@@ -73,7 +74,7 @@ class Permiso_SEARCH
             <label><?php echo $strings['Id accion']; ?>
                 <select name="IdAccion" id="IdAccion" >
                     <?php
-                    foreach ($this->lista_Accion as $accion) {
+                    foreach ($this->lista_Accion as $accion) {//recorre lista de acciones
 
                         ?>
                         <option value="<?php echo $accion['IdAccion']?>"><?php echo $accion['NombreAccion']?></option>

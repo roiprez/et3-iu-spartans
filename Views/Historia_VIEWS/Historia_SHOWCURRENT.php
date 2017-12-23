@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Showcurrent de Historia
  * Date: 02/12/2017
- * Time: 12:30
  */
 
 class Historia_SHOWCURRENT
 {
+    //Declaracion de los atributos
     var $lista_variables;//lista de variables a mostrar
     var $lista_valores;//lista de valores de las variables
 
@@ -20,6 +20,7 @@ class Historia_SHOWCURRENT
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
@@ -36,7 +37,7 @@ class Historia_SHOWCURRENT
             <h1 class="titulo-categoria"><?php echo $strings['Detalle'];?></h1>
 
             <?php
-            for($i=0;$i<count($this->lista_variables);$i++){
+            for($i=0;$i<count($this->lista_variables);$i++){//recorre la lista de variables
                 ?>
                 <tr>
                     <th><?php $fila = $this->lista_variables[$i]; echo $strings[$fila]; ?></th>
