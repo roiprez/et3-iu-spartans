@@ -285,7 +285,7 @@ function validarFormularioHistoria(formulario){
   if((comprobarVacio(campo)) == false){
     return false;
   }
-  if((comprobarEntero(campo, 2)) == false){
+  if(comprobarEntero(this, 0, 99)) == false){
     return false; 
   }
 
