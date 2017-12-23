@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: diego
- * Date: 25/11/17
- * Time: 15:40
+	*Vista que muestra el formulario de registro al usuario
+    *25/11/2017 por IU SPARTANS
  */
 
 class Vista_LOGIN{

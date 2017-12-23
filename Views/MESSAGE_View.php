@@ -1,7 +1,7 @@
 <?php
 /*
 	Vista que muestra el contenido de un mensaje enviado al usuario y un botón de retorno al controlador indicado por $volver 
-
+    23/11/2017 por IU SPARTANS
 	*/
 class Vista_MESSAGE{
 	

@@ -43,13 +43,20 @@ class Trabajo_EDIT
             <label><?php echo $strings['Nombre Trabajo']; ?>
                 <input type="text" name="NombreTrabajo"
                        id="NombreTrabajo" required="true"
-                       size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreTrabajo'] ?>" onBlur ="return comprobarAlfabetico(this,this.size,'edit');"
+                       size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreTrabajo'] ?>" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
+<<<<<<< HEAD
+            <label><?php echo $strings['Porcentaje Trabajo']; ?>
+                <input type="text" name="PorcentajeNota"
+                       id="PorcentajeNota" required="true"
+                       size="2" maxlength="2" value="<?php echo $this->lista_valores['PorcentajeNota']?>" onChange ="return comprobarReal(this,3,0,10);" 
+=======
             <label><?php echo $strings['Porcentaje Nota']; ?>
                 <input type="text" name="PorcentajeNota"
                        id="PorcentajeTrabajo" required="true"
                        size="2" maxlength="2" value="<?php echo $this->lista_valores['PorcentajeNota'] ?>"
+>>>>>>> cf66190c6e9b2ffb4de26fdb41925251e1710b3c
                 />
             </label>
             <label><?php echo $strings['Fecha inicio']; ?>

@@ -85,7 +85,7 @@ function validarEntidad(entidad, formulario){
 	case 'trabajo':
 	return validarFormularioTrabajo(formulario);
 	break;
-	case 'nota_trabajo':
+	case 'notatrabajo':
 	return validarFormularioNota(formulario);
 	break;
 	case 'entrega':
@@ -285,7 +285,7 @@ function validarFormularioHistoria(formulario){
   if((comprobarVacio(campo)) == false){
     return false;
   }
-  if((comprobarEntero(campo, 2)) == false){
+  if((comprobarEntero(campo,0,99)) == false){
     return false; 
   }
 
@@ -506,10 +506,14 @@ function validarFormularioTrabajo(formulario){
   if((comprobarVacio(campo)) == false){
     return false;
   }
-  if((comprobarAlfabetico(campo, 60)) == false){
+  if((comprobarTexto(campo, 60)) == false){
     return false; 
   }
 
+  campo=objetivo.PorcentajeNota;
+  if(comprobarReal(campo,3,0,10) ==false){
+return false;	  
+}
   
   //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
   return true;

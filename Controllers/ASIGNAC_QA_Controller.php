@@ -12,6 +12,7 @@ include '../Views/Asignac_QA_VIEWS/Asignac_QA_DELETE.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_SEARCH.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_SHOWALL.php';
 include '../Views/Asignac_QA_VIEWS/Asignac_QA_SHOWCURRENT.php';
+include '../Views/MESSAGE_View.php';
 
 //Devuelve una instancia del modelo con los objetos recibidos del formulario como parámetros
 function get_data_form(){

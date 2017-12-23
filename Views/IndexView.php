@@ -1,7 +1,7 @@
 <?php
 /*
 Vista que muestra la vista principal de la aplicación
-23/11/2017
+23/11/2017 por IU SPARTANS
 */
 
 class Index {

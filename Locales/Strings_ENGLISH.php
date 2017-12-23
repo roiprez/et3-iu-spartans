@@ -54,7 +54,7 @@ array(
 	"No existe" => "Don't exist",
 	'No existe en la base de datos' => "Don't exist in the database",
 	'Error en la modificación' => 'Modification error',
-	
+	'El trabajo con este id no existe en la base de datos' => 'Doesn´t exist a work with this Id',
 	/*Diccionario acciones*/
 	'IdAccion' => 'IdAction',
 	'NombreAccion' => 'NameAction',
