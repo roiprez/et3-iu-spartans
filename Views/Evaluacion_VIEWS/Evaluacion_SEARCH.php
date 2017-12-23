@@ -52,7 +52,7 @@ class Evaluacion_SEARCH// declaración de clase
             </label>
             <label><?php echo $strings['Id de la historia']; ?>
                 <input type="number" name="IdHistoria"
-                       id="IdHistoria" 
+                       id="IdHistoria" min="0" max="99" 
                        size="2" maxlength="2" 
                 />
             </label>

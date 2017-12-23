@@ -40,9 +40,9 @@ class Trabajo_SEARCH
                        size="60" maxlength="60" onChange();
                 />
             </label>
-            <label><?php echo $strings['Porcentaje Trabajo']; ?>
-                <input type="text" name="PorcentajeTrabajo"
-                       id="PorcentajeTrabajo"
+            <label><?php echo $strings['Porcentaje Nota']; ?>
+                <input type="text" name="PorcentajeNota"
+                       id="PorcentajeNota"
                        size="2" maxlength="2"
                 />
             </label>

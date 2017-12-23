@@ -163,6 +163,7 @@ array(
 	'Fecha fin' => 'Fecha fin',
 	'PorcentajeNota' => 'PorcentajeNota',
 	'Porcentaje Trabajo' => 'Porcentaje Trabajo',
+	'Porcentaje Nota'=>'Porcentaje Nota',
 	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito',
 	'generar asignaciones' => 'generar asignaciones',
 	'borrar linea' => 'borrar linea',

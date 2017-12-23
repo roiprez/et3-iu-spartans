@@ -1,4 +1,5 @@
-﻿/*Insercion del Grupo de Adminitradores*/
+﻿
+
 INSERT INTO GRUPO (
             IdGrupo,
             NombreGrupo,
