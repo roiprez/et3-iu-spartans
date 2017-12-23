@@ -1,18 +1,17 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Vista de Add de accion
  * Date: 01/12/2017
- * Time: 18:14
  */
 
 class Accion_ADD
 {
-    //Constructor
+    //Constructor de la clase
     function __construct()
     {
         $this->pinta();
     }
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';

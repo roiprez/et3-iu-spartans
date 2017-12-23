@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Vista de edit de accion
  * Date: 01/12/2017
- * Time: 18:16
  */
 
 class Accion_EDIT
@@ -14,11 +12,10 @@ class Accion_EDIT
     //Constructor
     function __construct($lista_valores)
     {
-
         $this->lista_valores=$lista_valores;
-
         $this->pinta();
     }
+    //Envía contenido al navegador
     function pinta()
     {
         //Si el usuarios está autenticado pero no es administrador 

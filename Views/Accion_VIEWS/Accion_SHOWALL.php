@@ -1,13 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Vista de showall de accion
  * Date: 01/12/2017
- * Time: 18:18
  */
 
 class Accion_SHOWALL
 {
+    //Listas de variables y valores que recibe la aplicación
     var $lista;
     var $datos;
     var $indexphp;

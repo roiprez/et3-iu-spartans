@@ -1,8 +1,7 @@
 <?php
 /**
- * User: Diego
+ * Vista de Add de Asignac_QA
  * Date: 08/12/2017
- * Time: 10:57
  */
 
 
