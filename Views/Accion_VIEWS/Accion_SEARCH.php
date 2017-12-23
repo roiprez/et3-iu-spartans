@@ -1,19 +1,18 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Vista de search de accion
  * Date: 01/12/2017
- * Time: 18:17
  */
 
 class Accion_SEARCH
 {
 
-//Constructor
+    //Constructor
     function __construct()
     {
         $this->pinta();
     }
+    //Envía contenido al navegador
     function pinta()
     {
         //Si el usuarios está autenticado pero no es administrador 
