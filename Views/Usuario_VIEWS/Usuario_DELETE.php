@@ -38,9 +38,7 @@ class Usuario_DELETE{
                 <p id="frase-borrado-tupla"><?php echo $strings['¿Está seguro de querer borrar los siguientes datos?'] ?></p>
             </div>
             <?php 
-            $this->lista_valores['password']=***********;
             for($i=0;$i<count($this->lista_variables);$i++){
-
                 ?>
                 <tr>
                     <th><?php $fila = $this->lista_variables[$i]; echo $strings[$fila];?></th>
