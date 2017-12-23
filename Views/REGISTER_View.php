@@ -1,7 +1,7 @@
 <?php
 	/*
 	*Vista que muestra el formulario de registro al usuario
-
+    25/11/2017 por IU SPARTANS
 	*/
 class Register{
     function __construct(){
