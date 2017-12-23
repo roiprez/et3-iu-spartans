@@ -1,8 +1,8 @@
 <?php
 
 /*
-Controlador que se encarga de gestionar las peticiones de lectura y escritura de datos al modelo.
-20/10/2017 por s84f46
+Controlador que se encarga de gestionar las peticiones de lectura y escritura de datos al modelo de Usuario.
+25/11/2017 por IU SPARTANS
 */
 
 include '../Models/USUARIOS_Model.php';
@@ -18,7 +18,7 @@ include_once '../Models/GRUPOS_Model.php';
 
 
 
-
+//Devuelve una instancia del modelo con los objetos recibidos del formulario como parámetros
 function get_data_form(){
 	$login = $_REQUEST['login'];
 	$password = $_REQUEST['password'].trim();
@@ -48,70 +48,86 @@ function get_data_form(){
 if (!isset($_REQUEST['password'])){
 	$_REQUEST['password'] = '';
 }
+//Si el formulario no ha devuelto una action la inicializamos vacía
 if (!isset($_REQUEST['action'])){
 	$_REQUEST['action'] = '';
 }
-
+//Si el formulario no ha devuelto un grupo lo inicializamos vacío
 if (!isset($_REQUEST['IdGrupo'])){
 	$_REQUEST['IdGrupo'] = '';
 }
 
-	
+	//EN función de la action que llega del formulario ejecutamos una acción distinta	
 	Switch ($_REQUEST['action']){
+		//Añadimos una tupla
 		case 'ADD':
+			//Si no hay post
 			if (!$_POST){
+				//Creamos una instancia de la vista
 				new Usuario_ADD();
 			}
 			else{
 				$temp_login= $_REQUEST['login'];//Se define un login temporal para poder usarlo tanto en la insercion del usuario
                                                 //como cuando se asigne el usuario al grupo por defecto.
+				//Recogemos los datos, los añadimos y lanzamos la respuesta en una vista
 				$USUARIOS = new USUARIOS_Model($temp_login, $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);
 				$respuesta = $USUARIOS->ADD();
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
-				$USU_GRUP = new USU_GRUPO_Model($temp_login,'Alumnos'); //Todo nuevo usuario es asginado por defecto al grupo mas basico
+				//Añade al usuario directamente al grupo de Alumno
+				$USU_GRUP = new USU_GRUPO_Model($temp_login,'Alumno'); //Todo nuevo usuario es asginado por defecto al grupo mas basico
 				$USU_GRUP->ADD();
-
-            }
+			}
 			break;
+		//Borramos una tupla
 		case 'DELETE':
+			//Si no hay post
 			if (!$_POST){
+				//Creamos una vista con los datos del usuario
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
 				$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
 				$valores = $USUARIOS->RellenaDatos();
 				new Usuario_DELETE($lista, $valores);
 			}
 			else{
+				//Cogemos el usuario y lo borramos
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
 				$respuesta = $USUARIOS->DELETE();
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			break;
+		//Editamos una tupla
 		case 'EDIT':		
+			//Si no hay post
 			if (!$_POST){	
+				//Rellenamos de datos la vista de edit y la mostramos
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
 				$valores = $USUARIOS->RellenaDatos();
-
 				new Usuario_EDIT($valores);
 			}
 			else{	
+				//Cogemos el resultado del submit del formulario y editamos en el modelo
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);							
 				$respuesta = $USUARIOS->EDIT();
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
 			
 			break;
+		//Buscamos una tupla o un conjunto de tuplas
 		case 'SEARCH':
+			//Si no hay post
 			if (!$_POST){
-
+				//Lanza la vista de search
 				new Usuario_SEARCH();
 			}
 			else{
+				//Recogemos los datos y lanzamos un showall con las tuplas filtradas
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], $_REQUEST['password'], $_REQUEST['DNI'], $_REQUEST['Nombre'], $_REQUEST['Apellidos'], $_REQUEST['Correo'], $_REQUEST['Direccion'], $_REQUEST['Telefono']);
 				$datos = $USUARIOS->SEARCH();
 				$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo');				
 				new Usuario_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
 			}
 			break;
+		//Mostramos en detalle una tupla
 		case 'SHOWCURRENT':
 			$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');	
 			$valores = $USUARIOS->RellenaDatos();
@@ -152,7 +168,9 @@ if (!isset($_REQUEST['IdGrupo'])){
 			}
 			break;
 			
+		//Si la accion no coincide con las anteriores creamos un showall con todoas las tuplas de la tabla
 		default:
+			//Si no hay post
 			if (!$_POST){
 				$USUARIOS = new USUARIOS_Model('','','', '','','', '', '');
 			}

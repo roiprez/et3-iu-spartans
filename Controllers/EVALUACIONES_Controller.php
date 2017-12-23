@@ -53,7 +53,6 @@ if (!isset($_REQUEST['action'])){
 
 	
 	//EN función de la action que llega del formulario ejecutamos una acción distinta
-	//EN función de la action que llega del formulario ejecutamos una acción distinta
 	Switch ($_REQUEST['action']){
 
 		//Añadimos una tupla
@@ -100,6 +99,7 @@ if (!isset($_REQUEST['action'])){
 				//Cogemos el resultado del submit del formulario y editamos en el modelo
 				$EVALUACION = new EVALUACIONES_Model($_REQUEST['IdTrabajo'], $_REQUEST['LoginEvaluador'], $_REQUEST['AliasEvaluado'], $_REQUEST['IdHistoria'], $_REQUEST['CorrectoA'], $_REQUEST['ComenIncorrectoA'], $_REQUEST['CorrectoP'], $_REQUEST['ComentIncorrectoP'], $_REQUEST['OK']);							
 				$respuesta = $EVALUACION->EDIT();
+				//lanzamos una función que actualiza las notas de las entregas de la aplicación
 				notas_update($_REQUEST['IdTrabajo']);
 				new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
 			}
