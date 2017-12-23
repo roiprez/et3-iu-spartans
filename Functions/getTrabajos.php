@@ -1,7 +1,7 @@
 <?php
 /*
 Devuelve la lista de trabajos del usuario de la sesión
-19/12/2017 por 
+19/12/2017 por IU SPARTANS
 */
 include_once '../Models/ENTREGAS_Model.php';
 

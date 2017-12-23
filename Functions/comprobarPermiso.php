@@ -1,7 +1,7 @@
 <?php
 /*
 Devuelve true si el usuario pertenece a un grupo con permisos para una función concreta
-25/11/2017 por 
+25/11/2017 por IU SPARTANS
 */
 include_once '../Models/GRUPOS_Model.php';
 include_once '../Models/PERMISOS_Model.php';

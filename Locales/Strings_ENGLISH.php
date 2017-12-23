@@ -1,7 +1,7 @@
 <?php 
 /*
 fichero con las cadenas de texto en inglés
-26/10/2017 por s84f46
+2/12/2017 por IU SPARTANS
 */
 
 

@@ -1,8 +1,7 @@
 <?php
-
 /*
 El Modelo de los datos de usuario, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
-26/10/2017 por s84f46
+25/11/2017 por IU SPARTANS
 */
 
 class USUARIOS_Model { //declaración de la clase

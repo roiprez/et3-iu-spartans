@@ -1,5 +1,8 @@
 <?php
-/*Modelo de datos de NOTAS*/
+/*
+El Modelo de los datos de NOTAS, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
+08/12/2017 por IU SPARTANS
+*/
 class NOTAS_Model{   //Declaracion de la clase
     var $login;
     var $idTrabajo;

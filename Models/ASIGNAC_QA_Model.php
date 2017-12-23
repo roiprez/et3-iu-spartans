@@ -1,4 +1,8 @@
 <?php
+/*
+El Modelo de los datos de ASIGNACIONES, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
+10/12/2017 por IU SPARTANS
+*/
 class ASIGNAC_QA_Model{
     var $IdTrabajo;
     var $LoginEvaluador;

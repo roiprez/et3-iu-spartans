@@ -1,6 +1,6 @@
 /*
 Este fichero se encarga de controlar el menú lateral de la aplicación
-23/11/2017
+23/11/2017 por IU SPARTANS
 */
 
 //La función muestra el submenu del menu clicado

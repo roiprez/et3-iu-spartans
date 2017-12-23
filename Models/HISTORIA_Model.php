@@ -1,5 +1,8 @@
 <?php
-/*Modelo de datos de Grupo*/
+/*
+El Modelo de los datos de HISTORIAS, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
+02/12/2017 por IU SPARTANS
+*/
 class HISTORIA_Model{   //Declaracion de la clase
     var $idTrabajo;
     var $idHistoria;

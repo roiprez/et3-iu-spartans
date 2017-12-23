@@ -2,7 +2,7 @@
 
 /*
 El Modelo de los datos de evaluaciones, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
-8/12/2017 por 
+8/12/2017 por IU SPARTANS
 */
 
 class EVALUACIONES_Model { //declaración de la clase

@@ -1,5 +1,8 @@
 <?php
-/*Modelo de datos de Grupo*/
+/*
+El Modelo de los datos de GRUPOS, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
+27/11/2017 por IU SPARTANS
+*/
 class GRUPOS_Model{   //Declaracion de la clase
     var $idGrupo;
     var $nombreGrupo;

@@ -1,9 +1,8 @@
 <?php
 /**
- * Autor 9jyjjr
- * Última fecha de modificación 6/11/2017
- * permite saber que idioma ha selecciona el usuario
- */
+*permite saber que idioma ha selecciona el usuario
+*25/11/2017 por IU SPARTANS
+*/
 
 session_start();
 $idioma = $_GET['idioma'];
