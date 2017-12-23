@@ -94,8 +94,14 @@ Switch ($_REQUEST['action']){
         }
         else{
             $ENTREGAS = get_data_form();
-			$Ruta = upload_entrega($_REQUEST['Alias']);
-            $ENTREGAS = new ENTREGAS_Model($_REQUEST['IdTrabajo'], $_REQUEST['login'], $_REQUEST['Alias'], $_REQUEST['Horas'], $Ruta);
+            $Ruta = upload_entrega($_REQUEST['Alias']);
+            if($Ruta == ''){    
+                $ENTREGAS = new ENTREGAS_Model($_REQUEST['IdTrabajo'], $_REQUEST['login'], $_REQUEST['Alias'], $_REQUEST['Horas'], $_REQUEST['RutaOriginal']);    
+            } else {
+                $ENTREGAS = new ENTREGAS_Model($_REQUEST['IdTrabajo'], $_REQUEST['login'], $_REQUEST['Alias'], $_REQUEST['Horas'], $Ruta);                
+            }
+            
+			
             $respuesta = $ENTREGAS->EDIT();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         }

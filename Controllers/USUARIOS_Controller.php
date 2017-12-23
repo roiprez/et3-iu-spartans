@@ -76,7 +76,7 @@ if (!isset($_REQUEST['IdGrupo'])){
 		case 'DELETE':
 			if (!$_POST){
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'], '', '', '', '', '', '', '');
-				$lista = array('login', 'password', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
+				$lista = array('login', 'DNI', 'Nombre', 'Apellidos', 'Correo', 'Direccion','Telefono');
 				$valores = $USUARIOS->RellenaDatos();
 				new Usuario_DELETE($lista, $valores);
 			}
