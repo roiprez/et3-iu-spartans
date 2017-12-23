@@ -38,8 +38,8 @@ class Asignac_QA_ADD// declaración de clase
                 />
             </label>
             <label><?php echo $strings['Alias']; ?>
-                <input type="text" name="Alias"
-                       id="Alias" required="true"
+                <input type="text" name="AliasEvaluado"
+                       id="AliasEvaluado" required="true"
                        size="6" maxlength="6"
                 />
             </label>

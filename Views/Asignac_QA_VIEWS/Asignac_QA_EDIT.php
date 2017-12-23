@@ -16,7 +16,7 @@ class Asignac_QA_EDIT// declaración de clase
   var $corrector;
 
     //Constructor de la clase
-    function __construct($trabajo,$usuario,$alias,$corrector)
+    function __construct($trabajo,$corrector,$usuario,$alias)
     {//asignación de valores de parámetro a los atributos de la clase
         $this->trabajo=$trabajo;
         $this->usuario=$usuario;

@@ -106,7 +106,7 @@ class ASIGNAC_QA_Model{
     } // fin metodo DELETE
     function EDIT(){
 // se construye la sentencia de busqueda de la tupla en la bd
-        $sql = "SELECT * FROM ASIGNAC_QA WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador'
+        $sql = "SELECT * FROM ASIGNAC_QA WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador')
                                                                                     &&(AliasEvaluado= '$this->AliasEvaluado'))";
         // se ejecuta la query
         $result = $this->mysqli->query($sql);
@@ -114,7 +114,7 @@ class ASIGNAC_QA_Model{
         if ($result->num_rows == 1)
         {	// se construye la sentencia de modificacion en base a los atributos de la clase
             $sql = "UPDATE ASIGNAC_QA SET  AliasEvaluado= '$this->AliasEvaluado'
-				 WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador'
+				 WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador')
                                                                                     &&(AliasEvaluado= '$this->AliasEvaluado'))";
             // si hay un problema con la query se envia un mensaje de error en la modificacion
             if (!($resultado = $this->mysqli->query($sql))){
