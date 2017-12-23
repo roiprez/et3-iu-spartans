@@ -1,8 +1,8 @@
 <?php
 /**
- * User: Diego
+* Author: IU Spartans
+ * Vista de Search de Evaluacion
  * Date: 07/12/2017
- * Time: 21:03
  */
 
 
@@ -17,6 +17,8 @@ class Evaluacion_SEARCH// declaración de clase
       
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

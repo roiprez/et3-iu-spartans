@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+* Author: IU Spartans
+ * Vista de showcurrent de accion
  * Date: 01/12/2017
- * Time: 18:19
  */
 
 class Accion_SHOWCURRENT
@@ -20,7 +19,7 @@ class Accion_SHOWCURRENT
         $this->lista_valores=$lista_valores;
         $this->pinta();
     }
-
+    //Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
@@ -36,6 +35,7 @@ class Accion_SHOWCURRENT
             <h1 class="titulo-categoria"><?php echo $strings['Detalle']; ?></h1>
 
             <?php
+            //Por cada lista de variables crea una celda de cabecera y sus celdas de datos
             for($i=0;$i<count($this->lista_variables);$i++){
                 ?>
                 <tr>

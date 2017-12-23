@@ -1,12 +1,13 @@
 <?php
 /**
- * User: Diego
- * Date: 08/12/2017
- * Time: 10:51
- */
+* Author: IU Spartans
+* Vista de Showall de Asignac_QA
+* Date: 08/12/2017
+*/
 
 class Asignac_QA_SHOWALL
 {
+     //Declaracion de los atributos
     var $lista;
     var $datos;
     var $indexphp;
@@ -15,12 +16,14 @@ class Asignac_QA_SHOWALL
     function __construct($lista, $datos, $indexphp)
     {
         //asignación de valores de parámetro a los atributos de la clase
-        $this->lista = $lista;
-        $this->datos = $datos;
+        $this->lista = $lista;//lista de variables a mostrar
+        $this->datos = $datos;//recordset de datos
         $this->indexphp = $indexphp;
+
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta()
     {
         if (IsAuthenticated() && !isAllow('Aisg_Qua','Show')) {
@@ -49,7 +52,7 @@ class Asignac_QA_SHOWALL
             <table id="tabla-showall">
                 <tr>
                     <?php
-                    for ($i = 0; $i < count($this->lista); $i++) {
+                    for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                         ?>
                         <th><?php $columna = $this->lista[$i];
 					echo $strings[$columna];?></th>
@@ -59,12 +62,12 @@ class Asignac_QA_SHOWALL
                 </tr>
 
                 <?php
-                while ($row = $this->datos->fetch_array()) {
+                while ($row = $this->datos->fetch_array()) {//recorre el recordset de datos tupla a tupla
                     ?>
                     <form class="formulario-tupla" method="">
                         <tr>
                             <?php
-                            for ($i = 0; $i < count($this->lista); $i++) {
+                            for ($i = 0; $i < count($this->lista); $i++) {//para cada elemento de la lista muestra el valor de la tupla
                                 ?>
                                 <td class="celda"><?php echo $row[$this->lista[$i]] ?><input type="hidden"
                                                                                              name="<?php echo $this->lista[$i] ?>"

@@ -1,8 +1,8 @@
 <?php
 /**
- * User: Diego
+* Author: IU Spartans
+ * Vista de Edit de Nota_Trabajo
  * Date: 08/12/2017
- * Time: 11:57
  */
 
 class Nota_Trabajo_EDIT
@@ -13,11 +13,13 @@ class Nota_Trabajo_EDIT
     //Constructor
     function __construct($lista_valores)
     {
-
+//asignación de valores de parámetro a los atributos de la clase
         $this->lista_valores=$lista_valores;
 
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

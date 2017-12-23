@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Add de Historia
  * Date: 02/12/2017
- * Time: 12:11
  */
 
 class Historia_ADD
 {
+    //Declaracion de los atributos
     var $lista_Trabajos;
 
 
@@ -16,11 +16,13 @@ class Historia_ADD
     //Constructor
     function __construct($lista_Trabajos)
     {
-
+//asignación de valores de parámetro a los atributos de la clase
         $this->lista_Trabajos=$lista_Trabajos;
 
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
@@ -41,7 +43,7 @@ class Historia_ADD
 
                 <select name="IdTrabajo" id="IdTrabajo" required="true">
                     <?php
-                    for ($i=0;$i<count($this->lista_Trabajos);$i++) {
+                    for ($i=0;$i<count($this->lista_Trabajos);$i++) {//recorre la lista de trabajos
 
                         ?>
                         <option value="<?php echo $this->lista_Trabajos[$i]?>"><?php echo $this->lista_Trabajos[$i]?></option>
@@ -61,8 +63,7 @@ class Historia_ADD
             </label>
 
             <label><?php echo $strings['Texto']; ?>
-                <textarea form="formulario-add" maxlength="300" name="TextoHistoria" required="true" onChange ="return comprobarTexto(this,this.size);">
-                </textarea>
+                <textarea form="formulario-add" maxlength="300" name="TextoHistoria" required="true" onChange ="return comprobarTexto(this,this.size);"></textarea>
             </label>
 
 

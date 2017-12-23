@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Author: IU Spartans
+ * Vista de Add de Usu_Grupo
+ * Date: 02/12/2017
+ */
 class Usu_Grupo_ADD// declaración de clase
 {
 

@@ -1,10 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 10:53
- */
+* Author: IU Spartans
+* Vista de Edit de Trabajos
+* Date: 02/12/2017
+*/
 
 class Trabajo_EDIT
 {
@@ -14,11 +13,13 @@ class Trabajo_EDIT
     //Constructor
     function __construct($lista_valores)
     {
-
+//asignación de valores de parámetro a los atributos de la clase
         $this->lista_valores=$lista_valores;
 
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
@@ -45,10 +46,17 @@ class Trabajo_EDIT
                        size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreTrabajo'] ?>" onBlur ="return comprobarTexto(this,this.size);"
                 />
             </label>
+<<<<<<< HEAD
             <label><?php echo $strings['Porcentaje Trabajo']; ?>
                 <input type="text" name="PorcentajeNota"
                        id="PorcentajeNota" required="true"
                        size="2" maxlength="2" value="<?php echo $this->lista_valores['PorcentajeNota']?>" onChange ="return comprobarReal(this,3,0,10);" 
+=======
+            <label><?php echo $strings['Porcentaje Nota']; ?>
+                <input type="text" name="PorcentajeNota"
+                       id="PorcentajeTrabajo" required="true"
+                       size="2" maxlength="2" value="<?php echo $this->lista_valores['PorcentajeNota'] ?>"
+>>>>>>> cf66190c6e9b2ffb4de26fdb41925251e1710b3c
                 />
             </label>
             <label><?php echo $strings['Fecha inicio']; ?>

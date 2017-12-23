@@ -1,10 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 10:42
- */
+* Author: IU Spartans
+* Vista de Add de Trabajos
+* Date: 02/12/2017
+*/
 
 class Trabajo_ADD
 {
@@ -14,6 +13,8 @@ class Trabajo_ADD
     {
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
@@ -42,7 +43,7 @@ class Trabajo_ADD
                        size="60" maxlength="60" onBlur ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
-            <label><?php echo $strings['Porcentaje Trabajo']; ?>
+            <label><?php echo $strings['Porcentaje Nota']; ?>
                 <input type="text" name="PorcentajeNota"
                        id="PorcentajeNota" required="true"
                        size="2" maxlength="2"

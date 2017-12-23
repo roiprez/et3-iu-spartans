@@ -1,9 +1,8 @@
 <?php
 /**
- 
- * User: Diego
+* Author: IU Spartans
+ * Vista de Showall de Evaluacion
  * Date: 07/12/2017
- * Time: 21:00
  */
 
 class Evaluacion_SHOWALL{  // declaración de clase
@@ -21,6 +20,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if(!isAllow('Eval','Show')){
@@ -32,7 +32,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
             <table id="tabla-showall">
                 <tr>
                     <?php
-                    for ($i = 0; $i < count($this->lista); $i++) {
+                    for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                         ?>
                         <th><?php echo $this->lista[$i];?></th>
                         <?php
@@ -41,7 +41,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
                 </tr>
 
                 <?php
-                while($row = $this->datos->fetch_array())
+                while($row = $this->datos->fetch_array())//recorre el recordset de datos tupla a tupla
                 {
                     if($row[1] == $_SESSION['login']){
                     ?>
@@ -74,7 +74,7 @@ class Evaluacion_SHOWALL{  // declaración de clase
         <table id="tabla-showall">
             <tr>
                 <?php
-                for ($i = 0; $i < count($this->lista); $i++) {
+                for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                     ?>
                     <th><?php $columna = $this->lista[$i];
 					echo $strings[$columna];?></th>
@@ -84,13 +84,13 @@ class Evaluacion_SHOWALL{  // declaración de clase
             </tr>
 
             <?php
-            while($row = $this->datos->fetch_array())
+            while($row = $this->datos->fetch_array())//recorre el recordset de datos tupla a tupla
             {
                 ?>
                 <form class="formulario-tupla" method="">
                     <tr>
                         <?php
-                        for ($i = 0; $i < count($this->lista); $i++) {
+                        for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                             ?>
                             <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
                             <?php

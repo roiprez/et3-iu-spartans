@@ -84,9 +84,7 @@ Vista que contiene el Menú lateral
 							<ul id="submenu_permisos" class="dropdown-content">
 									<?php if (isAllow('Perm','Show')){?>
 								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS"><?php echo $strings['Mostrar todo']; ?></a></li>
-									<?php }if (isAllow('Perm','Add')){?>
-								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS&action=ADD"><?php echo $strings['Añadir']; ?></a></li>
-									<?php }if (isAllow('Perm','Search')){?>
+								<?php }if (isAllow('Perm','Search')){?>
 								<li><a href="../Controllers/Index_Controller.php?Controlador=PERMISOS&action=SEARCH"><?php echo $strings['Buscar']; ?></a></li>
 									<?php }?>
 							</ul>

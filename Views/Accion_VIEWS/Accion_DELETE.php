@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+* Author: IU Spartans
+ * Vista de delete de accion
  * Date: 01/12/2017
- * Time: 18:15
  */
 
 class Accion_DELETE
 {
+    //Listas de variables y valores que recibe la aplicación
     var $lista_variables;
     var $lista_valores;
 

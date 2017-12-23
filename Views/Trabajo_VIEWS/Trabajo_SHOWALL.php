@@ -1,14 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 10:55
- */
+* Author: IU Spartans
+* Vista de Showall de Trabajos
+* Date: 02/12/2017
+*/
 
 class Trabajo_SHOWALL
 {
-
+//Declaracion de los atributos
     var $lista;
     var $datos;
     var $indexphp;
@@ -22,6 +21,7 @@ class Trabajo_SHOWALL
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
@@ -36,7 +36,7 @@ class Trabajo_SHOWALL
         <table id="tabla-showall">
             <tr>
                 <?php
-                for ($i = 0; $i < count($this->lista); $i++) {
+                for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                     ?>
                     <th><?php $columna = $this->lista[$i];
 					echo $strings[$columna];?></th>
@@ -47,12 +47,12 @@ class Trabajo_SHOWALL
 
             <?php
             while($row = $this->datos->fetch_array())
-            {
+            {//recorre el recordset de datos tupla a tupla
                 ?>
                 <form class="formulario-tupla" method="">
                     <tr>
                         <?php
-                        for ($i = 0; $i < count($this->lista); $i++) {
+                        for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                             ?>
                             <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
                             <?php
@@ -71,7 +71,7 @@ class Trabajo_SHOWALL
         <button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
             
         <?php
-            }else{
+            }else{//si esta autenticado y esta autorizado
 
         ?>
         <form id="formulario-showall" method="">
@@ -83,7 +83,7 @@ class Trabajo_SHOWALL
         <table id="tabla-showall">
             <tr>
                 <?php
-                for ($i = 0; $i < count($this->lista); $i++) {
+                for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                     ?>
                    <th><?php $columna = $this->lista[$i];
                     echo $strings[$columna];?></th>
@@ -94,12 +94,12 @@ class Trabajo_SHOWALL
 
             <?php
             while($row = $this->datos->fetch_array())
-            {
+            {//recorre el recordset de datos tupla a tupla
                 ?>
                 <form class="formulario-tupla" method="">
                     <tr>
                         <?php
-                        for ($i = 0; $i < count($this->lista); $i++) {
+                        for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                             ?>
                             <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
                             <?php

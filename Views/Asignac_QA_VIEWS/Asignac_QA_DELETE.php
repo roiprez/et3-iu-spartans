@@ -1,13 +1,13 @@
 <?php
 /**
- * User: Diego
+* Author: IU Spartans
+ * Vista de Delete de Asignac_QA
  * Date: 08/12/2017
- * Time: 10:54
  */
 
 class Asignac_QA_DELETE
 {
-
+     //Declaracion de los atributos
     var $lista_variables;
     var $lista_valores;
 
@@ -20,6 +20,7 @@ class Asignac_QA_DELETE
         $this->pinta();
     }
 
+    //Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if (IsAuthenticated() && !isAllow('Asig_Qua','Delete')){
@@ -35,7 +36,7 @@ class Asignac_QA_DELETE
                 <img src="../Iconos/error.png">
                 <p id="frase-borrado-tupla"><?php echo $strings['¿Está seguro de querer borrar los siguientes datos?'] ?></p>
             </div>
-            <?php for($i=0;$i<count($this->lista_variables);$i++){
+            <?php for($i=0;$i<count($this->lista_variables);$i++){//recorre la lista de variables a mostrar
 
                 ?>
                 <tr>

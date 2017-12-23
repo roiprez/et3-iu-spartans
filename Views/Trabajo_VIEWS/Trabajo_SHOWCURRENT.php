@@ -1,15 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 10:56
- */
-
+* Author: IU Spartans
+* Vista de Showcurrent de Trabajos
+* Date: 02/12/2017
+*/
 class Trabajo_SHOWCURRENT
 {
-
-
+//Declaracion de los atributos
     var $lista_variables;//lista de variables a mostrar
     var $lista_valores;//lista de valores de las variables
 
@@ -22,6 +19,7 @@ class Trabajo_SHOWCURRENT
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAllow('Jobs','Show')){
@@ -37,7 +35,7 @@ class Trabajo_SHOWCURRENT
             <h1 class="titulo-categoria"><?php echo $strings['Detalle']; ?></h1>
 
             <?php
-            for($i=0;$i<count($this->lista_variables);$i++){
+            for($i=0;$i<count($this->lista_variables);$i++){//recorre la lista de variables
                 ?>
                 <tr>
                     <th><?php $fila = $this->lista_variables[$i]; echo $strings[$fila];?></th>

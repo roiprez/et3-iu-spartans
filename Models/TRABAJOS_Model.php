@@ -1,5 +1,7 @@
 <?php
-/*Modelo de datos de TRABAJO*/
+/*Modelo de datos de TRABAJO
+2/12/2017 por IU SPARTANS
+*/
 class TRABAJOS_Model{   //Declaracion de la clase
 
     var $idTrabajo;

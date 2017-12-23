@@ -1,27 +1,25 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Search de Historia
  * Date: 02/12/2017
- * Time: 12:31
  */
 
 class Historia_SEARCH
 {
-
+//Declaracion de los atributos
     var $lista_Trabajos;
 
 
 
 
 //Constructor
-    function __construct($lista_Trabajos)
+    function __construct()
     {
-
-        $this->lista_Trabajos=$lista_Trabajos;
-
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
 include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
@@ -39,19 +37,9 @@ include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
         <form id="formulario-search" name="formulario_search" method="post" onSubmit="return validarEntidad('historia','search')">
 
             <label><?php echo $strings['Id trabajo']; ?>
-
-                <select name="IdTrabajo" id="IdTrabajo" >
-                    <?php
-                    for ($i=0;$i<count($this->lista_Trabajos);$i++) {
-
-                        ?>
-                        <option value="<?php echo $this->lista_Trabajos[$i]?>"><?php echo $this->lista_Trabajos[$i]?></option>
-                        <?php
-
-                    }//fin del bucle
-
-                    ?>
-                </select>
+                <input type="text" name="IdTrabajo" 
+                id="IdTrabajo" 
+                maxlength="6" size="6"/>
             </label>
 
             <label><?php echo $strings['Id historia']; ?>
@@ -62,8 +50,7 @@ include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
             </label>
 
             <label><?php echo $strings['Texto']; ?>
-                <textarea form="formulario-add" maxlength="300" name="TextoHistoria">
-                </textarea>
+                <textarea form="formulario-add" maxlength="300" name="TextoHistoria"></textarea>
             </label>
 
             <div class="botones-formulario">

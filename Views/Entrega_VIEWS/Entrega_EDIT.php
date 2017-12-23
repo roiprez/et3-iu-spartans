@@ -1,22 +1,28 @@
 <?php
 /**
- * User: Diego
- * Date: 07/12/2017
- * Time: 12:48
- */
+* Author: IU Spartans
+* Vista de Edit de Entrega
+* Date: 07/12/2017
+*/
 
 
 class Entrega_EDIT// declaración de clase
 {
 
-  var $lista_Valores;
+  //Declaracion de los atributos
+  var $lista_Valores;//lista de valores originales
 
     //Constructor
     function __construct($lista_Valores)
     {
+      //asignación de valores de parámetro a los atributos de la clase
         $this->lista_Valores=$lista_Valores;
+
+        //Envía contenido al navegador
         $this->pinta();
     }
+    
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

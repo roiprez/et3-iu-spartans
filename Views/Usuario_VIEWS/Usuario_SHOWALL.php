@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 30/11/2017
- * Time: 12:50
+ * Author: IU Spartans
+ * Vista de Showall de Usuario
+ * Date: 30/12/2017
  */
 
 class Usuario_SHOWALL{  // declaración de clase
 
+//Declaracion de los atributos
     var $lista;
     var $datos;
     var $indexphp;
@@ -21,6 +21,7 @@ class Usuario_SHOWALL{  // declaración de clase
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 

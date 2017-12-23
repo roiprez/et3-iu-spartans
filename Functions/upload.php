@@ -2,7 +2,7 @@
 
 /*
 Función que se encarga de subir al directorio files la entrega.
-11/11/2017 
+25/11/2017 por IU SPARTANS
 */
 
 function upload_entrega($alias){

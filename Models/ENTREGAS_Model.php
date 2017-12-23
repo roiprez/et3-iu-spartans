@@ -1,5 +1,8 @@
 <?php
-/*Modelo de datos de ENTREGA*/
+/*
+El Modelo de los datos de ENTREGAS, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
+06/12/2017 por IU SPARTANS
+*/
 class ENTREGAS_Model{   //Declaracion de la clase
     var $idTrabajo;
     var $login;

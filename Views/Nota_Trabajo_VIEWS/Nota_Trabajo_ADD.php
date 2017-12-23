@@ -1,9 +1,8 @@
 <?php
 /**
-
- * User: DIEGO
+* Author: IU Spartans
+ * Vista de Add de Nota_Trabajo
  * Date: 08/12/2017
- * Time: 11:15
  */
 
 
@@ -15,6 +14,8 @@ class Nota_Trabajo_ADD//eclaración de clase
     {
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

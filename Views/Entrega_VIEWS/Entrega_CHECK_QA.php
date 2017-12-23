@@ -26,6 +26,7 @@ class Correccion_Conjunta_QAS
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 		if(!isAllow('ResEt','Show')){
@@ -89,7 +90,7 @@ class Correccion_Conjunta_QAS
                         
                             ?>
                             <td>
-                                <input type="checkbox" name="<?php echo $i.$evaluadores[$i]?>">
+                                <input type="checkbox" name="<?php echo $i."_".$evaluadores[$j]?>">
                             </td>
                             <?php
                         

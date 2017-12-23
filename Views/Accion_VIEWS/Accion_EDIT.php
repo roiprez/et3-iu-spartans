@@ -1,24 +1,23 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+* Author: IU Spartans
+ * Vista de edit de accion
  * Date: 01/12/2017
- * Time: 18:16
  */
 
 class Accion_EDIT
 {
     //Declaracion de los atributos
-    var $lista_valores;//valores de las variables
+    var $lista_valores;//lista de valores originales
 
     //Constructor
     function __construct($lista_valores)
     {
-
+    //asignación de valores de parámetro a los atributos de la clase
         $this->lista_valores=$lista_valores;
-
         $this->pinta();
     }
+    //Envía contenido al navegador
     function pinta()
     {
         //Si el usuarios está autenticado pero no es administrador 
@@ -49,9 +48,7 @@ class Accion_EDIT
                 />
             </label>
             <label><?php echo $strings['Descripcion']; ?>
-                <textarea form="formulario-edit" maxlength="100" name="DescripAccion" onChange ="return comprobarTexto(this,this.size);">
-                <?php echo $this->lista_valores['DescripAccion'] ?>
-                </textarea>
+                <textarea form="formulario-edit" maxlength="100" name="DescripAccion" onChange ="return comprobarTexto(this,this.size);"><?php echo $this->lista_valores['DescripAccion'] ?></textarea>
             </label>
 
             <div class="botones-formulario">

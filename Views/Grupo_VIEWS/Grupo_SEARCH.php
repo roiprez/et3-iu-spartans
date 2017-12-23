@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Search de Grupo
  * Date: 30/11/2017
- * Time: 13:35
  */
 
 class Grupo_SEARCH
@@ -15,6 +14,8 @@ function __construct()
 {
     $this->pinta();
 }
+
+//Envía contenido al navegador
 function pinta()
 {
 include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

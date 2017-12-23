@@ -1,10 +1,8 @@
 <?php
-
 /**
- 
- * User: Diego
+* Author: IU Spartans
+ * Vista de Showcurrent de Evaluacion
  * Date: 07/12/2017
- * Time: 21:01
  */
 
 class Evaluacion_SHOWCURRENT{  // declaración de clase
@@ -21,6 +19,7 @@ class Evaluacion_SHOWCURRENT{  // declaración de clase
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if (IsAuthenticated() && !isAllow('Eval','Show')){
@@ -36,7 +35,7 @@ class Evaluacion_SHOWCURRENT{  // declaración de clase
             <h1 class="titulo-categoria"><?php echo $strings['Detalles']; ?></h1>
 
             <?php
-            for($i=0;$i<count($this->lista_variables);$i++){
+            for($i=0;$i<count($this->lista_variables);$i++){//recorre la lista de variables
                 ?>
                 <tr>
                     <th><?php $fila = $this->lista_variables[$i]; echo $strings[$fila];?></th>

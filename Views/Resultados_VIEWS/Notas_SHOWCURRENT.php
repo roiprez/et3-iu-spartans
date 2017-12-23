@@ -1,13 +1,13 @@
 <?php
 /**
- * User: Diego
+* Author: IU Spartans
+ * Vista de Showcurrent de Notas
  * Date: 15/12/2017
- * Time: 12:34
  */
 
 class Notas_SHOWCURRENT
 {
-
+//Declaracion de los atributos
     var $trabajos;
     var $notas_trabajos;
     var $lista_atributos;
@@ -25,6 +25,7 @@ class Notas_SHOWCURRENT
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 		if (IsAuthenticated() && !isAllow('Nota','Show')){
@@ -39,9 +40,9 @@ class Notas_SHOWCURRENT
            <table id="tabla-showall">
             <tr>
                 <?php
-                for ($i = 0; $i < count($this->lista); $i++) {
+                for ($i = 0; $i < count($this->lista_atributos); $i++) {//recorre la lista de atributos
                     ?>
-                    <th><?php echo $this->lista[$i];?></th>
+                    <th><?php echo $this->lista_atributos[$i];?></th>
                     <?php
                 }
                 ?>
@@ -50,12 +51,12 @@ class Notas_SHOWCURRENT
             <?php
             $i=0;
             $notas_totales=array();
-            while($row = $this->trabajos->fetch_array())
+            while($row = $this->trabajos->fetch_array())//recorre el recordset de datos tupla a tupla
             {
                 
 
                 
-                foreach ($this->notas_trabajos as $fila) {
+                foreach ($this->notas_trabajos as $fila) {//recorre las notas de los trabajos
                     if($fila['idTrabajo']==$row['idTrabajo']){
                         $nota=$fila['NotaTrabajo'];
                     }
@@ -93,8 +94,8 @@ class Notas_SHOWCURRENT
         <form id="Formulario-mensaje" action="../Controllers/Index_Controller.php" method="get">
         <button id="boton-mensaje" type='submit' name='action' title="Volver atrás"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
-    }
-}
-}
+    }//fin else
+}//fin pinta
+}//fin clase
 
 ?>

@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Howall de Historia
  * Date: 02/12/2017
- * Time: 12:29
  */
 
 class Historia_SHOWALL
 {
+    //Declaracion de los atributos
     var $lista;
     var $datos;
     var $indexphp;
@@ -21,6 +21,7 @@ class Historia_SHOWALL
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
@@ -42,7 +43,7 @@ class Historia_SHOWALL
         <table id="tabla-showall">
             <tr>
                 <?php
-                for ($i = 0; $i < count($this->lista); $i++) {
+                for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                     ?>
                     <th><?php $columna = $this->lista[$i];
 					echo $strings[$columna];?></th>
@@ -52,13 +53,13 @@ class Historia_SHOWALL
             </tr>
 
             <?php
-            while($row = $this->datos->fetch_array())
+            while($row = $this->datos->fetch_array())//recorre el recordset de datos tupla a tupla
             {
                 ?>
                 <form class="formulario-tupla" method="">
                     <tr>
                         <?php
-                        for ($i = 0; $i < count($this->lista); $i++) {
+                        for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                             ?>
                             <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
                             <?php

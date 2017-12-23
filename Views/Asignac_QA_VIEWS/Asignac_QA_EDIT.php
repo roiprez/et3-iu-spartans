@@ -1,29 +1,30 @@
 <?php
 /**
- * User: Diego
+* Author: IU Spartans
+ * Vista de Edit de Asignac_QA
  * Date: 08/12/2017
- * Time: 11:38
  */
 
 
 class Asignac_QA_EDIT// declaración de clase
 {
-
+   //Declaracion de los atributos
   var $lista_Usuarios;
   var $usuario;
   var $trabajo;
   var $alias;
   var $corrector;
 
-    //Constructor
+    //Constructor de la clase
     function __construct($trabajo,$usuario,$alias,$corrector)
-    {
+    {//asignación de valores de parámetro a los atributos de la clase
         $this->trabajo=$trabajo;
         $this->usuario=$usuario;
         $this->alias=$alias;
         $this->corrector=$corrector;
         $this->pinta();
     }
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

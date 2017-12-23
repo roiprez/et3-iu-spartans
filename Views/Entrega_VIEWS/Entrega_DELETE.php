@@ -1,9 +1,14 @@
 <?php
+/**
+* Author: IU Spartans
+* Vista de Delete de Entrega
+* Date: 07/12/2017
+*/
 
-class Entrega_DELETE{
-
-    var $lista_variables;
-    var $lista_valores;
+class Entrega_DELETE{//Declaración de la clase
+    //Declaracion de los atributos
+    var $lista_variables;//lista de variables
+    var $lista_valores;//lista de valores de las variables
 
 
     //Constructor de la clase
@@ -11,9 +16,12 @@ class Entrega_DELETE{
         //asignación de valores de parámetro a los atributos de la clase
         $this->lista_variables=$lista_variables;
         $this->lista_valores = $lista_valores;
+
+        //Envía contenido al navegador
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if (IsAuthenticated() && !isAllow('Entre','Delete')){
@@ -29,7 +37,7 @@ class Entrega_DELETE{
                 <img src="../Iconos/error.png">
                 <p id="frase-borrado-tupla"><?php echo $strings['¿Está seguro de querer borrar los siguientes datos?'] ?></p>
             </div>
-            <?php for($i=0;$i<count($this->lista_variables);$i++){
+            <?php for($i=0;$i<count($this->lista_variables);$i++){//recorre las variables a mostrar
 
                 ?>
                 <tr>
