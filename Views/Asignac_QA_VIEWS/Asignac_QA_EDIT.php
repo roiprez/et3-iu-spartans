@@ -16,9 +16,8 @@ class Asignac_QA_EDIT// declaración de clase
   var $corrector;
 
     //Constructor
-    function __construct($lista_usuarios,$trabajo,$usuario,$alias,$corrector)
+    function __construct($trabajo,$usuario,$alias,$corrector)
     {
-        $this->lista_Usuarios=$lista_usuarios;
         $this->trabajo=$trabajo;
         $this->usuario=$usuario;
         $this->alias=$alias;

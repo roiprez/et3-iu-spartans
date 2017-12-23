@@ -89,6 +89,27 @@ else{ // si la busqueda es correcta devolvemos el recordset resultado
     return $resultado;
 }
 } // fin metodo SEARCH
+    function DELETE(){
+        //se comprueba que existe existe la tupla a borrar si es asi se borra
+        //si no, se alerta de que no existe
+        $sql = "SELECT * FROM PERMISO WHERE ((IdGrupo='$this->idGrupo')&&(IdFuncionalidad = '$this->idFuncionalidad')
+                                                                                  &&(IdAccion = '$this->idAccion'))";
+        // se ejecuta la query
+        $result = $this->mysqli->query($sql);
+        // si existe una tupla con ese valor de clave
+        if ($result->num_rows == 1)
+        {
+            // se construye la sentencia sql de borrado
+            $sql = "DELETE FROM PERMISO WHERE ((IdGrupo='$this->idGrupo')&&(IdFuncionalidad = '$this->idFuncionalidad')
+                                                                                  &&(IdAccion = '$this->idAccion'))";
+            // se ejecuta la query
+            $this->mysqli->query($sql);
+            // se devuelve el mensaje de borrado correcto
+            return "Borrado correctamente";
+        } // si no existe el login a borrar se devuelve el mensaje de que no existe
+        else
+            return "No existe";
+    } // fin metodo DELETE
 
     function RellenaDatos()
     {	// se construye la sentencia de busqueda de la tupla
