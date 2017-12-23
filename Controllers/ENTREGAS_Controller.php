@@ -100,7 +100,7 @@ if (!isset($_REQUEST['action'])){
             new Entrega_DELETE($lista, $valores);
         }
         else{
-            //Cogemos la asignacion y la borramos
+            //Cogemos la entrega y la borramos
             $ENTREGAS = new ENTREGAS_Model($_REQUEST['IdTrabajo'], $_REQUEST['login'], '', '', '');
             $respuesta = $ENTREGAS->DELETE();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');

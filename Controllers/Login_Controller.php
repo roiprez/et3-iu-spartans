@@ -2,7 +2,7 @@
 
 /*
 Controlador que se encarga de hacer login en la aplicación
-25/11/2017 por 
+25/11/2017 por IU SPARTANS
 */
 include '../Functions/comprobarAdmin.php';
 
