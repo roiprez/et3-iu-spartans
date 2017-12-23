@@ -128,10 +128,10 @@ function EDIT(){
 					IdTrabajo = '$this->idTrabajo',
 					NombreTrabajo = '$this->nombreTrabajo',
 					FechaIniTrabajo = '$this->fechIniTrabajo',
-                    FechaFinTrabajo = '$this->fechFinTrabajo'
+                    FechaFinTrabajo = '$this->fechFinTrabajo',
                     PorcentajeNota = '$this->porcentajeNota'
 					
-				WHERE ( IdTrabajo = '$this->idTrabajo'
+				WHERE ( IdTrabajo LIKE '$this->idTrabajo'
 				)";
         // si hay un problema con la query se envia un mensaje de error en la modificacion
         if (!($resultado = $this->mysqli->query($sql))){

@@ -506,10 +506,14 @@ function validarFormularioTrabajo(formulario){
   if((comprobarVacio(campo)) == false){
     return false;
   }
-  if((comprobarAlfabetico(campo, 60)) == false){
+  if((comprobarTexto(campo, 60)) == false){
     return false; 
   }
 
+  campo=objetivo.PorcentajeNota;
+  if(comprobarReal(campo,3,0,10) ==false){
+return false;	  
+}
   
   //Devuelve true una vez hemos comprobado todos los campos sin fallar ninguna validación
   return true;
