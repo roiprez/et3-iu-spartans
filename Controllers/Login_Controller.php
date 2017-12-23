@@ -20,7 +20,7 @@ else{
 	if ($respuesta == 'true')
 	{
 		session_start();
-		$_SESSION['login'] = strtolower($_REQUEST['login']);
+		$_SESSION['login'] = $_REQUEST['login'];
 		if(isAdmin())
 		{
 		$_SESSION['controlador'] = 'USUARIOS_Controller';

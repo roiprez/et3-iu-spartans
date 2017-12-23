@@ -85,8 +85,8 @@ function validarEntidad(entidad, formulario){
 	case 'trabajo':
 	return validarFormularioTrabajo(formulario);
 	break;
-	case 'notatrabajo':
-	return validarFormularioNotaTrabajo(formulario);
+	case 'nota_trabajo':
+	return validarFormularioNota(formulario);
 	break;
 	case 'entrega':
 	return validarFormularioEntrega(formulario);
@@ -285,7 +285,7 @@ function validarFormularioHistoria(formulario){
   if((comprobarVacio(campo)) == false){
     return false;
   }
-  if(comprobarEntero(this, 0, 99)) == false){
+  if((comprobarEntero(campo,0,99)) == false){
     return false; 
   }
 
@@ -610,7 +610,7 @@ function validarFormularioNotaTrabajo(formulario){
   if((comprobarVacio(campo)) == false){
     return false;
    }
-   if((comprobarEnterocampo,0,10)) == false){
+   if((comprobarReal(campo,3,0,10)) == false){
     return false;
   }
   

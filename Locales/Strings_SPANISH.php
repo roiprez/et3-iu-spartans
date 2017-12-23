@@ -51,7 +51,7 @@ array(
 	'Usuarios' =>'Usuarios',
 	'Grupos' => 'Grupos',
 	'buscar' => 'Buscar',
-	
+	'El trabajo con este id no existe en la base de datos' => 'El trabajo con este id no existe en la base de datos',
 	
 	/*Diccionario js*/
 	'Longitud incorrecta. El atributo nombre debe ser maximo 30',
