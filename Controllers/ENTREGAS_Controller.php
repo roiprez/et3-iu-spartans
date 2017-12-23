@@ -156,7 +156,14 @@ if (!isset($_REQUEST['action'])){
             new Entrega_CHECK_QA($_REQUEST['IdTrabajo'],$_REQUEST['AliasEvaluado'],$datos,$datosHistorias);
         }
         else{
-
+            $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['AliasEvaluado'],'','','', '','','');
+            $ENTREGAAEVALUAR= $ENTREGAAEVALUAR->SEARCH();
+            foreach($ENTREGAAEVALUAR->fetch_array() as $rowEvaluacion){
+                $ok= $_REQUEST($rowEvaluacion[3]."_".$rowEvaluacion[1]);
+                $EVALUACION= new EVALUACIONES_Model($rowEvaluacion[0],$rowEvaluacion[1],$rowEvaluacion[2],$rowEvaluacion[3],$rowEvaluacion[4],$rowEvaluacion[5],$rowEvaluacion[6],$rowEvaluacion[7],$ok);
+                $respuesta= $EVALUACION->EDIT();
+            }
+            new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         }
         break;
     //Mostramos en detalle una tupla

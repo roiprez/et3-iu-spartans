@@ -90,7 +90,7 @@ class Correccion_Conjunta_QAS
                         
                             ?>
                             <td>
-                                <input type="checkbox" name="<?php echo $i.$evaluadores[$i]?>">
+                                <input type="checkbox" name="<?php echo $i."_".$evaluadores[$j]?>">
                             </td>
                             <?php
                         
