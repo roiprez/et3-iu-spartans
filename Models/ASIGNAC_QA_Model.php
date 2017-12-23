@@ -124,8 +124,9 @@ class ASIGNAC_QA_Model{
             return 'No existe en la base de datos';
     } // fin del metodo EDIT
     function RellenaDatos()
+	
     {	// se construye la sentencia de busqueda de la tupla
-        $sql = "SELECT * FROM ASIGNAC_QA WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador'
+        $sql = "SELECT * FROM ASIGNAC_QA WHERE ((IdTrabajo= '$this->IdTrabajo')&&(LoginEvaluador= '$this->LoginEvaluador')
                                                                                     &&(AliasEvaluado= '$this->AliasEvaluado'))";
         // Si la busqueda no da resultados, se devuelve el mensaje de que no existe
         if (!($resultado = $this->mysqli->query($sql))){

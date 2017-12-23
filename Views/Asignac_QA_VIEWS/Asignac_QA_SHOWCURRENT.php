@@ -38,7 +38,7 @@ class Asignac_QA_SHOWCURRENT
                 ?>
                 <tr>
                     <th><?php $fila = $this->lista_variables[$i]; echo $strings[$fila];?></th>
-                    <td class="celda"><?php echo $this->lista_valores[$this->lista_variables[$i]]; ?></td>
+                    <td class="celda"><?php echo $this->lista_valores[$i]; ?></td>
                 </tr>
                 <?php
             }//fin de bucle for

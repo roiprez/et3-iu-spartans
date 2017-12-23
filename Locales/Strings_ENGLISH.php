@@ -146,7 +146,7 @@ array(
 	'Fecha inicio' => 'Date start',
 	'Fecha fin' => 'Date end',
 	'PorcentajeNota' => 'MarkPercent',
-	'Porcentaje Nota'=>'Mark Percent'
+	'Porcentaje Nota'=>'Mark Percent',
 	'Se han generado las asignaciones y sus correspondientes evaluaciones con éxito' => 'Asgnations and evaluations have been generated succesfully',
 	'Porcentaje Trabajo' => 'WorkPercent',
 	'generar asignaciones' => 'generate asignations',
