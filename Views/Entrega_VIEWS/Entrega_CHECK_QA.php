@@ -34,7 +34,7 @@ class Correccion_Conjunta_QAS
 			echo $strings['No tienes permiso para acceder a esta vista'];
 
 		//Si tiene permisos pero no es adminitrador
-		}else if (!isAdmin() && isAllow('ResEt','Show')){
+		}else if (isAdmin() && isAllow('ResEt','Show')){
         $correctos=array();
         $comentarios=array();
         ?>

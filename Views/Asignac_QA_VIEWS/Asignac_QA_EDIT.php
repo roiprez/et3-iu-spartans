@@ -46,8 +46,8 @@ class Asignac_QA_EDIT// declaración de clase
                 />
             </label>
             <label><?php echo $strings['Alias']; ?>
-                <input type="text" name="Alias" readonly="true"
-                       id="Alias" required="true"
+                <input type="text" name="AliasEvaluado" readonly="true"
+                       id="AliasEvaluado" required="true"
                        size="9" maxlength="9" value="<?php echo $this->alias?>"
                 />
             </label>
