@@ -14,9 +14,6 @@ function enFecha($IdTrabajo){
 	
 	//Recorre la lista de trabajos para ver si la fecha de entrega ha expirado
 	while($row = $TRABAJO_cmp->fetch_array()) {
-		//Si la fecha limite ya ha pasado
-		echo $row[3];
-		echo  date("Y-m-d");
 		//Si ha expirado devuelve falso
 		if($row[3] < date("Y-m-d")){
 			return false;
