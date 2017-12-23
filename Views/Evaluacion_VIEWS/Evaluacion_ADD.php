@@ -70,7 +70,7 @@ class Evaluacion_ADD// declaración de clase
                 </select>
             </label>
             <label><?php echo $strings['comentario']; ?>
-                <textarea form="formulario-add" maxlength="300" name="ComenIncorrectoP" onChange ="return comprobarTexto(this,this.size);"></textarea>
+                <textarea form="formulario-add" maxlength="300" name="ComentIncorrectoP" onChange ="return comprobarTexto(this,this.size);"></textarea>
             </label>
             <label><?php echo $strings['Corrección de la evaluación']; ?>
                 <select name="OK" id="OK" required="true" size="1">

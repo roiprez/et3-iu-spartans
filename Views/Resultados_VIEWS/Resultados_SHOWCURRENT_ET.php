@@ -79,10 +79,13 @@ class Resultados_SHOWCURRENT_ET
                     ?>
                 </tr>
                 <tr>
-                    <?php echo $incorrectoP?>
+                    <?php
+                    if($incorrectoP!='') 
+                        echo "Profesor:  " .$incorrectoP . "<br>"?>
                     <?php
                         for($j=0;$j<5;$j++){
-                            echo $comentarios[$j];
+                            if($comentarios[$j]!='')
+                                echo $j+1 . ":  " . $comentarios[$j] . "<br>";
                         }
                     ?>
                 </tr>
