@@ -154,7 +154,11 @@ if (!isset($_REQUEST['action'])){
             $datos= $ENTREGAAEVALUAR->SEARCH();
             $HISTORIAS= new HISTORIA_Model($_REQUEST['IdTrabajo'],'','');
             $datosHistorias= $HISTORIAS->SEARCH();
-            new Correccion_Conjunta_QAS($_REQUEST['IdTrabajo'],$_REQUEST['Alias'],$datos,$datosHistorias,'../Controllers/Index_Controller.php');
+            $arrayDescripciones= array();
+             while($rowHistoria = $datosHistorias->fetch_array()){
+                 $arrayDescripciones[]=$rowHistoria[2];
+             }
+            new Correccion_Conjunta_QAS($_REQUEST['IdTrabajo'],$_REQUEST['Alias'],$datos,$arrayDescripciones,'../Controllers/Index_Controller.php');
         }
         else{
             $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['Alias'],'','','', '','','');
