@@ -1,5 +1,6 @@
 <?php
 /**
+* Author: IU Spartans
  * Vista de Add de accion
  * Date: 01/12/2017
  */
@@ -11,6 +12,7 @@ class Accion_ADD
     {
         $this->pinta();
     }
+    
     //Envía contenido al navegador
     function pinta()
     {

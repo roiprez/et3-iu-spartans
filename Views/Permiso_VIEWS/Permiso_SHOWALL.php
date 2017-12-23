@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+* Author: IU Spartans
+ * Vista de Showall de Permiso
  * Date: 02/12/2017
- * Time: 11:50
  */
 
 class Permiso_SHOWALL
 {
+    //declaracion de atributos
     var $lista;
     var $datos;
     var $indexphp;
@@ -21,6 +21,7 @@ class Permiso_SHOWALL
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         //Si el usuarios está autenticado pero no es administrador 
             if (IsAuthenticated() && !isAllow('Perm','Show')){
@@ -41,7 +42,7 @@ class Permiso_SHOWALL
         <table id="tabla-showall">
             <tr>
                 <?php
-                for ($i = 0; $i < count($this->lista); $i++) {
+                for ($i = 0; $i < count($this->lista); $i++) {//recorre lista de variables
                     ?>
                     <th><?php
 					$columna = $this->lista[$i];
@@ -53,12 +54,12 @@ class Permiso_SHOWALL
 
             <?php
             while($row = $this->datos->fetch_array())
-            {
+            {//recorre recordset de datos tupla a tupla
                 ?>
                 <form class="formulario-tupla" method="">
                     <tr>
                         <?php
-                        for ($i = 0; $i < count($this->lista); $i++) {
+                        for ($i = 0; $i < count($this->lista); $i++) {//recorre la lista de variables
                             ?>
                             <td class="celda"><?php echo $row[$this->lista[$i]]?><input type="hidden" name="<?php echo $this->lista[$i]?>" value="<?php echo $row[$this->lista[$i]]?>"></td>
                             <?php
@@ -76,7 +77,7 @@ class Permiso_SHOWALL
 		<button id="boton-mensaje" type='submit' name='action' title="<?php echo $strings['Volver atrás']; ?>"><img class="button-td" src="../Iconos/back.png" ></img></button></form> <!--Imagen para la accion back,que permite volver al menu principal-->
         <?php
     }//Fin else
-    }
-}
+    }//finde pinta
+}//fin de clase
 
 ?>

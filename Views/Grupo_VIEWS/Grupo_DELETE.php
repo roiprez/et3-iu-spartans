@@ -1,15 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Delete de Grupo
  * Date: 30/11/2017
- * Time: 13:34
  */
-
 class Grupo_DELETE
 {
 
-
+//Declaracion de los atributos
     var $lista_variables;
     var $lista_valores;
 
@@ -22,6 +20,7 @@ class Grupo_DELETE
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 
@@ -38,7 +37,7 @@ class Grupo_DELETE
                 <img src="../Iconos/error.png">
                 <p id="frase-borrado-tupla"><?php echo $strings['¿Está seguro de querer borrar los siguientes datos?'] ?></p>
             </div>
-            <?php for($i=0;$i<count($this->lista_variables);$i++){
+            <?php for($i=0;$i<count($this->lista_variables);$i++){//recorre la lista de variables
 
                 ?>
                 <tr>

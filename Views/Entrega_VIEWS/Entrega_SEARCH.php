@@ -1,9 +1,9 @@
 <?php
 /**
- * User: Diego
- * Date: 07/12/2017
- * Time: 12:32
- */
+* Author: IU Spartans
+* Vista de Search de Entrega
+* Date: 07/12/2017
+*/
 
 
 class Entrega_SEARCH// declaración de clase
@@ -14,9 +14,11 @@ class Entrega_SEARCH// declaración de clase
     //Constructor
     function __construct()
     {
-      
+      //Envía contenido al navegador
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 30/11/2017
- * Time: 13:22
+ * Author: IU Spartans
+ * Vista de Search de Usuario
+ * Date: 30/12/2017
  */
 
 class Usuario_SEARCH
@@ -14,6 +13,7 @@ class Usuario_SEARCH
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
       //Si el usuarios está autenticado pero no es administrador 

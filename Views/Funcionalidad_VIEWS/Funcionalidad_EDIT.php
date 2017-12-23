@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Edit de Funcionalidad
  * Date: 01/12/2017
- * Time: 18:02
  */
 
 class Funcionalidad_EDIT
@@ -19,6 +18,8 @@ class Funcionalidad_EDIT
 
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         //Si el usuarios está autenticado pero no es administrador 

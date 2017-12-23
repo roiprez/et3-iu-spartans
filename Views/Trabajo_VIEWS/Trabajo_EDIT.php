@@ -1,10 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 02/12/2017
- * Time: 10:53
- */
+* Author: IU Spartans
+* Vista de Edit de Trabajos
+* Date: 02/12/2017
+*/
 
 class Trabajo_EDIT
 {
@@ -14,11 +13,13 @@ class Trabajo_EDIT
     //Constructor
     function __construct($lista_valores)
     {
-
+//asignación de valores de parámetro a los atributos de la clase
         $this->lista_valores=$lista_valores;
 
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

@@ -1,12 +1,13 @@
 <?php
 /**
- * User: Diego
- * Date: 08/12/2017
- * Time: 10:53
- */
+* Author: IU Spartans
+* Vista de Showcurrent de Asignac_QA
+* Date: 08/12/2017
+*/
 
 class Asignac_QA_SHOWCURRENT
 {
+     //Declaracion de los atributos
     var $lista_variables;//lista de variables a mostrar
     var $lista_valores;//lista de valores de las variables
 
@@ -16,9 +17,12 @@ class Asignac_QA_SHOWCURRENT
         //asignación de valores de parámetro a los atributos de la clase
         $this->lista_variables = $lista_variables;
         $this->lista_valores=$lista_valores;
+
+        
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
          if (IsAuthenticated() && !isAllow('Asig_Qua','Show')){
@@ -34,7 +38,7 @@ class Asignac_QA_SHOWCURRENT
             <h1 class="titulo-categoria"><?php echo $strings['Detalle']; ?></h1>
 
             <?php
-            for($i=0;$i<count($this->lista_variables);$i++){
+            for($i=0;$i<count($this->lista_variables);$i++){//recorre la lista de variables
                 ?>
                 <tr>
                     <th><?php $fila = $this->lista_variables[$i]; echo $strings[$fila];?></th>

@@ -1,11 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 30/11/2017
- * Time: 12:56
+ * Author: IU Spartans
+ * Vista de Add de Usuario
+ * Date: 30/12/2017
  */
-
 
 class Usuario_ADD// declaración de clase
 {
@@ -15,6 +13,8 @@ class Usuario_ADD// declaración de clase
     {
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

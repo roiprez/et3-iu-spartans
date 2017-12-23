@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Author: IU Spartans
+ * Vista de Gestion de las Fun_Accion 
+ * Date: 04/12/2017
+ */
 class Fun_Accion_GESTION// declaración de clase
 {
 //declaracion de atributos
@@ -12,6 +16,7 @@ class Fun_Accion_GESTION// declaración de clase
     //Constructor
     function __construct($lista_acciones,$lista_nombre_acciones,$funcionalidad,$nombre_funcionalidad,$lista_valores)
     {	
+        //asignación de valores de parámetro a los atributos de la clase
         $this->lista_acciones=$lista_acciones;
         $this->lista_nombre_acciones=$lista_nombre_acciones;
         $this->funcionalidad=$funcionalidad;      
@@ -19,6 +24,8 @@ class Fun_Accion_GESTION// declaración de clase
     	$this->lista_valores=$lista_valores;
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

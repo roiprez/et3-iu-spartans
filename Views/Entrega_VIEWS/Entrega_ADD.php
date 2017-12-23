@@ -1,26 +1,32 @@
 <?php
 /**
- * User: Diego
- * Date: 07/12/2017
- * Time: 12:32
- */
+* Author: IU Spartans
+* Vista de Add de Entrega
+* Date: 07/12/2017
+*/
 
 
 class Entrega_ADD// declaración de clase
 {
 
-  var $lista_Usuarios;
-  var $lista_Trabajos;
+  //Declaracion de los atributos
+  var $lista_Usuarios;//lista de usuarios dados de alta
+  var $lista_Trabajos;//lista de trabajos posibles
   var $alias;
 
     //Constructor
     function __construct($lista_usuarios,$lista_trabajos,$alias)
     {
+      //asignación de valores de parámetro a los atributos de la clase
         $this->lista_Usuarios=$lista_usuarios;
         $this->lista_Trabajos=$lista_trabajos;
         $this->alias=$alias;
+
+        //Envía contenido al navegador
         $this->pinta();
     }
+    
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
@@ -38,7 +44,7 @@ class Entrega_ADD// declaración de clase
             <label><?php echo $strings['Login']; ?>
                 <select name="login" id="login" required="true" size="1">
                   <?php 
-                    for($i=0;$i<count($this->lista_Usuarios);$i++){
+                    for($i=0;$i<count($this->lista_Usuarios);$i++){//recorre todos los usuarios
                       ?>
                       <option value="<?php echo $this->lista_Usuarios[$i]?>"><?php echo $this->lista_Usuarios[$i] ?></option>
                       <?php
@@ -49,7 +55,7 @@ class Entrega_ADD// declaración de clase
             <label><?php echo $strings['Id del Trabajo']; ?>
                 <select name="IdTrabajo" id="IdTrabajo" required="true" size="1">
                   <?php 
-                    for($i=0;$i<count($this->lista_Trabajos);$i++){
+                    for($i=0;$i<count($this->lista_Trabajos);$i++){//recorre todos los trabajos
                       ?>
                       <option value="<?php echo $this->lista_Trabajos[$i] ?>"><?php echo $this->lista_Trabajos[$i] ?></option>
                       <?php

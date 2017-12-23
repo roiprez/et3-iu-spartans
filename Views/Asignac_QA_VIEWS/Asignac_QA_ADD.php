@@ -1,5 +1,6 @@
 <?php
 /**
+* Author: IU Spartans
  * Vista de Add de Asignac_QA
  * Date: 08/12/2017
  */
@@ -14,6 +15,8 @@ class Asignac_QA_ADD// declaración de clase
 
         $this->pinta();
     }
+    
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

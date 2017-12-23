@@ -1,4 +1,9 @@
 <?php
+/**
+* Author: IU Spartans
+ * Vista de Gestion de Permiso
+ * Date: 02/12/2017
+ */
 
 class Permiso_GESTION// declaración de clase
 {
@@ -12,12 +17,15 @@ class Permiso_GESTION// declaración de clase
     //Constructor
     function __construct($datos_grupo,$lista_fun_accion,$lista_valores)
     {	
+        //asignación de valores de parámetro a los atributos de la clase
         $this->datos_grupo=$datos_grupo;
         $this->lista_valores=$lista_valores;//recordset de la tabla permiso
         $this->lista_fun_accion=$lista_fun_accion;//lista de fun_accion disponibles
         $this->grupo;
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
         //Si el usuarios está autenticado pero no es administrador 

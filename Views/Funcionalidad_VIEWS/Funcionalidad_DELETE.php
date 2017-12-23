@@ -1,15 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Delete de Funcionalidad
  * Date: 01/12/2017
- * Time: 18:09
  */
 
 class Funcionalidad_DELETE
 {
 
-
+//Declaracion de los atributos
     var $lista_variables;
     var $lista_valores;
 
@@ -22,6 +21,7 @@ class Funcionalidad_DELETE
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
         //Si el usuarios está autenticado pero no es administrador 

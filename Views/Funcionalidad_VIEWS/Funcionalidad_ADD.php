@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Add de Funcionalidad
  * Date: 01/12/2017
- * Time: 17:59
  */
 
 class Funcionalidad_ADD

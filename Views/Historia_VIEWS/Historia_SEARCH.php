@@ -1,14 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Search de Historia
  * Date: 02/12/2017
- * Time: 12:31
  */
 
 class Historia_SEARCH
 {
-
+//Declaracion de los atributos
     var $lista_Trabajos;
 
 
@@ -19,6 +18,8 @@ class Historia_SEARCH
     {
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
 include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

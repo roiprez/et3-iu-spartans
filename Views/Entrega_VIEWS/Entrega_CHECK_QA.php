@@ -26,6 +26,7 @@ class Correccion_Conjunta_QAS
         $this->pinta();
     }
 
+//Envía contenido al navegador
     function pinta(){
         include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 		if(!isAllow('ResEt','Show')){

@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
+ * Author: IU Spartans
+ * Vista de Search de Funcionalidad
  * Date: 01/12/2017
- * Time: 18:07
  */
 
 class Funcionalidad_SEARCH
@@ -13,6 +12,8 @@ class Funcionalidad_SEARCH
     {
         $this->pinta();
     }
+
+    //Envía contenido al navegador
     function pinta()
     {
 include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';

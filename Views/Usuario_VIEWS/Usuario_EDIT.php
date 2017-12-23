@@ -1,11 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Drubito
- * Date: 30/11/2017
- * Time: 13:10
+ * Author: IU Spartans
+ * Vista de Edit de Usuario
+ * Date: 30/12/2017
  */
-
 
 
 class Usuario_EDIT// declaración de clase
@@ -16,11 +14,13 @@ class Usuario_EDIT// declaración de clase
     //Constructor
     function __construct($lista_valores)
     {
-
+//asignación de valores de parámetro a los atributos de la clase
         $this->lista_valores=$lista_valores;
 
         $this->pinta();
     }
+    
+    //Envía contenido al navegador
     function pinta()
     {
         include '../Locales/Strings_' . $_SESSION['idioma'] . '.php';
