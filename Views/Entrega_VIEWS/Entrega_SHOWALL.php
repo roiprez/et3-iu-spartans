@@ -59,9 +59,13 @@ class Entrega_SHOWALL{  // declaración de clase
                             <?php
                         }
                         ?>
-                       
+						
+                       <?php
+						//Comprobacion de la fecha de entrega
+						
+					   if(enFecha($row[0])){?>
                         <td><button type = "submit" name = "action" value="EDIT" title="<?php echo $strings['editar']; ?>"><img class="button-td" src="../Iconos/edit.png" ></img></button></td>
-                        
+					   <?php } ?>
                     </tr>
                 </form>
                 <?php

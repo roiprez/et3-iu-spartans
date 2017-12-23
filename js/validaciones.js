@@ -464,20 +464,9 @@ function validarFormularioEntrega(formulario){
   }
 //Comprueba que Horas sea un entero entre 0 y 99 y que no esté vacío
   campo = objetivo.Horas;
-  if((comprobarVacio(campo)) == false){
-    return false;
-  }
+  
   if((comprobarEntero(campo,0,99)) == false){
     return false; 
-  }
-//Si el formulario tiene el valor add comprueba el valor de ruta y se asegura de que no esté vacío
-  if(formulario=='add'){
-
-        campo = objetivo.Ruta;
-      if((comprobarVacio(campo)) == false){
-        return false;
-      }
-  
   }
   
   
