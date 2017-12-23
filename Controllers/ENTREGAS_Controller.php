@@ -2,6 +2,8 @@
     include_once '../Models/ENTREGAS_Model.php';
     include_once '../Models/USUARIOS_Model.php';
     include_once '../Models/TRABAJOS_Model.php';
+    include_once '../Models/EVALUACIONES_Model.php';
+    include_once '../Models/HISTORIA_Model.php';
     include '../Views/Entrega_VIEWS/Entrega_ADD.php';
     include '../Views/Entrega_VIEWS/Entrega_DELETE.php';
     include '../Views/Entrega_VIEWS/Entrega_EDIT.php';
@@ -114,6 +116,18 @@ Switch ($_REQUEST['action']){
             $datos = $ENTREGAS->SEARCH();
             $lista = array('IdTrabajo', 'login', 'Alias', 'Horas', 'Ruta');
             new Entrega_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
+        }
+        break;
+    case 'QACHECK':
+        if (!$_POST){
+            $ENTREGAAEVALUAR= new EVALUACIONES_Model($_REQUEST['IdTrabajo'],'',$_REQUEST['AliasEvaluado'],'','','', '','','');
+            $datos= $ENTREGAAEVALUAR->SEARCH();
+            $HISTORIAS= new HISTORIA_Model($_REQUEST['IdTrabajo'],'','');
+            $datosHistorias= $HISTORIAS->SEARCH();
+            new Entrega_SEARCH($_REQUEST['IdTrabajo'],$_REQUEST['AliasEvaluado'],$datos,$datosHistorias);
+        }
+        else{
+            
         }
         break;
     case 'SHOWCURRENT':
