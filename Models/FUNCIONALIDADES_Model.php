@@ -1,4 +1,8 @@
 <?php
+/*
+El Modelo de los datos de FUNCIONALIDADES, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
+01/12/2017 por IU SPARTANS
+*/
 class FUNCIONALIDADES_MODEL{
     var $idFuncionalidad;
     var $nombreFuncionalidad;

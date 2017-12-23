@@ -1,6 +1,7 @@
 <?php
 /*
 Genera automáticamente las qas, sus evaluaciones y las notas
+15/12/2017 por IU SPARTANS
 */
 
 include_once '../Models/ENTREGAS_Model.php';

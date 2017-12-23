@@ -1,7 +1,7 @@
 <?php
 /*
 Comprueba que el trabajo se ha entregado en la fecha correcta
-22/12/2017 por 
+22/12/2017 por IU SPARTANS 
 */
 include_once '../Models/GRUPOS_Model.php';
 

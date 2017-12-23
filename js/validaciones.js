@@ -3,7 +3,7 @@
 Este fichero se encarga de las validaciones de los formularios.
 A lo largo del fichero hay validaciones que si se usan en campos del formulario cambian el estilo del campo a rojo si el valor es incorrecto
 y lo convierten a blanco en caso de que se haya corregido.
-25/11/2017 por 
+25/11/2017 por IU SPARTANS
 */
 
 

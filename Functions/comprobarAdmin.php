@@ -1,7 +1,7 @@
 <?php
 /*
 Devuelve true si el usuario pertenece al grupo de Admin
-25/11/2017 por 
+25/11/2017 por IU SPARTANS
 */
 include_once '../Models/GRUPOS_Model.php';
 

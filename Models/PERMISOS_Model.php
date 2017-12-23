@@ -1,4 +1,8 @@
 <?php
+/*
+El Modelo de los datos de PERMISOS, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
+02/12/2017 por IU SPARTANS
+*/
 class PERMISOS_Model{
     var $idGrupo;
     var $idFuncionalidad;

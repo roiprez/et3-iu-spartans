@@ -1,4 +1,8 @@
 <?php
+/*
+El Modelo de los datos de ACCIONES, se encarga de ejecutar las operaciones de la aplicación contra la base de datos
+01/12/2017 por IU SPARTANS
+*/
 class ACCIONES_Model{
     var $idAccion;
     var $nombreAccion;

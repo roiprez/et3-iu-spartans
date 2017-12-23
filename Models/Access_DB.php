@@ -3,7 +3,7 @@
 <?php
 /*
 Función única de conexión a la base de datos
-26/10/2017 por s84f46
+25/11/2017 por IU SPARTANS
 */
 function ConectarBD() //declaración de funcion
 	{

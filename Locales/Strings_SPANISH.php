@@ -1,5 +1,8 @@
 <?php 
-
+/*
+fichero con las cadenas de texto en castellano
+2/12/2017 por IU SPARTANS
+*/
 $strings = 
 array(
 	'Portal de Gestión' => 'Portal de Gestión',
