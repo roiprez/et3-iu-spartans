@@ -85,7 +85,7 @@ function validarEntidad(entidad, formulario){
 	case 'trabajo':
 	return validarFormularioTrabajo(formulario);
 	break;
-	case 'nota_trabajo':
+	case 'notatrabajo':
 	return validarFormularioNota(formulario);
 	break;
 	case 'entrega':
