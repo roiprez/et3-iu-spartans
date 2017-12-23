@@ -33,23 +33,23 @@ class Nota_Trabajo_EDIT
             }else{
 
         ?>
-        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarFormulario('notaTrabajo','edit') && encriptar()">
+        <form id="formulario-edit" name="formulario_edit" method="post" onSubmit="return validarEntidad('notatrabajo','edit') && encriptar()">
             <label><?php echo $strings['Login']; ?>
                 <input type="text" name="login" readonly="true" 
                        id="login" required="true"
-                       size="9" maxlength="9" value="<?php echo $this->lista_valores['login']?>" onBlur ="return comprobarTexto(this,this.size);"
+                       size="9" maxlength="9" value="<?php echo $this->lista_valores['login']?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Id del Trabajo']; ?>
                 <input type="text" name="IdTrabajo"
                        id="IdTrabajo" required="true" readonly="true"
-                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo']?>" onBlur ="return comprobarTexto(this,this.size);"
+                       size="6" maxlength="6" value="<?php echo $this->lista_valores['IdTrabajo']?>" onChange ="return comprobarTexto(this,this.size);"
                 />
             </label>
             <label><?php echo $strings['Nota del Trabajo']; ?>
                 <input type="text" name="NotaTrabajo"
                        id="NotaTrabajo" required="true"
-                       size="4" maxlength="4" value="<?php echo $this->lista_valores['NotaTrabajo']?>" onBlur ="return comprobarTexto(this,this.size);"
+                       size="4" maxlength="4" value="<?php echo $this->lista_valores['NotaTrabajo']?>" onChange ="return comprobarReal(this,3,0,10);"
                 />
             </label>
             <div class="botones-formulario">

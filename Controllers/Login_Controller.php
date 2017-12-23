@@ -23,9 +23,13 @@ else{
 	if ($respuesta == 'true')
 	{
 		session_start();
+
+		$_SESSION['login'] = $_REQUEST['login'];
+
 		//Establecemos el login de la sesión
 		$_SESSION['login'] = strtolower($_REQUEST['login']);
 		//Si el que se loguea es administrador lo mandamos al controlador de usuarios por defecto, si no al de entregas
+
 		if(isAdmin())
 		{
 		$_SESSION['controlador'] = 'USUARIOS_Controller';

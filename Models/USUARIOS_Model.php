@@ -276,7 +276,21 @@ function login(){
 				return 'Error en la inserción';
 			}
 			else{
+				
+				$sql = "INSERT INTO USU_GRUPO (
+				login,
+				IdGrupo
+				) 
+					VALUES (
+						'".$this->login."',
+						'Alumno'
+						)";
+						if (!$this->mysqli->query($sql)) {
+				return 'Error en la inserción';
+			}else{
+				
 				return 'Inserción realizada con éxito'; //operacion de insertado correcta
+			}
 			}		
 		}
 
