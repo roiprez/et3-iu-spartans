@@ -45,10 +45,10 @@ class Trabajo_EDIT
                        size="60" maxlength="60" value="<?php echo $this->lista_valores['NombreTrabajo'] ?>" onBlur ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
-            <label><?php echo $strings['Porcentaje Trabajo']; ?>
-                <input type="text" name="PorcentajeTrabajo"
+            <label><?php echo $strings['Porcentaje Nota']; ?>
+                <input type="text" name="PorcentajeNota"
                        id="PorcentajeTrabajo" required="true"
-                       size="2" maxlength="2" value="<?php echo $this->lista_valores['PorcentajeTrabajo'] ?>"
+                       size="2" maxlength="2" value="<?php echo $this->lista_valores['PorcentajeNota'] ?>"
                 />
             </label>
             <label><?php echo $strings['Fecha inicio']; ?>

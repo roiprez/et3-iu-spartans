@@ -58,7 +58,7 @@ class Entrega_SEARCH// declaración de clase
             </label>
             <label><?php echo $strings['Ruta']; ?>
                 <input type="file" name="Ruta"
-                       id="Ruta" required="true"
+                       id="Ruta" 
                        size="60" maxlength="60"
                 />
             </label>

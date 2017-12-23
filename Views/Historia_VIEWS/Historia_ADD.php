@@ -61,8 +61,7 @@ class Historia_ADD
             </label>
 
             <label><?php echo $strings['Texto']; ?>
-                <textarea form="formulario-add" maxlength="300" name="TextoHistoria" required="true" onChange ="return comprobarTexto(this,this.size);">
-                </textarea>
+                <textarea form="formulario-add" maxlength="300" name="TextoHistoria" required="true" onChange ="return comprobarTexto(this,this.size);"></textarea>
             </label>
 
 
