@@ -2,7 +2,7 @@
 
 /*
 Controlador que se encarga del acceso a la aplicación, envía a la entrada por defecto por index.php o a la vista principal de la página si está autenticado
-25/11/2017 por 
+25/11/2017 por IU SPARTANS
 */
 
 //session
