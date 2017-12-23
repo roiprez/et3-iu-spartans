@@ -54,10 +54,27 @@ class Entrega_EDIT// declaración de clase
                        id="RutaOriginal" 
                        size="60" maxlength="60" value="<?php echo $this->lista_Valores['Ruta']?>" 
                 />
+				
+				
+				<?php
+				//Si el valor de Ruta es vacio, es obligatorio
+				if($this->lista_Valores['Ruta'] == ''){?>
+				
                 <input type="file" name="Ruta"
-                       id="Ruta"  
-                       size="60" maxlength="60"
+                       id="Ruta"  required="true"
+                       size="60"  maxlength="60"
                 />
+				
+				<?php
+				//Si no es vacío, no es obligatorio
+				}else{?>
+				
+				<input type="file" name="Ruta"
+                       id="Ruta"  
+                       size="60"  maxlength="60"
+                />
+				<?php }?>
+				
             </label>
            <div class="botones-formulario">
                 <button id="enviar" name = "action" value = "EDIT" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>
