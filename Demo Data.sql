@@ -29,9 +29,16 @@ INSERT INTO TRABAJO (IdTrabajo,NombreTrabajo,FechaIniTrabajo,FechaFinTrabajo,Por
 						VALUES (
 							'ET1',
 							'Entrega 1',
-							'20/08/2017',
-							'21/08/2017',
+							'2017-08-14',
+							'2017-08-21',
 							'20');
+INSERT INTO TRABAJO (IdTrabajo,NombreTrabajo,FechaIniTrabajo,FechaFinTrabajo,PorcentajeNota)
+						VALUES (
+							'QA1',
+							'QA 1',
+							'2017-08-22',
+							'2017-08-28',
+							'5');
 /*Insercion de Entregas de Prueba*/
 INSERT INTO ENTREGA (login,IdTrabajo,
 					Alias,Horas,Ruta)
