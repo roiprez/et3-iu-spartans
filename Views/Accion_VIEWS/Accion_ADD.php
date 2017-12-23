@@ -27,7 +27,7 @@ class Accion_ADD
 
         ?>
 
-        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarEntidad('Action','add')">
+        <form id="formulario-add" name="formulario_add" method="post" onSubmit="return validarEntidad('accion','add')">
 
             <label><?php echo $strings['Id Accion']; ?>
                 <input type="text" name="IdAccion"
@@ -43,8 +43,7 @@ class Accion_ADD
                 />
             </label>
             <label><?php echo $strings['Descripcion']; ?>
-                <textarea form="formulario-add" maxlength="100" name="DescripAccion" required="true" onChange ="return comprobarTexto(this,this.size);">
-                </textarea>
+                <textarea form="formulario-add" maxlength="100" name="DescripAccion" required="true" onChange ="return comprobarTexto(this,this.size);"></textarea>
             </label>
             <div class="botones-formulario">
                 <button id="enviar" name = "action" value = "ADD" type="submit" title="<?php echo $strings['enviar']; ?>"><img class="button-td" src="../Iconos/send.png" ></button>

@@ -148,6 +148,7 @@ if (!isset($_REQUEST['IdGrupo'])){
 						$USU_GRUPO->ADD(); // Añadimos uno por uno a la tabla
 					}
 				}
+				new Vista_MESSAGE('Modificado correctamente', '../Controllers/Index_Controller.php');
 			}
 			break;
 			
