@@ -1,7 +1,7 @@
 <?php
 /*
 Vista que contiene el Menú lateral
-23/11/2017
+23/11/2017 por IU SPARTANS
 */
 
   class MenuLateral{

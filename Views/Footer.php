@@ -1,7 +1,7 @@
 <?php
 /*
 Vista que contiene el footer de la aplicación junto con los scripts de javascript necesarios para su funcionamiento
-23/11/2017
+23/11/2017 por IU SPARTANS
 */
 
 	class Footer{

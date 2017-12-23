@@ -1,7 +1,7 @@
 <?php
 /*
 entrada a la aplicacion
-23/11/2017
+23/11/2017 por IU SPARTANS
 */
 	//se va usar la session de la conexion
 	session_start();
