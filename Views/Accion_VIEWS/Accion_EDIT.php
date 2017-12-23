@@ -46,9 +46,7 @@ class Accion_EDIT
                 />
             </label>
             <label><?php echo $strings['Descripcion']; ?>
-                <textarea form="formulario-edit" maxlength="100" name="DescripAccion" onChange ="return comprobarTexto(this,this.size);">
-                <?php echo $this->lista_valores['DescripAccion'] ?>
-                </textarea>
+                <textarea form="formulario-edit" maxlength="100" name="DescripAccion" onChange ="return comprobarTexto(this,this.size);"><?php echo $this->lista_valores['DescripAccion'] ?></textarea>
             </label>
 
             <div class="botones-formulario">

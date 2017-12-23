@@ -42,7 +42,7 @@ class Trabajo_ADD
                        size="60" maxlength="60" onBlur ="return comprobarAlfabetico(this,this.size,'edit');"
                 />
             </label>
-            <label><?php echo $strings['Porcentaje Trabajo']; ?>
+            <label><?php echo $strings['Porcentaje Nota']; ?>
                 <input type="text" name="PorcentajeNota"
                        id="PorcentajeNota" required="true"
                        size="2" maxlength="2"

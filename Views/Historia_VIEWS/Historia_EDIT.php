@@ -51,9 +51,7 @@ class Historia_EDIT
             </label>
 
             <label><?php echo $strings['Texto']; ?>
-                <textarea form="formulario-edit" maxlength="300" name="TextoHistoria" required="true" onChange ="return comprobarTexto(this,this.size);">
-                    <?php echo $this->lista_valores['TextoHistoria']?>
-                </textarea>
+                <textarea form="formulario-edit" maxlength="300" name="TextoHistoria" required="true" onChange ="return comprobarTexto(this,this.size);"><?php echo $this->lista_valores['TextoHistoria']?></textarea>
             </label>
 
             <div class="botones-formulario">
