@@ -191,7 +191,7 @@ function validarFormularioUsuario(formulario){
     return false;
    }
    
-  if(!comprobarAlfabetico(campo, 60,'')){
+  if(!comprobarTexto(campo, 60,'')){
     return false;
   }
 
