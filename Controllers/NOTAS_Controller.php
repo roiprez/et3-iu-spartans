@@ -1,4 +1,10 @@
 <?php
+
+/*
+Controlador que se encarga de gestionar las peticiones de lectura y escritura de datos al modelo de notas.
+08/12/2017 por IU SPARTANS
+*/
+
     include_once '../Models/NOTAS_Model.php';
     include_once '../Models/TRABAJOS_Model.php';
     include_once '../Models/ENTREGAS_Model.php';
@@ -11,6 +17,7 @@
     include '../Views/Nota_Trabajo_VIEWS/Nota_Trabajo_SHOWCURRENT.php';
     include '../Views/MESSAGE_View.php';
 
+//Devuelve una instancia del modelo con los objetos recibidos del formulario como parámetros
 function get_data_form(){
     $login = $_REQUEST['login'];
     $IdTrabajo = $_REQUEST['IdTrabajo'];
@@ -26,6 +33,7 @@ function get_data_form(){
     return $NOTAS;
 }
 
+//Devuelve una instancia del modelo con parte de los objetos recibidos del formulario como parámetros
 function get_data_form2(){
 
     $login = $_REQUEST['login'];
@@ -47,54 +55,56 @@ function get_data_form2(){
 
 }
 
+//Si el formulario no ha devuelto una action la inicializamos vacía
 if (!isset($_REQUEST['action'])){
     $_REQUEST['action'] = '';
 }
 
 
+//EN función de la action que llega del formulario ejecutamos una acción distinta
 Switch ($_REQUEST['action']){
+    //Añadimos una tupla
     case 'ADD':
-        // $TRABAJO = new TRABAJOS_Model($_REQUEST['IdTrabajo'],'','','','');
-        // $trabajo = $TRABAJO->SEARCH()->fetch_array();
-        // $valores = $NOTAS->RellenaDatos();
-        // $ENTREGA = get_data_form2();
-        // $valorentrega = $ENTREGA->SEARCH();
-        // $alias_v = $valorentrega->fetch_array();
-        // $NOTAS = get_data_form();
-        // $NOTAS['NotaTrabajo'] = generarNotasEntrega($IdTrabajo,$alias_v[2],$trabajo[4]);
-        // $respuesta = $NOTAS->ADD();
-        // new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
-        
-        case 'ADD':
+        //Si no hay post
         if (!$_POST){
+            //Creamos una instancia de la vista
             new Nota_Trabajo_ADD();
         }
         else{		
+            //Recogemos los datos que devuelve el formulario y creamos una nueva historia
             $NOTAS = get_data_form();
             $respuesta = $NOTAS->ADD();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         }
-        break;
+    break;
+    //Borramos una tupla
     case 'DELETE':
+        //Si no hay post
         if (!$_POST){
+            //Creamos una vista con los datos de la nota
             $NOTAS = new NOTAS_Model($_REQUEST['login'], $_REQUEST['IdTrabajo'], '');
             $lista = array('login', 'IdTrabajo', 'NotaTrabajo');
             $valores = $NOTAS->RellenaDatos();
             new Nota_Trabajo_DELETE($lista, $valores);
         }
         else{
+            //Cogemos la nota y la borramos
             $NOTAS = new NOTAS_Model($_REQUEST['login'], $_REQUEST['IdTrabajo'], '');
             $respuesta = $NOTAS->DELETE();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
         }
         break;
+    //Editamos una tupla
     case 'EDIT':
+        //Si no hay post
         if (!$_POST){
+            //Rellenamos de datos la vista de edit y la mostramos
             $NOTAS = new NOTAS_Model($_REQUEST['login'], $_REQUEST['IdTrabajo'], '');
             $valores = $NOTAS->RellenaDatos();
             new Nota_Trabajo_EDIT($valores);
         }
         else{
+            //Cogemos el resultado del submit del formulario y editamos en el modelo
             $NOTAS = get_data_form();
             $respuesta = $NOTAS->EDIT();
             new Vista_MESSAGE($respuesta, '../Controllers/Index_Controller.php');
@@ -102,24 +112,28 @@ Switch ($_REQUEST['action']){
 
         break;
     case 'SEARCH':
+        //Si no hay post
         if (!$_POST){
             new Nota_Trabajo_SEARCH();
         }
         else{
+            //Recogemos los datos y lanzamos un showall con las notas filtradas
             $NOTAS = get_data_form();
             $datos = $NOTAS->SEARCH();
             $lista = array('login', 'IdTrabajo', 'NotaTrabajo');
             new Nota_Trabajo_SHOWALL($lista, $datos, '../Controllers/Index_Controller.php');
         }
         break;
+    //Mostramos en detalle una tupla
     case 'SHOWCURRENT':
         $NOTAS = new NOTAS_Model($_REQUEST['login'], $_REQUEST['IdTrabajo'], '');
         $lista = array('login', 'IdTrabajo', 'NotaTrabajo');
         $valores = $NOTAS->RellenaDatos();
         new Nota_Trabajo_SHOWCURRENT($lista, $valores);
-        break;
-        
+        break;       
+    //Si la accion no coincide con las anteriores creamos un showall con todoas las tuplas de la tabla
     default:
+        //Si no hay post
         if (!$_POST){
             $NOTAS = new NOTAS_Model('','','');
         }
